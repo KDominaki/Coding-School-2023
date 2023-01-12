@@ -14,11 +14,19 @@ Console.WriteLine($"{num1}+{num2}={sum} and {num1}/{num2}={division}");
 
 // 3.>> the result of the specified operstions
 
+int firstOp = -1 + (5 * 6);
+int secondOp = 38 + (5 % 7);
+int thirdOp = 14 + ((-3 * 6) / 7);
+double forthOp = 2 + ((13 / 6) * 6) + Math.Sqrt(7);
+double fithOp = (Math.Pow(6, 4) + Math.Pow(5, 7)) / (9 % 4);
+
+Console.WriteLine($"1st operation= {firstOp}, 2nd= {secondOp}, 3rd= {thirdOp}, 4th={forthOp} and the 5th= {fithOp}" );
+
 /* 4.Write a C# program that assigns an age (number) (for example 20) and 
  * a gender (string) (for example female) and displays something like: "You are female and look younger than 20."*/
 
 string gender = "female";
-short age = 20;
+ushort age = 20;
 
 Console.WriteLine($"You are a {gender} and you are {age} years old");
 
