@@ -34,11 +34,11 @@ Console.WriteLine($"You are a {gender} and you are {age} years old");
 
 //5. Write a C# program that takes an integer representing seconds (for example 45678) and converts it to : min, h, d, y
 
-int secs = 45678;
-int secsToMinutes = secs / 60;
-int secsToHours = secsToMinutes / 60;
-int secsToDays = secsToHours / 24;
-int secsToYears = secsToDays / 365;
+uint secs = 45678;
+uint secsToMinutes = secs / 60;
+uint secsToHours = secsToMinutes / 60;
+uint secsToDays = secsToHours / 24;
+uint secsToYears = secsToDays / 365;
 
 Console.WriteLine($"{secs} seconds are {secsToMinutes} minutes, {secsToHours} hours, {secsToDays} days and {secsToYears} years");
 
