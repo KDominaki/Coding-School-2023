@@ -10,7 +10,7 @@ int num2 = 6;
 int sum = num1 + num2;
 float division = num1 / num2;
 
-Console.WriteLine(num1 + "+" + num2 + "=" + sum + " and " + num1 + "/" + num2 + "=" + division);
+Console.WriteLine($"{num1}+{num2}={sum} and {num1}/{num2}={division}");
 
 // 3.>> the result of the specified operstions
 
@@ -20,7 +20,7 @@ Console.WriteLine(num1 + "+" + num2 + "=" + sum + " and " + num1 + "/" + num2 + 
 string gender = "female";
 short age = 20;
 
-Console.WriteLine("You are "+gender+" and you are "+age);
+Console.WriteLine($"You are a {gender} and you are {age} years old");
 
 
 
@@ -32,8 +32,17 @@ int secsToHours = secsToMinutes / 60;
 int secsToDays = secsToHours / 24;
 int secsToYears = secsToDays / 365;
 
-Console.WriteLine(secs + " seconds are " + secsToMinutes + " minutes, " + secsToHours + " hours, " + secsToDays + " days and " + secsToYears + " years.");
+Console.WriteLine($"{secs} seconds are {secsToMinutes} minutes, {secsToHours} hours, {secsToDays} days and {secsToYears} years");
 
 
+//6. Rewrite Program #5 using .Net Libraries. 
+
+//7. Write a C# program to convert from celsius degrees to Kelvin and Fahrenheit.
+
+int celsius = 18;
+int celciusToKelvin = celsius + 273;
+int celciusToFahrenheit = celsius * (9 / 5) + 32;
+
+Console.WriteLine($"{celsius} Celsius are {celciusToKelvin} Kelvin and {celciusToFahrenheit} Fahrenheit");
 
 Console.ReadLine();
