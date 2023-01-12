@@ -45,6 +45,12 @@ Console.WriteLine($"{secs} seconds are {secsToMinutes} minutes, {secsToHours} ho
 
 //6. Rewrite Program #5 using .Net Libraries. 
 
+TimeSpan seconds = TimeSpan.FromSeconds(secs);
+int minutes = Convert.ToInt32(seconds.TotalMinutes);
+int hours = Convert.ToInt32(seconds.TotalHours);
+int days = Convert.ToInt32(seconds.TotalDays);
+Console.WriteLine($"{secs} seconds are {minutes} minutes, {hours} hours {days} days and {days/365}");
+
 //7. Write a C# program to convert from celsius degrees to Kelvin and Fahrenheit.
 
 int celsius = 18;
