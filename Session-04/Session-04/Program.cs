@@ -30,8 +30,6 @@ ushort age = 20;
 
 Console.WriteLine($"You are a {gender} and you are {age} years old");
 
-
-
 //5. Write a C# program that takes an integer representing seconds (for example 45678) and converts it to : min, h, d, y
 
 uint secs = 45678;
@@ -45,7 +43,7 @@ Console.WriteLine($"{secs} seconds are {secsToMinutes} minutes, {secsToHours} ho
 
 //6. Rewrite Program #5 using .Net Libraries. 
 
-TimeSpan seconds = TimeSpan.FromSeconds(secs);
+TimeSpan seconds = TimeSpan.FromSeconds(45678);
 int minutes = Convert.ToInt32(seconds.TotalMinutes);
 int hours = Convert.ToInt32(seconds.TotalHours);
 int days = Convert.ToInt32(seconds.TotalDays);
