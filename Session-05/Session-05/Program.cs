@@ -1,10 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Session_05;
+
+
 // Question 1
 ReverseString revName= new ReverseString();
 string name = "Kostas";
 
 Console.WriteLine(revName.Reverse(name));
+
+
 // Question 2
 UsersNum numForCalc = new UsersNum();
 
@@ -56,23 +60,21 @@ foreach (int num in primes)
 }
 Console.ReadLine();
 
+
 // Question 4
 
 int[] array1 = new int[4] { 2, 4, 9, 12 };
 int[] array2 = new int[4] {1, 3, 7, 10};
 int[] newArray = new int[array1.Length*array2.Length];
 
-foreach (int num in array1)
+for (int i = 0; i < 4; i++)
 {
-    for (int i = 0; i < array2.Length; i++)
+    for (int j = 0; j < 4; j++)
     {
-        Console.WriteLine(array2[i] * num);
-
-       
+        newArray[i * 4 + j] = array1[i] * array2[j];
     }
 }
-
-//foreach (int num in newArray) { Console.WriteLine(num); } (temp)
+foreach (int num in newArray) { Console.WriteLine(num); }
 
 // Question 5
 
