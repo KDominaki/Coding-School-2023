@@ -35,7 +35,7 @@ else
 // Question 3
 
 Console.WriteLine("Give me a number and i will give you all the prime numbers up to this number:");
-usersNumber= Convert.ToInt32(Console.ReadLine());
+usersNumber = Convert.ToInt32(Console.ReadLine());
 
 int[] primes = new int[usersNumber];
 
@@ -63,20 +63,22 @@ Console.ReadLine();
 
 // Question 4
 
-int[] array1 = new int[4] { 2, 4, 9, 12 };
-int[] array2 = new int[4] {1, 3, 7, 10};
+int[] array1 = { 2, 4, 9, 12 };
+int[] array2 = {1, 3, 7, 10};
 int[] newArray = new int[array1.Length*array2.Length];
 
-for (int i = 0; i < 4; i++)
+for (int i = 0; i < array1.Length; i++)
 {
-    for (int j = 0; j < 4; j++)
+    for (int j = 0; j < array2.Length; j++)
     {
-        newArray[i * 4 + j] = array1[i] * array2[j];
+        newArray[i * array2.Length + j] = array1[i] * array2[j];
     }
 }
 foreach (int num in newArray) { Console.WriteLine(num); }
 
+
 // Question 5
+
 int[] array = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
 
 for (int i = 0; i < array.Length; i++)
