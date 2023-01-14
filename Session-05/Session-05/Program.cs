@@ -77,6 +77,22 @@ for (int i = 0; i < 4; i++)
 foreach (int num in newArray) { Console.WriteLine(num); }
 
 // Question 5
+int[] array = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
 
+for (int i = 0; i < array.Length; i++)
+{
+    for (int j = i; j < array.Length; j++)
+    {
+        if (array[i] > array[j])
+        {
+            int temp;
+            temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        
+    }   
+}
+foreach(int num in array) { Console.WriteLine(num); }
 
 Console.ReadLine();
