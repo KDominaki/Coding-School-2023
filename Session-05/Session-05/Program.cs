@@ -8,6 +8,8 @@ string name = "Kostas";
 
 Console.WriteLine(revName.Reverse(name));
 
+Console.WriteLine($"{System.Environment.NewLine} Press 'ENTER' to go to the next question");
+Console.ReadLine();
 
 // Question 2
 UsersNum numForCalc = new UsersNum();
@@ -30,6 +32,9 @@ else
 {
     Console.WriteLine("I am sorry but this wasn't an acceptable asnwer");
 }
+
+Console.WriteLine($"{System.Environment.NewLine} Press 'ENTER' to go to the next question");
+Console.ReadLine();
 
 
 // Question 3
@@ -58,10 +63,14 @@ foreach (int num in primes)
     else { Console.WriteLine(num); }
     
 }
+
+Console.WriteLine($"{System.Environment.NewLine} Press 'ENTER' to go to the next question");
 Console.ReadLine();
 
 
 // Question 4
+
+Console.WriteLine("The results are:");
 
 int[] array1 = { 2, 4, 9, 12 };
 int[] array2 = {1, 3, 7, 10};
@@ -76,8 +85,13 @@ for (int i = 0; i < array1.Length; i++)
 }
 foreach (int num in newArray) { Console.WriteLine(num); }
 
+Console.WriteLine($"{System.Environment.NewLine} Press 'ENTER' to go to the next question");
+Console.ReadLine();
+
 
 // Question 5
+
+Console.WriteLine("The new array is:");
 
 int[] array = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
 
