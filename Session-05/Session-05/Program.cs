@@ -8,8 +8,8 @@ UsersNum numForCalc = new UsersNum();
 Console.WriteLine("Please enter an intiger:");
 int usersNumber = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"Would you like to sum all the numbers up to {usersNumber}, or to multiply them? (enter 'S' to sum or 'M' to multiply");
-string calculation = Console.ReadLine();
+Console.WriteLine($"Would you like to sum all the numbers up to {usersNumber}, or to multiply them? (enter 'S' to sum or 'M' to multiply)");
+string calculation = Console.ReadLine().ToUpper();
 
 if ( calculation == "S")
 {

@@ -12,7 +12,7 @@ namespace Session_05
         {
             int res = 0;
 
-            for (int i = 0; i < num + 1; i++)
+            for (int i = 0; i <= num; i++)
             {
                 res += i;
             }
@@ -24,7 +24,7 @@ namespace Session_05
         {
             int res = 1;
 
-            for (int i = 1; i < num + 1; i++)
+            for (int i = 1; i <= num; i++)
             {
                 res *= i;
             }
