@@ -10,7 +10,7 @@ namespace Session_06
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
 
         public Person()
         {
@@ -20,7 +20,7 @@ namespace Session_06
         {
             Name = name;
             Age = age;
-            Id = id;    
+            ID = id;    
         }
 
         public Person(string name)
