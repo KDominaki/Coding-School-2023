@@ -9,7 +9,7 @@ namespace Session_06
     internal class Student : Person
     {
         public int RegistrationNumber { get; set; }
-        public Course[] Course { get; set; }
+        public Course[] Courses { get; set; }
 
         public Student()
         {
@@ -19,7 +19,7 @@ namespace Session_06
         public Student(int regnum, Course[] course)
         {
             RegistrationNumber= regnum;
-            Course = course;
+            Courses = course;
         }
 
         public Student(int regnum)
