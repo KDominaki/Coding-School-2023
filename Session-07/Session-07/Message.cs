@@ -8,5 +8,14 @@ namespace Session_07
 {
     internal class Message
     {
+        public Guid ID { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string MessageStr { get; set; }
+
+        public Message()
+        {
+                
+        }
+       
     }
 }
