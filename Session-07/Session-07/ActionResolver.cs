@@ -20,21 +20,22 @@ namespace Session_07
         {
 
 
-            //switch (action.Action)
-            //{
-            //    case ActionEnum.Convert:
-            //        ActionResponse convert = new ActionResponse();
-            //        convert.Convert();
-            //        break;
-            //    case ActionEnum.Uppercase:
-            //        ActionResponse response = new ActionResponse();
-            //        return response;
-            //        break;
-            //    case ActionEnum.Reverse:
-            //        ActionResponse reverse = new ActionResponse();
-            //        break;
+            switch (action.Action)
+            {
+                case ActionEnum.Convert:
+                    ActionResponse convert = new ActionResponse();
+                    convert.Convert();
+                    break;
+                case ActionEnum.Uppercase: 
+                    ActionResponse uppercase = new ActionResponse();
+                    uppercase.Uppercase();
+                    break;
+                case ActionEnum.Reverse:
+                    ActionResponse reverse = new ActionResponse();
+                    reverse.Reverse();
+                    break;
 
-            //}
+            }
 
 
 
