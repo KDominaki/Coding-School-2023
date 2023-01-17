@@ -15,6 +15,22 @@ namespace Session_07
            
         }
 
-        public void Execute(ActionRequest actionRequest) { }
+        public void Execute(ActionRequest action) 
+        {
+            if(action.Action == ActionEnum.Convert) 
+            {
+
+            }
+            else if (action.Action == ActionEnum.Uppercase)
+            {
+
+            }
+
+            else if (action.Action == ActionEnum.Reverse)
+            {
+
+            }
+            else { }
+        }
     }
 }
