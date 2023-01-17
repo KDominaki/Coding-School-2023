@@ -8,5 +8,13 @@ namespace Session_07
 {
     internal class ActionResolver
     {
+        public MessageLogger Logger { get; set; }
+
+        public ActionResolver()
+        {
+           
+        }
+
+        public void Execute(ActionRequest actionRequest) { }
     }
 }

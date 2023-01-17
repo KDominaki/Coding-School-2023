@@ -8,5 +8,7 @@ namespace Session_07
 {
     internal class ActionRequest
     {
+        public Guid RequestID { get; set; }
+        public string Input { get; set; }
     }
 }

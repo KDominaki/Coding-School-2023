@@ -8,5 +8,8 @@ namespace Session_07
 {
     internal class ActionResponse
     {
+        public Guid RequestID { get; set; }
+        public Guid ResponseID { get; set; }
+        public string Output { get; set; }
     }
 }
