@@ -16,7 +16,7 @@ namespace Session_07
         }
 
 
-        public void Execute(ActionRequest action) 
+        public ActionResponse Execute(ActionRequest action) 
         {
             try
             {
@@ -25,18 +25,21 @@ namespace Session_07
                     case ActionEnum.Convert:
                         ActionResponse convert = new ActionResponse();
                         convert.Convert();
+
                         MessageLogger message = new MessageLogger();
-                        message.Messages[0] = new Message("Reverse Done");
+                        message.Messages[0] = new Message("Convert Done");
                         break;
                     case ActionEnum.Uppercase:
                         ActionResponse uppercase = new ActionResponse();
                         uppercase.Uppercase();
+
                         MessageLogger upperMessage = new MessageLogger();
-                        upperMessage.Messages[0] = new Message("Reverse Done");
+                        upperMessage.Messages[0] = new Message("Uppercase Done");
                         break;
                     case ActionEnum.Reverse:
                         ActionResponse reverse = new ActionResponse();
                         reverse.Reverse();
+
                         MessageLogger reverseMessage = new MessageLogger();
                         reverseMessage.Messages[0] = new Message("Reverse Done");
                         break;
