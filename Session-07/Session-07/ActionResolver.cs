@@ -56,7 +56,7 @@ namespace Session_07
             {
                 MessageLogger message = new MessageLogger();
                 message.Messages[0] = new Message(ex.Message);
-                return new ActionResponse();
+                return null;
                 throw;
             }
 
