@@ -14,13 +14,13 @@ namespace Session_07
     }
     internal class ActionRequest
     {
-        public Guid RequestID { get; set; }
+        public virtual Guid RequestID { get; set; }
         public string Input { get; set; }
         public ActionEnum Action { get; set; }
 
-       public ActionRequest(ActionEnum action)
+       public ActionRequest()
         {
-            Action = action;
+            
         }
     }
 }

@@ -6,3 +6,7 @@ ActionRequest request = new ActionRequest(ActionEnum.Convert);
 ActionResponse response = new ActionResponse();
 ActionResolver resolver = new ActionResolver();
 //response = resolver.Execute(request);
+
+response.Output = response.Convert();
+
+Console.WriteLine(response.Output);

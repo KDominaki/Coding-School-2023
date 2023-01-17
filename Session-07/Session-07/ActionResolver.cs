@@ -15,35 +15,29 @@ namespace Session_07
            
         }
 
+
         public void Execute(ActionRequest action) 
         {
-            //if(action.Action == ActionEnum.Convert) 
+
+
+            //switch (action.Action)
             //{
+            //    case ActionEnum.Convert:
+            //        ActionResponse convert = new ActionResponse();
+            //        convert.Convert();
+            //        break;
+            //    case ActionEnum.Uppercase:
+            //        ActionResponse response = new ActionResponse();
+            //        return response;
+            //        break;
+            //    case ActionEnum.Reverse:
+            //        ActionResponse reverse = new ActionResponse();
+            //        break;
 
             //}
-            //else if (action.Action == ActionEnum.Uppercase)
-            //{
 
-            //}
 
-            //else if (action.Action == ActionEnum.Reverse)
-            //{
 
-            //}
-            //else { }
-
-            switch (action.Action)
-            {
-                case ActionEnum.Convert:
-                    Console.WriteLine("Convert works!!");
-                    break;
-                case ActionEnum.Uppercase:
-                    Console.WriteLine("Upercase works !!");
-                    break;
-                case ActionEnum.Reverse:
-                    Console.WriteLine("Reverse works!!");
-                    break;
-            }
         }
     }
 }
