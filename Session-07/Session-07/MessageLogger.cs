@@ -10,9 +10,9 @@ namespace Session_07
     {
         public Message[] Messages;
 
-        public MessageLogger(Message[] messages)
+        public MessageLogger()
         {
-            Messages = messages;
+            
         }
 
         public void ReadAll() { }
