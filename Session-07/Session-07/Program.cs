@@ -2,5 +2,7 @@
 using Session_07;
 
 Console.WriteLine("Hello, World!");
-ActionRequest action = new ActionRequest(ActionEnum.Convert);
-action.Action = ActionEnum.Convert;
+ActionRequest request = new ActionRequest(ActionEnum.Convert);
+ActionResponse response = new ActionResponse();
+ActionResolver resolver = new ActionResolver();
+//response = resolver.Execute(request);
