@@ -16,7 +16,11 @@ namespace Session_07
 
         public ActionResponse()
         {
-              
+             
+        }
+        public ActionResponse(string output)
+        {
+           Output= output;
         }
 
         public decimal Convert()

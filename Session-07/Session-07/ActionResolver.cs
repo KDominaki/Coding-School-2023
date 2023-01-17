@@ -24,35 +24,43 @@ namespace Session_07
                 {
                     case ActionEnum.Convert:
                         ActionResponse convert = new ActionResponse();
-                        convert.Convert();
+                        string convertResult = convert.Convert().ToString();
 
                         MessageLogger message = new MessageLogger();
                         message.Messages[0] = new Message("Convert Done");
-                        break;
+
+                        return new ActionResponse(convertResult);
+
                     case ActionEnum.Uppercase:
                         ActionResponse uppercase = new ActionResponse();
-                        uppercase.Uppercase();
-
+                        string result = uppercase.Uppercase();
                         MessageLogger upperMessage = new MessageLogger();
                         upperMessage.Messages[0] = new Message("Uppercase Done");
-                        break;
+
+                        return new ActionResponse(result);
+
+                        
                     case ActionEnum.Reverse:
                         ActionResponse reverse = new ActionResponse();
-                        reverse.Reverse();
+                        string reverseResult =reverse.Reverse();
 
                         MessageLogger reverseMessage = new MessageLogger();
                         reverseMessage.Messages[0] = new Message("Reverse Done");
-                        break;
+
+                        return new ActionResponse(reverseResult);
+                        
 
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageLogger message = new MessageLogger();
                 message.Messages[0] = new Message(ex.Message);
+                return new ActionResponse();
                 throw;
             }
 
-            
+            return null;
 
 
 
