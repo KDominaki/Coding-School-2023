@@ -12,9 +12,10 @@ namespace Session_07
         public DateTime TimeStamp { get; set; }
         public string MessageStr { get; set; }
 
-        public Message(string message)
+        public Message(string message, DateTime timeStamp)
         {
-               MessageStr= message;
+            MessageStr= message;
+            TimeStamp = timeStamp;
         }
        
     }

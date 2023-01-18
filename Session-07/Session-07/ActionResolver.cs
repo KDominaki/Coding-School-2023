@@ -27,7 +27,7 @@ namespace Session_07
                         string convertResult = convert.Convert().ToString();
 
                         MessageLogger message = new MessageLogger();
-                        message.Messages[0] = new Message("Convert Done");
+                        message.Messages[0] = new Message("Convert Done", DateTime.Now);
 
                         return new ActionResponse(convertResult);
 
@@ -35,7 +35,7 @@ namespace Session_07
                         ActionResponse uppercase = new ActionResponse();
                         string result = uppercase.Uppercase();
                         MessageLogger upperMessage = new MessageLogger();
-                        upperMessage.Messages[0] = new Message("Uppercase Done");
+                        upperMessage.Messages[0] = new Message("Uppercase Done", DateTime.Now);
 
                         return new ActionResponse(result);
 
@@ -45,7 +45,7 @@ namespace Session_07
                         string reverseResult =reverse.Reverse();
 
                         MessageLogger reverseMessage = new MessageLogger();
-                        reverseMessage.Messages[0] = new Message("Reverse Done");
+                        reverseMessage.Messages[0] = new Message("Reverse Done", DateTime.Now);
 
                         return new ActionResponse(reverseResult);
                         
@@ -55,7 +55,7 @@ namespace Session_07
             catch (Exception ex)
             {
                 MessageLogger message = new MessageLogger();
-                message.Messages[0] = new Message(ex.Message);
+                message.Messages[0] = new Message(ex.Message, DateTime.Now);
                 return null;
                 throw;
             }
