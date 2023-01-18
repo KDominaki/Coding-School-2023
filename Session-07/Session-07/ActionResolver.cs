@@ -47,7 +47,7 @@ namespace Session_07
                         break;
 
                     default:
-                        // TODO: ERRORMESSAGE!
+                        Log("Error");
                         break;
                 }
             }

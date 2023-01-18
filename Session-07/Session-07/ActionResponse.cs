@@ -55,10 +55,11 @@ namespace Session_07
                     ctr = s.Length;
                 }
                 else { }
-
+            
 
             }
-            return word;
+            string wordUp = word.ToUpper();
+            return wordUp;
            
 
         }
