@@ -12,58 +12,70 @@ namespace Session_07
 
         public ActionResolver()
         {
-           
+            Logger = new MessageLogger();
         }
 
 
-        public ActionResponse Execute(ActionRequest action) 
+        public ActionResponse Execute(ActionRequest request)
         {
+
+
+            ActionResponse response = new ActionResponse();
+            response.ResponseID = Guid.NewGuid();
+            response.RequestID = request.RequestID;
+
+            Log("EXECUTION START");
+
             try
             {
-                switch (action.Action)
+
+                switch (request.Action)
                 {
                     case ActionEnum.Convert:
-                        ActionResponse convert = new ActionResponse();
-                        string convertResult = convert.Convert().ToString();
-
-                        MessageLogger message = new MessageLogger();
-                        message.Messages[0] = new Message("Convert Done", DateTime.Now);
-
-                        return new ActionResponse(convertResult);
+                        Log("CONVERT");
+                        response.Output = response.Convert(request.Input);
+                        break;
 
                     case ActionEnum.Uppercase:
-                        ActionResponse uppercase = new ActionResponse();
-                        string result = uppercase.Uppercase();
-                        MessageLogger upperMessage = new MessageLogger();
-                        upperMessage.Messages[0] = new Message("Uppercase Done", DateTime.Now);
+                        Log("UPPERCASE");
+                        response.Output = response.Uppercase(request.Input);
+                        break;
 
-                        return new ActionResponse(result);
-
-                        
                     case ActionEnum.Reverse:
-                        ActionResponse reverse = new ActionResponse();
-                        string reverseResult =reverse.Reverse();
+                        Log("REVERSE");
+                        response.Output = response.Reverse(request.Input);
+                        break;
 
-                        MessageLogger reverseMessage = new MessageLogger();
-                        reverseMessage.Messages[0] = new Message("Reverse Done", DateTime.Now);
-
-                        return new ActionResponse(reverseResult);
-                        
-
+                    default:
+                        // TODO: ERRORMESSAGE!
+                        break;
                 }
             }
             catch (Exception ex)
             {
-                MessageLogger message = new MessageLogger();
-                message.Messages[0] = new Message(ex.Message, DateTime.Now);
-                return null;
-                throw;
+                Log(ex.Message);
+
+            }
+            finally
+            {
+                Log("EXECUTION END");
             }
 
-            return null;
 
+            return response;
+        }
+
+        private void Log(string text)
+        {
+
+            Logger.Write(new Message("------------"));
+
+            Message message = new Message(text);
+            Logger.Write(message);
 
 
         }
+
+
     }
 }

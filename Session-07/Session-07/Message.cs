@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 
 namespace Session_07
 {
-    internal class Message
+    public class Message
     {
+
         public Guid ID { get; set; }
         public DateTime TimeStamp { get; set; }
-        public string MessageStr { get; set; }
 
-        public Message(string message, DateTime timeStamp)
+        // Change from class diagram: Message property cannot be the same as class name
+        public string Text { get; set; }
+
+        public Message()
         {
-            MessageStr= message;
-            TimeStamp = timeStamp;
+            ID = Guid.NewGuid();
         }
-       
+
+        public Message(string text)
+        {
+            ID = Guid.NewGuid();
+            TimeStamp = DateTime.Now;
+            Text = text;
+        }
     }
+
 }

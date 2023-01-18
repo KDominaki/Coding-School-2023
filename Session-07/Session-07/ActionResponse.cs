@@ -7,9 +7,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Session_07
 {
-    internal class ActionResponse : ActionRequest
+    internal class ActionResponse
     {
-        public override Guid RequestID { get; set; }
+        public Guid RequestID { get; set; }
         public Guid ResponseID { get; set; }
         public string Output { get; set; }
 
@@ -23,16 +23,16 @@ namespace Session_07
            Output= output;
         }
 
-        public decimal Convert()
+        public string Convert(string input)
         {
             try
             {
-                string input = Input;
+               
                 decimal text = Decimal.Parse(input);
                 decimal binaryNum = text % 2;
                 binaryNum /= 2;
 
-                return binaryNum;
+                return binaryNum.ToString();
                 
             } catch (Exception ex)
             {
@@ -41,10 +41,10 @@ namespace Session_07
            
             
         }    
-        public string Uppercase()
+        public string Uppercase(string input)
         {
-            string line = Input;
-            string[] words = line.Split(new[] { " " }, StringSplitOptions.None);
+            
+            string[] words = input.Split(new[] { " " }, StringSplitOptions.None);
             string word = "";
             int ctr = 0;
             foreach (String s in words)
@@ -62,10 +62,9 @@ namespace Session_07
            
 
         }
-        public string Reverse()
+        public string Reverse(string input)
         {   
-            string text = Input;
-            char[] cArray = text.ToCharArray();
+            char[] cArray = input.ToCharArray();
             string reverse = String.Empty;
             for (int i = cArray.Length - 1; i > -1; i--)
             {

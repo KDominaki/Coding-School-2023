@@ -6,17 +6,48 @@ using System.Threading.Tasks;
 
 namespace Session_07
 {
-    internal class MessageLogger
+    
+    public class MessageLogger
     {
-        public Message[] Messages;
 
+        //  PROPERTIES
+        public Message[] Messages { get; set; }
+
+        private int _messageCounter = 0;
+
+        // CTOR
         public MessageLogger()
         {
-            
+            Messages = new Message[1000];
         }
 
-        public void ReadAll() { }
-        public void Clear() { }
-        public void Write(Message message) { }
+
+        // METHODS
+        public void ReadAll()
+        {
+            foreach (Message message in Messages)
+            {
+
+                if (message != null)
+                {
+                    Console.WriteLine(message.Text);
+                }
+
+            }
+        }
+
+        public void Clear()
+        {
+            Messages = new Message[1000];
+            _messageCounter = 0;
+        }
+
+        public void Write(Message message)
+        {
+
+            Messages[_messageCounter] = message;
+            _messageCounter++;
+        }
+
     }
 }
