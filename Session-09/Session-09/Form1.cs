@@ -156,7 +156,6 @@ namespace Session_09
                     _result = Convert.ToDecimal(Math.Sqrt(root));
                     break;
                 case CalcOperation.Power:
-                  /*_result = Math.Pow(_value1, _value2)*/;
                     double powerOne = Convert.ToDouble(_value1.Value);
                     double powerTwo = Convert.ToDouble(_value2.Value);
                     _result = Convert.ToDecimal(Math.Pow(powerOne, powerTwo));
