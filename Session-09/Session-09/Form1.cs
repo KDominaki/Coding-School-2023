@@ -128,7 +128,7 @@ namespace Session_09
 
         private void button16_Click(object sender, EventArgs e)
         {
-            textBox.Text += "r";
+            textBox.Text += (char)0x221A;
             _calcOperation = CalcOperation.Root;
         }
 
