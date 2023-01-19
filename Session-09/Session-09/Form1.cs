@@ -8,6 +8,7 @@ namespace Session_09
         private decimal? _value2 = null;
         private decimal? _result = null;
 
+
         private CalcOperation _calcOperation;
 
         enum CalcOperation
@@ -143,13 +144,16 @@ namespace Session_09
                     _result = addition.Sum(_value1.Value, _value2.Value);
                     break;
                 case CalcOperation.Substraction:
-                    _result = _value1 - _value2;
+                    Substraction sub = new Substraction();
+                    _result = sub.Do(_value1.Value, _value2.Value);
                     break;
                 case CalcOperation.Division:
-                    _result = _value1 / _value2;
+                    Division division= new Division();
+                    _result = division.Do(_value1.Value, _value2.Value);
                     break;
                 case CalcOperation.Multiplication:
-                    _result = _value1 * _value2;
+                    Multiplicationcs mult = new Multiplicationcs();
+                    _result = mult.Multiply(_value1.Value, _value2.Value);
                     break;
                 case CalcOperation.Root:
                     SquareRoot();
@@ -206,6 +210,6 @@ namespace Session_09
             double root = Convert.ToDouble(_value1.Value);
             _result = Convert.ToDecimal(Math.Sqrt(root));
         }
-    
+
     }
 }
