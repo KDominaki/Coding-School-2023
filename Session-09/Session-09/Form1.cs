@@ -156,10 +156,12 @@ namespace Session_09
                     _result = mult.Multiply(_value1.Value, _value2.Value);
                     break;
                 case CalcOperation.Root:
-                    SquareRoot();
+                    Roots root = new Roots();
+                    _result = root.SquareRoot(_value1.Value);
                     break;
                 case CalcOperation.Power:
-                    Power();
+                    Powers pow = new Powers();
+                    _result = pow.Power(_value1.Value, _value2.Value);
                     break;
 
                 default:
@@ -193,23 +195,7 @@ namespace Session_09
             }
         }
 
-        private void Power()
-        {
-            if (_value1 != null)
-            {
-                double powerOne = Convert.ToDouble(_value1.Value);
-                double powerTwo = Convert.ToDouble(_value2.Value);
-                _result = Convert.ToDecimal(Math.Pow(powerOne, powerTwo));
-            }
-            else { }
 
-        }
-
-        private void SquareRoot()
-        {
-            double root = Convert.ToDouble(_value1.Value);
-            _result = Convert.ToDecimal(Math.Sqrt(root));
-        }
-
+     
     }
 }
