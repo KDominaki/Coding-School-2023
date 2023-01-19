@@ -13,7 +13,9 @@ namespace Session_09
             Addition,
             Division,
             Multiplication,
-            Substraction
+            Substraction,
+            Power,
+            Root
         }
 
         public Form1()
@@ -23,93 +25,73 @@ namespace Session_09
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //textBox.Text += "1";
-
-            if (_result != null)
-            {
-
-                textBox.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
+            IsResNull();
             textBox.Text += "1";
-
-            if (_value1 == null)
-            {
-                _value1 = 1;
-            }
-            else
-            {
-                _value2 = 1;
-            }
-
+            AddValues(1);
         }
 
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //textBox.Text += "2";
-            if (_result != null)
-            {
-
-                textBox.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
+            IsResNull();
+            AddValues(2);
             textBox.Text += "2";
-
-            if (_value1 == null)
-            {
-                _value1 = 2;
-            }
-            else
-            {
-                _value2 = 2;
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(3);
             textBox.Text += "3";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(4);
             textBox.Text += "4";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(5);
             textBox.Text += "5";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(6);
             textBox.Text += "6";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(7);
             textBox.Text += "7";
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(8);
             textBox.Text += "8";
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(9);
             textBox.Text += "9";
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            IsResNull();
+            AddValues(0);
             textBox.Text += "0";
         }
 
@@ -122,26 +104,31 @@ namespace Session_09
         private void button12_Click(object sender, EventArgs e)
         {
             textBox.Text += "-";
+            _calcOperation = CalcOperation.Substraction;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             textBox.Text += "*";
+            _calcOperation = CalcOperation.Multiplication;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             textBox.Text += "/";
+            _calcOperation = CalcOperation.Division;
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
             textBox.Text += "^";
+            _calcOperation = CalcOperation.Power;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             textBox.Text += "r";
+            _calcOperation = CalcOperation.Root;
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -152,6 +139,21 @@ namespace Session_09
                 case CalcOperation.Addition:
                     _result = _value1 + _value2;
                     break;
+                case CalcOperation.Substraction:
+                    _result = _value1 - _value2;
+                    break;
+                case CalcOperation.Division:
+                    _result = _value1 / _value2;
+                    break;
+                case CalcOperation.Multiplication:
+                    _result = _value1 * _value2;
+                    break;
+                case CalcOperation.Root:
+                    //_result = Math.Sqrt(_value1);
+                    break;
+                case CalcOperation.Power:
+                  /*  _result = Math.Pow(_value1, _value2)*/;
+                    break;
 
                 default:
                     break;
@@ -159,6 +161,30 @@ namespace Session_09
             textBox.Text += _result;
         }
 
+        private void IsResNull()
+        {
+            if (_result != null)
+            {
+
+                textBox.Text = string.Empty;
+                _value1 = null;
+                _value2 = null;
+                _result = null;
+            }
+            else { }
+        }
+
+        private void AddValues(int num)
+        {
+            if (_value1 == null)
+            {
+                _value1 = num;
+            }
+            else
+            {
+                _value2 = num;
+            }
+        }
     
     }
 }
