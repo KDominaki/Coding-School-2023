@@ -152,13 +152,10 @@ namespace Session_09
                     _result = _value1 * _value2;
                     break;
                 case CalcOperation.Root:
-                    double root =Convert.ToDouble(_value1.Value);
-                    _result = Convert.ToDecimal(Math.Sqrt(root));
+                    SquareRoot();
                     break;
                 case CalcOperation.Power:
-                    double powerOne = Convert.ToDouble(_value1.Value);
-                    double powerTwo = Convert.ToDouble(_value2.Value);
-                    _result = Convert.ToDecimal(Math.Pow(powerOne, powerTwo));
+                    Power();
                     break;
 
                 default:
@@ -192,14 +189,23 @@ namespace Session_09
             }
         }
 
-        private void SqueareRoot() 
+        private void Power()
         {
-            if(_value1 != null)
+            if (_value1 != null)
             {
-                
+                double powerOne = Convert.ToDouble(_value1.Value);
+                double powerTwo = Convert.ToDouble(_value2.Value);
+                _result = Convert.ToDecimal(Math.Pow(powerOne, powerTwo));
             }
+            else { }
+
         }
 
+        private void SquareRoot()
+        {
+            double root = Convert.ToDouble(_value1.Value);
+            _result = Convert.ToDecimal(Math.Sqrt(root));
+        }
     
     }
 }
