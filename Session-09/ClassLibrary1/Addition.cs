@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary1
+﻿namespace CalcLibrary
 {
     public class Addition
     {

@@ -1,4 +1,4 @@
-
+using CalcLibrary;
 namespace Session_09
 {
     
@@ -139,7 +139,9 @@ namespace Session_09
             switch (_calcOperation)
             {
                 case CalcOperation.Addition:
-                    _result = _value1 + _value2;
+                    //_result = _value1 + _value2;
+                    Addition addition= new Addition();
+                    _result = addition.Sum(_value1.Value, _value2.Value);
                     break;
                 case CalcOperation.Substraction:
                     _result = _value1 - _value2;
