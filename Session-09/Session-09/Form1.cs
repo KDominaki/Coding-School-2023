@@ -1,5 +1,6 @@
 namespace Session_09
 {
+    
     public partial class Form1 : Form
     {
         private decimal? _value1 = null;
@@ -152,7 +153,7 @@ namespace Session_09
                     //_result = Math.Sqrt(_value1);
                     break;
                 case CalcOperation.Power:
-                  /*  _result = Math.Pow(_value1, _value2)*/;
+                  /*_result = Math.Pow(_value1, _value2)*/;
                     break;
 
                 default:
@@ -183,6 +184,14 @@ namespace Session_09
             else
             {
                 _value2 = num;
+            }
+        }
+
+        private void SqueareRoot() 
+        {
+            if(_value1 != null)
+            {
+                
             }
         }
     
