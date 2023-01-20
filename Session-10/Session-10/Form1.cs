@@ -21,21 +21,12 @@ namespace Session_10
         {
             University university = new University();
             university.GetStudents();
+            university.GetGrades();
+            university.GetCourses();
+            Properties(university);
 
-            List<Course> courses = new List<Course>();
+            //university.SetSchedule();
 
-            Course courseOne = new Course()
-            {
-                Subject = "Biology",
-                Code = "00001"
-            };
-            courses.Add(courseOne);
-            Course courseTwo = new Course()
-            {
-                Subject = "Chemistry",
-                Code = "00002"
-            };
-            courses.Add(courseTwo);
 
             List<Schedule> schedules= new List<Schedule>();
 
@@ -43,19 +34,27 @@ namespace Session_10
             schedules.Add(scheduleOne);
             Schedule scheduleTwo = new Schedule();
             schedules.Add (scheduleTwo);
-            
-        
+
+           
+            dataGridView4.DataSource = schedules;
+        }
+
+        public void Properties(University university)
+        {
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView3.AutoGenerateColumns = false;
+            dataGridView4.AutoGenerateColumns = false;
 
             dataGridView1.DataSource = university.Students;
-            dataGridView2.DataSource = courses;
+            dataGridView2.DataSource = university.Courses;
             dataGridView3.DataSource = university.Grades;
-            dataGridView4.DataSource = schedules;
+            //dataGridView4.DataSource = university.ScheduledCourse;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
-
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

@@ -35,7 +35,19 @@ namespace Session_06
         }
         public void GetCourses() 
         {
-            Course course = new Course("0001", "biology");
+            Courses = new List<Course>();
+            Course courseOne = new Course()
+            {
+                Subject = "Biology",
+                Code = "00001"
+            };
+            Courses.Add(courseOne);
+            Course courseTwo = new Course()
+            {
+                Subject = "Chemistry",
+                Code = "00002"
+            };
+            Courses.Add(courseTwo);
         }
         public void GetGrades() 
         {
