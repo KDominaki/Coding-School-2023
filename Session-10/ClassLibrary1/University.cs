@@ -20,16 +20,16 @@ namespace Session_06
 
         public void GetStudents() 
         {
-
+            Students = new List<Student>();
             Student studentOne = new Student()
             {
-                RegistrationNumber = 1
+                RegistrationNumber = 6,
             };
             Students.Add(studentOne);
             
             Student studentTwo = new Student()
             {
-                RegistrationNumber = 1,
+                RegistrationNumber = 9,
             };
             Students.Add(studentTwo);
         }
@@ -37,7 +37,21 @@ namespace Session_06
         {
             Course course = new Course("0001", "biology");
         }
-        public void GetGrades() { }
+        public void GetGrades() 
+        {
+            Grades = new List<Grade>();
+
+            Grade gradeOne = new Grade()
+            {
+                GradeNum = 90,
+            };
+            Grades.Add(gradeOne);
+            Grade gradeTwo = new Grade()
+            {
+                GradeNum = 70,
+            };
+            Grades.Add(gradeTwo);
+        }
         public void SetSchedule(Guid courseID, Guid professorID, DateTime datetime) { }
     }
 }

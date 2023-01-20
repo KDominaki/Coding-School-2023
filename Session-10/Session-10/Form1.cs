@@ -18,32 +18,9 @@ namespace Session_10
         }
 
         private void MakeUniversity()
-        {   //University university = new University()
-            List <Student> students= new List<Student>();
-            
-            Student studentOne= new Student()
-            {
-                RegistrationNumber= 00001,
-            };
-            students.Add(studentOne);
-            Student studentTwo = new Student()
-            {
-                RegistrationNumber = 00002,
-            };
-            students.Add(studentTwo);
-
-            List<Grade>grades = new List<Grade>();
-
-            Grade gradeOne = new Grade()
-            {
-                GradeNum= 90,
-            };
-            grades.Add(gradeOne);
-            Grade gradeTwo = new Grade()
-            {
-                GradeNum = 70,
-            };
-            grades.Add(gradeTwo);
+        {
+            University university = new University();
+            university.GetStudents();
 
             List<Course> courses = new List<Course>();
 
@@ -69,9 +46,9 @@ namespace Session_10
             
         
 
-            dataGridView1.DataSource = students;
+            dataGridView1.DataSource = university.Students;
             dataGridView2.DataSource = courses;
-            dataGridView3.DataSource = grades;
+            dataGridView3.DataSource = university.Grades;
             dataGridView4.DataSource = schedules;
         }
 
