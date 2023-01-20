@@ -12,18 +12,48 @@ namespace Session_10
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MakeUniversity();
+        }
+
         private void MakeUniversity()
-        {    List <Student> students= new List<Student>();
-            //University university = new University()
-            //{
-                
-            //};
+        {   //University university = new University()
+            List <Student> students= new List<Student>();
+            
             Student studentOne= new Student();
             students.Add(studentOne);
-            //university.Students.Add(studentOne);
-            dataGridView1.DataSource = students;
-        }
+            Student studentTwo = new Student();
+            students.Add(studentTwo);
+
+            List<Grade>grades = new List<Grade>();
+
+            Grade gradeOne = new Grade();
+            grades.Add(gradeOne);
+            Grade gradeTwo = new Grade();
+            grades.Add(gradeTwo);
+
+            List<Course> courses = new List<Course>();
+
+            Course courseOne = new Course();
+            courses.Add(courseOne);
+            Course courseTwo = new Course();
+            courses.Add(courseTwo);
+
+            List<Schedule> schedules= new List<Schedule>();
+
+            Schedule scheduleOne = new Schedule();
+            schedules.Add(scheduleOne);
+            Schedule scheduleTwo = new Schedule();
+            schedules.Add (scheduleTwo);
+            
         
+
+            dataGridView1.DataSource = students;
+            dataGridView2.DataSource = grades;
+            dataGridView3.DataSource = courses;
+            dataGridView4.DataSource = schedules;
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -56,9 +86,6 @@ namespace Session_10
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            MakeUniversity();
-        }
+       
     }
 }
