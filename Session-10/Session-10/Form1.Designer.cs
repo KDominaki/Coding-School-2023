@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colRNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.colSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.colGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -43,6 +48,8 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colRNum});
             this.dataGridView1.Location = new System.Drawing.Point(1, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
@@ -50,9 +57,19 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // colRNum
+            // 
+            this.colRNum.DataPropertyName = "RegistrationNumber";
+            this.colRNum.HeaderText = "RegistrationNumber";
+            this.colRNum.Name = "colRNum";
+            this.colRNum.Width = 150;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSub,
+            this.colCode});
             this.dataGridView2.Location = new System.Drawing.Point(1, 158);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
@@ -60,9 +77,24 @@
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // colSub
+            // 
+            this.colSub.DataPropertyName = "Subject";
+            this.colSub.HeaderText = "Subject";
+            this.colSub.Name = "colSub";
+            // 
+            // colCode
+            // 
+            this.colCode.DataPropertyName = "Code";
+            this.colCode.HeaderText = "Code";
+            this.colCode.Name = "colCode";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colGrade,
+            this.colStudentID});
             this.dataGridView3.Location = new System.Drawing.Point(1, 314);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 25;
@@ -100,6 +132,17 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // colGrade
+            // 
+            this.colGrade.DataPropertyName = "GradeNum";
+            this.colGrade.HeaderText = "Grade";
+            this.colGrade.Name = "colGrade";
+            // 
+            // colStudentID
+            // 
+            this.colStudentID.HeaderText = "Student ID";
+            this.colStudentID.Name = "colStudentID";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -130,5 +173,10 @@
         private DataGridView dataGridView4;
         private Button btnSave;
         private Button btnLoad;
+        private DataGridViewTextBoxColumn colRNum;
+        private DataGridViewTextBoxColumn colSub;
+        private DataGridViewTextBoxColumn colCode;
+        private DataGridViewTextBoxColumn colGrade;
+        private DataGridViewTextBoxColumn colStudentID;
     }
 }

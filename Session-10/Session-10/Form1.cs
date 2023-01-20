@@ -21,23 +21,43 @@ namespace Session_10
         {   //University university = new University()
             List <Student> students= new List<Student>();
             
-            Student studentOne= new Student();
+            Student studentOne= new Student()
+            {
+                RegistrationNumber= 00001,
+            };
             students.Add(studentOne);
-            Student studentTwo = new Student();
+            Student studentTwo = new Student()
+            {
+                RegistrationNumber = 00002,
+            };
             students.Add(studentTwo);
 
             List<Grade>grades = new List<Grade>();
 
-            Grade gradeOne = new Grade();
+            Grade gradeOne = new Grade()
+            {
+                GradeNum= 90,
+            };
             grades.Add(gradeOne);
-            Grade gradeTwo = new Grade();
+            Grade gradeTwo = new Grade()
+            {
+                GradeNum = 70,
+            };
             grades.Add(gradeTwo);
 
             List<Course> courses = new List<Course>();
 
-            Course courseOne = new Course();
+            Course courseOne = new Course()
+            {
+                Subject = "Biology",
+                Code = "00001"
+            };
             courses.Add(courseOne);
-            Course courseTwo = new Course();
+            Course courseTwo = new Course()
+            {
+                Subject = "Chemistry",
+                Code = "00002"
+            };
             courses.Add(courseTwo);
 
             List<Schedule> schedules= new List<Schedule>();
@@ -50,8 +70,8 @@ namespace Session_10
         
 
             dataGridView1.DataSource = students;
-            dataGridView2.DataSource = grades;
-            dataGridView3.DataSource = courses;
+            dataGridView2.DataSource = courses;
+            dataGridView3.DataSource = grades;
             dataGridView4.DataSource = schedules;
         }
 

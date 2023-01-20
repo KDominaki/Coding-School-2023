@@ -11,7 +11,7 @@ namespace Session_06
         public List<Student> Students { get; set; }
         public List <Course> Courses { get;set; }
         public List<Grade> Grades { get; set; }
-        public List<Schedule> SceduledCourse { get; set; }
+        public List<Schedule> ScheduledCourse { get; set; }
 
         public University()
         {
