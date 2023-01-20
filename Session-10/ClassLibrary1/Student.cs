@@ -18,8 +18,9 @@ namespace Session_06
 
         }
 
-        public Student(int regnum, Course[] course)
+        public Student(int regnum, List<Course>course)
         {
+            Courses = course;
             RegistrationNumber= regnum;
         }
 

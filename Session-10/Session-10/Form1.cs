@@ -58,6 +58,7 @@ namespace Session_10
             _university = serializer.Deserialize<University>("university.json");
         }
 
+        // Αυτά τα έβαλα καταλάθος, αλλά φοβάμαι ελαφρός να τα ακουμπίσω τώρα
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
