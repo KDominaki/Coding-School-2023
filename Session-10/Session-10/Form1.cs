@@ -15,6 +15,8 @@ namespace Session_10
         private void Form1_Load(object sender, EventArgs e)
         {
             MakeUniversity();
+            
+
         }
 
         private void MakeUniversity()
@@ -23,23 +25,14 @@ namespace Session_10
             university.GetStudents();
             university.GetGrades();
             university.GetCourses();
-            Properties(university);
+            university.SetSchedule();
+            Properties();
+            DataSourses(university);
+          
 
-            //university.SetSchedule();
-
-
-            List<Schedule> schedules= new List<Schedule>();
-
-            Schedule scheduleOne = new Schedule();
-            schedules.Add(scheduleOne);
-            Schedule scheduleTwo = new Schedule();
-            schedules.Add (scheduleTwo);
-
-           
-            dataGridView4.DataSource = schedules;
         }
 
-        public void Properties(University university)
+        public void Properties()
         {
 
             dataGridView1.AutoGenerateColumns = false;
@@ -47,11 +40,15 @@ namespace Session_10
             dataGridView3.AutoGenerateColumns = false;
             dataGridView4.AutoGenerateColumns = false;
 
+        }   
+        public void DataSourses(University university)
+        {
             dataGridView1.DataSource = university.Students;
             dataGridView2.DataSource = university.Courses;
             dataGridView3.DataSource = university.Grades;
-            //dataGridView4.DataSource = university.ScheduledCourse;
+            dataGridView4.DataSource = university.ScheduledCourse;
         }
+    
 
         private void btnSave_Click(object sender, EventArgs e)
         {

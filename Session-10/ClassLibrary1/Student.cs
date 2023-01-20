@@ -9,7 +9,9 @@ namespace Session_06
     public class Student : Person
     {
         public int RegistrationNumber { get; set; }
-        public Course[] Courses { get; set; }
+        public string Name { get; set; }      // I added name and surname to make it a little prettier
+        public string Surname { get; set; }
+        public List<Course> Courses { get; set; }
 
         public Student()
         {
@@ -19,7 +21,6 @@ namespace Session_06
         public Student(int regnum, Course[] course)
         {
             RegistrationNumber= regnum;
-            Courses = course;
         }
 
         public Student(int regnum)

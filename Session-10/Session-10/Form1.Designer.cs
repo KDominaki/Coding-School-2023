@@ -30,6 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colRNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.colSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +54,9 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRNum});
+            this.colRNum,
+            this.colName,
+            this.colSurname});
             this.dataGridView1.Location = new System.Drawing.Point(1, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
@@ -66,6 +70,18 @@
             this.colRNum.HeaderText = "RegistrationNumber";
             this.colRNum.Name = "colRNum";
             this.colRNum.Width = 150;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            // 
+            // colSurname
+            // 
+            this.colSurname.DataPropertyName = "Surname";
+            this.colSurname.HeaderText = "Surname";
+            this.colSurname.Name = "colSurname";
             // 
             // dataGridView2
             // 
@@ -162,6 +178,7 @@
             // 
             // colCal
             // 
+            this.colCal.DataPropertyName = "Callender";
             this.colCal.HeaderText = "Callendar";
             this.colCal.Name = "colCal";
             // 
@@ -195,11 +212,13 @@
         private DataGridView dataGridView4;
         private Button btnSave;
         private Button btnLoad;
-        private DataGridViewTextBoxColumn colRNum;
         private DataGridViewTextBoxColumn colSub;
         private DataGridViewTextBoxColumn colCode;
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewTextBoxColumn colStudentID;
+        private DataGridViewTextBoxColumn colRNum;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colSurname;
         private DataGridViewTextBoxColumn colCourseID;
         private DataGridViewTextBoxColumn colProfID;
         private DataGridViewTextBoxColumn colCal;

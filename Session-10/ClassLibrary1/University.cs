@@ -23,13 +23,17 @@ namespace Session_06
             Students = new List<Student>();
             Student studentOne = new Student()
             {
-                RegistrationNumber = 6,
+                RegistrationNumber = 4866547,
+                Name = "Ioannis",
+                Surname = "Papadimos"
             };
             Students.Add(studentOne);
             
             Student studentTwo = new Student()
             {
-                RegistrationNumber = 9,
+                RegistrationNumber = 6584654,
+                Name = "James",
+                Surname = "Bond"
             };
             Students.Add(studentTwo);
         }
@@ -64,6 +68,21 @@ namespace Session_06
             };
             Grades.Add(gradeTwo);
         }
-        public void SetSchedule(Guid courseID, Guid professorID, DateTime datetime) { }
+        public void SetSchedule() 
+        {
+            ScheduledCourse = new List<Schedule>();
+
+            Schedule schedOne = new Schedule() 
+            {
+                Callender= DateTime.Now,
+            };
+            ScheduledCourse.Add(schedOne);
+            Schedule schedTwo = new Schedule()
+            {
+                Callender = DateTime.Now,
+            };
+            ScheduledCourse.Add(schedTwo);
+
+        }
     }
 }
