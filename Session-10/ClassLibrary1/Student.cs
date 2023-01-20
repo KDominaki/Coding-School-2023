@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Session_06
 {
-    internal class Student : Person
+    public class Student : Person
     {
         public int RegistrationNumber { get; set; }
         public Course[] Courses { get; set; }
