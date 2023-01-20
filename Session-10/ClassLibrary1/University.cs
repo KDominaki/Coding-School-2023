@@ -60,11 +60,13 @@ namespace Session_06
             Grade gradeOne = new Grade()
             {
                 GradeNum = 90,
+                StudentID = Guid.NewGuid(),
             };
             Grades.Add(gradeOne);
             Grade gradeTwo = new Grade()
             {
                 GradeNum = 70,
+                StudentID = Guid.NewGuid(),
             };
             Grades.Add(gradeTwo);
         }
@@ -75,11 +77,17 @@ namespace Session_06
             Schedule schedOne = new Schedule() 
             {
                 Callender= DateTime.Now,
+                CourseID = Guid.NewGuid(),
+                ProfessorID= Guid.NewGuid(),
+                ID= Guid.NewGuid(),
             };
             ScheduledCourse.Add(schedOne);
             Schedule schedTwo = new Schedule()
             {
                 Callender = DateTime.Now,
+                CourseID = Guid.NewGuid(),
+                ProfessorID= Guid.NewGuid(),
+                ID= Guid.NewGuid(),
             };
             ScheduledCourse.Add(schedTwo);
 

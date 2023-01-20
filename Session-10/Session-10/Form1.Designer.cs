@@ -36,14 +36,15 @@
             this.colSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.colGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.colCourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProfID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.colGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -121,30 +122,44 @@
             this.dataGridView3.TabIndex = 2;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
-            // colGrade
-            // 
-            this.colGrade.DataPropertyName = "GradeNum";
-            this.colGrade.HeaderText = "Grade";
-            this.colGrade.Name = "colGrade";
-            // 
-            // colStudentID
-            // 
-            this.colStudentID.HeaderText = "Student ID";
-            this.colStudentID.Name = "colStudentID";
-            // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCourseID,
             this.colProfID,
-            this.colCal});
+            this.colCal,
+            this.colID});
             this.dataGridView4.Location = new System.Drawing.Point(1, 470);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 25;
             this.dataGridView4.Size = new System.Drawing.Size(730, 150);
             this.dataGridView4.TabIndex = 3;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            // 
+            // colCourseID
+            // 
+            this.colCourseID.DataPropertyName = "CourseID";
+            this.colCourseID.HeaderText = "CourseID";
+            this.colCourseID.Name = "colCourseID";
+            // 
+            // colProfID
+            // 
+            this.colProfID.DataPropertyName = "ProfessorID";
+            this.colProfID.HeaderText = "ProfesorID";
+            this.colProfID.Name = "colProfID";
+            // 
+            // colCal
+            // 
+            this.colCal.DataPropertyName = "Callender";
+            this.colCal.HeaderText = "Callendar";
+            this.colCal.Name = "colCal";
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "ID";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
             // 
             // btnSave
             // 
@@ -166,21 +181,17 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // colCourseID
+            // colGrade
             // 
-            this.colCourseID.HeaderText = "CourseID";
-            this.colCourseID.Name = "colCourseID";
+            this.colGrade.DataPropertyName = "GradeNum";
+            this.colGrade.HeaderText = "Grade";
+            this.colGrade.Name = "colGrade";
             // 
-            // colProfID
+            // colStudentID
             // 
-            this.colProfID.HeaderText = "ProffesorID";
-            this.colProfID.Name = "colProfID";
-            // 
-            // colCal
-            // 
-            this.colCal.DataPropertyName = "Callender";
-            this.colCal.HeaderText = "Callendar";
-            this.colCal.Name = "colCal";
+            this.colStudentID.DataPropertyName = "StudentID";
+            this.colStudentID.HeaderText = "Student ID";
+            this.colStudentID.Name = "colStudentID";
             // 
             // Form1
             // 
@@ -214,13 +225,14 @@
         private Button btnLoad;
         private DataGridViewTextBoxColumn colSub;
         private DataGridViewTextBoxColumn colCode;
-        private DataGridViewTextBoxColumn colGrade;
-        private DataGridViewTextBoxColumn colStudentID;
         private DataGridViewTextBoxColumn colRNum;
         private DataGridViewTextBoxColumn colName;
         private DataGridViewTextBoxColumn colSurname;
         private DataGridViewTextBoxColumn colCourseID;
         private DataGridViewTextBoxColumn colProfID;
         private DataGridViewTextBoxColumn colCal;
+        private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn colGrade;
+        private DataGridViewTextBoxColumn colStudentID;
     }
 }

@@ -16,6 +16,8 @@ namespace Session_10
         {
             MakeUniversity();
 
+            Serializer serializer = new Serializer();
+
         }
 
         private void MakeUniversity()
