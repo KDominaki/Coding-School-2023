@@ -1,14 +1,33 @@
+using ClassLibrary1;
+using Session_06;
+
 namespace Session_10
 {
     public partial class Form1 : Form
     {
+       
+   
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void MakeUniversity()
+        {    List <Student> students= new List<Student>();
+            //University university = new University()
+            //{
+                
+            //};
+            Student studentOne= new Student();
+            students.Add(studentOne);
+            //university.Students.Add(studentOne);
+            dataGridView1.DataSource = students;
+        }
+        
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -35,6 +54,11 @@ namespace Session_10
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MakeUniversity();
         }
     }
 }

@@ -18,8 +18,25 @@ namespace Session_06
 
         }
 
-        public void GetStudents() { }
-        public void GetCourses() { }
+        public void GetStudents() 
+        {
+
+            Student studentOne = new Student()
+            {
+                RegistrationNumber = 1
+            };
+            Students.Add(studentOne);
+            
+            Student studentTwo = new Student()
+            {
+                RegistrationNumber = 1,
+            };
+            Students.Add(studentTwo);
+        }
+        public void GetCourses() 
+        {
+            Course course = new Course("0001", "biology");
+        }
         public void GetGrades() { }
         public void SetSchedule(Guid courseID, Guid professorID, DateTime datetime) { }
     }

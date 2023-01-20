@@ -20,6 +20,12 @@ namespace Session_06
         {
             ID= id;
         }
+        public Course(string code, string subject)
+        {
+            Code = code;
+            Subject = subject;
+
+        }
 
         public Course(Guid id, string code, string subject) 
         {
