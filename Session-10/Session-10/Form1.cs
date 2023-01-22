@@ -14,6 +14,7 @@ namespace Session_10
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Properties();
             MakeUniversity(_university);
         }
 
@@ -26,7 +27,6 @@ namespace Session_10
             university.GetGrades();
             university.GetCourses();
             university.SetSchedule();
-            Properties();
             DataSourses(university);
         }
 
