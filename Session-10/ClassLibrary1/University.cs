@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,16 @@ namespace Session_06
         public University()
         {
 
+        }
+
+        public void CreateStudentList()
+        {
+            Students = new List<Student>();
+        }
+
+        public void GetStudent(int registrationNum, string name, string surname)
+        {
+            Students.Add(new Student(registrationNum, name, surname));
         }
 
         public void GetStudents() 

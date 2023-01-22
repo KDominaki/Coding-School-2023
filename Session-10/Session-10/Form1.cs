@@ -20,7 +20,9 @@ namespace Session_10
         private void MakeUniversity()
         {
             _university = new University();
-            _university.GetStudents();
+            _university.CreateStudentList();
+            _university.GetStudent(95636, "Kostas", "Dimitropoulos");
+            _university.GetStudent(4854985, "James", "Bond");
             _university.GetGrades();
             _university.GetCourses();
             _university.SetSchedule();

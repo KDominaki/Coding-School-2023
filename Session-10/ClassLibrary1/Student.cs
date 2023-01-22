@@ -24,9 +24,11 @@ namespace Session_06
             RegistrationNumber= regnum;
         }
 
-        public Student(int regnum)
+        public Student(int regnum, string name, string surname)
         {
            RegistrationNumber= regnum;
+            Name = name;
+            Surname = surname;
         }
 
         public void Attend (Course course, DateTime datetime) { }
