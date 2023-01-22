@@ -29,25 +29,6 @@ namespace Session_06
             Students.Add(new Student(registrationNum, name, surname));
         }
 
-        public void GetStudents() 
-        {
-            Students = new List<Student>();
-            Student studentOne = new Student()
-            {
-                RegistrationNumber = 4866547,
-                Name = "Ioannis",
-                Surname = "Papadimos"
-            };
-            Students.Add(studentOne);
-            
-            Student studentTwo = new Student()
-            {
-                RegistrationNumber = 6584654,
-                Name = "James",
-                Surname = "Bond"
-            };
-            Students.Add(studentTwo);
-        }
         public void GetCourses() 
         {
             Courses = new List<Course>();
