@@ -14,20 +14,20 @@ namespace Session_10
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MakeUniversity();
+            MakeUniversity(_university);
         }
 
-        private void MakeUniversity()
+        private void MakeUniversity(University university)
         {
-            _university = new University();
-            _university.CreateStudentList();
-            _university.GetStudent(95636, "Kostas", "Dimitropoulos");
-            _university.GetStudent(4854985, "James", "Bond");
-            _university.GetGrades();
-            _university.GetCourses();
-            _university.SetSchedule();
+            university = new University();
+            university.CreateStudentList();
+            university.GetStudent(95636, "Kostas", "Dimitropoulos");
+            university.GetStudent(4854985, "James", "Bond");
+            university.GetGrades();
+            university.GetCourses();
+            university.SetSchedule();
             Properties();
-            DataSourses(_university);
+            DataSourses(university);
         }
 
         public void Properties()
