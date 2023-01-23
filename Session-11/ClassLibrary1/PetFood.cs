@@ -9,6 +9,9 @@ namespace ClassLibrary1
     public class PetFood : Pet
     {
 
-
+        public PetFood()
+        {
+        
+        }
     }
 }
