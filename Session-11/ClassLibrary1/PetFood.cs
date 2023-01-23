@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class PetFood
+    public class PetFood : Pet
     {
+
+
     }
 }
