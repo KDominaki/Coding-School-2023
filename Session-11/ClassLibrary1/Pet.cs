@@ -8,10 +8,10 @@ namespace ClassLibrary1
 {
     public class Pet
     {
-        public enum AnimalType { }
-
-        public enum PetStatus { }
-
+        public AnimalType Animaltype { get; set; }
+        
+        public PetStatus Petstatus { get; set; }
+        
         public Guid ID { get; set; }
 
         public string? Breed { get; set; }
