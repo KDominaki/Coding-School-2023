@@ -73,19 +73,9 @@ namespace Session_11.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap shoplogo1 {
+        internal static System.Drawing.Bitmap translogoo {
             get {
-                object obj = ResourceManager.GetObject("shoplogo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap shoplogo2 {
-            get {
-                object obj = ResourceManager.GetObject("shoplogo2", resourceCulture);
+                object obj = ResourceManager.GetObject("translogoo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
