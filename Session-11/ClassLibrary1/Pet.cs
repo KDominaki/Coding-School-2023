@@ -8,20 +8,10 @@ namespace ClassLibrary1
 {
     public class Pet
     {
-        enum AnimalType
-        {
-            Dog,
-            Cat,
-            Parrot
+        public enum AnimalType { }
 
-        }
-        enum PetStatus
-        {
-            Ok,
-            Unhealthy,
-            Recovering
+        public enum PetStatus { }
 
-        }
         public Guid ID { get; set; }
 
         public string? Breed { get; set; }
@@ -29,6 +19,11 @@ namespace ClassLibrary1
         public decimal Price { get; set; }
 
         public decimal Cost { get; set; }
+
+        public Pet()
+        {
+
+        }
 
             
     }
