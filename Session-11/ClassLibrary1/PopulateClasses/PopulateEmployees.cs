@@ -10,9 +10,9 @@ namespace ClassLibrary1.PopulateClasses {
         public List<Employee> Employees { get; set; }
         public PopulateEmployees() { }
         //functions
+        
         public List<Employee> PopulateEmpls() {
             //Employee(ID, Name, Surname, EmployeeType (enum), SallaryPerMonth)
-            Employees = new List<Employee>();
 
             Guid id = Guid.Parse("{C903AB60-032B-4238-913E-624EB3B1FEED}");
             Employee employ1 = new Employee() {
@@ -67,8 +67,9 @@ namespace ClassLibrary1.PopulateClasses {
                 EmpType = EmployeeType.Staff,
                 SalaryPerMonth = 900
             };
-            return Employees;
-        }
+            return Employees;   
+        
+    }
 
 
     }
