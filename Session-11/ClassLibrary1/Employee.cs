@@ -21,7 +21,9 @@ namespace ClassLibrary1
         public Employee()
         {
             ID = Guid.NewGuid();   
+
         }
+
 
 
 
