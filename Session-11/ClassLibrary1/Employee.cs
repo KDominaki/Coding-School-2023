@@ -14,13 +14,13 @@ namespace ClassLibrary1
             Staff
         }
 
-        public Guid ID { get; set; }    
+        
         public EmployeeType EmpType { get; set;}
         public decimal SalaryPerMonth { get; set;}
 
         public Employee()
         {
-            ID = Guid.NewGuid();
+            ID = Guid.NewGuid();   
         }
 
 
