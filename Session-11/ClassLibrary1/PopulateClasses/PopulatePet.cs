@@ -14,7 +14,7 @@ namespace PopulateClassLibrary {
 
         public List<Pet> PopulatePets() {
 
-            Pet pet = new Pet()
+            //Pet pet = new Pet()
             //{
             //    //Animaltype = AnimalType.Dog,
 
