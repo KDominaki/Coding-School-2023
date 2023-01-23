@@ -9,14 +9,98 @@ namespace Session_11
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //SetControlProperties();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void SetControlProperties()
+        {
+            // FOR THE BINDING SOURCES 
+/*  
+            grvCustomer.DataSource= bsCustomer;
+            grvCustomer.AutoGenerateColumns = false;
+            grvPet.DataSource = bsPet;
+            grvPet.AutoGenerateColumns = false;
+            grvPetFood.DataSource = bsPetFood;
+            grvPetFood.AutoGenerateColumns = false;
+            grvEmployees.DataSource = bsEmployees;
+            grvEmployees.AutoGenerateColumns = false;
+            grvTransaction.DataSource = bsTransact;
+            grvTransaction.AutoGenerateColumns = false;
+            grvMonthLedger.DataSource = bsMonthlyLedger; 
+            grvMonthLedger.AutoGenerateColumns = false;
+            grvPetReport.DataSource = bsPetReport;
+            grvPetReport.AutoGenerateColumns = false;
+*/
+            
+/*          //FOR THE COMBO BOXES 
+            DataGridViewComboBoxColumn colUniversity = grvStudents.Columns["colUniversity"] as DataGridViewComboBoxColumn;
+            colUniversity.DataSource = //GetUniversities();
+            colUniversity.DisplayMember = //"Name";
+            colUniversity.ValueMember = //"ID";*/
+
 
         }
+
+
+
+
+
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-       
+      
     }
 }
