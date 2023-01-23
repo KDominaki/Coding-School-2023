@@ -1,15 +1,20 @@
-﻿namespace PopulateClassLibrary
+﻿using ClassLibrary1;
+
+namespace PopulateClassLibrary
 {
     public class PopulateCustomer
     {
-        public PopulateCustomer() 
-        {
-            object[] array = new object[]
-            {
+        public List<Customer> Customers { get; set; }
 
-            };
- 
-        }
+        public PopulateCustomer() 
+        {}
+
+    
+
+
+
+
+
 
     }
 }
