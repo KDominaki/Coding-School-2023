@@ -7,10 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session-11", "Session-11\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{26C18FE1-1183-4DF4-960D-F87EBC976B56}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C32DA1FD-032F-46BC-B6E3-E6C16CCADD6B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71E27C17-4F0B-4D58-9F8A-872EBAACACE0}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		User.cs = User.cs
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopulateClassLibrary", "PopulateClassLibrary\PopulateClassLibrary.csproj", "{DA53D358-B0A3-4BCF-A8C5-9693B31EBFA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +29,10 @@ Global
 		{26C18FE1-1183-4DF4-960D-F87EBC976B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26C18FE1-1183-4DF4-960D-F87EBC976B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26C18FE1-1183-4DF4-960D-F87EBC976B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA53D358-B0A3-4BCF-A8C5-9693B31EBFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA53D358-B0A3-4BCF-A8C5-9693B31EBFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA53D358-B0A3-4BCF-A8C5-9693B31EBFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA53D358-B0A3-4BCF-A8C5-9693B31EBFA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
