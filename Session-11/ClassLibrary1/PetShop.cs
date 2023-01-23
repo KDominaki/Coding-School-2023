@@ -17,9 +17,7 @@ namespace ClassLibrary1 {
         //CTOR
         public PetShop() {
             Name = "The Pet";
-            Transactions.Add(new Transaction() {
-                
-            });
+
         }
 
         
