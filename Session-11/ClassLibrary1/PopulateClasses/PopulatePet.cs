@@ -14,11 +14,12 @@ namespace PopulateClassLibrary {
 
         public List<Pet> PopulatePets() {
 
-            //Pet pet = new Pet()
-            //{
-            //    //Animaltype = AnimalType.Dog,
+            Pet pet = new Pet() {
+                Animaltype = AnimalType.Dog,
+                Petstatus = PetStatus.OK,
+                ID = Guid.NewGuid(),
 
-            //}
+            }
 
 
 
