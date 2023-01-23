@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Employee
+    public class Employee : User
     {
+        public enum EmployeeType
+        {
+            Manager,
+            Staff
+        }
+
+        public Guid ID { get; set; }    
+        public EmployeeType EmpType { get; set;}
+        public decimal SalaryPerMonth { get; set;}
+
+        public Employee()
+        {
+            ID = Guid.NewGuid();
+        }
+
+
+
     }
 }
