@@ -19,11 +19,11 @@ namespace ClassLibrary1
         public decimal? PetFoodPrice { get; set; }
         public decimal? TotalPrice { get; set; }
 
-
-        public Transaction() { 
-            ID = Guid.NewGuid();
-            Date = DateTime.Now;
-        }
+        public Transaction() { }
+        //public Transaction() { 
+        //    ID = Guid.NewGuid();
+        //    Date = DateTime.Now;
+        //}
 
 
         public void SetTotalPrice() {
