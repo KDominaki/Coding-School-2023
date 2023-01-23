@@ -148,10 +148,7 @@ namespace PopulateClassLibrary {
             pets.Add(pet);
 
 
-
-
-
-            return new List<Pet>();
+            return pets;
 
         }
 
