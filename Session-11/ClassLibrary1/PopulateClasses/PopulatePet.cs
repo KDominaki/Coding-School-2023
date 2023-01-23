@@ -12,7 +12,9 @@ namespace PopulateClassLibrary {
 
         }
 
-        public List<Pet> GetPets() {
+        public List<Pet> PopulatePets() {
+
+            return new List<Pet>();
 
         }
 
