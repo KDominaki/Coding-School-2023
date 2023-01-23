@@ -18,8 +18,11 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Dog,
                 Petstatus = PetStatus.OK,
                 ID = Guid.NewGuid(),
+                Breed = "Labrador",
+                Price = 1500,
+                Cost = 1000,
 
-            }
+            };
 
 
 
