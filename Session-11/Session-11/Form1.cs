@@ -11,5 +11,11 @@ namespace Session_11
         {
 
         }
+
+        private void btnManage_Click(object sender, EventArgs e) {
+            TransactionsForm form2 = new TransactionsForm();
+            //Form1.Close();
+            form2.Show();
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.btnManage.Size = new System.Drawing.Size(229, 149);
             this.btnManage.TabIndex = 0;
             this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // button2
             // 
