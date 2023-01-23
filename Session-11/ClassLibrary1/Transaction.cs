@@ -20,9 +20,14 @@ namespace ClassLibrary1
         public decimal TotalPrice { get; set; }
 
 
-        public Transaction() { }
+        public Transaction() { 
+            ID = Guid.NewGuid();
+            Date = DateTime.Now;
+        }
 
 
+        public void SetTotalPrice() {
 
+        }
     }
 }
