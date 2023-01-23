@@ -1,8 +1,8 @@
 ﻿namespace PopulateClassLibrary
 {
-    public class PopulateCoustumers
+    public class PopulateCustomer
     {
-        public PopulateCoustumers() 
+        public PopulateCustomer() 
         {
             object[] array = new object[]
             {

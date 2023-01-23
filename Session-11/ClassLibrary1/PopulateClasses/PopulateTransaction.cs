@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using System.Transactions;
 
 namespace PopulateClassLibrary {
-    public class PopulateTransactions {
+    public class PopulateTransaction {
 
 
 
 
-        public PopulateTransactions() { }
+        public PopulateTransaction() { }
 
 
         //public List<Transaction> GetPopulateTransactions() {

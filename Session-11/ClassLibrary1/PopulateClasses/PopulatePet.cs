@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,10 @@ namespace PopulateClassLibrary {
     public class PopulatePet {
 
         public PopulatePet() {
+
+        }
+
+        public List<Pet> GetPets() {
 
         }
 
