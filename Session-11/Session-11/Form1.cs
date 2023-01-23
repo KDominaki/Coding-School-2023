@@ -89,6 +89,7 @@ namespace Session_11
 
         }
 
+<<<<<<< HEAD
 
 
 
@@ -102,5 +103,12 @@ namespace Session_11
         }
 
       
+=======
+        private void btnManage_Click(object sender, EventArgs e) {
+            TransactionsForm form2 = new TransactionsForm();
+            //Form1.Close();
+            form2.Show();
+        }
+>>>>>>> ea759b9b5990170eb1d7aa2ebf00213dc822ccf7
     }
 }

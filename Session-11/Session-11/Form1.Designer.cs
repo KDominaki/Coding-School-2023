@@ -95,15 +95,22 @@
             // 
             // btnManage
             // 
+<<<<<<< HEAD
             this.btnManage.Location = new System.Drawing.Point(50, 324);
+=======
+            this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
+            this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnManage.Location = new System.Drawing.Point(425, 134);
+>>>>>>> ea759b9b5990170eb1d7aa2ebf00213dc822ccf7
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(229, 149);
             this.btnManage.TabIndex = 0;
             this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::Session_11.Properties.Resources.shoplogo2;
+            this.button2.BackgroundImage = global::Session_11.Properties.Resources.shoplogo;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(50, 138);

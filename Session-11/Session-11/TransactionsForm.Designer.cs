@@ -29,7 +29,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(849, 450);
+=======
+            this.ClientSize = new System.Drawing.Size(800, 450);
+>>>>>>> ea759b9b5990170eb1d7aa2ebf00213dc822ccf7
             this.Name = "TransactionsForm";
             this.Text = "TransactionsForm";
             this.Load += new System.EventHandler(this.TransactionsForm_Load);
