@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Transaction
+    public class Transaction 
     {
-        public Guid ID { get; set; }
+        public Guid ID { get; set ; }
         public DateTime Date { get; set; }
         public Guid CustomerID { get; set; }
         public Guid EmployeeID { get; set; }
