@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session-11", "Session-11\Session-11.csproj", "{FC5C770F-0EAA-40EE-8C44-202B5BD69247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session-11", "Session-11\Session-11.csproj", "{FC5C770F-0EAA-40EE-8C44-202B5BD69247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{26C18FE1-1183-4DF4-960D-F87EBC976B56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{26C18FE1-1183-4DF4-960D-F87EBC976B56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C32DA1FD-032F-46BC-B6E3-E6C16CCADD6B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
