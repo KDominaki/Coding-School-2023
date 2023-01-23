@@ -245,7 +245,7 @@ namespace PopulateClassLibrary
 
 
 
-
+            //bsCustomer.DataSource = Customers;
             return Customers;
         }
 

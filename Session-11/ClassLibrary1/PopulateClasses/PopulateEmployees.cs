@@ -67,6 +67,8 @@ namespace ClassLibrary1.PopulateClasses {
                 EmpType = EmployeeType.Staff,
                 SalaryPerMonth = 900
             };
+
+            //bsEmployees.DataSource = Employees;
             return Employees;   
         
     }
