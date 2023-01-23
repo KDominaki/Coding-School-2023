@@ -34,6 +34,7 @@
             // 
             // btnManage
             // 
+            this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnManage.Location = new System.Drawing.Point(425, 134);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(229, 149);
