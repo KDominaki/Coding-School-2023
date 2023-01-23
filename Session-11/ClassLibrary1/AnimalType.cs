@@ -8,6 +8,6 @@ namespace ClassLibrary1 {
     public enum AnimalType {
         Dog,
         Cat,
-        Parrot
+        Bird
     }
 }

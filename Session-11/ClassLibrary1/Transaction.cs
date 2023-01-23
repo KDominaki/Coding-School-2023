@@ -10,7 +10,7 @@ namespace ClassLibrary1
     {
         public Guid? ID { get; set; }
         public DateTime? Date { get; set; }
-        public Guid? CustomerID { get; set; }
+        public Guid CustomerID { get; set; }
         public Guid? EmployeeID { get; set; }
         public Guid? PetID { get; set; }
         public decimal? PetPrice { get; set; }
