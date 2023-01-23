@@ -10,6 +10,7 @@ namespace ClassLibrary1.PopulateClasses {
         public List<Employee> Employees { get; set; }
         public PopulateEmployees() { }
         //functions
+        
         public List<Employee> PopulateEmpls() {
             //Employee(ID, Name, Surname, EmployeeType (enum), SallaryPerMonth)
 
