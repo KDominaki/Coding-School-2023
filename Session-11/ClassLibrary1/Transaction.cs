@@ -15,7 +15,7 @@ namespace ClassLibrary1
         public Guid? PetID { get; set; }
         public decimal? PetPrice { get; set; }
         public Guid? PetFoodID { get; set; }
-        public decimal? PetFoodQty { get; set; }
+        public decimal PetFoodQty { get; set; }
         public decimal? PetFoodPrice { get; set; }
         public decimal? TotalPrice { get; set; }
 

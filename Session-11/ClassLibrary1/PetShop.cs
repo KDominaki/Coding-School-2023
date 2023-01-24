@@ -18,19 +18,37 @@ namespace ClassLibrary1 {
         public List<PetFood> MonthlyFoods = new List<PetFood>() { new PetFood(), new PetFood(), new PetFood() };
         public List<Pet> MonthlyPets = new List<Pet>();
 
-       
-       
-			
-        
-        
 
-        
+
         //CTOR
         public PetShop() {
 
         }
 
-        
+        public List<PetFood> GetPetFood() {
+            List<PetFood> petFoods = new List<PetFood>();
+
+            foreach (var transaction in Transactions) {
+                var foodID = transaction.PetFoodID;
+                
+                foreach(var food in Foods) {
+                    if (food.ID == foodID) {
+                        food.Qty -= transaction.PetFoodQty;
+                    }
+                }
+
+            }
+
+
+            return petFoods;
+
+
+
+
+
+        }
+
+
 
     }
 }
