@@ -20,7 +20,7 @@ namespace ClassLibrary1
             Expense += 2000;
         }
 
-        public void incomeCalc()
+        public void IncomeCalc()
         {
             PetShop shop= new PetShop();
             foreach (var item in shop.Transactions)
@@ -28,7 +28,7 @@ namespace ClassLibrary1
                 Expense += item.TotalPrice;
             }
         }
-        public void expenseCalc()
+        public void ExpenseCalc()
         {
             PetShop shop = new PetShop();
             foreach (var food in shop.Foods)
@@ -40,7 +40,7 @@ namespace ClassLibrary1
                 Expense += pet.Cost;
             }
         }
-        public void totalCalc()
+        public void TotalCalc()
         {
             Total = Incomee - Expense;
         }
