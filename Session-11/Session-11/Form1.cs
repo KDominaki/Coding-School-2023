@@ -99,11 +99,26 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
-            
+            grvEmployees.AutoGenerateColumns = false;
+            bsEmployees.DataSource = petShop.Employees;
+            grvEmployees.DataSource = bsEmployees;
+
+            //grvPetReport.AutoGenerateColumns = false;
+            //bsPetReport.DataSource = petShop.Employees;
+            //grvPetReport.DataSource = bsPetReport;
+
+
+
+            /*       public DateTime Year { get; set; }
+               public DateTime Month { get; set; }
+               public AnimalType Animal { get; set; }
+
+               public decimal TotalSold { get; set; }*/
+
             // FOR THE BINDING SOURCES 
             /*  
-                      
-                        
+
+
                         grvPetFood.DataSource = bsPetFood;
                         grvPetFood.AutoGenerateColumns = false;
                         grvEmployees.DataSource = bsEmployees;

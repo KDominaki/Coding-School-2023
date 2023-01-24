@@ -92,15 +92,15 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvPetReport = new System.Windows.Forms.DataGridView();
-            this.PRyear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRmonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRanimType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRtotalSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.bsPet = new System.Windows.Forms.BindingSource(this.components);
             this.bsPetFood = new System.Windows.Forms.BindingSource(this.components);
             this.bsTransact = new System.Windows.Forms.BindingSource(this.components);
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this.PRyear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRmonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRanimType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRtotalSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -643,21 +643,25 @@
             // 
             // PRyear
             // 
+            this.PRyear.DataPropertyName = "Year";
             this.PRyear.HeaderText = "Year";
             this.PRyear.Name = "PRyear";
             // 
             // PRmonth
             // 
+            this.PRmonth.DataPropertyName = "Month";
             this.PRmonth.HeaderText = "Month";
             this.PRmonth.Name = "PRmonth";
             // 
             // PRanimType
             // 
+            this.PRanimType.DataPropertyName = "Animal";
             this.PRanimType.HeaderText = "Animal Type";
             this.PRanimType.Name = "PRanimType";
             // 
             // PRtotalSold
             // 
+            this.PRtotalSold.DataPropertyName = "TotalSold";
             this.PRtotalSold.HeaderText = "Total Sold";
             this.PRtotalSold.Name = "PRtotalSold";
             // 
@@ -716,10 +720,6 @@
         private DataGridView grvEmployees;
         private DataGridView grvTransaction;
         private DataGridView grvPetReport;
-        private DataGridViewTextBoxColumn PRyear;
-        private DataGridViewTextBoxColumn PRmonth;
-        private DataGridViewTextBoxColumn PRanimType;
-        private DataGridViewTextBoxColumn PRtotalSold;
         private BindingSource bsCustomer;
         private DataGridViewTextBoxColumn CustomID;
         private DataGridViewTextBoxColumn CustomName;
@@ -756,5 +756,9 @@
         private DataGridViewComboBoxColumn EmpType;
         private DataGridViewTextBoxColumn EmpSalary;
         private BindingSource bsEmployees;
+        private DataGridViewTextBoxColumn PRyear;
+        private DataGridViewTextBoxColumn PRmonth;
+        private DataGridViewTextBoxColumn PRanimType;
+        private DataGridViewTextBoxColumn PRtotalSold;
     }
 }
