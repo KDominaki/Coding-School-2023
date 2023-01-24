@@ -21,6 +21,7 @@ namespace ClassLibrary1
             Year = year;
             Month = month;
             Expense += 2000;
+            TotalCalc();
         }
 
         public void IncomeCalc()
