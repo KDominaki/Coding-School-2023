@@ -36,7 +36,7 @@ namespace ClassLibrary1
                 this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
                 this.PetFoodQty++;
             } else {
-                this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
+                this.TotalPrice = (petFoodQty * petFoodPrice);
             }
         }
         public decimal FindPetPrice(List<Pet> pets, Guid? id) {

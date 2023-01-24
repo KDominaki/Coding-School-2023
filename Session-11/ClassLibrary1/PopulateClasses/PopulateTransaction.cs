@@ -327,14 +327,14 @@ namespace PopulateClassLibrary {
                         break;
                     }
                 }
-                tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
-                tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+                // tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
 
             } else {
                 tr.PetFoodID = RandomPetFood(foods);
 
             }
-
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
             return tr;
         }
 
@@ -356,6 +356,12 @@ namespace PopulateClassLibrary {
             var random = new Random();
             var pf = foods[random.Next(0, foods.Count)].ID;
             return pf;
+        }
+
+        public T RandomEnumValue<T>() {
+            Random random = new Random();
+            var v = Enum.GetValues(typeof(AnimalType));
+            return (T)v.GetValue(random.Next(v.Length));
         }
 
 
