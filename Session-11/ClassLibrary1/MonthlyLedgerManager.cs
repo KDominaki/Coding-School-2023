@@ -31,5 +31,13 @@ namespace ClassLibrary1
             else { }
         }
 
+        public decimal? CurrentMonthTotal()
+        {
+            decimal? currentMonthTotal = currentMonth.Total; 
+            return currentMonthTotal;
+        }
+
+
+
     }
 }
