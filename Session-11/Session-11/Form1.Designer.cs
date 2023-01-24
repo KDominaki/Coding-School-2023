@@ -108,7 +108,9 @@
             // 
             // btnManage
             // 
-            this.btnManage.Location = new System.Drawing.Point(296, 138);
+            this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
+            this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnManage.Location = new System.Drawing.Point(285, 29);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(229, 149);
             this.btnManage.TabIndex = 0;
@@ -119,7 +121,7 @@
             this.button2.BackgroundImage = global::Session_11.Properties.Resources.shoplogo;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(50, 138);
+            this.button2.Location = new System.Drawing.Point(50, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(229, 149);
             this.button2.TabIndex = 1;
@@ -130,6 +132,7 @@
             // 
             this.grvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -153,7 +156,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grvCustomer.Location = new System.Drawing.Point(50, 360);
+            this.grvCustomer.Location = new System.Drawing.Point(50, 239);
             this.grvCustomer.Name = "grvCustomer";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -164,33 +167,38 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grvCustomer.RowTemplate.Height = 25;
-            this.grvCustomer.Size = new System.Drawing.Size(424, 56);
+            this.grvCustomer.Size = new System.Drawing.Size(563, 201);
             this.grvCustomer.TabIndex = 2;
             this.grvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CustomID
             // 
+            this.CustomID.DataPropertyName = "ID";
             this.CustomID.HeaderText = "Customer ID";
             this.CustomID.Name = "CustomID";
             this.CustomID.Visible = false;
             // 
             // CustomName
             // 
+            this.CustomName.DataPropertyName = "Name";
             this.CustomName.HeaderText = "Name";
             this.CustomName.Name = "CustomName";
             // 
             // CustomSurname
             // 
+            this.CustomSurname.DataPropertyName = "SurName";
             this.CustomSurname.HeaderText = "Surname";
             this.CustomSurname.Name = "CustomSurname";
             // 
             // CustomPhone
             // 
+            this.CustomPhone.DataPropertyName = "Phone";
             this.CustomPhone.HeaderText = "Phone";
             this.CustomPhone.Name = "CustomPhone";
             // 
             // CustomTin
             // 
+            this.CustomTin.DataPropertyName = "TIN";
             this.CustomTin.HeaderText = "TIN";
             this.CustomTin.Name = "CustomTin";
             // 
@@ -273,7 +281,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 342);
+            this.label1.Location = new System.Drawing.Point(50, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 4;
@@ -627,6 +635,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1465, 787);
             this.Controls.Add(this.grvPetReport);
             this.Controls.Add(this.grvTransaction);
@@ -662,11 +671,6 @@
         private Button btnManage;
         private Button button2;
         private DataGridView grvCustomer;
-        private DataGridViewTextBoxColumn CustomID;
-        private DataGridViewTextBoxColumn CustomName;
-        private DataGridViewTextBoxColumn CustomSurname;
-        private DataGridViewTextBoxColumn CustomPhone;
-        private DataGridViewTextBoxColumn CustomTin;
         private DataGridView grvPet;
         private Label label1;
         private Label label2;
@@ -709,5 +713,10 @@
         private DataGridViewTextBoxColumn PetPrice;
         private DataGridViewTextBoxColumn PetCost;
         private BindingSource bsCustomer;
+        private DataGridViewTextBoxColumn CustomID;
+        private DataGridViewTextBoxColumn CustomName;
+        private DataGridViewTextBoxColumn CustomSurname;
+        private DataGridViewTextBoxColumn CustomPhone;
+        private DataGridViewTextBoxColumn CustomTin;
     }
 }

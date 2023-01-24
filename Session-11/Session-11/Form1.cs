@@ -1,7 +1,14 @@
+using ClassLibrary1.PopulateClasses;
+using ClassLibrary1;
+
 namespace Session_11
 {
     public partial class Form1 : Form
     {
+        PetShop petShop;
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -9,7 +16,12 @@ namespace Session_11
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //SetControlProperties();
+            petShop= new PetShop();
+            EngagePopulate ep = new EngagePopulate();
+            petShop = ep.SetPopulation();
+            
+
+            SetControlProperties();
         }
 
 
@@ -62,9 +74,13 @@ namespace Session_11
 
         private void SetControlProperties()
         {
+            grvCustomer.AutoGenerateColumns = false;
+            bsCustomer.DataSource = petShop.Customers;
+            grvCustomer.DataSource = bsCustomer;
+            
             // FOR THE BINDING SOURCES 
             /*  
-                        grvCustomer.DataSource= bsCustomer;
+                        grvCustomer.DataSource = bsCustomer;
                         grvCustomer.AutoGenerateColumns = false;
                         grvPet.DataSource = bsPet;
                         grvPet.AutoGenerateColumns = false;
