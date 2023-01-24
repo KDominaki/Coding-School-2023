@@ -112,13 +112,13 @@ namespace Session_11
             //PET - AnimalType combobox
             DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
             colAnimType.DataSource = petShop.Pets;//GetUniversities();
-            colAnimType.DisplayMember = "Animaltype";//"Name";
+            colAnimType.DisplayMember = "AnimalType";//"Name";
             colAnimType.ValueMember =  "ID";//"ID";*/
 
             //PET - PetFood combobox
             DataGridViewComboBoxColumn colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
             colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
-             colPetFoodType.DisplayMember = "Animaltype";//"Name";
+            colPetFoodType.DisplayMember = "Animaltype";//"Name";
             colPetFoodType.ValueMember = "ID";//"ID";*/
 
 

@@ -34,6 +34,7 @@ namespace ClassLibrary1
         public decimal? CurrentMonthTotal()
         {
             GeneratorActivator();
+            currentMonth.TotalCalc();
             decimal? currentMonthTotal = currentMonth.Total; 
             return currentMonthTotal;
         }
