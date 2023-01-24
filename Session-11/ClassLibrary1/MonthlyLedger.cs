@@ -42,6 +42,8 @@ namespace ClassLibrary1
         }
         public void TotalCalc()
         {
+            ExpenseCalc();
+            IncomeCalc();
             Total = Incomee - Expense;
         }
     }
