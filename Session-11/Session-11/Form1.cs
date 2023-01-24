@@ -185,6 +185,20 @@ namespace Session_11
 
         }
 
-      
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            Serializer serializer = new Serializer();
+            petShop = serializer.DeserializeFromFile<PetShop>("petshop.json");
+
+            System.Windows.MessageBox.Show("Load Done!");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Serializer serializer = new Serializer();
+            serializer.SerializeToFile(petShop, "petshop.json");
+
+            System.Windows.MessageBox.Show("Save Done!");
+        }
     }
 }
