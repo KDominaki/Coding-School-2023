@@ -119,7 +119,7 @@
             // 
             this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(134, 116);
+            this.btnManage.Location = new System.Drawing.Point(150, 116);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(161, 105);
             this.btnManage.TabIndex = 0;
