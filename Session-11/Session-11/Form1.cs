@@ -184,7 +184,11 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
-            //if
+            grvPet.Visible = true;
+            grvEmployees.Visible = false;
+
+
+
         }
     }
 }

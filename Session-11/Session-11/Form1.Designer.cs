@@ -241,6 +241,7 @@
             this.grvPet.RowTemplate.Height = 25;
             this.grvPet.Size = new System.Drawing.Size(542, 157);
             this.grvPet.TabIndex = 3;
+            this.grvPet.Visible = false;
             // 
             // PetID
             // 
@@ -442,7 +443,6 @@
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(500, 134);
             this.grvEmployees.TabIndex = 12;
-            this.grvEmployees.Visible = false;
             // 
             // EmpID
             // 
@@ -593,7 +593,6 @@
             // 
             // btnPets
             // 
-            this.btnPets.BackgroundImage = global::Session_11.Properties.Resources.dog_grey_background;
             this.btnPets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPets.FlatAppearance.BorderSize = 0;
             this.btnPets.Location = new System.Drawing.Point(928, 97);
