@@ -4,9 +4,10 @@ using System.Diagnostics;
 using System.Windows;
 using PopulateClassLibrary;
 using Point = System.Drawing.Point;
-
+using System.Windows.Controls;
 using DevExpress.CodeParser;
-
+using Label = System.Windows.Forms.Label;
+using static DevExpress.Pdf.Native.BouncyCastle.Asn1.X509.Target;
 
 namespace Session_11
 {
@@ -27,7 +28,7 @@ namespace Session_11
             EngagePopulate ep = new EngagePopulate();
             petShop = ep.SetPopulation();
 
-
+            startInvis();
             SetControlProperties();
         }
 
@@ -137,36 +138,92 @@ namespace Session_11
 
 
 
-        }             
+        }
+        public void massHideGrv(DataGridView grvChoice, Label labChoice)
+        { 
+            List<DataGridView> grvNameList = new List<DataGridView>()  
+            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport };
 
-        public  Point getCentered(string choice)
-        {   
+            List<Label> labelList = new List<Label>()
+            {labCustomer,labEmployees,labPetFood,labPetReport,labPets,labTransaction };
+            
+            grvNameList.Remove(grvChoice);
+            labelList.Remove(labChoice);
+            DataGridView grvTmp = new DataGridView();
+            //grvTmp = choice ;
+            Label tmpLabel = new Label();
 
-            //lets hope it dont go boom
-            DataGridView gridName = new DataGridView();
-            gridName.Name = choice;
-            int midX = 942, midY = 448;
-            double center, Xsquared, Ysquared;
-            Xsquared = Math.Pow(gridName.Size.Width, 2);
-            Ysquared = Math.Pow(gridName.Size.Height, 2);
+            for(int i=0; i<grvNameList.Count;i++)
+            {
+                grvTmp = grvNameList[i];
+                grvTmp.Visible = false;
 
-            center = Math.Sqrt(Xsquared + Ysquared) / 2;
-            return grvPet.Location = new Point(midX - (int)center, midY - 200);
+                tmpLabel = labelList[i];
+                tmpLabel.Visible = false;
 
-
+               
+            }
+            grvChoice.Visible = true;
+            //labChoice.Visible = true;
 
         }
 
+        public  Point getCentered(DataGridView grvSizeChoice)
+        {   
+            int midX = 942, midY = 448;
+            double center, Xsquared, Ysquared;
+            Xsquared = Math.Pow(grvSizeChoice.Size.Width, 2);
+            Ysquared = Math.Pow(grvSizeChoice.Size.Height, 2);
 
-          //public void Window_Loaded(object sender, RoutedEventArgs e)
-          // {
-          //     foreach (var type in Enum.GetValues(typeof(AnimalType)))
-          //     {
-          //         AnimType.Items.Add(type);
-          //     }
-          // }
+            center = Math.Sqrt(Xsquared + Ysquared) / 2;
+            return grvSizeChoice.Location = new Point(midX - (int)center, midY - 200);
+        }
+
+       /* public Point getCenteredLabel(Label labelChoice)
+        {
+
+            int midX = 942, midY = 448;
+            double center, Xsquared, Ysquared;
+            Xsquared = Math.Pow(labelChoice.Size.Width, 2);
+            Ysquared = Math.Pow(labelChoice.Size.Height, 2);
+
+            center = Math.Sqrt(Xsquared + Ysquared) ;
+            return labelChoice.Location = new Point(midX - (int)center, midY - 250);
+
+           // return labelChoice.Location;
+        }*/
 
 
+        //public void Window_Loaded(object sender, RoutedEventArgs e)
+        // {
+        //     foreach (var type in Enum.GetValues(typeof(AnimalType)))
+        //     {
+        //         AnimType.Items.Add(type);
+        //     }
+        // }
+
+        //kinda redundant but didn't figure another solution this late at night
+        public void startInvis()
+        {
+            List<DataGridView> grvNameList = new List<DataGridView>()
+            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport };
+
+            List<Label> labelList = new List<Label>()
+            {labCustomer,labEmployees,labPetFood,labPetReport,labPets,labTransaction };
+
+            DataGridView grvTmp = new DataGridView();
+         
+            Label tmpLabel = new Label();
+
+            for (int i = 0; i < grvNameList.Count; i++)
+            {
+                grvTmp = grvNameList[i];
+                grvTmp.Visible = false;
+
+                tmpLabel = labelList[i];
+                tmpLabel.Visible = false;
+            }
+        }
 
 
 
@@ -209,24 +266,23 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
-            string grvChoice = "grvPet";
-            grvPet.Visible = true;
-
+            massHideGrv(grvPet,labPets);
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvChoice);
-            
+            center = getCentered(grvPet);
+           
 
         }
 
         private void btnManage_Click_1(object sender, EventArgs e)
         {
-            string grvChoice = "grvEmployees";
-            grvEmployees.Visible = true;
+            //could prolly do it by choosing the only visible grid but oh well
+            massHideGrv(grvEmployees, labEmployees);
 
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvChoice);
+            center = getCentered(grvEmployees);
+            
         }
     }
 }
