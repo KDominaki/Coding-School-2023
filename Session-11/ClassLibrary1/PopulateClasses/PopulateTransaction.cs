@@ -1,4 +1,5 @@
 ﻿using ClassLibrary1;
+using PopulateClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace PopulateClassLibrary {
 
         }
 
-        public List<Transaction> PopulateTransactions() {
+        public List<Transaction> PopulateTransactions(List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers) {
 
             List<Transaction> transactions = new List<Transaction>();
             Transaction tr;
@@ -82,15 +83,32 @@ namespace PopulateClassLibrary {
                 PetFoodQty = 3,
                 //PetFoodPrice = /* PetFood.GetPetPrice()  !!!!!!!
                 //TotalPrice = tr.GetTotalPrice();
-
-
             };
+
+            decimal petprice = 0;
+            //foreach(var pet in pets) {
+            //    if(pet.ID == tr.PetID) {
+            //        petprice = pet.Price;
+            //    }
+            //}
+
 
 
             transactions.Add(tr);
 
             return transactions;
         }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
