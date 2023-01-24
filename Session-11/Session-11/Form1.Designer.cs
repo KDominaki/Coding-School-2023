@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -95,12 +96,14 @@
             this.PRmonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRanimType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRtotalSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // btnManage
@@ -648,6 +651,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransaction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -704,5 +708,6 @@
         private DataGridViewTextBoxColumn PetStat;
         private DataGridViewTextBoxColumn PetPrice;
         private DataGridViewTextBoxColumn PetCost;
+        private BindingSource bsCustomer;
     }
 }
