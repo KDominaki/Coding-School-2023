@@ -28,7 +28,7 @@ namespace ClassLibrary1
         //}
 
 
-        public void SetTotalPrice(decimal petPrice, decimal petFoodQty, decimal petFoodPrice) {
+        public void SetTotalPrice(decimal? petPrice, decimal? petFoodQty, decimal? petFoodPrice) {
 
             if(this.PetID != null) {
                 this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
@@ -37,5 +37,30 @@ namespace ClassLibrary1
                 this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
             }
         }
+        public decimal FindPetPrice(List<Pet> pets, Guid? id) {
+
+            decimal price = 0;
+            foreach (var pet in pets) {
+                if (pet.ID == id) {
+                    price = pet.Price;
+                    break;
+                }
+            }
+            return price;
+
+        }
+
+        public decimal FindPetFoodPrice(List<PetFood> foods, Guid? id) {
+            decimal price = 0;
+            foreach (var food in foods) {
+                if (food.ID == id) {
+                    price = food.Price;
+                    break;
+                }
+            }
+            return price;
+        }
+
+
     }
 }
