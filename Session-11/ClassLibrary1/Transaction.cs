@@ -22,6 +22,7 @@ namespace ClassLibrary1
         public Transaction() {
             ID = Guid.NewGuid();
             Date = DateTime.Now;
+            PetID = Guid.Empty;
         }
         //public Transaction() { 
         //    ID = Guid.NewGuid();
@@ -35,7 +36,7 @@ namespace ClassLibrary1
                 this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
                 this.PetFoodQty++;
             } else {
-                this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
+                this.TotalPrice = (petFoodQty * petFoodPrice);
             }
         }
         public decimal FindPetPrice(List<Pet> pets, Guid? id) {
