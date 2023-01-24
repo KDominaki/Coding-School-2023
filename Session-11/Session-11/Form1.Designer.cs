@@ -443,6 +443,7 @@
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(465, 134);
             this.grvEmployees.TabIndex = 12;
+            this.grvEmployees.Visible = false;
             // 
             // EmpID
             // 
