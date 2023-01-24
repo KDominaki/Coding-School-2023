@@ -9,7 +9,7 @@ namespace ClassLibrary1
     public class Transaction
     {
         public Guid? ID { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
         public Guid CustomerID { get; set; }
         public Guid? EmployeeID { get; set; }
         public Guid? PetID { get; set; }
@@ -21,6 +21,7 @@ namespace ClassLibrary1
 
         public Transaction() {
             ID = Guid.NewGuid();
+            Date = DateTime.Now;
         }
         //public Transaction() { 
         //    ID = Guid.NewGuid();
