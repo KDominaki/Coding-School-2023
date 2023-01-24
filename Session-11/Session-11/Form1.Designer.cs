@@ -119,7 +119,7 @@
             // 
             this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(1138, 62);
+            this.btnManage.Location = new System.Drawing.Point(238, 73);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(229, 149);
             this.btnManage.TabIndex = 0;
@@ -130,7 +130,7 @@
             this.button2.BackgroundImage = global::Session_11.Properties.Resources.shoplogo;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(200, 62);
+            this.button2.Location = new System.Drawing.Point(1094, 73);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(229, 149);
             this.button2.TabIndex = 1;
@@ -176,7 +176,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grvCustomer.RowTemplate.Height = 25;
-            this.grvCustomer.Size = new System.Drawing.Size(777, 131);
+            this.grvCustomer.Size = new System.Drawing.Size(690, 131);
             this.grvCustomer.TabIndex = 2;
             this.grvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -250,7 +250,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPet.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grvPet.RowTemplate.Height = 25;
-            this.grvPet.Size = new System.Drawing.Size(673, 134);
+            this.grvPet.Size = new System.Drawing.Size(609, 134);
             this.grvPet.TabIndex = 3;
             // 
             // PetID
@@ -383,7 +383,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPetFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grvPetFood.RowTemplate.Height = 25;
-            this.grvPetFood.Size = new System.Drawing.Size(673, 146);
+            this.grvPetFood.Size = new System.Drawing.Size(609, 146);
             this.grvPetFood.TabIndex = 11;
             // 
             // ptFoodId
@@ -450,7 +450,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grvEmployees.RowTemplate.Height = 25;
-            this.grvEmployees.Size = new System.Drawing.Size(777, 146);
+            this.grvEmployees.Size = new System.Drawing.Size(690, 146);
             this.grvEmployees.TabIndex = 12;
             // 
             // EmpID
@@ -528,7 +528,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.grvTransaction.RowTemplate.Height = 25;
-            this.grvTransaction.Size = new System.Drawing.Size(777, 118);
+            this.grvTransaction.Size = new System.Drawing.Size(690, 118);
             this.grvTransaction.TabIndex = 13;
             // 
             // trDate
@@ -632,7 +632,7 @@
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPetReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.grvPetReport.RowTemplate.Height = 25;
-            this.grvPetReport.Size = new System.Drawing.Size(673, 118);
+            this.grvPetReport.Size = new System.Drawing.Size(609, 118);
             this.grvPetReport.TabIndex = 15;
             // 
             // PRyear
@@ -667,7 +667,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1529, 810);
+            this.btnSave.Location = new System.Drawing.Point(1420, 810);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 33);
             this.btnSave.TabIndex = 17;
@@ -680,7 +680,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1852, 855);
+            this.ClientSize = new System.Drawing.Size(1559, 855);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.grvPetReport);
