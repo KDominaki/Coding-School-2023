@@ -93,6 +93,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.btnPets = new System.Windows.Forms.Button();
+            this.btnPosition = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -110,7 +111,7 @@
             // 
             this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(150, 116);
+            this.btnManage.Location = new System.Drawing.Point(30, 77);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(161, 105);
             this.btnManage.TabIndex = 0;
@@ -121,7 +122,7 @@
             this.button2.BackgroundImage = global::Session_11.Properties.Resources.shoplogo;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(695, 97);
+            this.button2.Location = new System.Drawing.Point(209, 77);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 105);
             this.button2.TabIndex = 1;
@@ -228,7 +229,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPet.DefaultCellStyle = dataGridViewCellStyle5;
-            this.grvPet.Location = new System.Drawing.Point(1327, 240);
+            this.grvPet.Location = new System.Drawing.Point(5, 258);
             this.grvPet.Name = "grvPet";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -239,7 +240,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPet.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grvPet.RowTemplate.Height = 25;
-            this.grvPet.Size = new System.Drawing.Size(542, 157);
+            this.grvPet.Size = new System.Drawing.Size(500, 157);
             this.grvPet.TabIndex = 3;
             this.grvPet.Visible = false;
             // 
@@ -295,7 +296,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1327, 222);
+            this.label2.Location = new System.Drawing.Point(608, 240);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 15);
             this.label2.TabIndex = 5;
@@ -304,7 +305,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1327, 434);
+            this.label3.Location = new System.Drawing.Point(617, 434);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 6;
@@ -331,7 +332,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1327, 644);
+            this.label7.Location = new System.Drawing.Point(593, 644);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 15);
             this.label7.TabIndex = 10;
@@ -363,7 +364,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetFood.DefaultCellStyle = dataGridViewCellStyle8;
-            this.grvPetFood.Location = new System.Drawing.Point(1327, 452);
+            this.grvPetFood.Location = new System.Drawing.Point(610, 452);
             this.grvPetFood.Name = "grvPetFood";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -430,7 +431,7 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvEmployees.DefaultCellStyle = dataGridViewCellStyle11;
-            this.grvEmployees.Location = new System.Drawing.Point(12, 258);
+            this.grvEmployees.Location = new System.Drawing.Point(610, 258);
             this.grvEmployees.Name = "grvEmployees";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
@@ -537,7 +538,7 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetReport.DefaultCellStyle = dataGridViewCellStyle17;
-            this.grvPetReport.Location = new System.Drawing.Point(1327, 662);
+            this.grvPetReport.Location = new System.Drawing.Point(608, 662);
             this.grvPetReport.Name = "grvPetReport";
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
@@ -583,7 +584,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1552, 802);
+            this.btnSave.Location = new System.Drawing.Point(1000, 806);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 41);
             this.btnSave.TabIndex = 17;
@@ -595,21 +596,34 @@
             // 
             this.btnPets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPets.FlatAppearance.BorderSize = 0;
-            this.btnPets.Location = new System.Drawing.Point(928, 97);
+            this.btnPets.Location = new System.Drawing.Point(385, 77);
             this.btnPets.Name = "btnPets";
             this.btnPets.Size = new System.Drawing.Size(161, 105);
             this.btnPets.TabIndex = 18;
-            this.btnPets.Text = "\r\n";
+            this.btnPets.Text = "\r\npets";
             this.btnPets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPets.UseVisualStyleBackColor = true;
             this.btnPets.Click += new System.EventHandler(this.btnPets_Click);
+            // 
+            // btnPosition
+            // 
+            this.btnPosition.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPosition.FlatAppearance.BorderSize = 0;
+            this.btnPosition.Location = new System.Drawing.Point(518, 463);
+            this.btnPosition.Name = "btnPosition";
+            this.btnPosition.Size = new System.Drawing.Size(87, 55);
+            this.btnPosition.TabIndex = 19;
+            this.btnPosition.Text = "\r\npets";
+            this.btnPosition.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPosition.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1881, 855);
+            this.ClientSize = new System.Drawing.Size(1874, 855);
+            this.Controls.Add(this.btnPosition);
             this.Controls.Add(this.btnPets);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
@@ -705,5 +719,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private Button btnPets;
+        private Button btnPosition;
     }
 }
