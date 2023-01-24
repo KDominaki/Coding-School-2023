@@ -26,7 +26,7 @@ namespace ClassLibrary1 {
         }
 
         public List<PetFood> GetPetFood() {
-            List<PetFood> petFoods = new List<PetFood>();
+            
 
             foreach (var transaction in Transactions) {
                 var foodID = transaction.PetFoodID;
@@ -37,7 +37,7 @@ namespace ClassLibrary1 {
                     }
                 }
             }
-            return petFoods;
+            return Foods;
         }
 
 

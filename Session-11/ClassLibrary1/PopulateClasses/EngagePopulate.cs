@@ -29,15 +29,8 @@ namespace ClassLibrary1.PopulateClasses {
             };
 
             PopulateTransaction populateTransaction = new PopulateTransaction();
-
             petshop.Transactions = populateTransaction.PopulateTransactions(petshop.Foods, petshop.Pets, petshop.Employees, petshop.Customers);
-
             //petShop.Transactions = new Populate
-
-
-
-
-
             return petshop;
         }
 
