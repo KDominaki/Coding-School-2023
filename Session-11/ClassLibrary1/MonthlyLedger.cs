@@ -43,7 +43,6 @@ namespace ClassLibrary1
             }
         }
 
-        // TO DO
         public void GetMonthsTrans()
         {
             PetShop shop = new PetShop();
