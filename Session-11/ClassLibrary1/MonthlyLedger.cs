@@ -45,8 +45,8 @@ namespace ClassLibrary1
 
         public void GetMonthsTrans()
         {
-            PetShop shop = new PetShop();
-            foreach (var trans in shop.Transactions)
+            TransRepository transRepositorycs = new TransRepository();
+            foreach (var trans in transRepositorycs.MainPetshop.Transactions)
             {
                 if (trans.Date.Year == Year && trans.Date.Month == Month )
                 {
