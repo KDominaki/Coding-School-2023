@@ -3,6 +3,7 @@ using ClassLibrary1;
 using System.Diagnostics;
 using System.Windows;
 using PopulateClassLibrary;
+using Point = System.Drawing.Point;
 
 namespace Session_11
 {
@@ -185,9 +186,16 @@ namespace Session_11
         private void btnPets_Click(object sender, EventArgs e)
         {
             grvPet.Visible = true;
-           // grvEmployees.Visible = false;
 
+            //centering function sort of
+            int midX = 942,midY=448;
+            double center,Xsquared,Ysquared;
+            Xsquared = Math.Pow(grvPet.Size.Width,2);
+            Ysquared = Math.Pow(grvPet.Size.Height,2);
 
+            center = Math.Sqrt(Xsquared + Ysquared)/2;
+            grvPet.Location = new Point(midX-(int)center,midY -200);
+            
 
         }
     }
