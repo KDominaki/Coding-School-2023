@@ -94,6 +94,12 @@ namespace Session_11
             grvTransaction.AutoGenerateColumns = false;
             bsTransact.DataSource = petShop.Transactions;
             grvTransaction.DataSource = bsTransact;
+
+            grvEmployees.AutoGenerateColumns = false;
+            bsEmployees.DataSource = petShop.Employees;
+            grvEmployees.DataSource = bsEmployees;
+
+            
             // FOR THE BINDING SOURCES 
             /*  
                       
