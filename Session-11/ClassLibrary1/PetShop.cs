@@ -12,11 +12,10 @@ namespace ClassLibrary1 {
         public List<PetFood>? Foods = new List<PetFood>();
         public List<Pet> Pets = new List<Pet>();
         public List<Employee> Employees = new List<Employee>();
-        public List<Customer> Customer = new List<Customer>();
+        public List<Customer> Customers = new List<Customer>();
         
         //CTOR
         public PetShop() {
-            Name = "The Pet";
 
         }
 
