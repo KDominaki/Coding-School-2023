@@ -99,14 +99,11 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.btnPets = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
             this.ptFoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnimType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pfQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> 648d4bb196f8c900fb9f976e9912dc95f7f08bee
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();

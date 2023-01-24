@@ -3,11 +3,10 @@ using ClassLibrary1;
 using System.Diagnostics;
 using System.Windows;
 using PopulateClassLibrary;
-<<<<<<< HEAD
 using Point = System.Drawing.Point;
-=======
+
 using DevExpress.CodeParser;
->>>>>>> 648d4bb196f8c900fb9f976e9912dc95f7f08bee
+
 
 namespace Session_11
 {
@@ -195,10 +194,6 @@ namespace Session_11
         private void btnPets_Click(object sender, EventArgs e)
         {
             grvPet.Visible = true;
-<<<<<<< HEAD
-=======
-           //grvEmployees.Visible = false;
->>>>>>> 648d4bb196f8c900fb9f976e9912dc95f7f08bee
 
             //centering function sort of
             int midX = 942,midY=448;
