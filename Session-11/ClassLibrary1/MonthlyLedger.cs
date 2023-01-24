@@ -25,7 +25,7 @@ namespace ClassLibrary1
             PetShop shop= new PetShop();
             foreach (var item in shop.Transactions)
             {
-                Expense += item.TotalPrice;
+                Incomee += item.TotalPrice;
             }
         }
         public void ExpenseCalc()
