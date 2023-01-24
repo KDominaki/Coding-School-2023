@@ -12,7 +12,7 @@ namespace ClassLibrary1
         public AnimalType Animaltype { get; set; }
         public decimal Price { get; set; }
         public decimal Cost { get; set; }
-        public decimal Qty { get; set; }
+        public decimal? Qty { get; set; }
 
 
         public PetFood()
