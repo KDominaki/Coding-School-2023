@@ -75,11 +75,6 @@
             this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pfCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvEmployees = new System.Windows.Forms.DataGridView();
-            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvTransaction = new System.Windows.Forms.DataGridView();
             this.trDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +95,11 @@
             this.bsPet = new System.Windows.Forms.BindingSource(this.components);
             this.bsPetFood = new System.Windows.Forms.BindingSource(this.components);
             this.bsTransact = new System.Windows.Forms.BindingSource(this.components);
+            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -457,34 +457,6 @@
             this.grvEmployees.Size = new System.Drawing.Size(811, 184);
             this.grvEmployees.TabIndex = 12;
             // 
-            // EmpID
-            // 
-            this.EmpID.HeaderText = "Employee ID";
-            this.EmpID.Name = "EmpID";
-            this.EmpID.Visible = false;
-            // 
-            // EmpName
-            // 
-            this.EmpName.HeaderText = "Name";
-            this.EmpName.Name = "EmpName";
-            // 
-            // EmpSurname
-            // 
-            this.EmpSurname.HeaderText = "Surname";
-            this.EmpSurname.Name = "EmpSurname";
-            // 
-            // EmpType
-            // 
-            this.EmpType.HeaderText = "Employee Post";
-            this.EmpType.Name = "EmpType";
-            this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // EmpSalary
-            // 
-            this.EmpSalary.HeaderText = "Salary";
-            this.EmpSalary.Name = "EmpSalary";
-            // 
             // grvTransaction
             // 
             this.grvTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -655,6 +627,38 @@
             this.PRtotalSold.HeaderText = "Total Sold";
             this.PRtotalSold.Name = "PRtotalSold";
             // 
+            // EmpID
+            // 
+            this.EmpID.DataPropertyName = "ID";
+            this.EmpID.HeaderText = "Employee ID";
+            this.EmpID.Name = "EmpID";
+            this.EmpID.Visible = false;
+            // 
+            // EmpName
+            // 
+            this.EmpName.DataPropertyName = "Name";
+            this.EmpName.HeaderText = "Name";
+            this.EmpName.Name = "EmpName";
+            // 
+            // EmpSurname
+            // 
+            this.EmpSurname.DataPropertyName = "Surname";
+            this.EmpSurname.HeaderText = "Surname";
+            this.EmpSurname.Name = "EmpSurname";
+            // 
+            // EmpType
+            // 
+            this.EmpType.HeaderText = "Employee Post";
+            this.EmpType.Name = "EmpType";
+            this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // EmpSalary
+            // 
+            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
+            this.EmpSalary.HeaderText = "Salary";
+            this.EmpSalary.Name = "EmpSalary";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -713,11 +717,6 @@
         private DataGridViewTextBoxColumn PRmonth;
         private DataGridViewTextBoxColumn PRanimType;
         private DataGridViewTextBoxColumn PRtotalSold;
-        private DataGridViewTextBoxColumn EmpID;
-        private DataGridViewTextBoxColumn EmpName;
-        private DataGridViewTextBoxColumn EmpSurname;
-        private DataGridViewComboBoxColumn EmpType;
-        private DataGridViewTextBoxColumn EmpSalary;
         private BindingSource bsCustomer;
         private DataGridViewTextBoxColumn CustomID;
         private DataGridViewTextBoxColumn CustomName;
@@ -748,5 +747,10 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private BindingSource bsTransact;
+        private DataGridViewTextBoxColumn EmpID;
+        private DataGridViewTextBoxColumn EmpName;
+        private DataGridViewTextBoxColumn EmpSurname;
+        private DataGridViewComboBoxColumn EmpType;
+        private DataGridViewTextBoxColumn EmpSalary;
     }
 }
