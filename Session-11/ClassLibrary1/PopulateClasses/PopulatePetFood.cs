@@ -21,7 +21,7 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Cat,
                 Price = 10,
                 Cost = 5,
-                Qty = 1500,
+                Qty = 50,
             };
             petFood.Add(pf);
 
@@ -31,7 +31,7 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Dog,
                 Price = 11,
                 Cost = 6,
-                Qty = 1500,
+                Qty = 60,
             };
             petFood.Add(pf);
 
@@ -41,7 +41,7 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Parrot,
                 Price = 4,
                 Cost = 2,
-                Qty = 1500,
+                Qty = 50,
             };
             petFood.Add(pf);
 
