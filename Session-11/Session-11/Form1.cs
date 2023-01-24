@@ -3,7 +3,11 @@ using ClassLibrary1;
 using System.Diagnostics;
 using System.Windows;
 using PopulateClassLibrary;
+<<<<<<< HEAD
 using Point = System.Drawing.Point;
+=======
+using DevExpress.CodeParser;
+>>>>>>> 648d4bb196f8c900fb9f976e9912dc95f7f08bee
 
 namespace Session_11
 {
@@ -89,7 +93,7 @@ namespace Session_11
 
             //PetFood binding Source
             grvPetFood.AutoGenerateColumns = false;
-            bsPetFood.DataSource = petShop.Foods;
+            bsPetFood.DataSource = petShop.GetPetFood();
             grvPetFood.DataSource = bsPetFood;
 
             grvTransaction.AutoGenerateColumns = false;
@@ -100,9 +104,9 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
-            grvEmployees.AutoGenerateColumns = false;
-            bsEmployees.DataSource = petShop.Employees;
-            grvEmployees.DataSource = bsEmployees;
+            //grvEmployees.AutoGenerateColumns = false;
+            //bsEmployees.DataSource = petShop.Employees;
+            //grvEmployees.DataSource = bsEmployees;
 
             //grvPetReport.AutoGenerateColumns = false;
             //bsPetReport.DataSource = petShop.Employees;
@@ -116,9 +120,14 @@ namespace Session_11
             //FOR THE COMBO BOXES 
             //PET - AnimalType combobox
             DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
-            colAnimType.DataSource = petShop.Pets;//GetUniversities();
-            colAnimType.DisplayMember = "AnimalType";//"Name";
-            colAnimType.ValueMember =  "ID";//"ID";*/
+            //colAnimType.DataSource = petShop.Pets;//GetUniversities();
+            //colAnimType.DisplayMember = "AnimalType";//"Name";
+            //colAnimType.ValueMember =  "ID";//"ID";*/
+            foreach(var type in Enum.GetValues(typeof(AnimalType))) {
+                colAnimType.Items.Add(type);
+            }
+               
+
 
             //PET - PetFood combobox
             DataGridViewComboBoxColumn colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
@@ -186,6 +195,10 @@ namespace Session_11
         private void btnPets_Click(object sender, EventArgs e)
         {
             grvPet.Visible = true;
+<<<<<<< HEAD
+=======
+           //grvEmployees.Visible = false;
+>>>>>>> 648d4bb196f8c900fb9f976e9912dc95f7f08bee
 
             //centering function sort of
             int midX = 942,midY=448;
