@@ -71,7 +71,6 @@
             this.grvPetFood = new System.Windows.Forms.DataGridView();
             this.ptFoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnimType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ptDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pfCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvEmployees = new System.Windows.Forms.DataGridView();
@@ -120,9 +119,9 @@
             // 
             this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(285, 29);
+            this.btnManage.Location = new System.Drawing.Point(134, 116);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(229, 149);
+            this.btnManage.Size = new System.Drawing.Size(161, 105);
             this.btnManage.TabIndex = 0;
             this.btnManage.UseVisualStyleBackColor = true;
             // 
@@ -131,9 +130,9 @@
             this.button2.BackgroundImage = global::Session_11.Properties.Resources.shoplogo;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(50, 29);
+            this.button2.Location = new System.Drawing.Point(1001, 116);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(229, 149);
+            this.button2.Size = new System.Drawing.Size(161, 105);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -166,7 +165,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grvCustomer.Location = new System.Drawing.Point(1, 322);
+            this.grvCustomer.Location = new System.Drawing.Point(12, 452);
             this.grvCustomer.Name = "grvCustomer";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -177,7 +176,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grvCustomer.RowTemplate.Height = 25;
-            this.grvCustomer.Size = new System.Drawing.Size(950, 201);
+            this.grvCustomer.Size = new System.Drawing.Size(693, 134);
             this.grvCustomer.TabIndex = 2;
             this.grvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -240,7 +239,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPet.DefaultCellStyle = dataGridViewCellStyle5;
-            this.grvPet.Location = new System.Drawing.Point(950, 120);
+            this.grvPet.Location = new System.Drawing.Point(819, 258);
             this.grvPet.Name = "grvPet";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -251,7 +250,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPet.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grvPet.RowTemplate.Height = 25;
-            this.grvPet.Size = new System.Drawing.Size(890, 196);
+            this.grvPet.Size = new System.Drawing.Size(567, 134);
             this.grvPet.TabIndex = 3;
             // 
             // PetID
@@ -263,7 +262,6 @@
             // 
             // AnimalT
             // 
-            this.AnimalT.DataPropertyName = "Animaltype";
             this.AnimalT.HeaderText = "Type";
             this.AnimalT.Name = "AnimalT";
             this.AnimalT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -297,7 +295,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 301);
+            this.label1.Location = new System.Drawing.Point(12, 434);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 4;
@@ -306,7 +304,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(950, 102);
+            this.label2.Location = new System.Drawing.Point(816, 240);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 15);
             this.label2.TabIndex = 5;
@@ -315,7 +313,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1, 558);
+            this.label3.Location = new System.Drawing.Point(819, 422);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 6;
@@ -324,7 +322,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1, 675);
+            this.label4.Location = new System.Drawing.Point(12, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 15);
             this.label4.TabIndex = 7;
@@ -333,7 +331,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(961, 449);
+            this.label5.Location = new System.Drawing.Point(12, 644);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 15);
             this.label5.TabIndex = 8;
@@ -342,7 +340,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(961, 746);
+            this.label7.Location = new System.Drawing.Point(819, 644);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 15);
             this.label7.TabIndex = 10;
@@ -364,7 +362,6 @@
             this.grvPetFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ptFoodId,
             this.AnimType,
-            this.ptDescription,
             this.pfPrice,
             this.pfCost});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -375,7 +372,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetFood.DefaultCellStyle = dataGridViewCellStyle8;
-            this.grvPetFood.Location = new System.Drawing.Point(1, 576);
+            this.grvPetFood.Location = new System.Drawing.Point(816, 452);
             this.grvPetFood.Name = "grvPetFood";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -386,7 +383,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPetFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grvPetFood.RowTemplate.Height = 25;
-            this.grvPetFood.Size = new System.Drawing.Size(811, 96);
+            this.grvPetFood.Size = new System.Drawing.Size(346, 134);
             this.grvPetFood.TabIndex = 11;
             // 
             // ptFoodId
@@ -402,11 +399,6 @@
             this.AnimType.Name = "AnimType";
             this.AnimType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.AnimType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ptDescription
-            // 
-            this.ptDescription.HeaderText = "Description";
-            this.ptDescription.Name = "ptDescription";
             // 
             // pfPrice
             // 
@@ -447,7 +439,7 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvEmployees.DefaultCellStyle = dataGridViewCellStyle11;
-            this.grvEmployees.Location = new System.Drawing.Point(1, 693);
+            this.grvEmployees.Location = new System.Drawing.Point(12, 258);
             this.grvEmployees.Name = "grvEmployees";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
@@ -458,22 +450,25 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grvEmployees.RowTemplate.Height = 25;
-            this.grvEmployees.Size = new System.Drawing.Size(811, 184);
+            this.grvEmployees.Size = new System.Drawing.Size(465, 134);
             this.grvEmployees.TabIndex = 12;
             // 
             // EmpID
             // 
+            this.EmpID.DataPropertyName = "ID";
             this.EmpID.HeaderText = "Employee ID";
             this.EmpID.Name = "EmpID";
             this.EmpID.Visible = false;
             // 
             // EmpName
             // 
+            this.EmpName.DataPropertyName = "Name";
             this.EmpName.HeaderText = "Name";
             this.EmpName.Name = "EmpName";
             // 
             // EmpSurname
             // 
+            this.EmpSurname.DataPropertyName = "Surname";
             this.EmpSurname.HeaderText = "Surname";
             this.EmpSurname.Name = "EmpSurname";
             // 
@@ -486,6 +481,7 @@
             // 
             // EmpSalary
             // 
+            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
             this.EmpSalary.HeaderText = "Salary";
             this.EmpSalary.Name = "EmpSalary";
             // 
@@ -521,7 +517,7 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvTransaction.DefaultCellStyle = dataGridViewCellStyle14;
-            this.grvTransaction.Location = new System.Drawing.Point(961, 467);
+            this.grvTransaction.Location = new System.Drawing.Point(12, 662);
             this.grvTransaction.Name = "grvTransaction";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
@@ -532,7 +528,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.grvTransaction.RowTemplate.Height = 25;
-            this.grvTransaction.Size = new System.Drawing.Size(939, 183);
+            this.grvTransaction.Size = new System.Drawing.Size(574, 134);
             this.grvTransaction.TabIndex = 13;
             // 
             // trDate
@@ -625,7 +621,7 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetReport.DefaultCellStyle = dataGridViewCellStyle17;
-            this.grvPetReport.Location = new System.Drawing.Point(961, 764);
+            this.grvPetReport.Location = new System.Drawing.Point(816, 662);
             this.grvPetReport.Name = "grvPetReport";
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
@@ -636,7 +632,7 @@
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPetReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.grvPetReport.RowTemplate.Height = 25;
-            this.grvPetReport.Size = new System.Drawing.Size(811, 56);
+            this.grvPetReport.Size = new System.Drawing.Size(445, 134);
             this.grvPetReport.TabIndex = 15;
             // 
             // PRyear
@@ -661,9 +657,9 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(50, 248);
+            this.btnLoad.Location = new System.Drawing.Point(12, 806);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(80, 33);
+            this.btnLoad.Size = new System.Drawing.Size(89, 41);
             this.btnLoad.TabIndex = 16;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -671,9 +667,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(136, 248);
+            this.btnSave.Location = new System.Drawing.Point(1172, 802);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(79, 33);
+            this.btnSave.Size = new System.Drawing.Size(89, 41);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -684,7 +680,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1852, 870);
+            this.ClientSize = new System.Drawing.Size(1562, 855);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.grvPetReport);
@@ -740,11 +736,6 @@
         private DataGridViewTextBoxColumn PRmonth;
         private DataGridViewTextBoxColumn PRanimType;
         private DataGridViewTextBoxColumn PRtotalSold;
-        private DataGridViewTextBoxColumn EmpID;
-        private DataGridViewTextBoxColumn EmpName;
-        private DataGridViewTextBoxColumn EmpSurname;
-        private DataGridViewComboBoxColumn EmpType;
-        private DataGridViewTextBoxColumn EmpSalary;
         private BindingSource bsCustomer;
         private DataGridViewTextBoxColumn CustomID;
         private DataGridViewTextBoxColumn CustomName;
@@ -753,17 +744,6 @@
         private DataGridViewTextBoxColumn CustomTin;
         private BindingSource bsPet;
         private BindingSource bsPetFood;
-        private DataGridViewTextBoxColumn ptFoodId;
-        private DataGridViewComboBoxColumn AnimType;
-        private DataGridViewTextBoxColumn ptDescription;
-        private DataGridViewTextBoxColumn pfPrice;
-        private DataGridViewTextBoxColumn pfCost;
-        private DataGridViewTextBoxColumn PetID;
-        private DataGridViewComboBoxColumn AnimalT;
-        private DataGridViewTextBoxColumn PetBreed;
-        private DataGridViewTextBoxColumn PetStat;
-        private DataGridViewTextBoxColumn PetPrice;
-        private DataGridViewTextBoxColumn PetCost;
         private DataGridViewTextBoxColumn trDate;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn PetFoodQty;
@@ -778,5 +758,20 @@
         private Button btnLoad;
         private Button btnSave;
         private BindingSource bsEmployees;
+        private DataGridViewTextBoxColumn PetID;
+        private DataGridViewComboBoxColumn AnimalT;
+        private DataGridViewTextBoxColumn PetBreed;
+        private DataGridViewTextBoxColumn PetStat;
+        private DataGridViewTextBoxColumn PetPrice;
+        private DataGridViewTextBoxColumn PetCost;
+        private DataGridViewTextBoxColumn EmpID;
+        private DataGridViewTextBoxColumn EmpName;
+        private DataGridViewTextBoxColumn EmpSurname;
+        private DataGridViewComboBoxColumn EmpType;
+        private DataGridViewTextBoxColumn EmpSalary;
+        private DataGridViewTextBoxColumn ptFoodId;
+        private DataGridViewComboBoxColumn AnimType;
+        private DataGridViewTextBoxColumn pfPrice;
+        private DataGridViewTextBoxColumn pfCost;
     }
 }
