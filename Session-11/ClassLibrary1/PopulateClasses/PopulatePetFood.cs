@@ -44,7 +44,7 @@ namespace PopulateClassLibrary {
             petFood.Add(pf);
 
             pf = new PetFood() {
-                ID = Guid.Parse("{FA3827F3-190B-4DE0-808E-A2C31E6018E0"),
+                ID = Guid.Parse("{FA3827F3-190B-4DE0-808E-A2C31E6018E0}"),
                 Animaltype = AnimalType.Dog,
                 Price = 8,
                 Cost = 4,
