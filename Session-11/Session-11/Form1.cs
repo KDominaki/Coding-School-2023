@@ -86,7 +86,7 @@ namespace Session_11
             bsPet.DataSource = petShop.Pets; 
             grvPet.DataSource = bsPet;
 
-            //Pet binding Source
+            //PetFood binding Source
             grvPetFood.AutoGenerateColumns = false;
             bsPetFood.DataSource = petShop.Foods;
             grvPetFood.DataSource = bsPetFood;
@@ -107,29 +107,10 @@ namespace Session_11
             //bsPetReport.DataSource = petShop.Employees;
             //grvPetReport.DataSource = bsPetReport;
 
-
-
-            /*       public DateTime Year { get; set; }
-               public DateTime Month { get; set; }
-               public AnimalType Animal { get; set; }
-
-               public decimal TotalSold { get; set; }*/
-
             // FOR THE BINDING SOURCES 
-            /*  
+         
 
 
-                        grvPetFood.DataSource = bsPetFood;
-                        grvPetFood.AutoGenerateColumns = false;
-                        grvEmployees.DataSource = bsEmployees;
-                        grvEmployees.AutoGenerateColumns = false;
-                        grvTransaction.DataSource = bsTransact;
-                        grvTransaction.AutoGenerateColumns = false;
-                        grvMonthLedger.DataSource = bsMonthlyLedger; 
-                        grvMonthLedger.AutoGenerateColumns = false;
-                        grvPetReport.DataSource = bsPetReport;
-                        grvPetReport.AutoGenerateColumns = false;
-            */
 
             //FOR THE COMBO BOXES 
             //PET - AnimalType combobox
@@ -143,7 +124,7 @@ namespace Session_11
             colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
             colPetFoodType.DisplayMember = "Animaltype";//"Name";
             colPetFoodType.ValueMember = "ID";//"ID";*/
-
+            
             
 
 

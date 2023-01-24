@@ -69,11 +69,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grvPetFood = new System.Windows.Forms.DataGridView();
-            this.ptFoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnimType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ptDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pfCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvEmployees = new System.Windows.Forms.DataGridView();
             this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +98,10 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this.ptFoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnimType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pfCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -263,7 +262,6 @@
             // 
             // AnimalT
             // 
-            this.AnimalT.DataPropertyName = "Animaltype";
             this.AnimalT.HeaderText = "Type";
             this.AnimalT.Name = "AnimalT";
             this.AnimalT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -364,7 +362,6 @@
             this.grvPetFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ptFoodId,
             this.AnimType,
-            this.ptDescription,
             this.pfPrice,
             this.pfCost});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -388,37 +385,6 @@
             this.grvPetFood.RowTemplate.Height = 25;
             this.grvPetFood.Size = new System.Drawing.Size(811, 96);
             this.grvPetFood.TabIndex = 11;
-            // 
-            // ptFoodId
-            // 
-            this.ptFoodId.DataPropertyName = "ID";
-            this.ptFoodId.HeaderText = "Pet Food ID";
-            this.ptFoodId.Name = "ptFoodId";
-            this.ptFoodId.Visible = false;
-            // 
-            // AnimType
-            // 
-            this.AnimType.HeaderText = "Animal Type";
-            this.AnimType.Name = "AnimType";
-            this.AnimType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AnimType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ptDescription
-            // 
-            this.ptDescription.HeaderText = "Description";
-            this.ptDescription.Name = "ptDescription";
-            // 
-            // pfPrice
-            // 
-            this.pfPrice.DataPropertyName = "Price";
-            this.pfPrice.HeaderText = "Price";
-            this.pfPrice.Name = "pfPrice";
-            // 
-            // pfCost
-            // 
-            this.pfCost.DataPropertyName = "Cost";
-            this.pfCost.HeaderText = "Cost";
-            this.pfCost.Name = "pfCost";
             // 
             // grvEmployees
             // 
@@ -463,17 +429,20 @@
             // 
             // EmpID
             // 
+            this.EmpID.DataPropertyName = "ID";
             this.EmpID.HeaderText = "Employee ID";
             this.EmpID.Name = "EmpID";
             this.EmpID.Visible = false;
             // 
             // EmpName
             // 
+            this.EmpName.DataPropertyName = "Name";
             this.EmpName.HeaderText = "Name";
             this.EmpName.Name = "EmpName";
             // 
             // EmpSurname
             // 
+            this.EmpSurname.DataPropertyName = "Surname";
             this.EmpSurname.HeaderText = "Surname";
             this.EmpSurname.Name = "EmpSurname";
             // 
@@ -486,6 +455,7 @@
             // 
             // EmpSalary
             // 
+            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
             this.EmpSalary.HeaderText = "Salary";
             this.EmpSalary.Name = "EmpSalary";
             // 
@@ -679,6 +649,32 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // ptFoodId
+            // 
+            this.ptFoodId.DataPropertyName = "ID";
+            this.ptFoodId.HeaderText = "Pet Food ID";
+            this.ptFoodId.Name = "ptFoodId";
+            this.ptFoodId.Visible = false;
+            // 
+            // AnimType
+            // 
+            this.AnimType.HeaderText = "Animal Type";
+            this.AnimType.Name = "AnimType";
+            this.AnimType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AnimType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // pfPrice
+            // 
+            this.pfPrice.DataPropertyName = "Price";
+            this.pfPrice.HeaderText = "Price";
+            this.pfPrice.Name = "pfPrice";
+            // 
+            // pfCost
+            // 
+            this.pfCost.DataPropertyName = "Cost";
+            this.pfCost.HeaderText = "Cost";
+            this.pfCost.Name = "pfCost";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -740,11 +736,6 @@
         private DataGridViewTextBoxColumn PRmonth;
         private DataGridViewTextBoxColumn PRanimType;
         private DataGridViewTextBoxColumn PRtotalSold;
-        private DataGridViewTextBoxColumn EmpID;
-        private DataGridViewTextBoxColumn EmpName;
-        private DataGridViewTextBoxColumn EmpSurname;
-        private DataGridViewComboBoxColumn EmpType;
-        private DataGridViewTextBoxColumn EmpSalary;
         private BindingSource bsCustomer;
         private DataGridViewTextBoxColumn CustomID;
         private DataGridViewTextBoxColumn CustomName;
@@ -753,17 +744,6 @@
         private DataGridViewTextBoxColumn CustomTin;
         private BindingSource bsPet;
         private BindingSource bsPetFood;
-        private DataGridViewTextBoxColumn ptFoodId;
-        private DataGridViewComboBoxColumn AnimType;
-        private DataGridViewTextBoxColumn ptDescription;
-        private DataGridViewTextBoxColumn pfPrice;
-        private DataGridViewTextBoxColumn pfCost;
-        private DataGridViewTextBoxColumn PetID;
-        private DataGridViewComboBoxColumn AnimalT;
-        private DataGridViewTextBoxColumn PetBreed;
-        private DataGridViewTextBoxColumn PetStat;
-        private DataGridViewTextBoxColumn PetPrice;
-        private DataGridViewTextBoxColumn PetCost;
         private DataGridViewTextBoxColumn trDate;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn PetFoodQty;
@@ -778,5 +758,20 @@
         private Button btnLoad;
         private Button btnSave;
         private BindingSource bsEmployees;
+        private DataGridViewTextBoxColumn PetID;
+        private DataGridViewComboBoxColumn AnimalT;
+        private DataGridViewTextBoxColumn PetBreed;
+        private DataGridViewTextBoxColumn PetStat;
+        private DataGridViewTextBoxColumn PetPrice;
+        private DataGridViewTextBoxColumn PetCost;
+        private DataGridViewTextBoxColumn EmpID;
+        private DataGridViewTextBoxColumn EmpName;
+        private DataGridViewTextBoxColumn EmpSurname;
+        private DataGridViewComboBoxColumn EmpType;
+        private DataGridViewTextBoxColumn EmpSalary;
+        private DataGridViewTextBoxColumn ptFoodId;
+        private DataGridViewComboBoxColumn AnimType;
+        private DataGridViewTextBoxColumn pfPrice;
+        private DataGridViewTextBoxColumn pfCost;
     }
 }
