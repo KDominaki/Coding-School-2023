@@ -21,8 +21,16 @@ namespace ClassLibrary1.PopulateClasses {
 
             PetShop petshop = new PetShop() {
                 Name = "Mr Pet",
+                Foods = populatePetFood.PopulatePetFoods(),
+                Pets = populatePet.PopulatePets(),
+                Employees = populateEmployees.PopulateEmployees(),
+                Customers = populateCustomer.PopulateCustomers(),
+
             };
 
+            PopulateTransaction populateTransaction = new PopulateTransaction();
+
+            petshop.Transactions = populateTransaction(Foods, Pets, Employees, Customers);
 
             //petShop.Transactions = new Populate
 
