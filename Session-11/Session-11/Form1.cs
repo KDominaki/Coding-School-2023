@@ -22,44 +22,6 @@ namespace Session_11
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void SetControlProperties()
         {
             // FOR THE BINDING SOURCES 
@@ -89,26 +51,11 @@ namespace Session_11
 
         }
 
-<<<<<<< HEAD
 
-
-
-
-
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-      
-=======
         private void btnManage_Click(object sender, EventArgs e) {
             TransactionsForm form2 = new TransactionsForm();
             //Form1.Close();
             form2.Show();
         }
->>>>>>> ea759b9b5990170eb1d7aa2ebf00213dc822ccf7
     }
 }

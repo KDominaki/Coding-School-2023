@@ -95,13 +95,7 @@
             // 
             // btnManage
             // 
-<<<<<<< HEAD
-            this.btnManage.Location = new System.Drawing.Point(50, 324);
-=======
-            this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
-            this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(425, 134);
->>>>>>> ea759b9b5990170eb1d7aa2ebf00213dc822ccf7
+
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(229, 149);
             this.btnManage.TabIndex = 0;
@@ -135,7 +129,6 @@
             this.grvCustomer.RowTemplate.Height = 25;
             this.grvCustomer.Size = new System.Drawing.Size(424, 56);
             this.grvCustomer.TabIndex = 2;
-            this.grvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CustomID
             // 
