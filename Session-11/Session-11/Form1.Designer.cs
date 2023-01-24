@@ -69,6 +69,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grvPetFood = new System.Windows.Forms.DataGridView();
+            this.ptFoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnimType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pfQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvEmployees = new System.Windows.Forms.DataGridView();
             this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,11 +104,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.btnPets = new System.Windows.Forms.Button();
-            this.ptFoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnimType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.pfPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pfQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -126,6 +126,7 @@
             this.btnManage.Size = new System.Drawing.Size(161, 105);
             this.btnManage.TabIndex = 0;
             this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
             // 
             // button2
             // 
@@ -389,9 +390,41 @@
             this.grvPetFood.Size = new System.Drawing.Size(542, 134);
             this.grvPetFood.TabIndex = 11;
             // 
+            // ptFoodId
+            // 
+            this.ptFoodId.DataPropertyName = "ID";
+            this.ptFoodId.HeaderText = "Pet Food ID";
+            this.ptFoodId.Name = "ptFoodId";
+            this.ptFoodId.Visible = false;
+            // 
+            // AnimType
+            // 
+            this.AnimType.HeaderText = "Animal Type";
+            this.AnimType.Name = "AnimType";
+            this.AnimType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AnimType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // pfPrice
+            // 
+            this.pfPrice.DataPropertyName = "Price";
+            this.pfPrice.HeaderText = "Price";
+            this.pfPrice.Name = "pfPrice";
+            // 
+            // pfQty
+            // 
+            this.pfQty.DataPropertyName = "Cost";
+            this.pfQty.HeaderText = "Cost";
+            this.pfQty.Name = "pfQty";
+            // 
+            // colQty
+            // 
+            this.colQty.DataPropertyName = "Qty";
+            this.colQty.HeaderText = "Quantity";
+            this.colQty.Name = "colQty";
+            // 
             // grvEmployees
             // 
-            this.grvEmployees.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.grvEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
@@ -429,6 +462,7 @@
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(500, 134);
             this.grvEmployees.TabIndex = 12;
+            this.grvEmployees.Visible = false;
             // 
             // EmpID
             // 
@@ -650,38 +684,6 @@
             this.btnPets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPets.UseVisualStyleBackColor = true;
             this.btnPets.Click += new System.EventHandler(this.btnPets_Click);
-            // 
-            // ptFoodId
-            // 
-            this.ptFoodId.DataPropertyName = "ID";
-            this.ptFoodId.HeaderText = "Pet Food ID";
-            this.ptFoodId.Name = "ptFoodId";
-            this.ptFoodId.Visible = false;
-            // 
-            // AnimType
-            // 
-            this.AnimType.HeaderText = "Animal Type";
-            this.AnimType.Name = "AnimType";
-            this.AnimType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AnimType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // pfPrice
-            // 
-            this.pfPrice.DataPropertyName = "Price";
-            this.pfPrice.HeaderText = "Price";
-            this.pfPrice.Name = "pfPrice";
-            // 
-            // pfQty
-            // 
-            this.pfQty.DataPropertyName = "Cost";
-            this.pfQty.HeaderText = "Cost";
-            this.pfQty.Name = "pfQty";
-            // 
-            // colQty
-            // 
-            this.colQty.DataPropertyName = "Qty";
-            this.colQty.HeaderText = "Quantity";
-            this.colQty.Name = "colQty";
             // 
             // Form1
             // 

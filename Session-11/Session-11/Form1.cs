@@ -20,13 +20,13 @@ namespace Session_11
         {
             InitializeComponent();
         }
-     
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            petShop= new PetShop();
+            petShop = new PetShop();
             EngagePopulate ep = new EngagePopulate();
             petShop = ep.SetPopulation();
-            
+
 
             SetControlProperties();
         }
@@ -87,7 +87,7 @@ namespace Session_11
 
             //Pet binding Source
             grvPet.AutoGenerateColumns = false;
-            bsPet.DataSource = petShop.Pets; 
+            bsPet.DataSource = petShop.Pets;
             grvPet.DataSource = bsPet;
 
             //PetFood binding Source
@@ -112,7 +112,7 @@ namespace Session_11
             //grvPetReport.DataSource = bsPetReport;
 
             // FOR THE BINDING SOURCES 
-         
+
 
 
 
@@ -122,10 +122,10 @@ namespace Session_11
             //colAnimType.DataSource = petShop.Pets;//GetUniversities();
             //colAnimType.DisplayMember = "AnimalType";//"Name";
             //colAnimType.ValueMember =  "ID";//"ID";*/
-            foreach(var type in Enum.GetValues(typeof(AnimalType))) {
+            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
                 colAnimType.Items.Add(type);
             }
-               
+
 
 
             //PET - PetFood combobox
@@ -133,13 +133,29 @@ namespace Session_11
             colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
             colPetFoodType.DisplayMember = "Animaltype";//"Name";
             colPetFoodType.ValueMember = "ID";//"ID";*/
-            
-            
+
+
 
 
         }             
 
+        public  Point getCentered(string choice)
+        {   
 
+            //lets hope it dont go boom
+            DataGridView gridName = new DataGridView();
+            gridName.Name = choice;
+            int midX = 942, midY = 448;
+            double center, Xsquared, Ysquared;
+            Xsquared = Math.Pow(gridName.Size.Width, 2);
+            Ysquared = Math.Pow(gridName.Size.Height, 2);
+
+            center = Math.Sqrt(Xsquared + Ysquared) / 2;
+            return grvPet.Location = new Point(midX - (int)center, midY - 200);
+
+
+
+        }
 
 
           //public void Window_Loaded(object sender, RoutedEventArgs e)
@@ -193,18 +209,24 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
+            string grvChoice = "grvPet";
             grvPet.Visible = true;
 
             //centering function sort of
-            int midX = 942,midY=448;
-            double center,Xsquared,Ysquared;
-            Xsquared = Math.Pow(grvPet.Size.Width,2);
-            Ysquared = Math.Pow(grvPet.Size.Height,2);
-
-            center = Math.Sqrt(Xsquared + Ysquared)/2;
-            grvPet.Location = new Point(midX-(int)center,midY -200);
+            Point center = new Point();
+            center = getCentered(grvChoice);
             
 
+        }
+
+        private void btnManage_Click_1(object sender, EventArgs e)
+        {
+            string grvChoice = "grvEmployees";
+            grvEmployees.Visible = true;
+
+            //centering function sort of
+            Point center = new Point();
+            center = getCentered(grvChoice);
         }
     }
 }
