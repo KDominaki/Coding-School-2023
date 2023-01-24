@@ -38,14 +38,14 @@ namespace PopulateClassLibrary {
                         break;
                     }
                 }
-
                 tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
                 tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
-                transactions.Add(tr);
+                
             } else {
-                tr.PetFoodID = RandomPetFood(foods).ID;
-            }
+                tr.PetFoodID = RandomPetFood(foods);
 
+            }
+            transactions.Add(tr);
             /*2*/
             newPet = pets[1];
             tr = new Transaction() {
