@@ -9,18 +9,17 @@ namespace ClassLibrary1
     public class MonthlyLedgerManager
     {
         private DateTime _date = DateTime.Now;
-        public List<MonthlyLedger> mothLegList = new List<MonthlyLedger> ();
+        public List<MonthlyLedger> monthLegList = new List<MonthlyLedger> ();
         public MonthlyLedger currentMonth { get; set; }
         
         public void  MonthlyLedgerGenerator()
         {
-            //MonthlyLedger monthlyLedger = new MonthlyLedger(_date.Year, _date.Month );
-            mothLegList.Add(new MonthlyLedger(_date.Year, _date.Month));
+            monthLegList.Add(new MonthlyLedger(_date.Year, _date.Month));
         }
 
         public void CurrentMonthChanger()
         {
-            currentMonth = mothLegList[^1];
+            currentMonth = monthLegList[^1];
         }
 
         public void GeneratorActivator()
