@@ -50,11 +50,6 @@
             this.btnManage = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.grvCustomer = new System.Windows.Forms.DataGridView();
-            this.CustomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvPet = new System.Windows.Forms.DataGridView();
             this.PetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnimalT = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -97,6 +92,11 @@
             this.PRanimType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRtotalSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
+            this.CustomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -170,37 +170,6 @@
             this.grvCustomer.Size = new System.Drawing.Size(563, 201);
             this.grvCustomer.TabIndex = 2;
             this.grvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CustomID
-            // 
-            this.CustomID.DataPropertyName = "ID";
-            this.CustomID.HeaderText = "Customer ID";
-            this.CustomID.Name = "CustomID";
-            this.CustomID.Visible = false;
-            // 
-            // CustomName
-            // 
-            this.CustomName.DataPropertyName = "Name";
-            this.CustomName.HeaderText = "Name";
-            this.CustomName.Name = "CustomName";
-            // 
-            // CustomSurname
-            // 
-            this.CustomSurname.DataPropertyName = "SurName";
-            this.CustomSurname.HeaderText = "Surname";
-            this.CustomSurname.Name = "CustomSurname";
-            // 
-            // CustomPhone
-            // 
-            this.CustomPhone.DataPropertyName = "Phone";
-            this.CustomPhone.HeaderText = "Phone";
-            this.CustomPhone.Name = "CustomPhone";
-            // 
-            // CustomTin
-            // 
-            this.CustomTin.DataPropertyName = "TIN";
-            this.CustomTin.HeaderText = "TIN";
-            this.CustomTin.Name = "CustomTin";
             // 
             // grvPet
             // 
@@ -630,6 +599,37 @@
             // 
             this.PRtotalSold.HeaderText = "Total Sold";
             this.PRtotalSold.Name = "PRtotalSold";
+            // 
+            // CustomID
+            // 
+            this.CustomID.DataPropertyName = "ID";
+            this.CustomID.HeaderText = "Customer ID";
+            this.CustomID.Name = "CustomID";
+            this.CustomID.Visible = false;
+            // 
+            // CustomName
+            // 
+            this.CustomName.DataPropertyName = "Name";
+            this.CustomName.HeaderText = "Name";
+            this.CustomName.Name = "CustomName";
+            // 
+            // CustomSurname
+            // 
+            this.CustomSurname.DataPropertyName = "SurName";
+            this.CustomSurname.HeaderText = "Surname";
+            this.CustomSurname.Name = "CustomSurname";
+            // 
+            // CustomPhone
+            // 
+            this.CustomPhone.DataPropertyName = "Phone";
+            this.CustomPhone.HeaderText = "Phone";
+            this.CustomPhone.Name = "CustomPhone";
+            // 
+            // CustomTin
+            // 
+            this.CustomTin.DataPropertyName = "TIN";
+            this.CustomTin.HeaderText = "TIN";
+            this.CustomTin.Name = "CustomTin";
             // 
             // Form1
             // 
