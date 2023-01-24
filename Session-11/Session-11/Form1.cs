@@ -88,7 +88,7 @@ namespace Session_11
 
             //PetFood binding Source
             grvPetFood.AutoGenerateColumns = false;
-            bsPetFood.DataSource = petShop.Foods;
+            bsPetFood.DataSource = petShop.GetPetFood();
             grvPetFood.DataSource = bsPetFood;
 
             grvTransaction.AutoGenerateColumns = false;
@@ -99,9 +99,9 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
-            grvEmployees.AutoGenerateColumns = false;
-            bsEmployees.DataSource = petShop.Employees;
-            grvEmployees.DataSource = bsEmployees;
+            //grvEmployees.AutoGenerateColumns = false;
+            //bsEmployees.DataSource = petShop.Employees;
+            //grvEmployees.DataSource = bsEmployees;
 
             //grvPetReport.AutoGenerateColumns = false;
             //bsPetReport.DataSource = petShop.Employees;
