@@ -36,16 +36,8 @@ namespace ClassLibrary1 {
                         food.Qty -= transaction.PetFoodQty;
                     }
                 }
-
             }
-
-
             return petFoods;
-
-
-
-
-
         }
 
 
