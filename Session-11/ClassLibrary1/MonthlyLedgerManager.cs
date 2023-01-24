@@ -11,7 +11,14 @@ namespace ClassLibrary1
         private DateTime _date = DateTime.Now;
         public List<MonthlyLedger> monthLegList = new List<MonthlyLedger> ();
         public MonthlyLedger currentMonth { get; set; }
-        
+
+        public MonthlyLedgerManager()
+        {
+                
+        }
+
+        // Methods
+
         public void  MonthlyLedgerGenerator()
         {
             monthLegList.Add(new MonthlyLedger(_date.Year, _date.Month));
@@ -26,6 +33,7 @@ namespace ClassLibrary1
         {
             if(_date.Day == 1){
                 MonthlyLedgerGenerator();
+                CurrentMonthChanger();
             }
             else { }
         }

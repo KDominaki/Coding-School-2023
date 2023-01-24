@@ -33,11 +33,11 @@ namespace ClassLibrary1
         public void ExpenseCalc() // We need to make stable stock lists
         {
             PetShop shop = new PetShop();
-            foreach (var food in shop.Pets)
+            foreach (var food in shop.MonthlyPets)
             {
                 Expense += food.Cost;
             }
-            foreach (var pet in shop.Foods)
+            foreach (var pet in shop.MonthlyFoods)
             {
                 Expense += pet.Cost;
             }

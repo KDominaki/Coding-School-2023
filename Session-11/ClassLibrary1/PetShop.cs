@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1 {
     public class PetShop {
+
         //PROPERTIES
         public string Name { get; set; }
         public List<Transaction>? Transactions = new List<Transaction>();
