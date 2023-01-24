@@ -227,7 +227,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPet.DefaultCellStyle = dataGridViewCellStyle5;
-            this.grvPet.Location = new System.Drawing.Point(558, 240);
+            this.grvPet.Location = new System.Drawing.Point(1141, 240);
             this.grvPet.Name = "grvPet";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -361,7 +361,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetFood.DefaultCellStyle = dataGridViewCellStyle8;
-            this.grvPetFood.Location = new System.Drawing.Point(558, 452);
+            this.grvPetFood.Location = new System.Drawing.Point(1141, 452);
             this.grvPetFood.Name = "grvPetFood";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -441,6 +441,7 @@
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(500, 134);
             this.grvEmployees.TabIndex = 12;
+            this.grvEmployees.Visible = false;
             // 
             // EmpID
             // 
@@ -535,7 +536,7 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetReport.DefaultCellStyle = dataGridViewCellStyle17;
-            this.grvPetReport.Location = new System.Drawing.Point(558, 662);
+            this.grvPetReport.Location = new System.Drawing.Point(1141, 662);
             this.grvPetReport.Name = "grvPetReport";
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
@@ -594,7 +595,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1112, 855);
+            this.ClientSize = new System.Drawing.Size(1695, 855);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.grvPetReport);
