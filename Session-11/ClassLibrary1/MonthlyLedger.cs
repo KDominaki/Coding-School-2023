@@ -8,15 +8,17 @@ namespace ClassLibrary1
 {
     public class MonthlyLedger
     {
-        public DateTime Year { get; set; }
-        public DateTime Month { get; set; }
+        public int Year { get; set; }
+        public int Month { get; set; }
         public decimal? Incomee { get; set; }
         public decimal? Expense { get; set; } 
 
         public decimal? Total { get; set; }
 
-        public MonthlyLedger()
+        public MonthlyLedger(int year, int month)
         {
+            Year = year;
+            Month = month;
             Expense += 2000;
         }
 
