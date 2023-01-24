@@ -10,15 +10,41 @@ namespace ClassLibrary1
     {
         public DateTime Year { get; set; }
         public DateTime Month { get; set; }
-        public decimal Incomee { get; set; }
-        public decimal Expense { get; set; } 
+        public decimal? Incomee { get; set; }
+        public decimal? Expense { get; set; } 
 
-        public decimal Total { get; set; }
+        public decimal? Total { get; set; }
 
         public MonthlyLedger()
         {
             Expense += 2000;
         }
 
+        public void IncomeCalc()
+        {
+            PetShop shop= new PetShop();
+            foreach (var item in shop.Transactions)
+            {
+                Incomee += item.TotalPrice;
+            }
+        }
+        public void ExpenseCalc()
+        {
+            PetShop shop = new PetShop();
+            foreach (var food in shop.Foods)
+            {
+                Expense += food.Cost;
+            }
+            foreach (var pet in shop.Pets)
+            {
+                Expense += pet.Cost;
+            }
+        }
+        public void TotalCalc()
+        {
+            ExpenseCalc();
+            IncomeCalc();
+            Total = Incomee - Expense;
+        }
     }
 }
