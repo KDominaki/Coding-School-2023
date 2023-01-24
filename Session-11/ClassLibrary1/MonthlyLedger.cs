@@ -59,6 +59,7 @@ namespace ClassLibrary1
 
         public void TotalCalc()
         {
+            GetMonthsTrans();
             ExpenseCalc();
             IncomeCalc();
             Total = Incomee - Expense;
