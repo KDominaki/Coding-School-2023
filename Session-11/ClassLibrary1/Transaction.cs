@@ -20,6 +20,7 @@ namespace ClassLibrary1
         public decimal? TotalPrice { get; set; }
 
         public Transaction() {
+            ID = Guid.NewGuid();
         }
         //public Transaction() { 
         //    ID = Guid.NewGuid();
@@ -27,13 +28,39 @@ namespace ClassLibrary1
         //}
 
 
-        public decimal SetTotalPrice(decimal petPrice, decimal petFoodQty, decimal petFoodPrice) {
+        public void SetTotalPrice(decimal? petPrice, decimal? petFoodQty, decimal? petFoodPrice) {
 
+            if(this.PetID != null) {
+                this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
+                this.PetFoodQty++;
+            } else {
+                this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
+            }
+        }
+        public decimal FindPetPrice(List<Pet> pets, Guid? id) {
 
-            //TO COMPLETE
-            var TotalPrice = 123235432532;
-            return TotalPrice;
+            decimal price = 0;
+            foreach (var pet in pets) {
+                if (pet.ID == id) {
+                    price = pet.Price;
+                    break;
+                }
+            }
+            return price;
 
         }
+
+        public decimal FindPetFoodPrice(List<PetFood> foods, Guid? id) {
+            decimal price = 0;
+            foreach (var food in foods) {
+                if (food.ID == id) {
+                    price = food.Price;
+                    break;
+                }
+            }
+            return price;
+        }
+
+
     }
 }
