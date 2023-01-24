@@ -16,5 +16,14 @@ namespace ClassLibrary1
             //MonthlyLedger monthlyLedger = new MonthlyLedger(_date.Year, _date.Month );
             mothLegList.Add(new MonthlyLedger(_date.Year, _date.Month));
         }
+
+        public void GeneratorActivator()
+        {
+            if(_date.Day == 1){
+                MonthlyLedgerGenerator();
+            }
+            else { }
+        }
+
     }
 }
