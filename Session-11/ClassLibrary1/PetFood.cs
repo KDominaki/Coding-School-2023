@@ -15,9 +15,9 @@ namespace ClassLibrary1
         public decimal Qty { get; set; }
 
 
-        public PetFood(decimal price)
+        public PetFood()
         {
-            price = Price;
+            Cost = 10;
         }
     }
 }
