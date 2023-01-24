@@ -73,17 +73,21 @@ namespace Session_11
 
 
         private void SetControlProperties()
-        {
+        {   //Customer binding Source
             grvCustomer.AutoGenerateColumns = false;
             bsCustomer.DataSource = petShop.Customers;
             grvCustomer.DataSource = bsCustomer;
-            
+
+            //Pet binding Source
+            grvPet.AutoGenerateColumns = false;
+            bsPet.DataSource = petShop.Pets; 
+            grvPet.DataSource = bsPet;
+
+
             // FOR THE BINDING SOURCES 
             /*  
-                        grvCustomer.DataSource = bsCustomer;
-                        grvCustomer.AutoGenerateColumns = false;
-                        grvPet.DataSource = bsPet;
-                        grvPet.AutoGenerateColumns = false;
+                      
+                        
                         grvPetFood.DataSource = bsPetFood;
                         grvPetFood.AutoGenerateColumns = false;
                         grvEmployees.DataSource = bsEmployees;
@@ -96,12 +100,13 @@ namespace Session_11
                         grvPetReport.AutoGenerateColumns = false;
             */
 
-            /*          //FOR THE COMBO BOXES 
-                        DataGridViewComboBoxColumn colUniversity = grvStudents.Columns["colUniversity"] as DataGridViewComboBoxColumn;
-                        colUniversity.DataSource = //GetUniversities();
-                        colUniversity.DisplayMember = //"Name";
-                        colUniversity.ValueMember = //"ID";*/
-
+                      //FOR THE COMBO BOXES 
+                       //PET - AnimalType combobox
+                        DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
+                        colAnimType.DataSource = petShop.Pets;//GetUniversities();
+                        colAnimType.DisplayMember = "AnimalType";//"Name";
+                        colAnimType.ValueMember =  "ID";//"ID";*/
+                       
 
         }
 
