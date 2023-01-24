@@ -1,5 +1,8 @@
 using ClassLibrary1.PopulateClasses;
 using ClassLibrary1;
+using System.Diagnostics;
+using System.Windows;
+using PopulateClassLibrary;
 
 namespace Session_11
 {
@@ -13,7 +16,7 @@ namespace Session_11
         {
             InitializeComponent();
         }
-
+     
         private void Form1_Load(object sender, EventArgs e)
         {
             petShop= new PetShop();
@@ -83,6 +86,11 @@ namespace Session_11
             bsPet.DataSource = petShop.Pets; 
             grvPet.DataSource = bsPet;
 
+            //Pet binding Source
+            grvPetFood.AutoGenerateColumns = false;
+            bsPetFood.DataSource = petShop.Foods;
+            grvPetFood.DataSource = bsPetFood;
+
 
             // FOR THE BINDING SOURCES 
             /*  
@@ -99,20 +107,35 @@ namespace Session_11
                         grvPetReport.DataSource = bsPetReport;
                         grvPetReport.AutoGenerateColumns = false;
             */
+            
+            //FOR THE COMBO BOXES 
+            //PET - AnimalType combobox
+            DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
+            colAnimType.DataSource = petShop.Pets;//GetUniversities();
+            colAnimType.DisplayMember = "Animaltype";//"Name";
+            colAnimType.ValueMember =  "ID";//"ID";*/
 
-                      //FOR THE COMBO BOXES 
-                       //PET - AnimalType combobox
-                        DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
-                        colAnimType.DataSource = petShop.Pets;//GetUniversities();
-                        colAnimType.DisplayMember = "AnimalType";//"Name";
-                        colAnimType.ValueMember =  "ID";//"ID";*/
-                       
-
-        }
+            //PET - PetFood combobox
+            DataGridViewComboBoxColumn colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
+            colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
+             colPetFoodType.DisplayMember = "Animaltype";//"Name";
+            colPetFoodType.ValueMember = "ID";//"ID";*/
 
 
 
 
+        }             
+
+
+
+
+          //public void Window_Loaded(object sender, RoutedEventArgs e)
+          // {
+          //     foreach (var type in Enum.GetValues(typeof(AnimalType)))
+          //     {
+          //         AnimType.Items.Add(type);
+          //     }
+          // }
 
 
 
@@ -138,5 +161,7 @@ namespace Session_11
         {
 
         }
+
+      
     }
 }
