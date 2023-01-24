@@ -48,5 +48,6 @@ namespace ClassLibrary1
             IncomeCalc();
             Total = Incomee - Expense;
         }
+
     }
 }
