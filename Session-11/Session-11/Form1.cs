@@ -91,7 +91,9 @@ namespace Session_11
             bsPetFood.DataSource = petShop.Foods;
             grvPetFood.DataSource = bsPetFood;
 
-
+            grvTransaction.AutoGenerateColumns = false;
+            bsTransact.DataSource = petShop.Transactions;
+            grvTransaction.DataSource = bsTransact;
             // FOR THE BINDING SOURCES 
             /*  
                       
@@ -107,7 +109,7 @@ namespace Session_11
                         grvPetReport.DataSource = bsPetReport;
                         grvPetReport.AutoGenerateColumns = false;
             */
-            
+
             //FOR THE COMBO BOXES 
             //PET - AnimalType combobox
             DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
@@ -121,7 +123,7 @@ namespace Session_11
             colPetFoodType.DisplayMember = "Animaltype";//"Name";
             colPetFoodType.ValueMember = "ID";//"ID";*/
 
-
+            
 
 
         }             
