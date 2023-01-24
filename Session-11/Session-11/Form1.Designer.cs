@@ -250,7 +250,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPet.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grvPet.RowTemplate.Height = 25;
-            this.grvPet.Size = new System.Drawing.Size(544, 134);
+            this.grvPet.Size = new System.Drawing.Size(567, 134);
             this.grvPet.TabIndex = 3;
             // 
             // PetID
@@ -450,7 +450,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grvEmployees.RowTemplate.Height = 25;
-            this.grvEmployees.Size = new System.Drawing.Size(446, 134);
+            this.grvEmployees.Size = new System.Drawing.Size(465, 134);
             this.grvEmployees.TabIndex = 12;
             // 
             // EmpID
@@ -528,7 +528,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.grvTransaction.RowTemplate.Height = 25;
-            this.grvTransaction.Size = new System.Drawing.Size(553, 134);
+            this.grvTransaction.Size = new System.Drawing.Size(574, 134);
             this.grvTransaction.TabIndex = 13;
             // 
             // trDate
