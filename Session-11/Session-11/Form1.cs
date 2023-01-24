@@ -171,7 +171,7 @@ namespace Session_11
             Serializer serializer = new Serializer();
             petShop = serializer.DeserializeFromFile<PetShop>("petshop.json");
 
-            System.Windows.MessageBox.Show("Load Done!");
+            System.Windows.MessageBox.Show("Load Completed!");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -179,7 +179,7 @@ namespace Session_11
             Serializer serializer = new Serializer();
             serializer.SerializeToFile(petShop, "petshop.json");
 
-            System.Windows.MessageBox.Show("Save Done!");
+            System.Windows.MessageBox.Show("Save Completed!");
         }
     }
 }

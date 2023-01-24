@@ -10,22 +10,30 @@ namespace ClassLibrary1
     {
         private DateTime _date = DateTime.Now;
         public List<MonthlyLedger> monthLegList = new List<MonthlyLedger> ();
-        public MonthlyLedger currentMonth { get; set; }
-        
+        public MonthlyLedger currentMonthlyLedger { get; set; }
+
+        public MonthlyLedgerManager()
+        {
+                
+        }
+
+        // Methods
+
         public void  MonthlyLedgerGenerator()
         {
             monthLegList.Add(new MonthlyLedger(_date.Year, _date.Month));
         }
 
-        public void CurrentMonthChanger()
+        public void CurrentMonthlyLedgerChanger()
         {
-            currentMonth = monthLegList[^1];
+            currentMonthlyLedger = monthLegList[^1];
         }
 
         public void GeneratorActivator()
         {
             if(_date.Day == 1){
                 MonthlyLedgerGenerator();
+                CurrentMonthlyLedgerChanger();
             }
             else { }
         }
@@ -33,8 +41,8 @@ namespace ClassLibrary1
         public decimal? CurrentMonthTotal()
         {
             GeneratorActivator();
-            currentMonth.TotalCalc();
-            decimal? currentMonthTotal = currentMonth.Total; 
+            currentMonthlyLedger.TotalCalc();
+            decimal? currentMonthTotal = currentMonthlyLedger.Total; 
             return currentMonthTotal;
         }
 

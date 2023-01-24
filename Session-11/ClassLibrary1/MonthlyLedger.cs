@@ -30,14 +30,14 @@ namespace ClassLibrary1
                 Incomee += item.TotalPrice;
             }
         }
-        public void ExpenseCalc() // We need to make stable stock lists
+        public void ExpenseCalc() 
         {
             PetShop shop = new PetShop();
-            foreach (var food in shop.Pets)
+            foreach (var food in shop.MonthlyPets)
             {
                 Expense += food.Cost;
             }
-            foreach (var pet in shop.Foods)
+            foreach (var pet in shop.MonthlyFoods)
             {
                 Expense += pet.Cost;
             }
@@ -45,8 +45,8 @@ namespace ClassLibrary1
 
         public void GetMonthsTrans()
         {
-            PetShop shop = new PetShop();
-            foreach (var trans in shop.Transactions)
+            TransRepository transRepositorycs = new TransRepository();
+            foreach (var trans in transRepositorycs.MainPetshop.Transactions)
             {
                 if (trans.Date.Year == Year && trans.Date.Month == Month )
                 {
