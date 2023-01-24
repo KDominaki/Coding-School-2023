@@ -13,6 +13,7 @@ namespace ClassLibrary1
         public decimal? Incomee { get; set; }
         public decimal? Expense { get; set; } 
         public decimal? Total { get; set; }
+
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
 
         public MonthlyLedger(int year, int month)
