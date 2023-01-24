@@ -22,6 +22,7 @@ namespace ClassLibrary1
         public Transaction() {
             ID = Guid.NewGuid();
             Date = DateTime.Now;
+            PetID = Guid.Empty;
         }
         //public Transaction() { 
         //    ID = Guid.NewGuid();

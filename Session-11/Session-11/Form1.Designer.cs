@@ -507,7 +507,7 @@
             this.grvTransaction.RowTemplate.Height = 25;
             this.grvTransaction.Size = new System.Drawing.Size(939, 183);
             this.grvTransaction.TabIndex = 13;
-            this.grvTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvTransaction_CellContentClick);
+           
             // 
             // grvPetReport
             // 

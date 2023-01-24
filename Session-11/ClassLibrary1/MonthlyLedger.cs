@@ -13,11 +13,13 @@ namespace ClassLibrary1
         public decimal? Incomee { get; set; }
         public decimal? Expense { get; set; } 
         public decimal? Total { get; set; }
+        public PetShop Petshop { get; set; }
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
 
-        public MonthlyLedger(int year, int month)
+        public MonthlyLedger(int year, int month,PetShop petshop)
         {
+            Petshop= petshop;
             Year = year;
             Month = month;
             Expense += 2000;
@@ -32,12 +34,12 @@ namespace ClassLibrary1
         }
         public void ExpenseCalc() 
         {
-            PetShop shop = new PetShop();
-            foreach (var food in shop.MonthlyPets)
+            
+            foreach (var food in Petshop.MonthlyPets)
             {
                 Expense += food.Cost;
             }
-            foreach (var pet in shop.MonthlyFoods)
+            foreach (var pet in Petshop.MonthlyFoods)
             {
                 Expense += pet.Cost;
             }
@@ -45,8 +47,8 @@ namespace ClassLibrary1
 
         public void GetMonthsTrans()
         {
-            TransRepository transRepositorycs = new TransRepository();
-            foreach (var trans in transRepositorycs.MainPetshop.Transactions)
+            
+            foreach (var trans in Petshop.Transactions)
             {
                 if (trans.Date.Year == Year && trans.Date.Month == Month )
                 {

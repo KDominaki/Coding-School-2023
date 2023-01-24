@@ -182,9 +182,6 @@ namespace Session_11
             System.Windows.MessageBox.Show("Save Completed!");
         }
 
-        private void grvTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }
