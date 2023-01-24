@@ -19,30 +19,43 @@ namespace PopulateClassLibrary {
             Transaction tr;
 
             /*1*/
+
+            var newPet = pets[0];
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 12, 1),
                 CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
-                PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetID = newPet.ID,
+                PetFoodQty = RandomQty(),
             };
 
-            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
-            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
-            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
-            transactions.Add(tr);
+            if (tr.PetID != null) {
+                tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+                foreach (var food in foods) {
+                    if (food.Animaltype == newPet.Animaltype) {
+                        tr.PetFoodID = food.ID;
+                        break;
+                    }
+                }
+                tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+                tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+                
+            } else {
+                tr.PetFoodID = RandomPetFood(foods);
 
+            }
+            transactions.Add(tr);
             /*2*/
+            newPet = pets[1];
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 2, 2),
+                CustomerID = customers[1].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetID = newPet.ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -51,14 +64,15 @@ namespace PopulateClassLibrary {
             transactions.Add(tr);
 
             /*3*/
+            newPet = pets[1];
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 3, 3),
+                CustomerID = customers[2].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetID = newPet.ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
 
@@ -69,12 +83,12 @@ namespace PopulateClassLibrary {
             /*4*/
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 4, 4),
+                CustomerID = customers[3].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetID = pets[3].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -85,12 +99,11 @@ namespace PopulateClassLibrary {
             /*5*/
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 5, 5),
+                CustomerID = customers[4].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -100,12 +113,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 6, 6),
+                CustomerID = customers[5].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -115,12 +127,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 7, 7),
+                CustomerID = customers[6].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -130,12 +141,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 8, 8),
+                CustomerID = customers[7].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -145,12 +155,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 9, 9),
+                CustomerID = customers[8].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -160,12 +169,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 10, 10),
+                CustomerID = customers[9].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -175,12 +183,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 11, 11),
+                CustomerID = customers[10].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -190,12 +197,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 12, 12),
+                CustomerID = customers[11].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -205,12 +211,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 1, 2),
+                CustomerID = customers[12].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -220,12 +225,11 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 2, 3),
+                CustomerID = customers[13].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
@@ -235,18 +239,158 @@ namespace PopulateClassLibrary {
 
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
-                Date = new DateTime(2022, 12, 1),
-                CustomerID = customers[0].ID,
-                EmployeeID = employees[0].ID,
-                PetID = pets[0].ID,
+                Date = new DateTime(2022, 2, 4),
+                CustomerID = customers[14].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
                 PetFoodID = foods[0].ID,
-                PetFoodQty = 3,
+                PetFoodQty = RandomQty(),
             };
 
             tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
             tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
             tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
             transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2023, 1, 15),
+                CustomerID = customers[15].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2023, 1, 13),
+                CustomerID = customers[16].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2023, 1, 2),
+                CustomerID = customers[16].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 5, 15),
+                CustomerID = customers[17].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 8, 22),
+                CustomerID = customers[18].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 6, 29),
+                CustomerID = customers[19].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 4, 1),
+                CustomerID = customers[20].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 6, 1),
+                CustomerID = customers[3].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 7, 1),
+                CustomerID = customers[1].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty(),
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
+            tr = new Transaction() {
+                ID = Guid.NewGuid(),
+                Date = new DateTime(2022, 8, 1),
+                CustomerID = customers[2].ID,
+                EmployeeID = employees[RandomEmployee(employees)].ID,
+                PetFoodID = foods[0].ID,
+                PetFoodQty = RandomQty()
+            };
+
+            tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            transactions.Add(tr);
+
 
 
 
@@ -260,6 +404,23 @@ namespace PopulateClassLibrary {
             return transactions;
         }
 
+        public int RandomEmployee(List<Employee> employees) {
+            var random = new Random();
+            int employee = random.Next(1, employees.Count);
+            return employee;
+        }
+
+        public int RandomQty() {
+            var random = new Random();
+            int employee = random.Next(1, 20);
+            return employee;
+        }
+
+        public Guid RandomPetFood(List<PetFood> foods) {
+            var random = new Random();
+            var pf = foods[random.Next(0, foods.Count)].ID;
+            return pf;
+        }
 
 
     }
