@@ -30,7 +30,7 @@ namespace ClassLibrary1
                 Incomee += item.TotalPrice;
             }
         }
-        public void ExpenseCalc() // We need to make stable stock lists
+        public void ExpenseCalc() 
         {
             PetShop shop = new PetShop();
             foreach (var food in shop.MonthlyPets)
