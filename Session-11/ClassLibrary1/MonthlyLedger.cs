@@ -28,5 +28,21 @@ namespace ClassLibrary1
                 Expense += item.TotalPrice;
             }
         }
+        public void expenseCalc()
+        {
+            PetShop shop = new PetShop();
+            foreach (var food in shop.Foods)
+            {
+                Expense += food.Cost;
+            }
+            foreach (var pet in shop.Pets)
+            {
+                Expense += pet.Cost;
+            }
+        }
+        public void totalCalc()
+        {
+            Total = Incomee - Expense;
+        }
     }
 }
