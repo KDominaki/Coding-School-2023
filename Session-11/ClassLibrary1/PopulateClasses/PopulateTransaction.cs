@@ -15,8 +15,7 @@ namespace PopulateClassLibrary {
 
         public List<Transaction> PopulateTransactions(List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers) {
 
-            List<Transaction> transactions = new List<Transaction>();
-            Transaction tr;
+
 
             //customerIDS
             //"{E02ACE2B-6B49-49B6-8BB4-D0CBE5ECA72A}"
@@ -72,6 +71,9 @@ namespace PopulateClassLibrary {
             //"{FA3827F3-190B-4DE0-808E-A2C31E6018E0}"
             //"{6F7CF917-982E-47F4-98B0-C8445F094C8E}"
 
+            List<Transaction> transactions = new List<Transaction>();
+            Transaction tr;
+
             tr = new Transaction() {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 12, 1),
@@ -79,18 +81,28 @@ namespace PopulateClassLibrary {
                 EmployeeID = Guid.Parse("{C903AB60-032B-4238-913E-624EB3B1FEED}"),
                 PetID = Guid.Parse("{BC9B4A5D-3663-46B4-8578-E94EE1E5D452}"),
                 PetFoodID = Guid.Parse("{9B32B5C2-12F5-467F-8D68-FAD67DD51127}"),
-                //PetPrice = /* Pet.GetPetPrice()  !!!!!!!
                 PetFoodQty = 3,
+                //PetPrice = /* Pet.GetPetPrice()  !!!!!!!
                 //PetFoodPrice = /* PetFood.GetPetPrice()  !!!!!!!
                 //TotalPrice = tr.GetTotalPrice();
             };
 
             decimal petprice = 0;
-            //foreach(var pet in pets) {
-            //    if(pet.ID == tr.PetID) {
-            //        petprice = pet.Price;
-            //    }
-            //}
+            foreach (var pet in pets) {
+                if (pet.ID == tr.PetID) {
+                    petprice = pet.Price;
+                    break;
+                }
+            }
+            tr.PetPrice = petprice;
+
+            foreach (var food in foods) {
+                if (food.ID == tr.PetFoodID) {
+                    
+                    //food = pet.Price;
+                    break;
+                }
+            }
 
 
 
