@@ -32,7 +32,6 @@ namespace Session_11
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SetControlProperties();
             petShop = ep.SetPopulation();
 
             popGeneralPublic(petShop);
@@ -120,6 +119,8 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
+           
+
 
             //trial Update/deleteCustomer
             //DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
@@ -195,7 +196,7 @@ namespace Session_11
 
         }
 
-        public  Point getCentered(DataGridView grvSizeChoice)
+        /*public  Point getCentered(DataGridView grvSizeChoice)
         {   
             int midX = 942, midY = 448;
             double center, Xsquared, Ysquared;
@@ -205,20 +206,8 @@ namespace Session_11
             center = Math.Sqrt(Xsquared + Ysquared) / 2;
             return grvSizeChoice.Location = new Point(midX - (int)center, midY - 200);
         }
-
-       /* public Point getCenteredLabel(Label labelChoice)
-        {
-
-            int midX = 942, midY = 448;
-            double center, Xsquared, Ysquared;
-            Xsquared = Math.Pow(labelChoice.Size.Width, 2);
-            Ysquared = Math.Pow(labelChoice.Size.Height, 2);
-
-            center = Math.Sqrt(Xsquared + Ysquared) ;
-            return labelChoice.Location = new Point(midX - (int)center, midY - 250);
-
-           // return labelChoice.Location;
-        }*/
+*/
+        
 
 
         //public void Window_Loaded(object sender, RoutedEventArgs e)
@@ -232,7 +221,7 @@ namespace Session_11
         //kinda redundant but didn't figure another solution this late at night
         public void startInvis()
         {
-            List<DataGridView> grvNameList = new List<DataGridView>()
+            /*List<DataGridView> grvNameList = new List<DataGridView>()
             {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport,grvMonthly};
 
 
@@ -243,30 +232,26 @@ namespace Session_11
             {
                 grvTmp = grvNameList[i];
                 grvTmp.Visible = false;           
-            }
+            }*/
         }
 
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-       /* public void GrvCustomers_CellContentClick(object? sender, DataGridViewCellEventArgs e)
-        {
-
             var grv = (DataGridView)sender;
 
 
             DataGridViewButtonColumn col = grv.Columns[e.ColumnIndex] as DataGridViewButtonColumn;
 
-            if (col != null && col.Name == "cusUpdate" && e.RowIndex >= 0)
+            if (col != null && col.Name == "btnUpdate" && e.RowIndex >= 0)
             {
-                petShop.Customers customer = grv.CurrentRow.DataBoundItem as ;
+                publicCustomers = grv.CurrentRow.DataBoundItem as List<Customer>;
                 MessageBox.Show($"show something Plz");
             }
-        }*/
+        }
+        //customer update + delete button events 
+        
 
 
         /*private void btnManage_Click(object sender, EventArgs e)
@@ -281,11 +266,11 @@ namespace Session_11
 
         private void button2_Click(object sender, EventArgs e)
         {
-            massHideGrv(grvTransaction);
+           /* massHideGrv(grvTransaction);
 
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvTransaction);
+            center = getCentered(grvTransaction);*/
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -306,63 +291,68 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
-            massHideGrv(grvPet);
+            /*massHideGrv(grvPet);
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvPet);
+            center = getCentered(grvPet);*/
            
 
         }
 
         private void btnManage_Click_1(object sender, EventArgs e)
         {
-            //could prolly do it by choosing the only visible grid but oh well
+            tabControl1.SelectedIndex = 0;
+
+            
+            
+            
+            /* //could prolly do it by choosing the only visible grid but oh well
             massHideGrv(grvEmployees);
             labEmployees.Visible= false; //somehow didnt get caught in massHide
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvEmployees);
-            
+            */
         }
 
         private void btnPetFood_Click(object sender, EventArgs e)
         {
-            //could prolly do it by choosing the only visible grid but oh well
+            /*//could prolly do it by choosing the only visible grid but oh well
             massHideGrv(grvPetFood);
 
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvPetFood);
+            center = getCentered(grvPetFood);*/
         }
 
         
 
         private void btnPetReport_Click(object sender, EventArgs e)
         {
-            massHideGrv(grvPetReport);
+           /* massHideGrv(grvPetReport);
 
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvPetReport);
+            center = getCentered(grvPetReport);*/
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
-        {
+        {/*
             massHideGrv(grvCustomer);
 
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvCustomer);
+            center = getCentered(grvCustomer);*/
 
         }
 
         private void btnMonthly_Click(object sender, EventArgs e)
-        {
+        {/*
             massHideGrv(grvMonthly);
 
             //centering function sort of
             Point center = new Point();
-            center = getCentered(grvMonthly);
+            center = getCentered(grvMonthly);*/
         }
 
         private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -370,11 +360,15 @@ namespace Session_11
 
         }
 
-       
+        private void grvTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
 
+        private void grvPet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
+        }
     }
 
 

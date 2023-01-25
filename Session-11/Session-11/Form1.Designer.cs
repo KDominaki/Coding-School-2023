@@ -59,6 +59,13 @@
             this.CustomPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvPet = new System.Windows.Forms.DataGridView();
+            this.PetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DayBought = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnimalT = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.PetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PetStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PetPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PetCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labPets = new System.Windows.Forms.Label();
             this.labPetFood = new System.Windows.Forms.Label();
             this.labEmployees = new System.Windows.Forms.Label();
@@ -80,7 +87,8 @@
             this.cusDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grvTransaction = new System.Windows.Forms.DataGridView();
             this.colTransDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransCustomerName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransCustomerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransPet = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,13 +122,14 @@
             this.monIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monExpenses = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DayBought = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnimalT = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.PetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabEmployees = new System.Windows.Forms.TabPage();
+            this.tabPetFood = new System.Windows.Forms.TabPage();
+            this.tabPet = new System.Windows.Forms.TabPage();
+            this.tabCustomers = new System.Windows.Forms.TabPage();
+            this.tabPetReport = new System.Windows.Forms.TabPage();
+            this.tabMonthLedg = new System.Windows.Forms.TabPage();
+            this.tabTransactions = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -133,6 +142,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMonthly)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabEmployees.SuspendLayout();
+            this.tabPetFood.SuspendLayout();
+            this.tabPet.SuspendLayout();
+            this.tabCustomers.SuspendLayout();
+            this.tabPetReport.SuspendLayout();
+            this.tabMonthLedg.SuspendLayout();
+            this.tabTransactions.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnManage
@@ -164,7 +181,6 @@
             // 
             // grvCustomer
             // 
-            this.grvCustomer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -189,7 +205,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grvCustomer.Location = new System.Drawing.Point(12, 452);
+            this.grvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvCustomer.Location = new System.Drawing.Point(0, 0);
             this.grvCustomer.Name = "grvCustomer";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -200,7 +217,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grvCustomer.RowTemplate.Height = 25;
-            this.grvCustomer.Size = new System.Drawing.Size(500, 134);
+            this.grvCustomer.Size = new System.Drawing.Size(1034, 213);
             this.grvCustomer.TabIndex = 2;
             this.grvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -237,7 +254,6 @@
             // 
             // grvPet
             // 
-            this.grvPet.Anchor = System.Windows.Forms.AnchorStyles.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -263,7 +279,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPet.DefaultCellStyle = dataGridViewCellStyle5;
-            this.grvPet.Location = new System.Drawing.Point(1327, 240);
+            this.grvPet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvPet.Location = new System.Drawing.Point(0, 0);
             this.grvPet.Name = "grvPet";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -274,8 +291,55 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPet.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grvPet.RowTemplate.Height = 25;
-            this.grvPet.Size = new System.Drawing.Size(542, 157);
+            this.grvPet.Size = new System.Drawing.Size(1034, 213);
             this.grvPet.TabIndex = 3;
+            this.grvPet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvPet_CellContentClick);
+            // 
+            // PetID
+            // 
+            this.PetID.DataPropertyName = "ID";
+            this.PetID.HeaderText = "PetID";
+            this.PetID.Name = "PetID";
+            this.PetID.Visible = false;
+            // 
+            // DayBought
+            // 
+            this.DayBought.DataPropertyName = "Bought";
+            this.DayBought.HeaderText = "Purchase Date";
+            this.DayBought.Name = "DayBought";
+            // 
+            // AnimalT
+            // 
+            this.AnimalT.DataPropertyName = "AnimalType";
+            this.AnimalT.HeaderText = "Type";
+            this.AnimalT.Name = "AnimalT";
+            this.AnimalT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AnimalT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // PetBreed
+            // 
+            this.PetBreed.DataPropertyName = "Breed";
+            this.PetBreed.HeaderText = "Breed";
+            this.PetBreed.Name = "PetBreed";
+            // 
+            // PetStat
+            // 
+            this.PetStat.DataPropertyName = "Petstatus";
+            this.PetStat.HeaderText = "Health Status";
+            this.PetStat.Name = "PetStat";
+            this.PetStat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // PetPrice
+            // 
+            this.PetPrice.DataPropertyName = "Price";
+            this.PetPrice.HeaderText = "Price";
+            this.PetPrice.Name = "PetPrice";
+            // 
+            // PetCost
+            // 
+            this.PetCost.DataPropertyName = "Cost";
+            this.PetCost.HeaderText = "Cost";
+            this.PetCost.Name = "PetCost";
             // 
             // labPets
             // 
@@ -329,7 +393,6 @@
             // 
             // grvPetFood
             // 
-            this.grvPetFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.grvPetFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -354,7 +417,8 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetFood.DefaultCellStyle = dataGridViewCellStyle8;
-            this.grvPetFood.Location = new System.Drawing.Point(1327, 452);
+            this.grvPetFood.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvPetFood.Location = new System.Drawing.Point(3, 3);
             this.grvPetFood.Name = "grvPetFood";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -365,7 +429,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPetFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grvPetFood.RowTemplate.Height = 25;
-            this.grvPetFood.Size = new System.Drawing.Size(542, 134);
+            this.grvPetFood.Size = new System.Drawing.Size(1028, 207);
             this.grvPetFood.TabIndex = 11;
             // 
             // ptFoodId
@@ -403,7 +467,6 @@
             // 
             // grvEmployees
             // 
-            this.grvEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -429,7 +492,8 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvEmployees.DefaultCellStyle = dataGridViewCellStyle11;
-            this.grvEmployees.Location = new System.Drawing.Point(12, 258);
+            this.grvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvEmployees.Location = new System.Drawing.Point(3, 3);
             this.grvEmployees.Name = "grvEmployees";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
@@ -440,7 +504,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grvEmployees.RowTemplate.Height = 25;
-            this.grvEmployees.Size = new System.Drawing.Size(567, 134);
+            this.grvEmployees.Size = new System.Drawing.Size(1028, 207);
             this.grvEmployees.TabIndex = 12;
             this.grvEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvEmployees_CellContentClick);
             // 
@@ -504,7 +568,6 @@
             // 
             // grvTransaction
             // 
-            this.grvTransaction.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grvTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
@@ -518,6 +581,7 @@
             this.grvTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTransDate,
             this.colTransCustomerName,
+            this.CustomerID,
             this.colTransCustomerSurname,
             this.colTransEmployee,
             this.colTransPet,
@@ -534,7 +598,8 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvTransaction.DefaultCellStyle = dataGridViewCellStyle14;
-            this.grvTransaction.Location = new System.Drawing.Point(12, 662);
+            this.grvTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvTransaction.Location = new System.Drawing.Point(0, 0);
             this.grvTransaction.Name = "grvTransaction";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
@@ -545,11 +610,13 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.grvTransaction.RowTemplate.Height = 25;
-            this.grvTransaction.Size = new System.Drawing.Size(964, 134);
+            this.grvTransaction.Size = new System.Drawing.Size(1034, 213);
             this.grvTransaction.TabIndex = 13;
+            this.grvTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvTransaction_CellContentClick);
             // 
             // colTransDate
             // 
+            this.colTransDate.DataPropertyName = "Date";
             this.colTransDate.HeaderText = "Date";
             this.colTransDate.Name = "colTransDate";
             // 
@@ -557,6 +624,14 @@
             // 
             this.colTransCustomerName.HeaderText = "Customer Name";
             this.colTransCustomerName.Name = "colTransCustomerName";
+            this.colTransCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTransCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.HeaderText = "Customer ID ";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Visible = false;
             // 
             // colTransCustomerSurname
             // 
@@ -600,7 +675,6 @@
             // 
             // grvPetReport
             // 
-            this.grvPetReport.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.grvPetReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
@@ -624,7 +698,8 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvPetReport.DefaultCellStyle = dataGridViewCellStyle17;
-            this.grvPetReport.Location = new System.Drawing.Point(1327, 662);
+            this.grvPetReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvPetReport.Location = new System.Drawing.Point(0, 0);
             this.grvPetReport.Name = "grvPetReport";
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
@@ -635,7 +710,7 @@
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvPetReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.grvPetReport.RowTemplate.Height = 25;
-            this.grvPetReport.Size = new System.Drawing.Size(542, 134);
+            this.grvPetReport.Size = new System.Drawing.Size(1034, 213);
             this.grvPetReport.TabIndex = 15;
             // 
             // PRyear
@@ -778,7 +853,6 @@
             // 
             // grvMonthly
             // 
-            this.grvMonthly.Anchor = System.Windows.Forms.AnchorStyles.Right;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -802,7 +876,8 @@
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvMonthly.DefaultCellStyle = dataGridViewCellStyle20;
-            this.grvMonthly.Location = new System.Drawing.Point(665, 452);
+            this.grvMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvMonthly.Location = new System.Drawing.Point(0, 0);
             this.grvMonthly.Name = "grvMonthly";
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
@@ -813,7 +888,7 @@
             dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvMonthly.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.grvMonthly.RowTemplate.Height = 25;
-            this.grvMonthly.Size = new System.Drawing.Size(542, 127);
+            this.grvMonthly.Size = new System.Drawing.Size(1034, 213);
             this.grvMonthly.TabIndex = 25;
             // 
             // monYear
@@ -850,51 +925,97 @@
             this.monTotal.HeaderText = "Total ";
             this.monTotal.Name = "monTotal";
             // 
-            // PetID
+            // tabControl1
             // 
-            this.PetID.DataPropertyName = "ID";
-            this.PetID.HeaderText = "PetID";
-            this.PetID.Name = "PetID";
-            this.PetID.Visible = false;
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabEmployees);
+            this.tabControl1.Controls.Add(this.tabPetFood);
+            this.tabControl1.Controls.Add(this.tabPet);
+            this.tabControl1.Controls.Add(this.tabCustomers);
+            this.tabControl1.Controls.Add(this.tabPetReport);
+            this.tabControl1.Controls.Add(this.tabMonthLedg);
+            this.tabControl1.Controls.Add(this.tabTransactions);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.Location = new System.Drawing.Point(279, 164);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1042, 259);
+            this.tabControl1.TabIndex = 26;
             // 
-            // DayBought
+            // tabEmployees
             // 
-            this.DayBought.DataPropertyName = "Bought";
-            this.DayBought.HeaderText = "Purchase Date";
-            this.DayBought.Name = "DayBought";
+            this.tabEmployees.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
+            this.tabEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabEmployees.Controls.Add(this.grvEmployees);
+            this.tabEmployees.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabEmployees.Location = new System.Drawing.Point(4, 42);
+            this.tabEmployees.Name = "tabEmployees";
+            this.tabEmployees.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmployees.Size = new System.Drawing.Size(1034, 213);
+            this.tabEmployees.TabIndex = 0;
+            this.tabEmployees.Text = "Employees";
+            this.tabEmployees.UseVisualStyleBackColor = true;
             // 
-            // AnimalT
+            // tabPetFood
             // 
-            this.AnimalT.DataPropertyName = "AnimalType";
-            this.AnimalT.HeaderText = "Type";
-            this.AnimalT.Name = "AnimalT";
-            this.AnimalT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AnimalT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tabPetFood.Controls.Add(this.grvPetFood);
+            this.tabPetFood.Location = new System.Drawing.Point(4, 42);
+            this.tabPetFood.Name = "tabPetFood";
+            this.tabPetFood.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPetFood.Size = new System.Drawing.Size(1034, 213);
+            this.tabPetFood.TabIndex = 1;
+            this.tabPetFood.Text = "Pet Food";
+            this.tabPetFood.UseVisualStyleBackColor = true;
             // 
-            // PetBreed
+            // tabPet
             // 
-            this.PetBreed.DataPropertyName = "Breed";
-            this.PetBreed.HeaderText = "Breed";
-            this.PetBreed.Name = "PetBreed";
+            this.tabPet.Controls.Add(this.grvPet);
+            this.tabPet.Location = new System.Drawing.Point(4, 42);
+            this.tabPet.Name = "tabPet";
+            this.tabPet.Size = new System.Drawing.Size(1034, 213);
+            this.tabPet.TabIndex = 2;
+            this.tabPet.Text = "Pet";
+            this.tabPet.UseVisualStyleBackColor = true;
             // 
-            // PetStat
+            // tabCustomers
             // 
-            this.PetStat.DataPropertyName = "Petstatus";
-            this.PetStat.HeaderText = "Health Status";
-            this.PetStat.Name = "PetStat";
-            this.PetStat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabCustomers.Controls.Add(this.grvCustomer);
+            this.tabCustomers.Location = new System.Drawing.Point(4, 42);
+            this.tabCustomers.Name = "tabCustomers";
+            this.tabCustomers.Size = new System.Drawing.Size(1034, 213);
+            this.tabCustomers.TabIndex = 3;
+            this.tabCustomers.Text = "Customers";
+            this.tabCustomers.UseVisualStyleBackColor = true;
             // 
-            // PetPrice
+            // tabPetReport
             // 
-            this.PetPrice.DataPropertyName = "Price";
-            this.PetPrice.HeaderText = "Price";
-            this.PetPrice.Name = "PetPrice";
+            this.tabPetReport.Controls.Add(this.grvPetReport);
+            this.tabPetReport.Location = new System.Drawing.Point(4, 42);
+            this.tabPetReport.Name = "tabPetReport";
+            this.tabPetReport.Size = new System.Drawing.Size(1034, 213);
+            this.tabPetReport.TabIndex = 4;
+            this.tabPetReport.Text = "Pet Report";
+            this.tabPetReport.UseVisualStyleBackColor = true;
             // 
-            // PetCost
+            // tabMonthLedg
             // 
-            this.PetCost.DataPropertyName = "Cost";
-            this.PetCost.HeaderText = "Cost";
-            this.PetCost.Name = "PetCost";
+            this.tabMonthLedg.Controls.Add(this.grvMonthly);
+            this.tabMonthLedg.Location = new System.Drawing.Point(4, 42);
+            this.tabMonthLedg.Name = "tabMonthLedg";
+            this.tabMonthLedg.Size = new System.Drawing.Size(1034, 213);
+            this.tabMonthLedg.TabIndex = 5;
+            this.tabMonthLedg.Text = "Monthly Ledger";
+            this.tabMonthLedg.UseVisualStyleBackColor = true;
+            // 
+            // tabTransactions
+            // 
+            this.tabTransactions.Controls.Add(this.grvTransaction);
+            this.tabTransactions.Location = new System.Drawing.Point(4, 42);
+            this.tabTransactions.Name = "tabTransactions";
+            this.tabTransactions.Size = new System.Drawing.Size(1034, 213);
+            this.tabTransactions.TabIndex = 6;
+            this.tabTransactions.Text = "Transactions";
+            this.tabTransactions.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -902,7 +1023,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1881, 855);
-            this.Controls.Add(this.grvMonthly);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.labLedger);
             this.Controls.Add(this.btnMonthly);
             this.Controls.Add(this.btnCustomers);
@@ -912,17 +1033,11 @@
             this.Controls.Add(this.btnPets);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.grvPetReport);
-            this.Controls.Add(this.grvTransaction);
-            this.Controls.Add(this.grvEmployees);
-            this.Controls.Add(this.grvPetFood);
             this.Controls.Add(this.labPetReport);
             this.Controls.Add(this.labTransaction);
             this.Controls.Add(this.labEmployees);
             this.Controls.Add(this.labPetFood);
             this.Controls.Add(this.labPets);
-            this.Controls.Add(this.grvPet);
-            this.Controls.Add(this.grvCustomer);
             this.Controls.Add(this.btnTransact);
             this.Controls.Add(this.btnManage);
             this.Name = "Form1";
@@ -940,6 +1055,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMonthly)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabEmployees.ResumeLayout(false);
+            this.tabPetFood.ResumeLayout(false);
+            this.tabPet.ResumeLayout(false);
+            this.tabCustomers.ResumeLayout(false);
+            this.tabPetReport.ResumeLayout(false);
+            this.tabMonthLedg.ResumeLayout(false);
+            this.tabTransactions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -988,16 +1111,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private Button btnPets;
-        private DataGridViewTextBoxColumn colTransDate;
-        private DataGridViewTextBoxColumn colTransCustomerName;
-        private DataGridViewTextBoxColumn colTransCustomerSurname;
-        private DataGridViewTextBoxColumn colTransEmployee;
-        private DataGridViewTextBoxColumn colTransPet;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn colTransPetFood;
-        private DataGridViewTextBoxColumn colTransPetFoodQty;
-        private DataGridViewTextBoxColumn colTransPetFoodPrice;
-        private DataGridViewTextBoxColumn colTransTotalPrice;
         private Button btnPetFood;
         private DataGridViewTextBoxColumn ptFoodId;
         private DataGridViewComboBoxColumn AnimType;
@@ -1029,5 +1142,24 @@
         private DataGridViewTextBoxColumn PetStat;
         private DataGridViewTextBoxColumn PetPrice;
         private DataGridViewTextBoxColumn PetCost;
+        private DataGridViewTextBoxColumn colTransDate;
+        private DataGridViewComboBoxColumn colTransCustomerName;
+        private DataGridViewTextBoxColumn CustomerID;
+        private DataGridViewTextBoxColumn colTransCustomerSurname;
+        private DataGridViewTextBoxColumn colTransEmployee;
+        private DataGridViewTextBoxColumn colTransPet;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn colTransPetFood;
+        private DataGridViewTextBoxColumn colTransPetFoodQty;
+        private DataGridViewTextBoxColumn colTransPetFoodPrice;
+        private DataGridViewTextBoxColumn colTransTotalPrice;
+        private TabControl tabControl1;
+        private TabPage tabEmployees;
+        private TabPage tabPetFood;
+        private TabPage tabPet;
+        private TabPage tabCustomers;
+        private TabPage tabPetReport;
+        private TabPage tabMonthLedg;
+        private TabPage tabTransactions;
     }
 }
