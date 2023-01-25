@@ -60,6 +60,17 @@
             this.cusUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cusDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grvTransaction = new System.Windows.Forms.DataGridView();
+            this.colTransDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransCustomerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransPet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransPetFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransPetFoodQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransPetFoodPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsTransact = new System.Windows.Forms.BindingSource(this.components);
             this.grvPetReport = new System.Windows.Forms.DataGridView();
             this.PRyear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRmonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +79,6 @@
             this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.bsPet = new System.Windows.Forms.BindingSource(this.components);
             this.bsPetFood = new System.Windows.Forms.BindingSource(this.components);
-            this.bsTransact = new System.Windows.Forms.BindingSource(this.components);
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
@@ -100,27 +110,16 @@
             this.btnAddTransactions = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.bsTransactCustomers = new System.Windows.Forms.BindingSource(this.components);
-            this.colTransDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransCustomerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransPet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransPetFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransPetFoodQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransPetFoodPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPetFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMonthly)).BeginInit();
             this.pad.SuspendLayout();
@@ -409,7 +408,6 @@
             this.colTransCustomerSurname,
             this.colTransEmployee,
             this.colTransPet,
-            this.dataGridViewTextBoxColumn4,
             this.colTransPetFood,
             this.colTransPetFoodQty,
             this.colTransPetFoodPrice,
@@ -421,6 +419,73 @@
             this.grvTransaction.Size = new System.Drawing.Size(1160, 318);
             this.grvTransaction.TabIndex = 13;
             this.grvTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvTransaction_CellContentClick);
+            // 
+            // colTransDate
+            // 
+            this.colTransDate.DataPropertyName = "Date";
+            this.colTransDate.HeaderText = "Date";
+            this.colTransDate.Name = "colTransDate";
+            // 
+            // colTransCustomerName
+            // 
+            this.colTransCustomerName.DataPropertyName = "Customers.Name";
+            this.colTransCustomerName.HeaderText = "Customer Name";
+            this.colTransCustomerName.Name = "colTransCustomerName";
+            this.colTransCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "ID";
+            this.CustomerID.HeaderText = "Customer ID ";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Visible = false;
+            // 
+            // colTransCustomerSurname
+            // 
+            this.colTransCustomerSurname.DataPropertyName = "Surname";
+            this.colTransCustomerSurname.HeaderText = "Customer Surname";
+            this.colTransCustomerSurname.Name = "colTransCustomerSurname";
+            // 
+            // colTransEmployee
+            // 
+            this.colTransEmployee.DataPropertyName = "Surname";
+            this.colTransEmployee.HeaderText = "Employee Surname";
+            this.colTransEmployee.Name = "colTransEmployee";
+            // 
+            // colTransPet
+            // 
+            this.colTransPet.DataPropertyName = "ID";
+            this.colTransPet.HeaderText = "Pet";
+            this.colTransPet.Name = "colTransPet";
+            // 
+            // colTransPetFood
+            // 
+            this.colTransPetFood.DataPropertyName = "Animaltype";
+            this.colTransPetFood.HeaderText = "Pet Food";
+            this.colTransPetFood.Name = "colTransPetFood";
+            // 
+            // colTransPetFoodQty
+            // 
+            this.colTransPetFoodQty.DataPropertyName = "PetFoodQty";
+            this.colTransPetFoodQty.HeaderText = "Pet Food Quantity";
+            this.colTransPetFoodQty.Name = "colTransPetFoodQty";
+            // 
+            // colTransPetFoodPrice
+            // 
+            this.colTransPetFoodPrice.DataPropertyName = "PetFoodPrice";
+            this.colTransPetFoodPrice.HeaderText = "Pet Food Price";
+            this.colTransPetFoodPrice.Name = "colTransPetFoodPrice";
+            // 
+            // colTransTotalPrice
+            // 
+            this.colTransTotalPrice.DataPropertyName = "TotalPrice";
+            this.colTransTotalPrice.HeaderText = "TotalPrice";
+            this.colTransTotalPrice.Name = "colTransTotalPrice";
+            // 
+            // bsTransact
+            // 
+            this.bsTransact.DataSource = typeof(ClassLibrary1.PopulateClasses.EngagePopulate);
+            this.bsTransact.CurrentChanged += new System.EventHandler(this.bsTransact_CurrentChanged);
             // 
             // grvPetReport
             // 
@@ -457,10 +522,6 @@
             // 
             this.PRtotalSold.HeaderText = "Total Sold";
             this.PRtotalSold.Name = "PRtotalSold";
-            // 
-            // bsTransact
-            // 
-            this.bsTransact.CurrentChanged += new System.EventHandler(this.bsTransact_CurrentChanged);
             // 
             // btnLoad
             // 
@@ -804,66 +865,6 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // colTransDate
-            // 
-            this.colTransDate.DataPropertyName = "Date";
-            this.colTransDate.HeaderText = "Date";
-            this.colTransDate.Name = "colTransDate";
-            // 
-            // colTransCustomerName
-            // 
-            this.colTransCustomerName.DataPropertyName = "Name";
-            this.colTransCustomerName.HeaderText = "Customer Name";
-            this.colTransCustomerName.Name = "colTransCustomerName";
-            this.colTransCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.HeaderText = "Customer ID ";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.Visible = false;
-            // 
-            // colTransCustomerSurname
-            // 
-            this.colTransCustomerSurname.DataPropertyName = "FirstName";
-            this.colTransCustomerSurname.HeaderText = "Customer Surname";
-            this.colTransCustomerSurname.Name = "colTransCustomerSurname";
-            // 
-            // colTransEmployee
-            // 
-            this.colTransEmployee.HeaderText = "Employee Surname";
-            this.colTransEmployee.Name = "colTransEmployee";
-            // 
-            // colTransPet
-            // 
-            this.colTransPet.HeaderText = "Pet";
-            this.colTransPet.Name = "colTransPet";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // colTransPetFood
-            // 
-            this.colTransPetFood.HeaderText = "Pet Food";
-            this.colTransPetFood.Name = "colTransPetFood";
-            // 
-            // colTransPetFoodQty
-            // 
-            this.colTransPetFoodQty.HeaderText = "Pet Food Quantity";
-            this.colTransPetFoodQty.Name = "colTransPetFoodQty";
-            // 
-            // colTransPetFoodPrice
-            // 
-            this.colTransPetFoodPrice.HeaderText = "Pet Food Price";
-            this.colTransPetFoodPrice.Name = "colTransPetFoodPrice";
-            // 
-            // colTransTotalPrice
-            // 
-            this.colTransTotalPrice.HeaderText = "TotalPrice";
-            this.colTransTotalPrice.Name = "colTransTotalPrice";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -889,11 +890,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransaction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPetFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMonthly)).EndInit();
             this.pad.ResumeLayout(false);
@@ -996,13 +997,13 @@
         private Button btnAddTransactions;
         private Button btnAddPetReport;
         private BindingSource bsTransactCustomers;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn colTransDate;
         private DataGridViewTextBoxColumn colTransCustomerName;
         private DataGridViewTextBoxColumn CustomerID;
         private DataGridViewTextBoxColumn colTransCustomerSurname;
         private DataGridViewTextBoxColumn colTransEmployee;
         private DataGridViewTextBoxColumn colTransPet;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn colTransPetFood;
         private DataGridViewTextBoxColumn colTransPetFoodQty;
         private DataGridViewTextBoxColumn colTransPetFoodPrice;
