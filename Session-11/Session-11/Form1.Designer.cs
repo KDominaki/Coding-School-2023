@@ -99,12 +99,7 @@
             this.tabPetReport = new System.Windows.Forms.TabPage();
             this.tabMonthLedg = new System.Windows.Forms.TabPage();
             this.tabTransactions = new System.Windows.Forms.TabPage();
-
             this.btnRefresh = new System.Windows.Forms.Button();
-
-            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> 5803543d5773b9ff917e93daa402bc87dbf7aaf8
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -738,7 +733,6 @@
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(671, 528);
@@ -747,23 +741,6 @@
             this.btnRefresh.TabIndex = 27;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-=======
-            // monYear
-            // 
-            this.monYear.DataPropertyName = "OverAllTotal ";
-            this.monYear.FillWeight = 65.81662F;
-            this.monYear.HeaderText = "OverAllTotal";
-            this.monYear.Name = "monYear";
-            this.monYear.Width = 50;
-            // 
-            // monMonth
-            // 
-            this.monMonth.FillWeight = 26.24782F;
-            this.monMonth.HeaderText = "Month";
-            this.monMonth.Name = "monMonth";
-            this.monMonth.Width = 30;
->>>>>>> 5803543d5773b9ff917e93daa402bc87dbf7aaf8
             // 
             // Form1
             // 
@@ -893,11 +870,9 @@
         private TabPage tabTransactions;
         private Button btnDeletePet;
         private Button btnAddPet;
-<<<<<<< HEAD
         private Button btnRefresh;
-=======
         private DataGridViewTextBoxColumn monYear;
         private DataGridViewTextBoxColumn monMonth;
->>>>>>> 5803543d5773b9ff917e93daa402bc87dbf7aaf8
+
     }
 }
