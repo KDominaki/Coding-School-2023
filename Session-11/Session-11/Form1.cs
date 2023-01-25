@@ -143,6 +143,11 @@ namespace Session_11
                 EmpType.Items.Add(type);
             }*/
 
+            //Employees - Employee combobox
+            DataGridViewComboBoxColumn colEmpType = grvEmployees.Columns["EmpType"] as DataGridViewComboBoxColumn;
+            foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
+                colEmpType.Items.Add(type);
+            }
 
         }
         public void massHideGrv(DataGridView grvChoice)
