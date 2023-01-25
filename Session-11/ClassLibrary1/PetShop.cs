@@ -15,8 +15,6 @@ namespace ClassLibrary1 {
         public List<Employee> Employees = new List<Employee>();
         public List<Customer> Customers = new List<Customer>();
 
-        public List<PetFood> MonthlyFoods = new List<PetFood>() { new PetFood(), new PetFood(), new PetFood() };
-        public List<Pet> MonthlyPets = new List<Pet>();
 
 
 
@@ -28,14 +26,13 @@ namespace ClassLibrary1 {
         public List<PetFood> GetPetFood() {
             List<PetFood> petFoods = new List<PetFood>();
 
-            foreach (var transaction in Transactions) {
-                var foodID = transaction.PetFoodID;
-                
-                foreach(var food in Foods) {
+            foreach (var food in Foods) {
+                foreach (var transaction in Transactions) {
+                    var foodID = transaction.PetFoodID;
                     if (food.ID == foodID) {
                         food.Qty -= transaction.PetFoodQty;
                     }
-                }
+                }       
             }
             return Foods;
         }

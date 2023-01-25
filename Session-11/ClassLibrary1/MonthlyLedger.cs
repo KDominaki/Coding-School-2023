@@ -15,6 +15,7 @@ namespace ClassLibrary1
         public decimal? Total { get; set; }
         public decimal? OverAllTotal { get; set; }
         public decimal? OverAllIncomee { get; set; }
+        public decimal? OverAllExpense { get; set; }
         public PetShop Petshop { get; set; }
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
@@ -42,14 +43,30 @@ namespace ClassLibrary1
                 Incomee += item.TotalPrice;
             }
         }
-        public void ExpenseCalc() 
+        public void ExpenseCalc() // Πρέπει να υπάρχει λίστα με τις αγορές του μαγαζιού αυτού του μήνα
         {
             
-            foreach (var food in Petshop.MonthlyPets)
+        //    foreach (var food in Petshop.MonthlyPets)
+        //    {
+        //        Expense += food.Cost;
+        //    }
+        //    foreach (var pet in Petshop.MonthlyFoods)
+        //    {
+        //        Expense += pet.Cost;
+        //    }
+        //    foreach (var employee in Petshop.Employees)
+        //    {
+        //        Expense += employee.SalaryPerMonth;
+        //    }
+        }
+
+        public void TotalExpenseCalc() // Περιμένουμε τις συνολικές αγορές του μαγαζιού
+        {
+            foreach (var food in Petshop.Pets)
             {
                 Expense += food.Cost;
             }
-            foreach (var pet in Petshop.MonthlyFoods)
+            foreach (var pet in Petshop.Foods)
             {
                 Expense += pet.Cost;
             }
@@ -85,7 +102,7 @@ namespace ClassLibrary1
 
         public decimal? OverAllTotalCalc()
         {
-            ExpenseCalc();
+            TotalExpenseCalc();
             TotalIncomeCalc();
             OverAllTotal = Incomee - Expense;
             return OverAllTotal;
