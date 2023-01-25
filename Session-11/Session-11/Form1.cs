@@ -10,19 +10,19 @@ using Label = System.Windows.Forms.Label;
 using static DevExpress.Pdf.Native.BouncyCastle.Asn1.X509.Target;
 using MessageBox = System.Windows.Forms.MessageBox;
 using DevExpress.XtraSpreadsheet.Model;
+using static DevExpress.XtraPrinting.Native.ExportOptionsPropertiesNames;
 
 namespace Session_11 {
     public partial class Form1 : Form {
         public PetShop petShop = new PetShop();
         public EngagePopulate ep = new EngagePopulate();
-        public PetShop pullElements = new PetShop();
         public MonthlyLedgerManager month;
 
         //PetShop petShop;
         public List<Customer> publicCustomers;
         public List<Employee> publicEmployees;
-        public List<Pet> publicPet;
-        public List<PetFood> publicPetFood;
+        public List<Pet>      publicPet;
+        public List<PetFood>  publicPetFood;
 
 
         public Form1() {
@@ -30,30 +30,30 @@ namespace Session_11 {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            petShop = ep.SetPopulation();
+            
+           // petShop = ep.SetPopulation();
             month = new MonthlyLedgerManager(petShop);
 
-            popGeneralPublic(petShop);
-            startInvis();
+            InitPetShop(ep);
+            PopGeneralPublic(petShop);
             SetControlProperties();
         }
 
         //  public List<petShop.Customers> publicCustomers;
 
-        public void popGeneralPublic(PetShop customer) {
+    public void PopGeneralPublic(PetShop customer) {
             publicCustomers = petShop.Customers;
             publicEmployees = petShop.Employees;
             publicPet = petShop.Pets;
             publicPetFood = petShop.Foods;
 
-
-
         }
 
 
 
-
-
+    public PetShop InitPetShop(EngagePopulate eps)
+        {return petShop = ep.SetPopulation(); }
+        
 
 
 

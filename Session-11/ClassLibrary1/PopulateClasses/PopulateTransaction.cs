@@ -1,4 +1,5 @@
 ﻿using ClassLibrary1;
+using ClassLibrary1.PopulateClasses;
 using PopulateClassLibrary;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace PopulateClassLibrary {
     public class PopulateTransaction {
+
+        public List<Customer> publicCustomerstr;
+        public List<Employee> publicEmployeestr;
+        public List<Pet> publicPettr;
+        public List<PetFood> publicPetFoodtr;
 
         public PopulateTransaction() {
 
@@ -19,6 +25,11 @@ namespace PopulateClassLibrary {
             Transaction tr;
 
             /*1*/
+            PetShop pet2 = new PetShop();
+            EngagePopulate ep = new EngagePopulate();
+
+            pet2 = ep.SetPopulation();
+
 
             int petIndex = 0;
             tr = new Transaction() {
