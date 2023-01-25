@@ -21,8 +21,14 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Cat,
                 Price = 10,
                 Cost = 5,
-                Qty = 1300,
             };
+            var date = RandomDate();
+            var qty = RandomQty();
+
+            for(int i = 0; i < 20; i++) {
+                pf.PetFoodTransactions.Add(new PetFoodTransaction(date, qty));
+            }
+            pf.SetQty();
             petFood.Add(pf);
 
 
@@ -31,8 +37,14 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Dog,
                 Price = 11,
                 Cost = 6,
-                Qty = 1500,
             };
+
+            date = RandomDate();
+            qty = RandomQty();
+
+            for (int i = 0; i < 20; i++) {
+                pf.PetFoodTransactions.Add(new PetFoodTransaction(date, qty));
+            }
             petFood.Add(pf);
 
 
@@ -41,14 +53,29 @@ namespace PopulateClassLibrary {
                 Animaltype = AnimalType.Parrot,
                 Price = 4,
                 Cost = 2,
-                Qty = 1200,
             };
             petFood.Add(pf);
+            date = RandomDate();
+            qty = RandomQty();
 
-            //bsPetFood.DataSource = petFood;            
+            for (int i = 0; i < 20; i++) {
+                pf.PetFoodTransactions.Add(new PetFoodTransaction(date, qty));
+            }
+            petFood.Add(pf);  
             return petFood;
         }
 
+        public decimal RandomQty() {
+            var random = new Random();
+            int employee = random.Next(20, 60);
+            return employee;
+        }
 
+        public DateTime RandomDate() {
+            Random gen = new Random();
+            DateTime start = new DateTime(2022, 1, 1);
+            int range = ((TimeSpan)(DateTime.Today - start)).Days;
+            return start.AddDays(gen.Next(range));
+        }
     }
 }
