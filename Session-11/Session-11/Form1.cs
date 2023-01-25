@@ -301,10 +301,7 @@ namespace Session_11
             center = getCentered(grvPetFood);
         }
 
-        private void labEmployees_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnPetReport_Click(object sender, EventArgs e)
         {
