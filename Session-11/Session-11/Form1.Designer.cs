@@ -65,7 +65,6 @@
             this.PetStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PetPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PetCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labCustomer = new System.Windows.Forms.Label();
             this.labPets = new System.Windows.Forms.Label();
             this.labPetFood = new System.Windows.Forms.Label();
             this.labEmployees = new System.Windows.Forms.Label();
@@ -313,15 +312,6 @@
             this.PetCost.DataPropertyName = "Cost";
             this.PetCost.HeaderText = "Cost";
             this.PetCost.Name = "PetCost";
-            // 
-            // labCustomer
-            // 
-            this.labCustomer.AutoSize = true;
-            this.labCustomer.Location = new System.Drawing.Point(12, 434);
-            this.labCustomer.Name = "labCustomer";
-            this.labCustomer.Size = new System.Drawing.Size(64, 15);
-            this.labCustomer.TabIndex = 4;
-            this.labCustomer.Text = "Customers";
             // 
             // labPets
             // 
@@ -886,7 +876,6 @@
             this.Controls.Add(this.labEmployees);
             this.Controls.Add(this.labPetFood);
             this.Controls.Add(this.labPets);
-            this.Controls.Add(this.labCustomer);
             this.Controls.Add(this.grvPet);
             this.Controls.Add(this.grvCustomer);
             this.Controls.Add(this.btnTransact);
@@ -917,7 +906,6 @@
         private Button btnTransact;
         private DataGridView grvCustomer;
         private DataGridView grvPet;
-        private Label labCustomer;
         private Label labPets;
         private Label labPetFood;
         private Label labEmployees;

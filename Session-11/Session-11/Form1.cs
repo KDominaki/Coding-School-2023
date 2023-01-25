@@ -139,16 +139,16 @@ namespace Session_11
                 colPetFoodType.Items.Add(type);
             }
 
-            foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
+            /*foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
                 EmpType.Items.Add(type);
-            }
+            }*/
 
 
         }
         public void massHideGrv(DataGridView grvChoice)
         { 
             List<DataGridView> grvNameList = new List<DataGridView>()  
-            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport };
+            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport,grvMonthly };
 
             
             
@@ -325,5 +325,7 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvMonthly);
         }
+
+       
     }
 }
