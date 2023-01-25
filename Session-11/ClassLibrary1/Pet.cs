@@ -22,10 +22,13 @@ namespace ClassLibrary1
 
         public DateTime Bought { get; set; }
 
+        public bool Sold { get; set; }
+
         public Pet()
         {
             DateTime dt = new DateTime(1990, 1, 1);
             Bought = dt;
+            Sold = false;
 
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,6 +41,40 @@ namespace ClassLibrary1 {
             }
             return Foods;
         }
+        
+
+        //METHOD DELETE FUNCTION
+        public void DeleteTransaction(Transaction input) {
+
+            foreach (var trans in Transactions) {
+                if (trans.ID == input.ID) {
+                    EnablePet(trans.PetID);
+                    UpdatePetFoodQty(trans.PetFoodID, trans.PetFoodQty);
+                    Transactions.Remove(trans);
+                    break;
+                }
+                
+            }
+        }
+
+        public void EnablePet(Guid? input) {
+            foreach (var pet in Pets) {
+                if(pet.ID == input) {
+                    pet.Sold = false;
+                }
+            }
+        }
+
+        public void UpdatePetFoodQty(Guid? input, decimal foodupdate) {
+            foreach(var food in Foods) {
+                if (food.ID == input) {
+                    food.Qty += foodupdate;
+                }
+            }
+
+        }
+
+
 
 
 
