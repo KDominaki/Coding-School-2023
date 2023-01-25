@@ -11,7 +11,7 @@ namespace ClassLibrary1.PopulateClasses {
 
         public EngagePopulate() { }
 
-        
+
         public PetShop SetPopulation() {
 
             PopulatePetFood populatePetFood = new PopulatePetFood();
@@ -27,7 +27,7 @@ namespace ClassLibrary1.PopulateClasses {
                 Customers = populateCustomer.PopulateCustomers()
 
             };
-            
+
 
             PopulateTransaction populateTransaction = new PopulateTransaction();
             petshop.Transactions = populateTransaction.PopulateTransactions(petshop.Foods, petshop.Pets, petshop.Employees, petshop.Customers);
@@ -36,14 +36,21 @@ namespace ClassLibrary1.PopulateClasses {
             return petshop;
         }
 
-        
+
         public void SetBoughtDate(List<Pet> pets, List<Transaction> transactions) {
 
-            foreach(var pet in pets) {
-                foreach(var trans in transactions) {
-                    if(pet.ID== trans.ID) {
+            foreach (var pet in pets) {
+                foreach (var trans in transactions) {
+                    if (pet.ID == trans.PetID) {
                         pet.Bought = RandomDate(trans.Date);
+                        break;
                     }
+                }
+                DateTime dt = new DateTime(1990, 1, 1);
+
+                if (pet.Bought == dt) {
+                    DateTime today = DateTime.Now;
+                    pet.Bought = RandomDate(today);
                 }
             }
         }

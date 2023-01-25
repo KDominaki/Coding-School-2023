@@ -24,6 +24,8 @@ namespace ClassLibrary1
 
         public Pet()
         {
+            DateTime dt = new DateTime(1990, 1, 1);
+            Bought = dt;
 
         }
 
