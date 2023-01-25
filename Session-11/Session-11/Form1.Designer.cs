@@ -89,11 +89,6 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMonthly = new System.Windows.Forms.Button();
             this.grvMonthly = new System.Windows.Forms.DataGridView();
-            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monExpenses = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmployees = new System.Windows.Forms.TabPage();
             this.tabPetFood = new System.Windows.Forms.TabPage();
@@ -104,6 +99,8 @@
             this.tabPetReport = new System.Windows.Forms.TabPage();
             this.tabMonthLedg = new System.Windows.Forms.TabPage();
             this.tabTransactions = new System.Windows.Forms.TabPage();
+            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -616,51 +613,13 @@
             this.grvMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvMonthly.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.monYear,
-            this.monMonth,
-            this.monIncome,
-            this.monExpenses,
-            this.monTotal});
+            this.monMonth});
             this.grvMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvMonthly.Location = new System.Drawing.Point(0, 0);
             this.grvMonthly.Name = "grvMonthly";
             this.grvMonthly.RowTemplate.Height = 25;
             this.grvMonthly.Size = new System.Drawing.Size(1160, 318);
             this.grvMonthly.TabIndex = 25;
-            // 
-            // monYear
-            // 
-            this.monYear.DataPropertyName = "OverAllTotal ";
-            this.monYear.FillWeight = 65.81662F;
-            this.monYear.HeaderText = "Year";
-            this.monYear.Name = "monYear";
-            this.monYear.Width = 50;
-            // 
-            // monMonth
-            // 
-            this.monMonth.FillWeight = 26.24782F;
-            this.monMonth.HeaderText = "Month";
-            this.monMonth.Name = "monMonth";
-            this.monMonth.Width = 30;
-            // 
-            // monIncome
-            // 
-            this.monIncome.FillWeight = 89.50531F;
-            this.monIncome.HeaderText = "Monthly Income";
-            this.monIncome.Name = "monIncome";
-            this.monIncome.Width = 75;
-            // 
-            // monExpenses
-            // 
-            this.monExpenses.FillWeight = 128.0749F;
-            this.monExpenses.HeaderText = "Monthly Expenses";
-            this.monExpenses.Name = "monExpenses";
-            this.monExpenses.Width = 75;
-            // 
-            // monTotal
-            // 
-            this.monTotal.FillWeight = 190.3553F;
-            this.monTotal.HeaderText = "Total ";
-            this.monTotal.Name = "monTotal";
             // 
             // tabControl1
             // 
@@ -775,6 +734,21 @@
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
             // 
+            // monYear
+            // 
+            this.monYear.DataPropertyName = "OverAllTotal ";
+            this.monYear.FillWeight = 65.81662F;
+            this.monYear.HeaderText = "OverAllTotal";
+            this.monYear.Name = "monYear";
+            this.monYear.Width = 50;
+            // 
+            // monMonth
+            // 
+            this.monMonth.FillWeight = 26.24782F;
+            this.monMonth.HeaderText = "Month";
+            this.monMonth.Name = "monMonth";
+            this.monMonth.Width = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -874,11 +848,6 @@
         private DataGridViewTextBoxColumn EmpSalary;
         private DataGridViewButtonColumn cusUpdate;
         private DataGridViewButtonColumn cusDelete;
-        private DataGridViewTextBoxColumn monYear;
-        private DataGridViewTextBoxColumn monMonth;
-        private DataGridViewTextBoxColumn monIncome;
-        private DataGridViewTextBoxColumn monExpenses;
-        private DataGridViewTextBoxColumn monTotal;
         private DataGridViewTextBoxColumn PetID;
         private DataGridViewTextBoxColumn DayBought;
         private DataGridViewComboBoxColumn AnimalT;
@@ -907,5 +876,7 @@
         private TabPage tabTransactions;
         private Button btnDeletePet;
         private Button btnAddPet;
+        private DataGridViewTextBoxColumn monYear;
+        private DataGridViewTextBoxColumn monMonth;
     }
 }
