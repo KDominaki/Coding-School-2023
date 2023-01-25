@@ -4,6 +4,7 @@ using PopulateClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,17 +20,18 @@ namespace PopulateClassLibrary {
 
         }
 
-        public List<Transaction> PopulateTransactions(List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers) {
+        public List<Transaction> PopulateTransactions(){List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers) {
 
             List<Transaction> transactions = new List<Transaction>();
             Transaction tr;
 
             /*1*/
-            PetShop pet2 = new PetShop();
+          /*  PetShop pet2 = new PetShop();
             EngagePopulate ep = new EngagePopulate();
 
-            pet2 = ep.SetPopulation();
+            pet2 = ep.SetPopulation();*/
 
+        
 
             int petIndex = 0;
             tr = new Transaction() {
