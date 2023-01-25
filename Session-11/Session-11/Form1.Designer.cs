@@ -315,6 +315,7 @@
             // 
             // grvEmployees
             // 
+            this.grvEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmpID,
@@ -324,7 +325,6 @@
             this.EmpSalary,
             this.cusUpdate,
             this.cusDelete});
-            this.grvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvEmployees.Location = new System.Drawing.Point(3, 3);
             this.grvEmployees.Name = "grvEmployees";
             this.grvEmployees.RowTemplate.Height = 25;
