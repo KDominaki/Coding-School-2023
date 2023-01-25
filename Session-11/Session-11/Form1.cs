@@ -131,11 +131,13 @@ namespace Session_11
 
             //PET - PetFood combobox
             DataGridViewComboBoxColumn colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
-            colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
-            colPetFoodType.DisplayMember = "Animaltype";//"Name";
-            colPetFoodType.ValueMember = "ID";//"ID";*/
+            //colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
+            //colPetFoodType.DisplayMember = "Animaltype";//"Name";
+            //colPetFoodType.ValueMember = "ID";//"ID";*/
 
-
+            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
+                colPetFoodType.Items.Add(type);
+            }
 
 
         }
