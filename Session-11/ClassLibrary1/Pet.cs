@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
-{
-    public class Pet
-    {
+namespace ClassLibrary1 {
+    public class Pet {
         public AnimalType Animaltype { get; set; }
-        
+
         public PetStatus Petstatus { get; set; }
-        
+
         public Guid ID { get; set; }
 
         public string? Breed { get; set; }
@@ -24,14 +22,13 @@ namespace ClassLibrary1
 
         public bool Sold { get; set; }
 
-        public Pet()
-        {
+        public Pet() {
             DateTime dt = new DateTime(1990, 1, 1);
             Bought = dt;
             Sold = false;
 
         }
 
-            
+
     }
 }
