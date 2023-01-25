@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace ClassLibrary1
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
         public List<PetFood> MonthlyPetfoodTransactions= new List<PetFood>();
+        public List<Pet>MontlhyPetTransactions= new List<Pet>();
 
         public MonthlyLedger(int year, int month,PetShop petshop)
         {
@@ -44,17 +46,17 @@ namespace ClassLibrary1
                 Incomee += item.TotalPrice;
             }
         }
-        public void ExpenseCalc() // Πρέπει να υπάρχει λίστα με τις αγορές του μαγαζιού αυτού του μήνα
+        public void MonthlyExpenseCalc() // Πρέπει να υπάρχει λίστα με τις αγορές του μαγαζιού αυτού του μήνα
         {
 
                 foreach (var food in MonthlyPetfoodTransactions)
                 {
                     Expense += food.Cost;
                 }
-                //foreach (var pet in Petshop.MonthlyFoods)
-                //{
-                //    Expense += pet.Cost;
-                //}
+                foreach (var pet in MontlhyPetTransactions)
+                {
+                    Expense += pet.Cost;
+                }
                 foreach (var employee in Petshop.Employees)
                 {
                     Expense += employee.SalaryPerMonth;
@@ -99,12 +101,21 @@ namespace ClassLibrary1
                     }
                 }
             }
+            foreach (var pet in Petshop.Pets)
+            {
+                if (pet.Bought.Year == Year && pet.Bought.Month == Month)
+                {
+                    MontlhyPetTransactions.Add(pet);
+                }
+
+
+            }
         }
 
         public decimal? MothlyTotalCalc()
         {
             GetMonthsTrans();
-            ExpenseCalc();
+            MonthlyExpenseCalc();
             IncomeCalc();
             Total = Incomee - Expense;
             return Total;
