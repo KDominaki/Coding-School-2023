@@ -139,7 +139,7 @@ namespace Session_11
                 colPetFoodType.Items.Add(type);
             }
 
-            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
+            foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
                 EmpType.Items.Add(type);
             }
 
