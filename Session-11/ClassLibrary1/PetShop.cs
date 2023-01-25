@@ -44,7 +44,7 @@ namespace ClassLibrary1 {
 
 
         //METHOD DELETE FUNCTION
-        public void DeleteTransaction(Transaction input) {
+        public void DeleteTransaction(Transaction input) { //or guid??
 
             foreach (var trans in Transactions) {
                 if (trans.ID == input.ID) {
@@ -84,6 +84,14 @@ namespace ClassLibrary1 {
             }
         }
 
+        //DELETE PET
+        public void DeletePet(Guid? input) {
+            foreach (var pet in Pets) {
+                if (pet.ID == input) {
+                    Pets.Remove(pet);
+                }
+            }
+        }
 
 
     }
