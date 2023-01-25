@@ -24,7 +24,6 @@ namespace ClassLibrary1
             foreach(var trans in PetFoodTransactions) {
                 Qty += trans.Qty;
             }
-
         }
 
     }

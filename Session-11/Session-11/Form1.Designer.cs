@@ -108,18 +108,18 @@
             this.btnMonthly = new System.Windows.Forms.Button();
             this.labLedger = new System.Windows.Forms.Label();
             this.grvMonthly = new System.Windows.Forms.DataGridView();
-            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monExpenses = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cusUpdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cusDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cusUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cusDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monExpenses = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -442,7 +442,6 @@
             // grvEmployees
             // 
             this.grvEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -458,7 +457,7 @@
             this.EmpSurname,
             this.EmpType,
             this.EmpSalary,
-            this.cusUpdt,
+            this.cusUpdate,
             this.cusDelete});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
@@ -479,8 +478,9 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grvEmployees.RowTemplate.Height = 25;
-            this.grvEmployees.Size = new System.Drawing.Size(500, 134);
+            this.grvEmployees.Size = new System.Drawing.Size(567, 134);
             this.grvEmployees.TabIndex = 12;
+            this.grvEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvEmployees_CellContentClick);
             // 
             // grvTransaction
             // 
@@ -759,7 +759,6 @@
             // grvMonthly
             // 
             this.grvMonthly.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.grvMonthly.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -797,31 +796,6 @@
             this.grvMonthly.Size = new System.Drawing.Size(542, 127);
             this.grvMonthly.TabIndex = 25;
             // 
-            // monYear
-            // 
-            this.monYear.HeaderText = "Year";
-            this.monYear.Name = "monYear";
-            // 
-            // monMonth
-            // 
-            this.monMonth.HeaderText = "Month";
-            this.monMonth.Name = "monMonth";
-            // 
-            // monIncome
-            // 
-            this.monIncome.HeaderText = "Monthly Income";
-            this.monIncome.Name = "monIncome";
-            // 
-            // monExpenses
-            // 
-            this.monExpenses.HeaderText = "Monthly Expenses";
-            this.monExpenses.Name = "monExpenses";
-            // 
-            // monTotal
-            // 
-            this.monTotal.HeaderText = "Total ";
-            this.monTotal.Name = "monTotal";
-            // 
             // EmpID
             // 
             this.EmpID.DataPropertyName = "ID";
@@ -840,6 +814,7 @@
             this.EmpSurname.DataPropertyName = "Surname";
             this.EmpSurname.HeaderText = "Surname";
             this.EmpSurname.Name = "EmpSurname";
+            this.EmpSurname.Width = 120;
             // 
             // EmpType
             // 
@@ -848,22 +823,70 @@
             this.EmpType.Name = "EmpType";
             this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EmpType.Width = 76;
             // 
             // EmpSalary
             // 
             this.EmpSalary.DataPropertyName = "SalaryPerMonth";
             this.EmpSalary.HeaderText = "Salary";
             this.EmpSalary.Name = "EmpSalary";
+            this.EmpSalary.Width = 76;
             // 
-            // cusUpdt
+            // cusUpdate
             // 
-            this.cusUpdt.HeaderText = "Update";
-            this.cusUpdt.Name = "cusUpdt";
+            this.cusUpdate.HeaderText = "Update";
+            this.cusUpdate.Name = "cusUpdate";
+            this.cusUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cusUpdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cusUpdate.Text = "Update";
+            this.cusUpdate.ToolTipText = "Update";
+            this.cusUpdate.UseColumnTextForButtonValue = true;
+            this.cusUpdate.Width = 76;
             // 
             // cusDelete
             // 
             this.cusDelete.HeaderText = "Delete";
             this.cusDelete.Name = "cusDelete";
+            this.cusDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cusDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cusDelete.Text = "Delete";
+            this.cusDelete.ToolTipText = "Delete";
+            this.cusDelete.UseColumnTextForButtonValue = true;
+            this.cusDelete.Width = 76;
+            // 
+            // monYear
+            // 
+            this.monYear.FillWeight = 65.81662F;
+            this.monYear.HeaderText = "Year";
+            this.monYear.Name = "monYear";
+            this.monYear.Width = 50;
+            // 
+            // monMonth
+            // 
+            this.monMonth.FillWeight = 26.24782F;
+            this.monMonth.HeaderText = "Month";
+            this.monMonth.Name = "monMonth";
+            this.monMonth.Width = 30;
+            // 
+            // monIncome
+            // 
+            this.monIncome.FillWeight = 89.50531F;
+            this.monIncome.HeaderText = "Monthly Income";
+            this.monIncome.Name = "monIncome";
+            this.monIncome.Width = 75;
+            // 
+            // monExpenses
+            // 
+            this.monExpenses.FillWeight = 128.0749F;
+            this.monExpenses.HeaderText = "Monthly Expenses";
+            this.monExpenses.Name = "monExpenses";
+            this.monExpenses.Width = 75;
+            // 
+            // monTotal
+            // 
+            this.monTotal.FillWeight = 190.3553F;
+            this.monTotal.HeaderText = "Total ";
+            this.monTotal.Name = "monTotal";
             // 
             // Form1
             // 
@@ -985,17 +1008,17 @@
         private Button btnMonthly;
         private Label labLedger;
         private DataGridView grvMonthly;
-        private DataGridViewTextBoxColumn monYear;
-        private DataGridViewTextBoxColumn monMonth;
-        private DataGridViewTextBoxColumn monIncome;
-        private DataGridViewTextBoxColumn monExpenses;
-        private DataGridViewTextBoxColumn monTotal;
         private DataGridViewTextBoxColumn EmpID;
         private DataGridViewTextBoxColumn EmpName;
         private DataGridViewTextBoxColumn EmpSurname;
         private DataGridViewComboBoxColumn EmpType;
         private DataGridViewTextBoxColumn EmpSalary;
-        private DataGridViewTextBoxColumn cusUpdt;
-        private DataGridViewTextBoxColumn cusDelete;
+        private DataGridViewButtonColumn cusUpdate;
+        private DataGridViewButtonColumn cusDelete;
+        private DataGridViewTextBoxColumn monYear;
+        private DataGridViewTextBoxColumn monMonth;
+        private DataGridViewTextBoxColumn monIncome;
+        private DataGridViewTextBoxColumn monExpenses;
+        private DataGridViewTextBoxColumn monTotal;
     }
 }
