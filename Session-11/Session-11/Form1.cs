@@ -14,15 +14,17 @@ namespace Session_11
 {
     public partial class Form1 : Form
     {
-       public PetShop petShop = new PetShop();
-       public  EngagePopulate ep = new EngagePopulate();
-       
+        public PetShop petShop = new PetShop();
+        public  EngagePopulate ep = new EngagePopulate();
+        public PetShop pullElements = new PetShop();
 
-       //PetShop petShop;
+        //PetShop petShop;
         public List<Customer> publicCustomers;
         public List<Employee> publicEmployees;
         public List<Pet> publicPet;
         public List<PetFood> publicPetFood;
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace Session_11
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SetControlProperties();
             petShop = ep.SetPopulation();
 
             popGeneralPublic(petShop);
@@ -45,10 +48,12 @@ namespace Session_11
             publicEmployees = petShop.Employees;
             publicPet = petShop.Pets;
             publicPetFood = petShop.Foods;
+           
+           
+
         }
 
-        PetShop pullElements = new PetShop();   
-
+       
 
 
 
