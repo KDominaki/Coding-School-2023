@@ -30,7 +30,6 @@ namespace ClassLibrary1 {
         }
 
         public List<PetFood> GetPetFood() {
-            List<PetFood> petFoods = new List<PetFood>();
 
             foreach (var food in Foods) {
                 foreach (var transaction in Transactions) {
@@ -66,7 +65,7 @@ namespace ClassLibrary1 {
                 }
             }
         }
-            
+
         public void UpdatePetFoodQty(Guid? input, decimal foodupdate) {
             foreach (var food in Foods) {
                 if (food.ID == input) {
