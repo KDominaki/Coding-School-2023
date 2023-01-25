@@ -476,8 +476,7 @@
             this.grvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(500, 134);
-            this.grvEmployees.TabIndex = 12;
-            this.grvEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvEmployees_CellContentClick);
+            this.grvEmployees.TabIndex = 12;          
             // 
             // EmpID
             // 
