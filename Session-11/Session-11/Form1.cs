@@ -243,7 +243,7 @@ namespace Session_11
 
 
             DataGridViewButtonColumn col = grv.Columns[e.ColumnIndex] as DataGridViewButtonColumn;
-
+            //conflict resolution
             if (col != null && col.Name == "btnUpdate" && e.RowIndex >= 0)
             {
                 publicCustomers = grv.CurrentRow.DataBoundItem as List<Customer>;
