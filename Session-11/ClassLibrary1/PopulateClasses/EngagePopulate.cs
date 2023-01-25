@@ -27,11 +27,31 @@ namespace ClassLibrary1.PopulateClasses {
                 Customers = populateCustomer.PopulateCustomers()
 
             };
+            
 
             PopulateTransaction populateTransaction = new PopulateTransaction();
             petshop.Transactions = populateTransaction.PopulateTransactions(petshop.Foods, petshop.Pets, petshop.Employees, petshop.Customers);
+            SetBoughtDate(petshop.Pets, petshop.Transactions);
             //petShop.Transactions = new Populate
             return petshop;
+        }
+
+        
+        public void SetBoughtDate(List<Pet> pets, List<Transaction> transactions) {
+
+            foreach(var pet in pets) {
+                foreach(var trans in transactions) {
+                    if(pet.ID== trans.ID) {
+                        pet.Bought = RandomDate(trans.Date);
+                    }
+                }
+            }
+        }
+        public DateTime RandomDate(DateTime datebought) {
+            Random gen = new Random();
+            DateTime start = new DateTime(2022, 1, 1);
+            int range = ((TimeSpan)(datebought - start)).Days;
+            return start.AddDays(gen.Next(range));
         }
 
 
