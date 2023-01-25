@@ -14,7 +14,7 @@ namespace PopulateClassLibrary {
 
         public List<Pet> PopulatePets() {
 
-            List <Pet> pets = new List <Pet>();
+            List<Pet> pets = new List<Pet>();
 
             Pet pet = new Pet() {
                 Animaltype = AnimalType.Dog,
@@ -94,8 +94,8 @@ namespace PopulateClassLibrary {
                 Price = 1300,
                 Cost = 800,
             };
-            pets.Add(pet); 
-            
+            pets.Add(pet);
+
             pet = new Pet() {
                 Animaltype = AnimalType.Parrot,
                 Petstatus = PetStatus.OK,
@@ -139,7 +139,7 @@ namespace PopulateClassLibrary {
             //bsPet.DataSource = pets
             return pets;
 
-            
+
         }
 
     }

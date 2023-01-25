@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
-{
-    public class Transaction
-    {
+namespace ClassLibrary1 {
+    public class Transaction {
         public Guid? ID { get; set; }
         public DateTime Date { get; set; }
         public Guid CustomerID { get; set; }
@@ -32,7 +30,7 @@ namespace ClassLibrary1
 
         public void SetTotalPrice(decimal? petPrice, decimal? petFoodQty, decimal? petFoodPrice) {
 
-            if(this.PetID != null) {
+            if (this.PetID != null) {
                 this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
                 this.PetFoodQty++;
             } else {
