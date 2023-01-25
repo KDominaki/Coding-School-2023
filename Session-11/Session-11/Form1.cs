@@ -227,18 +227,7 @@ namespace Session_11
         //kinda redundant but didn't figure another solution this late at night
         public void startInvis()
         {
-            /*List<DataGridView> grvNameList = new List<DataGridView>()
-            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport,grvMonthly};
-
-
-            DataGridView grvTmp = new DataGridView();
-            Label tmpLabel = new Label();
-
-            for (int i = 0; i < grvNameList.Count; i++)
-            {
-                grvTmp = grvNameList[i];
-                grvTmp.Visible = false;           
-            }*/
+            
         }
 
 
@@ -269,12 +258,7 @@ namespace Session_11
         private void button2_Click(object sender, EventArgs e)
         {
 
-            /* massHideGrv(grvTransaction);
-
-             //centering function sort of
-             Point center = new Point();
-             center = getCentered(grvTransaction);*/
-
+            
             tabControl1.SelectedIndex = 6;
 
         }
