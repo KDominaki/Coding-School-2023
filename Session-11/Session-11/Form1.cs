@@ -207,10 +207,8 @@ namespace Session_11
         public void startInvis()
         {
             List<DataGridView> grvNameList = new List<DataGridView>()
-            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport };
+            {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport,grvMonthly};
 
-            List<Label> labelList = new List<Label>()
-            {labCustomer,labEmployees,labPetFood,labPetReport,labPets,labTransaction };
 
             DataGridView grvTmp = new DataGridView();
             Label tmpLabel = new Label();
@@ -218,10 +216,7 @@ namespace Session_11
             for (int i = 0; i < grvNameList.Count; i++)
             {
                 grvTmp = grvNameList[i];
-                grvTmp.Visible = false;
-
-                tmpLabel = labelList[i];
-                tmpLabel.Visible = false;
+                grvTmp.Visible = false;           
             }
         }
 
@@ -320,6 +315,15 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvCustomer);
 
+        }
+
+        private void btnMonthly_Click(object sender, EventArgs e)
+        {
+            massHideGrv(grvMonthly);
+
+            //centering function sort of
+            Point center = new Point();
+            center = getCentered(grvMonthly);
         }
     }
 }

@@ -63,6 +63,16 @@ namespace Session_11.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar2_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("calendar2_thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customer_thumbnail {
             get {
                 object obj = ResourceManager.GetObject("customer_thumbnail", resourceCulture);
@@ -86,6 +96,16 @@ namespace Session_11.Properties {
         internal static System.Drawing.Bitmap dogbowl_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("dogbowl-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap monthly_ledger_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("monthly-ledger_thumbnail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
