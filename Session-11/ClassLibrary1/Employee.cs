@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
+    public enum EmployeeType {
+        Manager,
+        Staff
+    }
     public class Employee : User
     {
-        public enum EmployeeType
-        {
-            Manager,
-            Staff
-        }
+
 
         
         public EmployeeType EmpType { get; set;}
