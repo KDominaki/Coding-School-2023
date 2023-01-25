@@ -212,7 +212,6 @@ namespace Session_11
             {labCustomer,labEmployees,labPetFood,labPetReport,labPets,labTransaction };
 
             DataGridView grvTmp = new DataGridView();
-         
             Label tmpLabel = new Label();
 
             for (int i = 0; i < grvNameList.Count; i++)
@@ -235,23 +234,23 @@ namespace Session_11
 
 
 
-        private void btnManage_Click(object sender, EventArgs e)
+        /*private void btnManage_Click(object sender, EventArgs e)
+        {
+            
+
+
+            //TransactionsForm form2 = new TransactionsForm();
+            //Form1.Close();
+            //form2.Show();
+        }*/
+
+        private void button2_Click(object sender, EventArgs e)
         {
             massHideGrv(grvTransaction, labTransaction);
 
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvTransaction);
-
-
-            //TransactionsForm form2 = new TransactionsForm();
-            //Form1.Close();
-            //form2.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -284,7 +283,7 @@ namespace Session_11
         {
             //could prolly do it by choosing the only visible grid but oh well
             massHideGrv(grvEmployees, labEmployees);
-
+            labEmployees.Visible= false; //somehow didnt get caught in massHide
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvEmployees);
@@ -299,6 +298,11 @@ namespace Session_11
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvPetFood);
+        }
+
+        private void labEmployees_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

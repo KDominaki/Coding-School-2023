@@ -120,9 +120,10 @@
             // 
             // btnManage
             // 
+            this.btnManage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(210, 31);
+            this.btnManage.Location = new System.Drawing.Point(369, 12);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(161, 105);
             this.btnManage.TabIndex = 0;
@@ -131,10 +132,11 @@
             // 
             // btnTransact
             // 
+            this.btnTransact.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTransact.BackgroundImage = global::Session_11.Properties.Resources.shoplogo;
             this.btnTransact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTransact.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTransact.Location = new System.Drawing.Point(581, 31);
+            this.btnTransact.Location = new System.Drawing.Point(740, 12);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(161, 105);
             this.btnTransact.TabIndex = 1;
@@ -330,6 +332,7 @@
             this.labEmployees.Size = new System.Drawing.Size(64, 15);
             this.labEmployees.TabIndex = 7;
             this.labEmployees.Text = "Employees";
+            this.labEmployees.Click += new System.EventHandler(this.labEmployees_Click);
             // 
             // labTransaction
             // 
@@ -673,10 +676,11 @@
             // 
             // btnPets
             // 
+            this.btnPets.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPets.BackgroundImage = global::Session_11.Properties.Resources.dg_shadow_removebg_preview;
             this.btnPets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPets.FlatAppearance.BorderSize = 0;
-            this.btnPets.Location = new System.Drawing.Point(769, 31);
+            this.btnPets.Location = new System.Drawing.Point(928, 12);
             this.btnPets.Name = "btnPets";
             this.btnPets.Size = new System.Drawing.Size(161, 105);
             this.btnPets.TabIndex = 18;
@@ -687,10 +691,11 @@
             // 
             // btnPetFood
             // 
+            this.btnPetFood.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPetFood.BackgroundImage = global::Session_11.Properties.Resources.dogbowl_removebg_preview;
             this.btnPetFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPetFood.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPetFood.Location = new System.Drawing.Point(392, 31);
+            this.btnPetFood.Location = new System.Drawing.Point(551, 12);
             this.btnPetFood.Name = "btnPetFood";
             this.btnPetFood.Size = new System.Drawing.Size(161, 105);
             this.btnPetFood.TabIndex = 19;
