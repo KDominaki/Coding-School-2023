@@ -104,6 +104,7 @@
             this.tabPetReport = new System.Windows.Forms.TabPage();
             this.tabMonthLedg = new System.Windows.Forms.TabPage();
             this.tabTransactions = new System.Windows.Forms.TabPage();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -775,12 +776,23 @@
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(671, 528);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(119, 53);
+            this.btnRefresh.TabIndex = 27;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1881, 855);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnMonthly);
             this.Controls.Add(this.btnCustomers);
@@ -907,5 +919,6 @@
         private TabPage tabTransactions;
         private Button btnDeletePet;
         private Button btnAddPet;
+        private Button btnRefresh;
     }
 }
