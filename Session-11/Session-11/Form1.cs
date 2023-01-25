@@ -15,7 +15,7 @@ namespace Session_11
     public partial class Form1 : Form
     {
         PetShop petShop;
-        //List<Customers> publicCustomers
+       public List<petShop.Customers> publicCustomers;
 
 
         public Form1()
@@ -33,7 +33,7 @@ namespace Session_11
             SetControlProperties();
         }
 
-
+        public List<petShop.Customers> publicCustomers;
 
 
 
