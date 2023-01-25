@@ -83,6 +83,16 @@ namespace Session_11.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PetReport_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("PetReport_thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shoplogo {
             get {
                 object obj = ResourceManager.GetObject("shoplogo", resourceCulture);

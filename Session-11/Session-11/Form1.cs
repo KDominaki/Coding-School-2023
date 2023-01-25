@@ -28,7 +28,7 @@ namespace Session_11
             EngagePopulate ep = new EngagePopulate();
             petShop = ep.SetPopulation();
 
-            //startInvis();
+            startInvis();
             SetControlProperties();
         }
 

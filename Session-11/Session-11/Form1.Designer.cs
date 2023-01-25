@@ -105,6 +105,7 @@
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.btnPets = new System.Windows.Forms.Button();
             this.btnPetFood = new System.Windows.Forms.Button();
+            this.btnPetReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -702,12 +703,27 @@
             this.btnPetFood.UseVisualStyleBackColor = true;
             this.btnPetFood.Click += new System.EventHandler(this.btnPetFood_Click);
             // 
+            // btnPetReport
+            // 
+            this.btnPetReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPetReport.BackgroundImage = global::Session_11.Properties.Resources.PetReport_thumbnail;
+            this.btnPetReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPetReport.FlatAppearance.BorderSize = 0;
+            this.btnPetReport.Location = new System.Drawing.Point(1120, 12);
+            this.btnPetReport.Name = "btnPetReport";
+            this.btnPetReport.Size = new System.Drawing.Size(161, 105);
+            this.btnPetReport.TabIndex = 20;
+            this.btnPetReport.Text = "\r\n";
+            this.btnPetReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPetReport.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1881, 855);
+            this.Controls.Add(this.btnPetReport);
             this.Controls.Add(this.btnPetFood);
             this.Controls.Add(this.btnPets);
             this.Controls.Add(this.btnSave);
@@ -816,5 +832,6 @@
         private DataGridViewTextBoxColumn pfQty;
         private DataGridViewTextBoxColumn colQty;
         private Button btnPetFood;
+        private Button btnPetReport;
     }
 }
