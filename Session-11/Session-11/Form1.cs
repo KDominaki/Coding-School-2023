@@ -268,15 +268,15 @@ namespace Session_11
 
         private void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             /* massHideGrv(grvTransaction);
 
              //centering function sort of
              Point center = new Point();
              center = getCentered(grvTransaction);*/
-=======
+
             tabControl1.SelectedIndex = 6;
->>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
+
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -297,21 +297,21 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             /*massHideGrv(grvPet);
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvPet);*/
 
 
-=======
+
             tabControl1.SelectedIndex = 2;
->>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
+
         }
 
         private void btnManage_Click_1(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             tabControl1.SelectedIndex = 0;
 
 
@@ -324,9 +324,9 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvEmployees);
             */
-=======
+
             tabControl1.SelectedIndex = 0;   
->>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
+
         }
 
         private void btnPetFood_Click(object sender, EventArgs e)
@@ -338,15 +338,15 @@ namespace Session_11
 
         private void btnPetReport_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             /* massHideGrv(grvPetReport);
 
              //centering function sort of
              Point center = new Point();
              center = getCentered(grvPetReport);*/
-=======
+
             tabControl1.SelectedIndex = 4;
->>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
+
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
