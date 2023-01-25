@@ -17,6 +17,7 @@ namespace Session_11
         public PetShop petShop = new PetShop();
         public  EngagePopulate ep = new EngagePopulate();
         public PetShop pullElements = new PetShop();
+        public MonthlyLedgerManager month;
 
         //PetShop petShop;
         public List<Customer> publicCustomers;
@@ -33,6 +34,7 @@ namespace Session_11
         private void Form1_Load(object sender, EventArgs e)
         {
             petShop = ep.SetPopulation();
+            month = new MonthlyLedgerManager(petShop);
 
             popGeneralPublic(petShop);
             startInvis();
@@ -118,6 +120,10 @@ namespace Session_11
             grvEmployees.AutoGenerateColumns = false;
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
+
+            grvMonthly.AutoGenerateColumns = false;
+            grvMonthly.DataSource = month.monthLegList;
+
 
            
 

@@ -29,6 +29,9 @@ namespace ClassLibrary1
             Year = year;
             Month = month;
             Expense += 2000;
+            OverAllTotalCalc();
+            MothlyTotalCalc();
+
         }
 
         public void IncomeCalc()
@@ -112,22 +115,22 @@ namespace ClassLibrary1
             }
         }
 
-        public decimal? MothlyTotalCalc()
+        public void MothlyTotalCalc()
         {
             GetMonthsTrans();
             MonthlyExpenseCalc();
             IncomeCalc();
             Total = Incomee - Expense;
-            return Total;
+           
         }
 
 
-        public decimal? OverAllTotalCalc()
+        public void OverAllTotalCalc()
         {
             TotalExpenseCalc();
             TotalIncomeCalc();
             OverAllTotal = Incomee - Expense;
-            return OverAllTotal;
+
         }
 
     }

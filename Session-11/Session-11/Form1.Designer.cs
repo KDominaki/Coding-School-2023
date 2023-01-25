@@ -984,6 +984,7 @@
             // 
             // monYear
             // 
+            this.monYear.DataPropertyName = "OverAllTotal ";
             this.monYear.FillWeight = 65.81662F;
             this.monYear.HeaderText = "Year";
             this.monYear.Name = "monYear";

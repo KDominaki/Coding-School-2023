@@ -15,7 +15,9 @@ namespace ClassLibrary1
 
         public MonthlyLedgerManager(PetShop petshop)
         {
-            Shop = petshop;  
+            Shop = petshop;
+            GeneratorActivator();
+
         }
 
         // Methods
