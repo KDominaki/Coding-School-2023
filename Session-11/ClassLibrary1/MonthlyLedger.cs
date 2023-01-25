@@ -59,12 +59,13 @@ namespace ClassLibrary1
             }
         }
 
-        public void TotalCalc()
+        public decimal? TotalCalc()
         {
             GetMonthsTrans();
             ExpenseCalc();
             IncomeCalc();
             Total = Incomee - Expense;
+            return Total;
         }
 
     }
