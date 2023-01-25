@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using DevExpress.CodeParser;
 using Label = System.Windows.Forms.Label;
 using static DevExpress.Pdf.Native.BouncyCastle.Asn1.X509.Target;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Session_11
 {
@@ -104,15 +105,20 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
-            //grvEmployees.AutoGenerateColumns = false;
-            //bsEmployees.DataSource = petShop.Employees;
-            //grvEmployees.DataSource = bsEmployees;
 
-            //grvPetReport.AutoGenerateColumns = false;
-            //bsPetReport.DataSource = petShop.Employees;
-            //grvPetReport.DataSource = bsPetReport;
+            //trial Update/deleteCustomer
+            //DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
+            //DataGridViewButtonColumn btnUpdate = grvCustomer.Columns["cusUpdate"] as DataGridViewButtonColumn;
+            DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
+            btnUpdate.FlatStyle = FlatStyle.Popup;
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.UseColumnTextForButtonValue = true;
+            btnUpdate.Text = "Update";
 
-            // FOR THE BINDING SOURCES 
+            grvCustomer.Columns.Add(btnUpdate);
+           
+
+
 
 
 
@@ -232,7 +238,20 @@ namespace Session_11
 
         }
 
+       /* public void GrvCustomers_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+        {
 
+            var grv = (DataGridView)sender;
+
+
+            DataGridViewButtonColumn col = grv.Columns[e.ColumnIndex] as DataGridViewButtonColumn;
+
+            if (col != null && col.Name == "cusUpdate" && e.RowIndex >= 0)
+            {
+                petShop.Customers customer = grv.CurrentRow.DataBoundItem as ;
+                MessageBox.Show($"show something Plz");
+            }
+        }*/
 
 
         /*private void btnManage_Click(object sender, EventArgs e)
@@ -331,5 +350,19 @@ namespace Session_11
             center = getCentered(grvMonthly);
         }
 
+        private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+
+
+
+
     }
+
+
+
+
 }
