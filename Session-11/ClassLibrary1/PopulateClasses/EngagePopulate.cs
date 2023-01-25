@@ -24,7 +24,7 @@ namespace ClassLibrary1.PopulateClasses {
                 Foods = populatePetFood.PopulatePetFoods(),
                 Pets = populatePet.PopulatePets(),
                 Employees = populateEmployees.PopulateEmployees(),
-                Customers = populateCustomer.PopulateCustomers(),
+                Customers = populateCustomer.PopulateCustomers()
 
             };
 
