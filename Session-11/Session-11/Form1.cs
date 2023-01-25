@@ -325,10 +325,6 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvMonthly);
         }
-//ignore it, accidental click
-      /*  private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }*/
     }
 }
