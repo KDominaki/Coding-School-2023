@@ -63,6 +63,26 @@ namespace Session_11.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dg_shadow_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("dg-shadow-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dogbowl_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("dogbowl-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shoplogo {
             get {
                 object obj = ResourceManager.GetObject("shoplogo", resourceCulture);

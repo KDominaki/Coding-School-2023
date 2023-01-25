@@ -28,7 +28,7 @@ namespace Session_11
             EngagePopulate ep = new EngagePopulate();
             petShop = ep.SetPopulation();
 
-            startInvis();
+            //startInvis();
             SetControlProperties();
         }
 
@@ -237,10 +237,16 @@ namespace Session_11
 
         private void btnManage_Click(object sender, EventArgs e)
         {
+            massHideGrv(grvTransaction, labTransaction);
 
-            TransactionsForm form2 = new TransactionsForm();
+            //centering function sort of
+            Point center = new Point();
+            center = getCentered(grvTransaction);
+
+
+            //TransactionsForm form2 = new TransactionsForm();
             //Form1.Close();
-            form2.Show();
+            //form2.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -283,6 +289,16 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvEmployees);
             
+        }
+
+        private void btnPetFood_Click(object sender, EventArgs e)
+        {
+            //could prolly do it by choosing the only visible grid but oh well
+            massHideGrv(grvPetFood, labPetFood);
+
+            //centering function sort of
+            Point center = new Point();
+            center = getCentered(grvPetFood);
         }
     }
 }
