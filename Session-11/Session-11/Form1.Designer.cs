@@ -609,7 +609,7 @@
             // 
             // grvMonthly
             // 
-            this.grvMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;          
+            this.grvMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvMonthly.Location = new System.Drawing.Point(0, 0);
             this.grvMonthly.Name = "grvMonthly";
@@ -732,12 +732,13 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(671, 528);
+            this.btnRefresh.Location = new System.Drawing.Point(671, 525);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(119, 53);
             this.btnRefresh.TabIndex = 27;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Form1
             // 

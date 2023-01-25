@@ -368,6 +368,11 @@ namespace Session_11
         {
             bsPet.RemoveCurrent();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            SetControlProperties();
+        }
     }
 
 }
