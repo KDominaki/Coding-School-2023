@@ -944,7 +944,6 @@
             // 
             // tabEmployees
             // 
-            this.tabEmployees.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.tabEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tabEmployees.Controls.Add(this.grvEmployees);
             this.tabEmployees.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
