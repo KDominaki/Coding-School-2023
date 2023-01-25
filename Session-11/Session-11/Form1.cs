@@ -9,13 +9,14 @@ using DevExpress.CodeParser;
 using Label = System.Windows.Forms.Label;
 using static DevExpress.Pdf.Native.BouncyCastle.Asn1.X509.Target;
 using MessageBox = System.Windows.Forms.MessageBox;
+using DevExpress.XtraSpreadsheet.Model;
 
 namespace Session_11
 {
     public partial class Form1 : Form
     {
         public PetShop petShop = new PetShop();
-        public  EngagePopulate ep = new EngagePopulate();
+        public EngagePopulate ep = new EngagePopulate();
         public PetShop pullElements = new PetShop();
 
         //PetShop petShop;
@@ -23,7 +24,7 @@ namespace Session_11
         public List<Employee> publicEmployees;
         public List<Pet> publicPet;
         public List<PetFood> publicPetFood;
-        
+
 
         public Form1()
         {
@@ -47,12 +48,12 @@ namespace Session_11
             publicEmployees = petShop.Employees;
             publicPet = petShop.Pets;
             publicPetFood = petShop.Foods;
-           
-           
+
+
 
         }
 
-       
+
 
 
 
@@ -119,7 +120,7 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
-           
+
 
 
             //trial Update/deleteCustomer
@@ -132,7 +133,7 @@ namespace Session_11
             btnUpdate.Text = "Update";
 
             grvCustomer.Columns.Add(btnUpdate);
-           
+
 
 
 
@@ -145,7 +146,8 @@ namespace Session_11
             //colAnimType.DataSource = petShop.Pets;//GetUniversities();
             //colAnimType.DisplayMember = "AnimalType";//"Name";
             //colAnimType.ValueMember =  "ID";//"ID";*/
-            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
+            foreach (var type in Enum.GetValues(typeof(AnimalType)))
+            {
                 colAnimType.Items.Add(type);
             }
 
@@ -157,7 +159,8 @@ namespace Session_11
             //colPetFoodType.DisplayMember = "Animaltype";//"Name";
             //colPetFoodType.ValueMember = "ID";//"ID";*/
 
-            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
+            foreach (var type in Enum.GetValues(typeof(AnimalType)))
+            {
                 colPetFoodType.Items.Add(type);
             }
 
@@ -167,32 +170,33 @@ namespace Session_11
 
             //Employees - Employee combobox
             DataGridViewComboBoxColumn colEmpType = grvEmployees.Columns["EmpType"] as DataGridViewComboBoxColumn;
-            foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
+            foreach (var type in Enum.GetValues(typeof(EmployeeType)))
+            {
                 colEmpType.Items.Add(type);
             }
 
         }
         public void massHideGrv(DataGridView grvChoice)
-        { 
-            List<DataGridView> grvNameList = new List<DataGridView>()  
+        {
+            List<DataGridView> grvNameList = new List<DataGridView>()
             {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport,grvMonthly };
 
-            
-            
+
+
             grvNameList.Remove(grvChoice);
-            
+
             DataGridView grvTmp = new DataGridView();
             //grvTmp = choice ;
-           
 
-            for(int i=0; i<grvNameList.Count;i++)
+
+            for (int i = 0; i < grvNameList.Count; i++)
             {
                 grvTmp = grvNameList[i];
                 grvTmp.Visible = false;
- 
+
             }
             grvChoice.Visible = true;
-            
+
 
         }
 
@@ -207,7 +211,7 @@ namespace Session_11
             return grvSizeChoice.Location = new Point(midX - (int)center, midY - 200);
         }
 */
-        
+
 
 
         //public void Window_Loaded(object sender, RoutedEventArgs e)
@@ -251,7 +255,7 @@ namespace Session_11
             }
         }
         //customer update + delete button events 
-        
+
 
 
         /*private void btnManage_Click(object sender, EventArgs e)
@@ -266,11 +270,11 @@ namespace Session_11
 
         private void button2_Click(object sender, EventArgs e)
         {
-           /* massHideGrv(grvTransaction);
+            /* massHideGrv(grvTransaction);
 
-            //centering function sort of
-            Point center = new Point();
-            center = getCentered(grvTransaction);*/
+             //centering function sort of
+             Point center = new Point();
+             center = getCentered(grvTransaction);*/
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -295,7 +299,7 @@ namespace Session_11
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvPet);*/
-           
+
 
         }
 
@@ -303,9 +307,9 @@ namespace Session_11
         {
             tabControl1.SelectedIndex = 0;
 
-            
-            
-            
+
+
+
             /* //could prolly do it by choosing the only visible grid but oh well
             massHideGrv(grvEmployees);
             labEmployees.Visible= false; //somehow didnt get caught in massHide
@@ -325,15 +329,15 @@ namespace Session_11
             center = getCentered(grvPetFood);*/
         }
 
-        
+
 
         private void btnPetReport_Click(object sender, EventArgs e)
         {
-           /* massHideGrv(grvPetReport);
+            /* massHideGrv(grvPetReport);
 
-            //centering function sort of
-            Point center = new Point();
-            center = getCentered(grvPetReport);*/
+             //centering function sort of
+             Point center = new Point();
+             center = getCentered(grvPetReport);*/
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -369,9 +373,17 @@ namespace Session_11
         {
 
         }
+
+        private void btnAddPet_Click(object sender, EventArgs e)
+        {
+            Pet pet = new Pet();
+            bsPet.Add(pet);
+        }
+
+        private void btnDeletePet_Click(object sender, EventArgs e)
+        {
+            bsPet.RemoveCurrent();
+        }
     }
-
-
-
 
 }
