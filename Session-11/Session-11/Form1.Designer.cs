@@ -332,8 +332,7 @@
             this.labEmployees.Name = "labEmployees";
             this.labEmployees.Size = new System.Drawing.Size(64, 15);
             this.labEmployees.TabIndex = 7;
-            this.labEmployees.Text = "Employees";
-            this.labEmployees.Click += new System.EventHandler(this.labEmployees_Click);
+            this.labEmployees.Text = "Employees";            
             // 
             // labTransaction
             // 
