@@ -14,8 +14,8 @@ namespace Session_11
 {
     public partial class Form1 : Form
     {
-       /* PetShop petShop;
-        List<Customers> publicCustomers*/
+        PetShop petShop;
+        //List<Customers> publicCustomers
 
 
         public Form1()
