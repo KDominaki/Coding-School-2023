@@ -117,11 +117,6 @@
             this.btnMonthly = new System.Windows.Forms.Button();
             this.labLedger = new System.Windows.Forms.Label();
             this.grvMonthly = new System.Windows.Forms.DataGridView();
-            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monExpenses = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmployees = new System.Windows.Forms.TabPage();
             this.tabPetFood = new System.Windows.Forms.TabPage();
@@ -130,6 +125,11 @@
             this.tabPetReport = new System.Windows.Forms.TabPage();
             this.tabMonthLedg = new System.Windows.Forms.TabPage();
             this.tabTransactions = new System.Windows.Forms.TabPage();
+            this.monYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monExpenses = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -891,40 +891,6 @@
             this.grvMonthly.Size = new System.Drawing.Size(1034, 213);
             this.grvMonthly.TabIndex = 25;
             // 
-            // monYear
-            // 
-            this.monYear.FillWeight = 65.81662F;
-            this.monYear.HeaderText = "Year";
-            this.monYear.Name = "monYear";
-            this.monYear.Width = 50;
-            // 
-            // monMonth
-            // 
-            this.monMonth.FillWeight = 26.24782F;
-            this.monMonth.HeaderText = "Month";
-            this.monMonth.Name = "monMonth";
-            this.monMonth.Width = 30;
-            // 
-            // monIncome
-            // 
-            this.monIncome.FillWeight = 89.50531F;
-            this.monIncome.HeaderText = "Monthly Income";
-            this.monIncome.Name = "monIncome";
-            this.monIncome.Width = 75;
-            // 
-            // monExpenses
-            // 
-            this.monExpenses.FillWeight = 128.0749F;
-            this.monExpenses.HeaderText = "Monthly Expenses";
-            this.monExpenses.Name = "monExpenses";
-            this.monExpenses.Width = 75;
-            // 
-            // monTotal
-            // 
-            this.monTotal.FillWeight = 190.3553F;
-            this.monTotal.HeaderText = "Total ";
-            this.monTotal.Name = "monTotal";
-            // 
             // tabControl1
             // 
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -1015,6 +981,43 @@
             this.tabTransactions.TabIndex = 6;
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
+            // 
+            // monYear
+            // 
+            this.monYear.FillWeight = 65.81662F;
+            this.monYear.HeaderText = "Year";
+            this.monYear.Name = "monYear";
+            this.monYear.Visible = false;
+            this.monYear.Width = 50;
+            // 
+            // monMonth
+            // 
+            this.monMonth.FillWeight = 26.24782F;
+            this.monMonth.HeaderText = "Month";
+            this.monMonth.Name = "monMonth";
+            this.monMonth.Visible = false;
+            this.monMonth.Width = 30;
+            // 
+            // monIncome
+            // 
+            this.monIncome.FillWeight = 89.50531F;
+            this.monIncome.HeaderText = "Monthly Income";
+            this.monIncome.Name = "monIncome";
+            this.monIncome.Width = 75;
+            // 
+            // monExpenses
+            // 
+            this.monExpenses.FillWeight = 128.0749F;
+            this.monExpenses.HeaderText = "Monthly Expenses";
+            this.monExpenses.Name = "monExpenses";
+            this.monExpenses.Width = 75;
+            // 
+            // monTotal
+            // 
+            this.monTotal.FillWeight = 190.3553F;
+            this.monTotal.HeaderText = "Total ";
+            this.monTotal.Name = "monTotal";
+            this.monTotal.Visible = false;
             // 
             // Form1
             // 
@@ -1129,11 +1132,6 @@
         private DataGridViewTextBoxColumn EmpSalary;
         private DataGridViewButtonColumn cusUpdate;
         private DataGridViewButtonColumn cusDelete;
-        private DataGridViewTextBoxColumn monYear;
-        private DataGridViewTextBoxColumn monMonth;
-        private DataGridViewTextBoxColumn monIncome;
-        private DataGridViewTextBoxColumn monExpenses;
-        private DataGridViewTextBoxColumn monTotal;
         private DataGridViewTextBoxColumn PetID;
         private DataGridViewTextBoxColumn DayBought;
         private DataGridViewComboBoxColumn AnimalT;
@@ -1160,5 +1158,10 @@
         private TabPage tabPetReport;
         private TabPage tabMonthLedg;
         private TabPage tabTransactions;
+        private DataGridViewTextBoxColumn monYear;
+        private DataGridViewTextBoxColumn monMonth;
+        private DataGridViewTextBoxColumn monIncome;
+        private DataGridViewTextBoxColumn monExpenses;
+        private DataGridViewTextBoxColumn monTotal;
     }
 }
