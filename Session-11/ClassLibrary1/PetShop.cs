@@ -15,9 +15,7 @@ namespace ClassLibrary1 {
         public List<Employee> Employees = new List<Employee>();
         public List<Customer> Customers = new List<Customer>();
 
-        public List<PetFood> MonthlyFoods = new List<PetFood>() { new PetFood(), new PetFood(), new PetFood() };
-        public List<Pet> MonthlyPets = new List<Pet>();
-
+        public List<PetshopTransactions> PetshopTransactions= new List<PetshopTransactions>();
 
 
         //CTOR
