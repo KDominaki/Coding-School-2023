@@ -253,28 +253,28 @@ namespace Session_11
                 publicCustomers = grv.CurrentRow.DataBoundItem as List<Customer>;
                 MessageBox.Show($"show something Plz");
             }
+
+
+
+
         }
         //customer update + delete button events 
 
 
 
-        /*private void btnManage_Click(object sender, EventArgs e)
-        {
-            
-
-
-            //TransactionsForm form2 = new TransactionsForm();
-            //Form1.Close();
-            //form2.Show();
-        }*/
+      
 
         private void button2_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             /* massHideGrv(grvTransaction);
 
              //centering function sort of
              Point center = new Point();
              center = getCentered(grvTransaction);*/
+=======
+            tabControl1.SelectedIndex = 6;
+>>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -295,16 +295,21 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             /*massHideGrv(grvPet);
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvPet);*/
 
 
+=======
+            tabControl1.SelectedIndex = 2;
+>>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
         }
 
         private void btnManage_Click_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             tabControl1.SelectedIndex = 0;
 
 
@@ -317,46 +322,39 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvEmployees);
             */
+=======
+            tabControl1.SelectedIndex = 0;   
+>>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
         }
 
         private void btnPetFood_Click(object sender, EventArgs e)
         {
-            /*//could prolly do it by choosing the only visible grid but oh well
-            massHideGrv(grvPetFood);
-
-            //centering function sort of
-            Point center = new Point();
-            center = getCentered(grvPetFood);*/
+            tabControl1.SelectedIndex = 1;
         }
 
 
 
         private void btnPetReport_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             /* massHideGrv(grvPetReport);
 
              //centering function sort of
              Point center = new Point();
              center = getCentered(grvPetReport);*/
+=======
+            tabControl1.SelectedIndex = 4;
+>>>>>>> dc432439ed0fae1ea7976af935e7895fe4aa4124
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
-        {/*
-            massHideGrv(grvCustomer);
-
-            //centering function sort of
-            Point center = new Point();
-            center = getCentered(grvCustomer);*/
-
+        {
+            tabControl1.SelectedIndex = 3;
         }
 
         private void btnMonthly_Click(object sender, EventArgs e)
-        {/*
-            massHideGrv(grvMonthly);
-
-            //centering function sort of
-            Point center = new Point();
-            center = getCentered(grvMonthly);*/
+        {
+            tabControl1.SelectedIndex = 5;
         }
 
         private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
