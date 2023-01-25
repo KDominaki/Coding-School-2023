@@ -37,7 +37,7 @@ namespace ClassLibrary1 {
                     }
                 }
             }
-            return petFoods;
+            return Foods;
         }
 
 
