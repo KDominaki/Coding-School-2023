@@ -13,6 +13,8 @@ namespace ClassLibrary1
         public decimal? Incomee { get; set; }
         public decimal? Expense { get; set; } 
         public decimal? Total { get; set; }
+        public decimal? OverAllTotal { get; set; }
+        public decimal? OverAllIncomee { get; set; }
         public PetShop Petshop { get; set; }
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
@@ -32,6 +34,14 @@ namespace ClassLibrary1
                 Incomee += item.TotalPrice;
             }
         }
+
+        public void TotalIncomeCalc()
+        {
+            foreach (var item in Petshop.Transactions)
+            {
+                Incomee += item.TotalPrice;
+            }
+        }
         public void ExpenseCalc() 
         {
             
@@ -47,12 +57,12 @@ namespace ClassLibrary1
 
         public void GetMonthsTrans()
         {
-            
+
             foreach (var trans in Petshop.Transactions)
             {
-                if (trans.Date.Year == Year && trans.Date.Month == Month )
+                if (trans.Date.Year == Year && trans.Date.Month == Month)
                 {
-                    MonthlyTransactions.Add( trans );
+                    MonthlyTransactions.Add(trans);
                 }
                 else { }
 
@@ -66,6 +76,15 @@ namespace ClassLibrary1
             IncomeCalc();
             Total = Incomee - Expense;
             return Total;
+        }
+
+
+        public decimal? OverAllTotalCalc()
+        {
+            ExpenseCalc();
+            TotalIncomeCalc();
+            OverAllTotal = Incomee - Expense;
+            return OverAllTotal;
         }
 
     }

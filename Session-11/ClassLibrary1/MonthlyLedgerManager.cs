@@ -53,6 +53,13 @@ namespace ClassLibrary1
             decimal? currentMonthTotal = currentMonthlyLedger.Total; 
             return currentMonthTotal;
         }
+        public decimal? CurrentMonthOverAllTotal()
+        {
+            GeneratorActivator();
+            currentMonthlyLedger.OverAllTotalCalc();
+            decimal? currentMonthOverAllTotal = currentMonthlyLedger.OverAllTotal;
+            return currentMonthOverAllTotal;
+        }
 
 
 
