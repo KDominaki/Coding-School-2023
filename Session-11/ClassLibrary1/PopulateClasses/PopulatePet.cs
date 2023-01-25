@@ -23,8 +23,10 @@ namespace PopulateClassLibrary {
                 Breed = "Labrador",
                 Price = 1500,
                 Cost = 1000,
+                Bought = RandomDate()
 
             };
+
             pets.Add(pet);
 
             pet = new Pet() {
@@ -34,7 +36,7 @@ namespace PopulateClassLibrary {
                 Breed = "Siamese",
                 Price = 1300,
                 Cost = 900,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -45,7 +47,7 @@ namespace PopulateClassLibrary {
                 Breed = "West Highland",
                 Price = 1000,
                 Cost = 700,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -56,7 +58,7 @@ namespace PopulateClassLibrary {
                 Breed = "Parakeet",
                 Price = 100,
                 Cost = 20,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -67,7 +69,7 @@ namespace PopulateClassLibrary {
                 Breed = "Siamese",
                 Price = 1300,
                 Cost = 900,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
             pet = new Pet() {
@@ -77,7 +79,7 @@ namespace PopulateClassLibrary {
                 Breed = "Sphynx",
                 Price = 1300,
                 Cost = 900,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -88,7 +90,7 @@ namespace PopulateClassLibrary {
                 Breed = "Himalayan",
                 Price = 1400,
                 Cost = 1000,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -99,7 +101,7 @@ namespace PopulateClassLibrary {
                 Breed = "Malinois",
                 Price = 1300,
                 Cost = 800,
-
+                Bought = RandomDate()
             };
             pets.Add(pet); 
             
@@ -110,7 +112,7 @@ namespace PopulateClassLibrary {
                 Breed = "Macaw",
                 Price = 2000,
                 Cost = 1200,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -121,7 +123,7 @@ namespace PopulateClassLibrary {
                 Breed = "Macaw",
                 Price = 2000,
                 Cost = 1200,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -132,7 +134,7 @@ namespace PopulateClassLibrary {
                 Breed = "African Grey",
                 Price = 1400,
                 Cost = 900,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
@@ -143,15 +145,21 @@ namespace PopulateClassLibrary {
                 Breed = "Cockatiel",
                 Price = 200,
                 Cost = 80,
-
+                Bought = RandomDate()
             };
             pets.Add(pet);
 
             //bsPet.DataSource = pets
             return pets;
 
+            
         }
 
-
+        public DateTime RandomDate() {
+            Random gen = new Random();
+            DateTime start = new DateTime(2022, 1, 1);
+            int range = ((TimeSpan)(DateTime.Today - start)).Days;
+            return start.AddDays(gen.Next(range));
+        }
     }
 }

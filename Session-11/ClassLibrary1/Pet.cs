@@ -20,6 +20,8 @@ namespace ClassLibrary1
 
         public decimal Cost { get; set; }
 
+        public DateTime Bought { get; set; }
+
         public Pet()
         {
 
