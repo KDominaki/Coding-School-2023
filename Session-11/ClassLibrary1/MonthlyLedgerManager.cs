@@ -23,6 +23,7 @@ namespace ClassLibrary1
         public void  MonthlyLedgerGenerator()
         {
             monthLegList.Add(new MonthlyLedger(_date.Year, _date.Month, Shop));
+            CurrentMonthlyLedgerChanger();
         }
 
         public void CurrentMonthlyLedgerChanger()
@@ -32,11 +33,17 @@ namespace ClassLibrary1
 
         public void GeneratorActivator()
         {
-            if(_date.Day == 1){
+            if (currentMonthlyLedger == null)
+            {
                 MonthlyLedgerGenerator();
-                CurrentMonthlyLedgerChanger();
             }
-            else { }
+            else {
+                if (_date.Day == 1)
+                {
+                    MonthlyLedgerGenerator();
+                }
+                else { }
+            }
         }
 
         public decimal? CurrentMonthTotal()
