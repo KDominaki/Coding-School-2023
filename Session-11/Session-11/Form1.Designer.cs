@@ -110,7 +110,6 @@
             this.btnDeleteTransactions = new System.Windows.Forms.Button();
             this.btnAddTransactions = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -858,22 +857,12 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1313, 545);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 53);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Refresh";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1881, 855);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.pad);
             this.Controls.Add(this.btnMonthly);
@@ -1008,7 +997,6 @@
         private Button btnDeletePetReport;
         private Button btnDeleteTransactions;
         private Button btnAddTransactions;
-        private Button button3;
         private Button btnAddPetReport;
     }
 }

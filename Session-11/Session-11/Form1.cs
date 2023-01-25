@@ -358,6 +358,21 @@ namespace Session_11
 
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            SetControlProperties();
+        }
+        private void btnAddEmployees_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            bsEmployees.Add(employee);
+        }
+
+        private void btnDeleteEmployees_Click(object sender, EventArgs e)
+        {
+            bsEmployees.RemoveCurrent();
+        }
+
         private void btnAddPet_Click(object sender, EventArgs e)
         {
             Pet pet = new Pet();
@@ -369,29 +384,15 @@ namespace Session_11
             bsPet.RemoveCurrent();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            SetControlProperties();
-        }
-
-        private void btnDeleteEmployees_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddEmployees_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddPetFood_Click(object sender, EventArgs e)
         {
-
+            PetFood petfood = new PetFood();
+            bsPetFood.Add(petfood);
         }
 
         private void btnDeletePetFood_Click(object sender, EventArgs e)
         {
-
+            bsPetFood.RemoveCurrent();
         }
 
         private void btnAddCustomers_Click(object sender, EventArgs e)
