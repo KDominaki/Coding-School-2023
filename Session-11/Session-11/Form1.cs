@@ -397,35 +397,38 @@ namespace Session_11
 
         private void btnAddCustomers_Click(object sender, EventArgs e)
         {
-
+            Customer customers = new Customer();
+            bsCustomer.Add(customers);
         }
 
         private void btnDeleteCustomers_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-        private void btnDeletePetReport_Click(object sender, EventArgs e)
-        {
-
+            bsCustomer.RemoveCurrent();
         }
 
         private void btnAddPetReport_Click(object sender, EventArgs e)
         {
-
+            //PetReport petReport = new PetReport();
+            //bsPetReport.Add(petReport);
         }
-        private void grvMonthly_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void btnDeletePetReport_Click(object sender, EventArgs e)
+        {
+            //bsPetReport.RemoveCurrent();
         }
 
         private void btnAddTransactions_Click(object sender, EventArgs e)
         {
-
+            //Transaction transactions = new Transaction();
+            //bsTransaction.Add(transactions);
         }
 
         private void btnDeleteTransactions_Click(object sender, EventArgs e)
+        {
+            //bsTransaction.RemoveCurrent();
+        }
+
+        private void grvMonthly_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
