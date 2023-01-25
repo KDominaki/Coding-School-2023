@@ -17,6 +17,7 @@ namespace Session_11
     {
         public PetShop petShop = new PetShop();
         public EngagePopulate ep = new EngagePopulate();
+        public PetShop pullElements = new PetShop();
         public MonthlyLedgerManager month;
 
         //PetShop petShop;
@@ -25,25 +26,75 @@ namespace Session_11
         public List<Pet> publicPet;
         public List<PetFood> publicPetFood;
 
+
         public Form1()
         {
             InitializeComponent();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             petShop = ep.SetPopulation();
             month = new MonthlyLedgerManager(petShop);
 
-            popGeneralPublic(petShop);     
+            popGeneralPublic(petShop);
+            startInvis();
             SetControlProperties();
-        }    
+        }
+
+        //  public List<petShop.Customers> publicCustomers;
+
         public void popGeneralPublic(PetShop customer)
         {
             publicCustomers = petShop.Customers;
             publicEmployees = petShop.Employees;
             publicPet = petShop.Pets;
             publicPetFood = petShop.Foods;
+
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -71,6 +122,12 @@ namespace Session_11
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
+           
+
+
+            //trial Update/deleteCustomer
+            //DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
+            //DataGridViewButtonColumn btnUpdate = grvCustomer.Columns["cusUpdate"] as DataGridViewButtonColumn;
             DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
             btnUpdate.FlatStyle = FlatStyle.Popup;
             btnUpdate.Name = "btnUpdate";
@@ -78,6 +135,11 @@ namespace Session_11
             btnUpdate.Text = "Update";
 
             grvCustomer.Columns.Add(btnUpdate);
+
+
+
+
+
 
 
             //FOR THE COMBO BOXES 
@@ -91,14 +153,22 @@ namespace Session_11
                 colAnimType.Items.Add(type);
             }
 
+
+
             //PET - PetFood combobox
             DataGridViewComboBoxColumn colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
-            
+            //colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
+            //colPetFoodType.DisplayMember = "Animaltype";//"Name";
+            //colPetFoodType.ValueMember = "ID";//"ID";*/
 
             foreach (var type in Enum.GetValues(typeof(AnimalType)))
             {
                 colPetFoodType.Items.Add(type);
             }
+
+            /*foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
+                EmpType.Items.Add(type);
+            }*/
 
             //Employees - Employee combobox
             DataGridViewComboBoxColumn colEmpType = grvEmployees.Columns["EmpType"] as DataGridViewComboBoxColumn;
@@ -132,6 +202,20 @@ namespace Session_11
 
         }
 
+        /*public  Point getCentered(DataGridView grvSizeChoice)
+        {   
+            int midX = 942, midY = 448;
+            double center, Xsquared, Ysquared;
+            Xsquared = Math.Pow(grvSizeChoice.Size.Width, 2);
+            Ysquared = Math.Pow(grvSizeChoice.Size.Height, 2);
+
+            center = Math.Sqrt(Xsquared + Ysquared) / 2;
+            return grvSizeChoice.Location = new Point(midX - (int)center, midY - 200);
+        }
+*/
+
+
+
         //public void Window_Loaded(object sender, RoutedEventArgs e)
         // {
         //     foreach (var type in Enum.GetValues(typeof(AnimalType)))
@@ -139,6 +223,14 @@ namespace Session_11
         //         AnimType.Items.Add(type);
         //     }
         // }
+
+        //kinda redundant but didn't figure another solution this late at night
+        public void startInvis()
+        {
+            
+        }
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -153,19 +245,21 @@ namespace Session_11
                 MessageBox.Show($"show something Plz");
             }
 
+
+
+
         }
         //customer update + delete button events 
 
+
+
+      
+
         private void button2_Click(object sender, EventArgs e)
-<<<<<<< HEAD
-        {  
-            tabControl1.SelectedIndex = 6;
-=======
         {
 
             
             pad.SelectedIndex = 6;
-
 
         }
 
@@ -228,9 +322,6 @@ namespace Session_11
 
         private void btnPetReport_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            tabControl1.SelectedIndex = 4;
-=======
 
             /* massHideGrv(grvPetReport);
 
@@ -240,7 +331,6 @@ namespace Session_11
 
             pad.SelectedIndex = 4;
 
->>>>>>> 7fa5a2f7eb67b1a2ede9cbfa8281d3e1e1242991
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -268,6 +358,21 @@ namespace Session_11
 
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            SetControlProperties();
+        }
+        private void btnAddEmployees_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            bsEmployees.Add(employee);
+        }
+
+        private void btnDeleteEmployees_Click(object sender, EventArgs e)
+        {
+            bsEmployees.RemoveCurrent();
+        }
+
         private void btnAddPet_Click(object sender, EventArgs e)
         {
             Pet pet = new Pet();
@@ -279,29 +384,15 @@ namespace Session_11
             bsPet.RemoveCurrent();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            SetControlProperties();
-        }
-
-        private void btnDeleteEmployees_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddEmployees_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddPetFood_Click(object sender, EventArgs e)
         {
-
+            PetFood petfood = new PetFood();
+            bsPetFood.Add(petfood);
         }
 
         private void btnDeletePetFood_Click(object sender, EventArgs e)
         {
-
+            bsPetFood.RemoveCurrent();
         }
 
         private void btnAddCustomers_Click(object sender, EventArgs e)
