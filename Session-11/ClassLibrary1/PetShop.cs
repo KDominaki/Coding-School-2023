@@ -30,6 +30,7 @@ namespace ClassLibrary1 {
         }
 
         public List<PetFood> GetPetFood() {
+            List<PetFood> petFoods = new List<PetFood>();
 
             foreach (var food in Foods) {
                 foreach (var transaction in Transactions) {
