@@ -609,10 +609,7 @@
             // 
             // grvMonthly
             // 
-            this.grvMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvMonthly.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.monYear,
-            this.monMonth});
+            this.grvMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;          
             this.grvMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvMonthly.Location = new System.Drawing.Point(0, 0);
             this.grvMonthly.Name = "grvMonthly";
