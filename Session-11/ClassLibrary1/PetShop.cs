@@ -41,32 +41,33 @@ namespace ClassLibrary1 {
             }
             return Foods;
         }
-        
+
 
         //METHOD DELETE FUNCTION
         public void DeleteTransaction(Transaction input) {
 
             foreach (var trans in Transactions) {
                 if (trans.ID == input.ID) {
-                    EnablePet(trans.PetID);
+                    if (trans.PetID == Guid.Empty)
+                        EnablePet(trans.PetID);
                     UpdatePetFoodQty(trans.PetFoodID, trans.PetFoodQty);
                     Transactions.Remove(trans);
                     break;
                 }
-                
+
             }
         }
 
         public void EnablePet(Guid? input) {
             foreach (var pet in Pets) {
-                if(pet.ID == input) {
+                if (pet.ID == input) {
                     pet.Sold = false;
                 }
             }
         }
-
+            
         public void UpdatePetFoodQty(Guid? input, decimal foodupdate) {
-            foreach(var food in Foods) {
+            foreach (var food in Foods) {
                 if (food.ID == input) {
                     food.Qty += foodupdate;
                 }
@@ -74,7 +75,14 @@ namespace ClassLibrary1 {
 
         }
 
-
+        //DELETE PET FOOD
+        public void DeletePetFood(Guid? input) {
+            foreach (var food in Foods) {
+                if (food.ID == input) {
+                    Foods.Remove(food);
+                }
+            }
+        }
 
 
 
