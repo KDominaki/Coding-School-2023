@@ -16,7 +16,7 @@ namespace ClassLibrary1
 
 
         public PetFood() {
-            //Cost = 10;
+            Qty= 0;
         }
 
         public void SetQty() {

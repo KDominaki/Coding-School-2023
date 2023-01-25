@@ -15,7 +15,7 @@ namespace PopulateClassLibrary {
         public List<PetFood> PopulatePetFoods() {
 
             List<PetFood> petFood = new List<PetFood>();
-
+            int eachTransaction = 30;
             PetFood pf = new PetFood() {
                 ID = Guid.Parse("{9B32B5C2-12F5-467F-8D68-FAD67DD51127}"),
                 Animaltype = AnimalType.Cat,
@@ -25,10 +25,11 @@ namespace PopulateClassLibrary {
             var date = RandomDate();
             var qty = RandomQty();
 
-            for(int i = 0; i < 20; i++) {
+            for(int i = 0; i < eachTransaction; i++) {
                 pf.PetFoodTransactions.Add(new PetFoodTransaction(date, qty));
             }
             pf.SetQty();
+
             petFood.Add(pf);
 
 
@@ -42,9 +43,10 @@ namespace PopulateClassLibrary {
             date = RandomDate();
             qty = RandomQty();
 
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < eachTransaction; i++) {
                 pf.PetFoodTransactions.Add(new PetFoodTransaction(date, qty));
             }
+            pf.SetQty();
             petFood.Add(pf);
 
 
@@ -54,13 +56,13 @@ namespace PopulateClassLibrary {
                 Price = 4,
                 Cost = 2,
             };
-            petFood.Add(pf);
             date = RandomDate();
             qty = RandomQty();
 
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < eachTransaction; i++) {
                 pf.PetFoodTransactions.Add(new PetFoodTransaction(date, qty));
             }
+            pf.SetQty();
             petFood.Add(pf);  
             return petFood;
         }
