@@ -89,17 +89,28 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMonthly = new System.Windows.Forms.Button();
             this.grvMonthly = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pad = new System.Windows.Forms.TabControl();
             this.tabEmployees = new System.Windows.Forms.TabPage();
+            this.btnDeleteEmployees = new System.Windows.Forms.Button();
+            this.btnAddEmployees = new System.Windows.Forms.Button();
             this.tabPetFood = new System.Windows.Forms.TabPage();
+            this.btnDeletePetFood = new System.Windows.Forms.Button();
+            this.btnAddPetFood = new System.Windows.Forms.Button();
             this.tabPet = new System.Windows.Forms.TabPage();
             this.btnDeletePet = new System.Windows.Forms.Button();
             this.btnAddPet = new System.Windows.Forms.Button();
             this.tabCustomers = new System.Windows.Forms.TabPage();
+            this.btnDeleteCustomers = new System.Windows.Forms.Button();
+            this.btnAddCustomers = new System.Windows.Forms.Button();
             this.tabPetReport = new System.Windows.Forms.TabPage();
+            this.btnAddPetReport = new System.Windows.Forms.Button();
+            this.btnDeletePetReport = new System.Windows.Forms.Button();
             this.tabMonthLedg = new System.Windows.Forms.TabPage();
             this.tabTransactions = new System.Windows.Forms.TabPage();
+            this.btnDeleteTransactions = new System.Windows.Forms.Button();
+            this.btnAddTransactions = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -112,7 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMonthly)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.pad.SuspendLayout();
             this.tabEmployees.SuspendLayout();
             this.tabPetFood.SuspendLayout();
             this.tabPet.SuspendLayout();
@@ -616,27 +627,30 @@
             this.grvMonthly.RowTemplate.Height = 25;
             this.grvMonthly.Size = new System.Drawing.Size(1160, 318);
             this.grvMonthly.TabIndex = 25;
+            this.grvMonthly.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvMonthly_CellContentClick);
             // 
-            // tabControl1
+            // pad
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl1.Controls.Add(this.tabEmployees);
-            this.tabControl1.Controls.Add(this.tabPetFood);
-            this.tabControl1.Controls.Add(this.tabPet);
-            this.tabControl1.Controls.Add(this.tabCustomers);
-            this.tabControl1.Controls.Add(this.tabPetReport);
-            this.tabControl1.Controls.Add(this.tabMonthLedg);
-            this.tabControl1.Controls.Add(this.tabTransactions);
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(417, 162);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1168, 364);
-            this.tabControl1.TabIndex = 26;
+            this.pad.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.pad.Controls.Add(this.tabEmployees);
+            this.pad.Controls.Add(this.tabPetFood);
+            this.pad.Controls.Add(this.tabPet);
+            this.pad.Controls.Add(this.tabCustomers);
+            this.pad.Controls.Add(this.tabPetReport);
+            this.pad.Controls.Add(this.tabMonthLedg);
+            this.pad.Controls.Add(this.tabTransactions);
+            this.pad.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pad.Location = new System.Drawing.Point(417, 162);
+            this.pad.Name = "pad";
+            this.pad.SelectedIndex = 0;
+            this.pad.Size = new System.Drawing.Size(1168, 364);
+            this.pad.TabIndex = 26;
             // 
             // tabEmployees
             // 
             this.tabEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabEmployees.Controls.Add(this.btnDeleteEmployees);
+            this.tabEmployees.Controls.Add(this.btnAddEmployees);
             this.tabEmployees.Controls.Add(this.grvEmployees);
             this.tabEmployees.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabEmployees.Location = new System.Drawing.Point(4, 42);
@@ -647,8 +661,30 @@
             this.tabEmployees.Text = "Employees";
             this.tabEmployees.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteEmployees
+            // 
+            this.btnDeleteEmployees.Location = new System.Drawing.Point(1027, 248);
+            this.btnDeleteEmployees.Name = "btnDeleteEmployees";
+            this.btnDeleteEmployees.Size = new System.Drawing.Size(119, 53);
+            this.btnDeleteEmployees.TabIndex = 17;
+            this.btnDeleteEmployees.Text = "Delete";
+            this.btnDeleteEmployees.UseVisualStyleBackColor = true;
+            this.btnDeleteEmployees.Click += new System.EventHandler(this.btnDeleteEmployees_Click);
+            // 
+            // btnAddEmployees
+            // 
+            this.btnAddEmployees.Location = new System.Drawing.Point(902, 248);
+            this.btnAddEmployees.Name = "btnAddEmployees";
+            this.btnAddEmployees.Size = new System.Drawing.Size(119, 53);
+            this.btnAddEmployees.TabIndex = 16;
+            this.btnAddEmployees.Text = "Add";
+            this.btnAddEmployees.UseVisualStyleBackColor = true;
+            this.btnAddEmployees.Click += new System.EventHandler(this.btnAddEmployees_Click);
+            // 
             // tabPetFood
             // 
+            this.tabPetFood.Controls.Add(this.btnDeletePetFood);
+            this.tabPetFood.Controls.Add(this.btnAddPetFood);
             this.tabPetFood.Controls.Add(this.grvPetFood);
             this.tabPetFood.Location = new System.Drawing.Point(4, 42);
             this.tabPetFood.Name = "tabPetFood";
@@ -657,6 +693,26 @@
             this.tabPetFood.TabIndex = 1;
             this.tabPetFood.Text = "Pet Food";
             this.tabPetFood.UseVisualStyleBackColor = true;
+            // 
+            // btnDeletePetFood
+            // 
+            this.btnDeletePetFood.Location = new System.Drawing.Point(1021, 245);
+            this.btnDeletePetFood.Name = "btnDeletePetFood";
+            this.btnDeletePetFood.Size = new System.Drawing.Size(119, 53);
+            this.btnDeletePetFood.TabIndex = 15;
+            this.btnDeletePetFood.Text = "Delete";
+            this.btnDeletePetFood.UseVisualStyleBackColor = true;
+            this.btnDeletePetFood.Click += new System.EventHandler(this.btnDeletePetFood_Click);
+            // 
+            // btnAddPetFood
+            // 
+            this.btnAddPetFood.Location = new System.Drawing.Point(896, 245);
+            this.btnAddPetFood.Name = "btnAddPetFood";
+            this.btnAddPetFood.Size = new System.Drawing.Size(119, 53);
+            this.btnAddPetFood.TabIndex = 14;
+            this.btnAddPetFood.Text = "Add";
+            this.btnAddPetFood.UseVisualStyleBackColor = true;
+            this.btnAddPetFood.Click += new System.EventHandler(this.btnAddPetFood_Click);
             // 
             // tabPet
             // 
@@ -692,6 +748,8 @@
             // 
             // tabCustomers
             // 
+            this.tabCustomers.Controls.Add(this.btnDeleteCustomers);
+            this.tabCustomers.Controls.Add(this.btnAddCustomers);
             this.tabCustomers.Controls.Add(this.grvCustomer);
             this.tabCustomers.Location = new System.Drawing.Point(4, 42);
             this.tabCustomers.Name = "tabCustomers";
@@ -700,8 +758,30 @@
             this.tabCustomers.Text = "Customers";
             this.tabCustomers.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteCustomers
+            // 
+            this.btnDeleteCustomers.Location = new System.Drawing.Point(1027, 251);
+            this.btnDeleteCustomers.Name = "btnDeleteCustomers";
+            this.btnDeleteCustomers.Size = new System.Drawing.Size(119, 53);
+            this.btnDeleteCustomers.TabIndex = 17;
+            this.btnDeleteCustomers.Text = "Delete";
+            this.btnDeleteCustomers.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomers.Click += new System.EventHandler(this.btnDeleteCustomers_Click);
+            // 
+            // btnAddCustomers
+            // 
+            this.btnAddCustomers.Location = new System.Drawing.Point(902, 251);
+            this.btnAddCustomers.Name = "btnAddCustomers";
+            this.btnAddCustomers.Size = new System.Drawing.Size(119, 53);
+            this.btnAddCustomers.TabIndex = 16;
+            this.btnAddCustomers.Text = "Add";
+            this.btnAddCustomers.UseVisualStyleBackColor = true;
+            this.btnAddCustomers.Click += new System.EventHandler(this.btnAddCustomers_Click);
+            // 
             // tabPetReport
             // 
+            this.tabPetReport.Controls.Add(this.btnAddPetReport);
+            this.tabPetReport.Controls.Add(this.btnDeletePetReport);
             this.tabPetReport.Controls.Add(this.grvPetReport);
             this.tabPetReport.Location = new System.Drawing.Point(4, 42);
             this.tabPetReport.Name = "tabPetReport";
@@ -709,6 +789,26 @@
             this.tabPetReport.TabIndex = 4;
             this.tabPetReport.Text = "Pet Report";
             this.tabPetReport.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPetReport
+            // 
+            this.btnAddPetReport.Location = new System.Drawing.Point(903, 251);
+            this.btnAddPetReport.Name = "btnAddPetReport";
+            this.btnAddPetReport.Size = new System.Drawing.Size(119, 53);
+            this.btnAddPetReport.TabIndex = 20;
+            this.btnAddPetReport.Text = "Add";
+            this.btnAddPetReport.UseVisualStyleBackColor = true;
+            this.btnAddPetReport.Click += new System.EventHandler(this.btnAddPetReport_Click);
+            // 
+            // btnDeletePetReport
+            // 
+            this.btnDeletePetReport.Location = new System.Drawing.Point(1028, 251);
+            this.btnDeletePetReport.Name = "btnDeletePetReport";
+            this.btnDeletePetReport.Size = new System.Drawing.Size(119, 53);
+            this.btnDeletePetReport.TabIndex = 19;
+            this.btnDeletePetReport.Text = "Delete";
+            this.btnDeletePetReport.UseVisualStyleBackColor = true;
+            this.btnDeletePetReport.Click += new System.EventHandler(this.btnDeletePetReport_Click);
             // 
             // tabMonthLedg
             // 
@@ -722,6 +822,8 @@
             // 
             // tabTransactions
             // 
+            this.tabTransactions.Controls.Add(this.btnDeleteTransactions);
+            this.tabTransactions.Controls.Add(this.btnAddTransactions);
             this.tabTransactions.Controls.Add(this.grvTransaction);
             this.tabTransactions.Location = new System.Drawing.Point(4, 42);
             this.tabTransactions.Name = "tabTransactions";
@@ -729,6 +831,26 @@
             this.tabTransactions.TabIndex = 6;
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteTransactions
+            // 
+            this.btnDeleteTransactions.Location = new System.Drawing.Point(1030, 251);
+            this.btnDeleteTransactions.Name = "btnDeleteTransactions";
+            this.btnDeleteTransactions.Size = new System.Drawing.Size(119, 53);
+            this.btnDeleteTransactions.TabIndex = 17;
+            this.btnDeleteTransactions.Text = "Delete";
+            this.btnDeleteTransactions.UseVisualStyleBackColor = true;
+            this.btnDeleteTransactions.Click += new System.EventHandler(this.btnDeleteTransactions_Click);
+            // 
+            // btnAddTransactions
+            // 
+            this.btnAddTransactions.Location = new System.Drawing.Point(905, 251);
+            this.btnAddTransactions.Name = "btnAddTransactions";
+            this.btnAddTransactions.Size = new System.Drawing.Size(119, 53);
+            this.btnAddTransactions.TabIndex = 16;
+            this.btnAddTransactions.Text = "Add";
+            this.btnAddTransactions.UseVisualStyleBackColor = true;
+            this.btnAddTransactions.Click += new System.EventHandler(this.btnAddTransactions_Click);
             // 
             // btnRefresh
             // 
@@ -740,14 +862,24 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1313, 545);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 53);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1881, 855);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.pad);
             this.Controls.Add(this.btnMonthly);
             this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnPetReport);
@@ -772,7 +904,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMonthly)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.pad.ResumeLayout(false);
             this.tabEmployees.ResumeLayout(false);
             this.tabPetFood.ResumeLayout(false);
             this.tabPet.ResumeLayout(false);
@@ -858,7 +990,7 @@
         private DataGridViewTextBoxColumn colTransPetFoodQty;
         private DataGridViewTextBoxColumn colTransPetFoodPrice;
         private DataGridViewTextBoxColumn colTransTotalPrice;
-        private TabControl tabControl1;
+        private TabControl pad;
         private TabPage tabEmployees;
         private TabPage tabPetFood;
         private TabPage tabPet;
@@ -871,6 +1003,16 @@
         private Button btnRefresh;
         private DataGridViewTextBoxColumn monYear;
         private DataGridViewTextBoxColumn monMonth;
-
+        private Button btnDeleteEmployees;
+        private Button btnAddEmployees;
+        private Button btnDeletePetFood;
+        private Button btnAddPetFood;
+        private Button btnDeleteCustomers;
+        private Button btnAddCustomers;
+        private Button btnDeletePetReport;
+        private Button btnDeleteTransactions;
+        private Button btnAddTransactions;
+        private Button button3;
+        private Button btnAddPetReport;
     }
 }

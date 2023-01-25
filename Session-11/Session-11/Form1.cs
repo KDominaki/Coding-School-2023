@@ -259,7 +259,7 @@ namespace Session_11
         {
 
             
-            tabControl1.SelectedIndex = 6;
+            pad.SelectedIndex = 6;
 
         }
 
@@ -289,14 +289,14 @@ namespace Session_11
 
 
 
-            tabControl1.SelectedIndex = 2;
+            pad.SelectedIndex = 2;
 
         }
 
         private void btnManage_Click_1(object sender, EventArgs e)
         {
 
-            tabControl1.SelectedIndex = 0;
+            pad.SelectedIndex = 0;
 
 
 
@@ -309,13 +309,13 @@ namespace Session_11
             center = getCentered(grvEmployees);
             */
 
-            tabControl1.SelectedIndex = 0;   
+            pad.SelectedIndex = 0;   
 
         }
 
         private void btnPetFood_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            pad.SelectedIndex = 1;
         }
 
 
@@ -329,18 +329,18 @@ namespace Session_11
              Point center = new Point();
              center = getCentered(grvPetReport);*/
 
-            tabControl1.SelectedIndex = 4;
+            pad.SelectedIndex = 4;
 
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 3;
+            pad.SelectedIndex = 3;
         }
 
         private void btnMonthly_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 5;
+            pad.SelectedIndex = 5;
         }
 
         private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -372,6 +372,61 @@ namespace Session_11
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             SetControlProperties();
+        }
+
+        private void btnDeleteEmployees_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEmployees_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddPetFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeletePetFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnDeletePetReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddPetReport_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void grvMonthly_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAddTransactions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteTransactions_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
