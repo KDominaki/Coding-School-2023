@@ -32,22 +32,11 @@ namespace ClassLibrary1.PopulateClasses {
             PopulateTransaction populateTransaction = new PopulateTransaction();
             petshop.Transactions = populateTransaction.PopulateTransactions(petshop.Foods, petshop.Pets, petshop.Employees, petshop.Customers);
             SetBoughtDate(petshop.Pets, petshop.Transactions);
-            setSoldPets(petshop.Pets, petshop.Transactions);
             //petShop.Transactions = new Populate
             return petshop;
         }
 
-        public void setSoldPets(List<Pet> pets, List<Transaction> transactions) {
 
-            foreach (var trans in transactions) {
-                foreach (var pet in pets) {
-                    if (pet.ID == trans.PetID) {
-                        pet.Sold = true;
-                        break;
-                    }
-                }
-            }
-        }
         public void SetBoughtDate(List<Pet> pets, List<Transaction> transactions) {
 
             foreach (var pet in pets) {
@@ -71,7 +60,6 @@ namespace ClassLibrary1.PopulateClasses {
             int range = ((TimeSpan)(datebought - start)).Days;
             return start.AddDays(gen.Next(range));
         }
-
 
 
 
