@@ -311,5 +311,15 @@ namespace Session_11
             Point center = new Point();
             center = getCentered(grvPetReport);
         }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            massHideGrv(grvCustomer);
+
+            //centering function sort of
+            Point center = new Point();
+            center = getCentered(grvCustomer);
+
+        }
     }
 }
