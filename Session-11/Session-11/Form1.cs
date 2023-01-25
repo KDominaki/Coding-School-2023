@@ -145,32 +145,27 @@ namespace Session_11
 
 
         }
-        public void massHideGrv(DataGridView grvChoice, Label labChoice)
+        public void massHideGrv(DataGridView grvChoice)
         { 
             List<DataGridView> grvNameList = new List<DataGridView>()  
             {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport };
 
-            List<Label> labelList = new List<Label>()
-            {labCustomer,labEmployees,labPetFood,labPetReport,labPets,labTransaction };
+            
             
             grvNameList.Remove(grvChoice);
-            labelList.Remove(labChoice);
+            
             DataGridView grvTmp = new DataGridView();
             //grvTmp = choice ;
-            Label tmpLabel = new Label();
+           
 
             for(int i=0; i<grvNameList.Count;i++)
             {
                 grvTmp = grvNameList[i];
                 grvTmp.Visible = false;
-
-                tmpLabel = labelList[i];
-                tmpLabel.Visible = false;
-
-               
+ 
             }
             grvChoice.Visible = true;
-            //labChoice.Visible = true;
+            
 
         }
 
@@ -252,7 +247,7 @@ namespace Session_11
 
         private void button2_Click(object sender, EventArgs e)
         {
-            massHideGrv(grvTransaction, labTransaction);
+            massHideGrv(grvTransaction);
 
             //centering function sort of
             Point center = new Point();
@@ -277,7 +272,7 @@ namespace Session_11
 
         private void btnPets_Click(object sender, EventArgs e)
         {
-            massHideGrv(grvPet,labPets);
+            massHideGrv(grvPet);
             //centering function sort of
             Point center = new Point();
             center = getCentered(grvPet);
@@ -288,7 +283,7 @@ namespace Session_11
         private void btnManage_Click_1(object sender, EventArgs e)
         {
             //could prolly do it by choosing the only visible grid but oh well
-            massHideGrv(grvEmployees, labEmployees);
+            massHideGrv(grvEmployees);
             labEmployees.Visible= false; //somehow didnt get caught in massHide
             //centering function sort of
             Point center = new Point();
@@ -299,7 +294,7 @@ namespace Session_11
         private void btnPetFood_Click(object sender, EventArgs e)
         {
             //could prolly do it by choosing the only visible grid but oh well
-            massHideGrv(grvPetFood, labPetFood);
+            massHideGrv(grvPetFood);
 
             //centering function sort of
             Point center = new Point();
@@ -309,6 +304,15 @@ namespace Session_11
         private void labEmployees_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPetReport_Click(object sender, EventArgs e)
+        {
+            massHideGrv(grvPetReport);
+
+            //centering function sort of
+            Point center = new Point();
+            center = getCentered(grvPetReport);
         }
     }
 }

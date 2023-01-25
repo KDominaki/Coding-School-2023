@@ -75,6 +75,11 @@
             this.pfQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvEmployees = new System.Windows.Forms.DataGridView();
+            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvTransaction = new System.Windows.Forms.DataGridView();
             this.colTransDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,11 +105,7 @@
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.btnPets = new System.Windows.Forms.Button();
             this.btnPetFood = new System.Windows.Forms.Button();
-            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPetReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -309,7 +310,7 @@
             // labPets
             // 
             this.labPets.AutoSize = true;
-            this.labPets.Location = new System.Drawing.Point(1327, 222);
+            this.labPets.Location = new System.Drawing.Point(995, 120);
             this.labPets.Name = "labPets";
             this.labPets.Size = new System.Drawing.Size(29, 15);
             this.labPets.TabIndex = 5;
@@ -318,7 +319,7 @@
             // labPetFood
             // 
             this.labPetFood.AutoSize = true;
-            this.labPetFood.Location = new System.Drawing.Point(1327, 434);
+            this.labPetFood.Location = new System.Drawing.Point(605, 120);
             this.labPetFood.Name = "labPetFood";
             this.labPetFood.Size = new System.Drawing.Size(54, 15);
             this.labPetFood.TabIndex = 6;
@@ -327,7 +328,7 @@
             // labEmployees
             // 
             this.labEmployees.AutoSize = true;
-            this.labEmployees.Location = new System.Drawing.Point(12, 240);
+            this.labEmployees.Location = new System.Drawing.Point(419, 120);
             this.labEmployees.Name = "labEmployees";
             this.labEmployees.Size = new System.Drawing.Size(64, 15);
             this.labEmployees.TabIndex = 7;
@@ -337,7 +338,7 @@
             // labTransaction
             // 
             this.labTransaction.AutoSize = true;
-            this.labTransaction.Location = new System.Drawing.Point(12, 644);
+            this.labTransaction.Location = new System.Drawing.Point(787, 120);
             this.labTransaction.Name = "labTransaction";
             this.labTransaction.Size = new System.Drawing.Size(72, 15);
             this.labTransaction.TabIndex = 8;
@@ -346,7 +347,7 @@
             // labPetReport
             // 
             this.labPetReport.AutoSize = true;
-            this.labPetReport.Location = new System.Drawing.Point(1327, 644);
+            this.labPetReport.Location = new System.Drawing.Point(1163, 120);
             this.labPetReport.Name = "labPetReport";
             this.labPetReport.Size = new System.Drawing.Size(62, 15);
             this.labPetReport.TabIndex = 10;
@@ -466,6 +467,39 @@
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(500, 134);
             this.grvEmployees.TabIndex = 12;
+            // 
+            // EmpID
+            // 
+            this.EmpID.DataPropertyName = "ID";
+            this.EmpID.HeaderText = "Employee ID";
+            this.EmpID.Name = "EmpID";
+            this.EmpID.Visible = false;
+            // 
+            // EmpName
+            // 
+            this.EmpName.DataPropertyName = "Name";
+            this.EmpName.HeaderText = "Name";
+            this.EmpName.Name = "EmpName";
+            // 
+            // EmpSurname
+            // 
+            this.EmpSurname.DataPropertyName = "Surname";
+            this.EmpSurname.HeaderText = "Surname";
+            this.EmpSurname.Name = "EmpSurname";
+            // 
+            // EmpType
+            // 
+            this.EmpType.DataPropertyName = "EmployeeType";
+            this.EmpType.HeaderText = "Employee Post";
+            this.EmpType.Name = "EmpType";
+            this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // EmpSalary
+            // 
+            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
+            this.EmpSalary.HeaderText = "Salary";
+            this.EmpSalary.Name = "EmpSalary";
             // 
             // grvTransaction
             // 
@@ -671,38 +705,20 @@
             this.btnPetFood.UseVisualStyleBackColor = true;
             this.btnPetFood.Click += new System.EventHandler(this.btnPetFood_Click);
             // 
-            // EmpID
+            // btnPetReport
             // 
-            this.EmpID.DataPropertyName = "ID";
-            this.EmpID.HeaderText = "Employee ID";
-            this.EmpID.Name = "EmpID";
-            this.EmpID.Visible = false;
-            // 
-            // EmpName
-            // 
-            this.EmpName.DataPropertyName = "Name";
-            this.EmpName.HeaderText = "Name";
-            this.EmpName.Name = "EmpName";
-            // 
-            // EmpSurname
-            // 
-            this.EmpSurname.DataPropertyName = "Surname";
-            this.EmpSurname.HeaderText = "Surname";
-            this.EmpSurname.Name = "EmpSurname";
-            // 
-            // EmpType
-            // 
-            this.EmpType.DataPropertyName = "EmployeeType";
-            this.EmpType.HeaderText = "Employee Post";
-            this.EmpType.Name = "EmpType";
-            this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // EmpSalary
-            // 
-            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
-            this.EmpSalary.HeaderText = "Salary";
-            this.EmpSalary.Name = "EmpSalary";
+            this.btnPetReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPetReport.BackgroundImage = global::Session_11.Properties.Resources.PetReport_thumbnail;
+            this.btnPetReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPetReport.FlatAppearance.BorderSize = 0;
+            this.btnPetReport.Location = new System.Drawing.Point(1115, 12);
+            this.btnPetReport.Name = "btnPetReport";
+            this.btnPetReport.Size = new System.Drawing.Size(161, 105);
+            this.btnPetReport.TabIndex = 20;
+            this.btnPetReport.Text = "\r\n";
+            this.btnPetReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPetReport.UseVisualStyleBackColor = true;
+            this.btnPetReport.Click += new System.EventHandler(this.btnPetReport_Click);
             // 
             // Form1
             // 
@@ -710,6 +726,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1881, 855);
+            this.Controls.Add(this.btnPetReport);
             this.Controls.Add(this.btnPetFood);
             this.Controls.Add(this.btnPets);
             this.Controls.Add(this.btnSave);
@@ -818,5 +835,6 @@
         private DataGridViewTextBoxColumn EmpSurname;
         private DataGridViewComboBoxColumn EmpType;
         private DataGridViewTextBoxColumn EmpSalary;
+        private Button btnPetReport;
     }
 }
