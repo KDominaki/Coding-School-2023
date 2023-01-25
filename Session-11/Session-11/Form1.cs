@@ -11,10 +11,8 @@ using static DevExpress.Pdf.Native.BouncyCastle.Asn1.X509.Target;
 using MessageBox = System.Windows.Forms.MessageBox;
 using DevExpress.XtraSpreadsheet.Model;
 
-namespace Session_11
-{
-    public partial class Form1 : Form
-    {
+namespace Session_11 {
+    public partial class Form1 : Form {
         public PetShop petShop = new PetShop();
         public EngagePopulate ep = new EngagePopulate();
         public PetShop pullElements = new PetShop();
@@ -27,13 +25,11 @@ namespace Session_11
         public List<PetFood> publicPetFood;
 
 
-        public Form1()
-        {
+        public Form1() {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e) {
             petShop = ep.SetPopulation();
             month = new MonthlyLedgerManager(petShop);
 
@@ -44,8 +40,7 @@ namespace Session_11
 
         //  public List<petShop.Customers> publicCustomers;
 
-        public void popGeneralPublic(PetShop customer)
-        {
+        public void popGeneralPublic(PetShop customer) {
             publicCustomers = petShop.Customers;
             publicEmployees = petShop.Employees;
             publicPet = petShop.Pets;
@@ -98,8 +93,7 @@ namespace Session_11
 
 
 
-        private void SetControlProperties()
-        {   //Customer binding Source
+        private void SetControlProperties() {   //Customer binding Source
             grvCustomer.AutoGenerateColumns = false;
             bsCustomer.DataSource = petShop.Customers;
             grvCustomer.DataSource = bsCustomer;
@@ -114,15 +108,15 @@ namespace Session_11
             bsPetFood.DataSource = petShop.GetPetFood();
             grvPetFood.DataSource = bsPetFood;
 
-            grvTransaction.AutoGenerateColumns = false;
-            bsTransact.DataSource = petShop.Transactions;
-            grvTransaction.DataSource = bsTransact;
+
+            SetControlTransactions();
+
 
             grvEmployees.AutoGenerateColumns = false;
             bsEmployees.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployees;
 
-           
+
 
 
             //trial Update/deleteCustomer
@@ -148,8 +142,7 @@ namespace Session_11
             //colAnimType.DataSource = petShop.Pets;//GetUniversities();
             //colAnimType.DisplayMember = "AnimalType";//"Name";
             //colAnimType.ValueMember =  "ID";//"ID";*/
-            foreach (var type in Enum.GetValues(typeof(AnimalType)))
-            {
+            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
                 colAnimType.Items.Add(type);
             }
 
@@ -161,8 +154,7 @@ namespace Session_11
             //colPetFoodType.DisplayMember = "Animaltype";//"Name";
             //colPetFoodType.ValueMember = "ID";//"ID";*/
 
-            foreach (var type in Enum.GetValues(typeof(AnimalType)))
-            {
+            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
                 colPetFoodType.Items.Add(type);
             }
 
@@ -170,16 +162,48 @@ namespace Session_11
                 EmpType.Items.Add(type);
             }*/
 
+
+
+
+
             //Employees - Employee combobox
             DataGridViewComboBoxColumn colEmpType = grvEmployees.Columns["EmpType"] as DataGridViewComboBoxColumn;
-            foreach (var type in Enum.GetValues(typeof(EmployeeType)))
-            {
+            foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
                 colEmpType.Items.Add(type);
             }
 
         }
-        public void massHideGrv(DataGridView grvChoice)
-        {
+
+
+        public void SetControlTransactions() {
+            grvTransaction.AutoGenerateColumns = false;
+
+            bsTransact.DataSource = petShop.Transactions;
+            grvTransaction.DataSource = bsTransactCustomers;
+
+            bsTransactCustomers.DataSource = petShop.Customers;
+
+            grvTransaction.DataSource = bsTransact;
+            grvTransaction.DataSource = bsTransactCustomers;
+
+
+            bsTransactCustomers.DataSource = bsTransact;
+            bsTransactCustomers.DataMember = "CustomerID";
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+        public void massHideGrv(DataGridView grvChoice) {
             List<DataGridView> grvNameList = new List<DataGridView>()
             {grvPet,grvEmployees,grvPetFood,grvCustomer,grvTransaction, grvPetReport,grvMonthly };
 
@@ -191,8 +215,7 @@ namespace Session_11
             //grvTmp = choice ;
 
 
-            for (int i = 0; i < grvNameList.Count; i++)
-            {
+            for (int i = 0; i < grvNameList.Count; i++) {
                 grvTmp = grvNameList[i];
                 grvTmp.Visible = false;
 
@@ -225,22 +248,19 @@ namespace Session_11
         // }
 
         //kinda redundant but didn't figure another solution this late at night
-        public void startInvis()
-        {
-            
+        public void startInvis() {
+
         }
 
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             var grv = (DataGridView)sender;
 
 
             DataGridViewButtonColumn col = grv.Columns[e.ColumnIndex] as DataGridViewButtonColumn;
             //conflict resolution
-            if (col != null && col.Name == "btnUpdate" && e.RowIndex >= 0)
-            {
+            if (col != null && col.Name == "btnUpdate" && e.RowIndex >= 0) {
                 publicCustomers = grv.CurrentRow.DataBoundItem as List<Customer>;
                 MessageBox.Show($"show something Plz");
             }
@@ -253,34 +273,30 @@ namespace Session_11
 
 
 
-      
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-            
+        private void button2_Click(object sender, EventArgs e) {
+
+
             pad.SelectedIndex = 6;
 
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
+        private void btnLoad_Click(object sender, EventArgs e) {
             Serializer serializer = new Serializer();
             petShop = serializer.DeserializeFromFile<PetShop>("petshop.json");
 
             System.Windows.MessageBox.Show("Load Completed!");
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+        private void btnSave_Click(object sender, EventArgs e) {
             Serializer serializer = new Serializer();
             serializer.SerializeToFile(petShop, "petshop.json");
 
             System.Windows.MessageBox.Show("Save Completed!");
         }
 
-        private void btnPets_Click(object sender, EventArgs e)
-        {
+        private void btnPets_Click(object sender, EventArgs e) {
 
             /*massHideGrv(grvPet);
             //centering function sort of
@@ -293,8 +309,7 @@ namespace Session_11
 
         }
 
-        private void btnManage_Click_1(object sender, EventArgs e)
-        {
+        private void btnManage_Click_1(object sender, EventArgs e) {
 
             pad.SelectedIndex = 0;
 
@@ -309,19 +324,17 @@ namespace Session_11
             center = getCentered(grvEmployees);
             */
 
-            pad.SelectedIndex = 0;   
+            pad.SelectedIndex = 0;
 
         }
 
-        private void btnPetFood_Click(object sender, EventArgs e)
-        {
+        private void btnPetFood_Click(object sender, EventArgs e) {
             pad.SelectedIndex = 1;
         }
 
 
 
-        private void btnPetReport_Click(object sender, EventArgs e)
-        {
+        private void btnPetReport_Click(object sender, EventArgs e) {
 
             /* massHideGrv(grvPetReport);
 
@@ -333,103 +346,88 @@ namespace Session_11
 
         }
 
-        private void btnCustomers_Click(object sender, EventArgs e)
-        {
+        private void btnCustomers_Click(object sender, EventArgs e) {
             pad.SelectedIndex = 3;
         }
 
-        private void btnMonthly_Click(object sender, EventArgs e)
-        {
+        private void btnMonthly_Click(object sender, EventArgs e) {
             pad.SelectedIndex = 5;
         }
 
-        private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void grvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
         }
 
-        private void grvTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void grvTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
         }
 
-        private void grvPet_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void grvPet_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
+        private void btnRefresh_Click(object sender, EventArgs e) {
             SetControlProperties();
         }
-        private void btnAddEmployees_Click(object sender, EventArgs e)
-        {
+        private void btnAddEmployees_Click(object sender, EventArgs e) {
             Employee employee = new Employee();
             bsEmployees.Add(employee);
         }
 
-        private void btnDeleteEmployees_Click(object sender, EventArgs e)
-        {
+        private void btnDeleteEmployees_Click(object sender, EventArgs e) {
             bsEmployees.RemoveCurrent();
         }
 
-        private void btnAddPet_Click(object sender, EventArgs e)
-        {
+        private void btnAddPet_Click(object sender, EventArgs e) {
             Pet pet = new Pet();
             bsPet.Add(pet);
         }
 
-        private void btnDeletePet_Click(object sender, EventArgs e)
-        {
+        private void btnDeletePet_Click(object sender, EventArgs e) {
             bsPet.RemoveCurrent();
         }
 
-        private void btnAddPetFood_Click(object sender, EventArgs e)
-        {
+        private void btnAddPetFood_Click(object sender, EventArgs e) {
             PetFood petfood = new PetFood();
             bsPetFood.Add(petfood);
         }
 
-        private void btnDeletePetFood_Click(object sender, EventArgs e)
-        {
+        private void btnDeletePetFood_Click(object sender, EventArgs e) {
             bsPetFood.RemoveCurrent();
         }
 
-        private void btnAddCustomers_Click(object sender, EventArgs e)
-        {
+        private void btnAddCustomers_Click(object sender, EventArgs e) {
             Customer customers = new Customer();
             bsCustomer.Add(customers);
         }
 
-        private void btnDeleteCustomers_Click(object sender, EventArgs e)
-        {
+        private void btnDeleteCustomers_Click(object sender, EventArgs e) {
             bsCustomer.RemoveCurrent();
         }
 
-        private void btnAddPetReport_Click(object sender, EventArgs e)
-        {
+        private void btnAddPetReport_Click(object sender, EventArgs e) {
             //PetReport petReport = new PetReport();
             //bsPetReport.Add(petReport);
         }
 
-        private void btnDeletePetReport_Click(object sender, EventArgs e)
-        {
+        private void btnDeletePetReport_Click(object sender, EventArgs e) {
             //bsPetReport.RemoveCurrent();
         }
 
-        private void btnAddTransactions_Click(object sender, EventArgs e)
-        {
+        private void btnAddTransactions_Click(object sender, EventArgs e) {
             //Transaction transactions = new Transaction();
             //bsTransaction.Add(transactions);
         }
 
-        private void btnDeleteTransactions_Click(object sender, EventArgs e)
-        {
+        private void btnDeleteTransactions_Click(object sender, EventArgs e) {
             //bsTransaction.RemoveCurrent();
         }
 
-        private void grvMonthly_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void grvMonthly_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+        }
+
+        private void bsTransact_CurrentChanged(object sender, EventArgs e) {
 
         }
     }
