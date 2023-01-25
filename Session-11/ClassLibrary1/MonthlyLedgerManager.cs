@@ -49,7 +49,7 @@ namespace ClassLibrary1
         public decimal? CurrentMonthTotal()
         {
             GeneratorActivator();
-            currentMonthlyLedger.TotalCalc();
+            currentMonthlyLedger.MothlyTotalCalc();
             decimal? currentMonthTotal = currentMonthlyLedger.Total; 
             return currentMonthTotal;
         }

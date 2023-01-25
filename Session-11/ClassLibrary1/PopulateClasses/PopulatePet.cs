@@ -34,7 +34,6 @@ namespace PopulateClassLibrary {
                 Breed = "Siamese",
                 Price = 1300,
                 Cost = 900,
-
             };
             pets.Add(pet);
 
@@ -45,7 +44,6 @@ namespace PopulateClassLibrary {
                 Breed = "West Highland",
                 Price = 1000,
                 Cost = 700,
-
             };
             pets.Add(pet);
 
@@ -56,7 +54,6 @@ namespace PopulateClassLibrary {
                 Breed = "Parakeet",
                 Price = 100,
                 Cost = 20,
-
             };
             pets.Add(pet);
 
@@ -67,7 +64,6 @@ namespace PopulateClassLibrary {
                 Breed = "Siamese",
                 Price = 1300,
                 Cost = 900,
-
             };
             pets.Add(pet);
             pet = new Pet() {
@@ -77,7 +73,6 @@ namespace PopulateClassLibrary {
                 Breed = "Sphynx",
                 Price = 1300,
                 Cost = 900,
-
             };
             pets.Add(pet);
 
@@ -88,7 +83,6 @@ namespace PopulateClassLibrary {
                 Breed = "Himalayan",
                 Price = 1400,
                 Cost = 1000,
-
             };
             pets.Add(pet);
 
@@ -99,7 +93,6 @@ namespace PopulateClassLibrary {
                 Breed = "Malinois",
                 Price = 1300,
                 Cost = 800,
-
             };
             pets.Add(pet); 
             
@@ -110,7 +103,6 @@ namespace PopulateClassLibrary {
                 Breed = "Macaw",
                 Price = 2000,
                 Cost = 1200,
-
             };
             pets.Add(pet);
 
@@ -121,7 +113,6 @@ namespace PopulateClassLibrary {
                 Breed = "Macaw",
                 Price = 2000,
                 Cost = 1200,
-
             };
             pets.Add(pet);
 
@@ -132,7 +123,6 @@ namespace PopulateClassLibrary {
                 Breed = "African Grey",
                 Price = 1400,
                 Cost = 900,
-
             };
             pets.Add(pet);
 
@@ -143,15 +133,14 @@ namespace PopulateClassLibrary {
                 Breed = "Cockatiel",
                 Price = 200,
                 Cost = 80,
-
             };
             pets.Add(pet);
 
             //bsPet.DataSource = pets
             return pets;
 
+            
         }
-
 
     }
 }

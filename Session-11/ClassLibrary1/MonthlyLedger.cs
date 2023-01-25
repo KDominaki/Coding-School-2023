@@ -19,6 +19,7 @@ namespace ClassLibrary1
         public PetShop Petshop { get; set; }
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
+        public List<PetFood> MonthlyPetfoodTransactions= new List<PetFood>();
 
         public MonthlyLedger(int year, int month,PetShop petshop)
         {
@@ -45,22 +46,22 @@ namespace ClassLibrary1
         }
         public void ExpenseCalc() // Πρέπει να υπάρχει λίστα με τις αγορές του μαγαζιού αυτού του μήνα
         {
-            
-        //    foreach (var food in Petshop.MonthlyPets)
-        //    {
-        //        Expense += food.Cost;
-        //    }
-        //    foreach (var pet in Petshop.MonthlyFoods)
-        //    {
-        //        Expense += pet.Cost;
-        //    }
-        //    foreach (var employee in Petshop.Employees)
-        //    {
-        //        Expense += employee.SalaryPerMonth;
-        //    }
+
+                foreach (var food in MonthlyPetfoodTransactions)
+                {
+                    Expense += food.Cost;
+                }
+                //foreach (var pet in Petshop.MonthlyFoods)
+                //{
+                //    Expense += pet.Cost;
+                //}
+                foreach (var employee in Petshop.Employees)
+                {
+                    Expense += employee.SalaryPerMonth;
+                }
         }
 
-        public void TotalExpenseCalc() // Περιμένουμε τις συνολικές αγορές του μαγαζιού
+        public void TotalExpenseCalc() 
         {
             foreach (var food in Petshop.Pets)
             {
@@ -88,9 +89,19 @@ namespace ClassLibrary1
                 else { }
 
             }
+            foreach (var food in Petshop.Foods)
+            {
+                foreach (var trans in food.PetFoodTransactions)
+                {
+                    if(trans.Date.Year == Year && trans.Date.Month == Month) 
+                    { 
+                        MonthlyPetfoodTransactions.Add(food);
+                    }
+                }
+            }
         }
 
-        public decimal? TotalCalc()
+        public decimal? MothlyTotalCalc()
         {
             GetMonthsTrans();
             ExpenseCalc();
