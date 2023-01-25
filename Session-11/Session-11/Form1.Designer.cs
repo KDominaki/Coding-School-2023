@@ -56,6 +56,12 @@
             this.CustomPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvPet = new System.Windows.Forms.DataGridView();
+            this.PetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnimalT = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.PetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PetStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PetPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PetCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labCustomer = new System.Windows.Forms.Label();
             this.labPets = new System.Windows.Forms.Label();
             this.labPetFood = new System.Windows.Forms.Label();
@@ -69,11 +75,6 @@
             this.pfQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvEmployees = new System.Windows.Forms.DataGridView();
-            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvTransaction = new System.Windows.Forms.DataGridView();
             this.colTransDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,12 +100,11 @@
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.btnPets = new System.Windows.Forms.Button();
             this.btnPetFood = new System.Windows.Forms.Button();
-            this.PetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnimalT = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.PetBreed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.EmpSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPetFood)).BeginInit();
@@ -257,6 +257,46 @@
             this.grvPet.Size = new System.Drawing.Size(542, 157);
             this.grvPet.TabIndex = 3;
             // 
+            // PetID
+            // 
+            this.PetID.DataPropertyName = "ID";
+            this.PetID.HeaderText = "PetID";
+            this.PetID.Name = "PetID";
+            this.PetID.Visible = false;
+            // 
+            // AnimalT
+            // 
+            this.AnimalT.DataPropertyName = "AnimalType";
+            this.AnimalT.HeaderText = "Type";
+            this.AnimalT.Name = "AnimalT";
+            this.AnimalT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AnimalT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // PetBreed
+            // 
+            this.PetBreed.DataPropertyName = "Breed";
+            this.PetBreed.HeaderText = "Breed";
+            this.PetBreed.Name = "PetBreed";
+            // 
+            // PetStat
+            // 
+            this.PetStat.DataPropertyName = "Petstatus";
+            this.PetStat.HeaderText = "Health Status";
+            this.PetStat.Name = "PetStat";
+            this.PetStat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // PetPrice
+            // 
+            this.PetPrice.DataPropertyName = "Price";
+            this.PetPrice.HeaderText = "Price";
+            this.PetPrice.Name = "PetPrice";
+            // 
+            // PetCost
+            // 
+            this.PetCost.DataPropertyName = "Cost";
+            this.PetCost.HeaderText = "Cost";
+            this.PetCost.Name = "PetCost";
+            // 
             // labCustomer
             // 
             this.labCustomer.AutoSize = true;
@@ -362,6 +402,7 @@
             // 
             // AnimType
             // 
+            this.AnimType.DataPropertyName = "AnimalType";
             this.AnimType.HeaderText = "Animal Type";
             this.AnimType.Name = "AnimType";
             this.AnimType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -425,38 +466,6 @@
             this.grvEmployees.RowTemplate.Height = 25;
             this.grvEmployees.Size = new System.Drawing.Size(500, 134);
             this.grvEmployees.TabIndex = 12;
-            // 
-            // EmpID
-            // 
-            this.EmpID.DataPropertyName = "ID";
-            this.EmpID.HeaderText = "Employee ID";
-            this.EmpID.Name = "EmpID";
-            this.EmpID.Visible = false;
-            // 
-            // EmpName
-            // 
-            this.EmpName.DataPropertyName = "Name";
-            this.EmpName.HeaderText = "Name";
-            this.EmpName.Name = "EmpName";
-            // 
-            // EmpSurname
-            // 
-            this.EmpSurname.DataPropertyName = "Surname";
-            this.EmpSurname.HeaderText = "Surname";
-            this.EmpSurname.Name = "EmpSurname";
-            // 
-            // EmpType
-            // 
-            this.EmpType.HeaderText = "Employee Post";
-            this.EmpType.Name = "EmpType";
-            this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // EmpSalary
-            // 
-            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
-            this.EmpSalary.HeaderText = "Salary";
-            this.EmpSalary.Name = "EmpSalary";
             // 
             // grvTransaction
             // 
@@ -662,45 +671,38 @@
             this.btnPetFood.UseVisualStyleBackColor = true;
             this.btnPetFood.Click += new System.EventHandler(this.btnPetFood_Click);
             // 
-            // PetID
+            // EmpID
             // 
-            this.PetID.DataPropertyName = "ID";
-            this.PetID.HeaderText = "PetID";
-            this.PetID.Name = "PetID";
-            this.PetID.Visible = false;
+            this.EmpID.DataPropertyName = "ID";
+            this.EmpID.HeaderText = "Employee ID";
+            this.EmpID.Name = "EmpID";
+            this.EmpID.Visible = false;
             // 
-            // AnimalT
+            // EmpName
             // 
-            this.AnimalT.DataPropertyName = "AnimalType";
-            this.AnimalT.HeaderText = "Type";
-            this.AnimalT.Name = "AnimalT";
-            this.AnimalT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AnimalT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EmpName.DataPropertyName = "Name";
+            this.EmpName.HeaderText = "Name";
+            this.EmpName.Name = "EmpName";
             // 
-            // PetBreed
+            // EmpSurname
             // 
-            this.PetBreed.DataPropertyName = "Breed";
-            this.PetBreed.HeaderText = "Breed";
-            this.PetBreed.Name = "PetBreed";
+            this.EmpSurname.DataPropertyName = "Surname";
+            this.EmpSurname.HeaderText = "Surname";
+            this.EmpSurname.Name = "EmpSurname";
             // 
-            // PetStat
+            // EmpType
             // 
-            this.PetStat.DataPropertyName = "Petstatus";
-            this.PetStat.HeaderText = "Health Status";
-            this.PetStat.Name = "PetStat";
-            this.PetStat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpType.DataPropertyName = "EmployeeType";
+            this.EmpType.HeaderText = "Employee Post";
+            this.EmpType.Name = "EmpType";
+            this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // PetPrice
+            // EmpSalary
             // 
-            this.PetPrice.DataPropertyName = "Price";
-            this.PetPrice.HeaderText = "Price";
-            this.PetPrice.Name = "PetPrice";
-            // 
-            // PetCost
-            // 
-            this.PetCost.DataPropertyName = "Cost";
-            this.PetCost.HeaderText = "Cost";
-            this.PetCost.Name = "PetCost";
+            this.EmpSalary.DataPropertyName = "SalaryPerMonth";
+            this.EmpSalary.HeaderText = "Salary";
+            this.EmpSalary.Name = "EmpSalary";
             // 
             // Form1
             // 
@@ -777,11 +779,6 @@
         private Button btnLoad;
         private Button btnSave;
         private BindingSource bsEmployees;
-        private DataGridViewTextBoxColumn EmpID;
-        private DataGridViewTextBoxColumn EmpName;
-        private DataGridViewTextBoxColumn EmpSurname;
-        private DataGridViewComboBoxColumn EmpType;
-        private DataGridViewTextBoxColumn EmpSalary;
         private DataGridViewTextBoxColumn QtyLeft;
         private DataGridViewTextBoxColumn trDate;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -804,11 +801,6 @@
         private DataGridViewTextBoxColumn colTransPetFoodQty;
         private DataGridViewTextBoxColumn colTransPetFoodPrice;
         private DataGridViewTextBoxColumn colTransTotalPrice;
-        private DataGridViewTextBoxColumn ptFoodId;
-        private DataGridViewComboBoxColumn AnimType;
-        private DataGridViewTextBoxColumn pfPrice;
-        private DataGridViewTextBoxColumn pfQty;
-        private DataGridViewTextBoxColumn colQty;
         private Button btnPetFood;
         private DataGridViewTextBoxColumn PetID;
         private DataGridViewComboBoxColumn AnimalT;
@@ -816,5 +808,15 @@
         private DataGridViewTextBoxColumn PetStat;
         private DataGridViewTextBoxColumn PetPrice;
         private DataGridViewTextBoxColumn PetCost;
+        private DataGridViewTextBoxColumn ptFoodId;
+        private DataGridViewComboBoxColumn AnimType;
+        private DataGridViewTextBoxColumn pfPrice;
+        private DataGridViewTextBoxColumn pfQty;
+        private DataGridViewTextBoxColumn colQty;
+        private DataGridViewTextBoxColumn EmpID;
+        private DataGridViewTextBoxColumn EmpName;
+        private DataGridViewTextBoxColumn EmpSurname;
+        private DataGridViewComboBoxColumn EmpType;
+        private DataGridViewTextBoxColumn EmpSalary;
     }
 }

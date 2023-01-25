@@ -139,6 +139,10 @@ namespace Session_11
                 colPetFoodType.Items.Add(type);
             }
 
+            foreach (var type in Enum.GetValues(typeof(AnimalType))) {
+                EmpType.Items.Add(type);
+            }
+
 
         }
         public void massHideGrv(DataGridView grvChoice, Label labChoice)
