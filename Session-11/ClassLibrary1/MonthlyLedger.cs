@@ -53,6 +53,10 @@ namespace ClassLibrary1
             {
                 Expense += pet.Cost;
             }
+            foreach (var employee in Petshop.Employees)
+            {
+                Expense += employee.SalaryPerMonth;
+            }
         }
 
         public void GetMonthsTrans()
