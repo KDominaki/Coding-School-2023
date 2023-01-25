@@ -46,7 +46,7 @@ namespace ClassLibrary1
                 Incomee += item.TotalPrice;
             }
         }
-        public void MonthlyExpenseCalc() // Πρέπει να υπάρχει λίστα με τις αγορές του μαγαζιού αυτού του μήνα
+        public void MonthlyExpenseCalc()
         {
 
                 foreach (var food in MonthlyPetfoodTransactions)
