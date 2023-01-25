@@ -326,7 +326,7 @@
             // 
             // grvEmployees
             // 
-            this.grvEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmpID,
@@ -336,6 +336,7 @@
             this.EmpSalary,
             this.cusUpdate,
             this.cusDelete});
+            this.grvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvEmployees.Location = new System.Drawing.Point(3, 3);
             this.grvEmployees.Name = "grvEmployees";
             this.grvEmployees.RowTemplate.Height = 25;
@@ -361,7 +362,6 @@
             this.EmpSurname.DataPropertyName = "Surname";
             this.EmpSurname.HeaderText = "Surname";
             this.EmpSurname.Name = "EmpSurname";
-            this.EmpSurname.Width = 120;
             // 
             // EmpType
             // 
@@ -370,14 +370,12 @@
             this.EmpType.Name = "EmpType";
             this.EmpType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EmpType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EmpType.Width = 76;
             // 
             // EmpSalary
             // 
             this.EmpSalary.DataPropertyName = "SalaryPerMonth";
             this.EmpSalary.HeaderText = "Salary";
             this.EmpSalary.Name = "EmpSalary";
-            this.EmpSalary.Width = 76;
             // 
             // cusUpdate
             // 
@@ -388,7 +386,6 @@
             this.cusUpdate.Text = "Update";
             this.cusUpdate.ToolTipText = "Update";
             this.cusUpdate.UseColumnTextForButtonValue = true;
-            this.cusUpdate.Width = 76;
             // 
             // cusDelete
             // 
@@ -399,7 +396,6 @@
             this.cusDelete.Text = "Delete";
             this.cusDelete.ToolTipText = "Delete";
             this.cusDelete.UseColumnTextForButtonValue = true;
-            this.cusDelete.Width = 76;
             // 
             // grvTransaction
             // 
