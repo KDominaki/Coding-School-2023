@@ -4,37 +4,40 @@ using PopulateClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PopulateClassLibrary {
-    public class PopulateTransaction {
+namespace PopulateClassLibrary
+{
+    public class PopulateTransaction
+    {
 
         public List<Customer> publicCustomerstr;
         public List<Employee> publicEmployeestr;
         public List<Pet> publicPettr;
         public List<PetFood> publicPetFoodtr;
 
-        public PopulateTransaction() {
+        public PopulateTransaction()
+        {
 
         }
 
-        public List<Transaction> PopulateTransactions(){List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers) {
+        public List<Transaction> PopulateTransactions(List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers)
+        {
 
             List<Transaction> transactions = new List<Transaction>();
             Transaction tr;
 
             /*1*/
-          /*  PetShop pet2 = new PetShop();
+            PetShop pet2 = new PetShop();
             EngagePopulate ep = new EngagePopulate();
 
-            pet2 = ep.SetPopulation();*/
+            pet2 = ep.SetPopulation();
 
-        
 
             int petIndex = 0;
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 12, 1),
                 CustomerID = customers[0].ID,
@@ -47,7 +50,8 @@ namespace PopulateClassLibrary {
             transactions.Add(tr);
             /*2*/
             petIndex = 1;
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 2, 2),
                 CustomerID = customers[1].ID,
@@ -62,7 +66,8 @@ namespace PopulateClassLibrary {
 
             /*3*/
             petIndex = 3;
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 3, 3),
                 CustomerID = customers[2].ID,
@@ -75,7 +80,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
             /*4*/
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 4, 4),
                 CustomerID = customers[3].ID,
@@ -88,7 +94,8 @@ namespace PopulateClassLibrary {
             transactions.Add(tr);
 
             /*5*/
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 5, 5),
                 CustomerID = customers[4].ID,
@@ -99,7 +106,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 6, 6),
                 CustomerID = customers[5].ID,
@@ -110,7 +118,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 7, 7),
                 CustomerID = customers[6].ID,
@@ -121,7 +130,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 8, 8),
                 CustomerID = customers[7].ID,
@@ -132,7 +142,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 9, 9),
                 CustomerID = customers[8].ID,
@@ -143,7 +154,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 10, 10),
                 CustomerID = customers[9].ID,
@@ -154,7 +166,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 11, 11),
                 CustomerID = customers[10].ID,
@@ -165,7 +178,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 12, 12),
                 CustomerID = customers[11].ID,
@@ -176,7 +190,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 1, 2),
                 CustomerID = customers[12].ID,
@@ -187,7 +202,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 2, 3),
                 CustomerID = customers[13].ID,
@@ -198,7 +214,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 2, 4),
                 CustomerID = customers[14].ID,
@@ -209,7 +226,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2023, 1, 15),
                 CustomerID = customers[15].ID,
@@ -220,7 +238,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2023, 1, 13),
                 CustomerID = customers[16].ID,
@@ -231,7 +250,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2023, 1, 2),
                 CustomerID = customers[16].ID,
@@ -242,7 +262,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 5, 15),
                 CustomerID = customers[17].ID,
@@ -253,7 +274,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 8, 22),
                 CustomerID = customers[18].ID,
@@ -264,7 +286,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 6, 29),
                 CustomerID = customers[19].ID,
@@ -275,7 +298,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 4, 1),
                 CustomerID = customers[20].ID,
@@ -286,7 +310,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 6, 1),
                 CustomerID = customers[3].ID,
@@ -297,7 +322,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 7, 1),
                 CustomerID = customers[1].ID,
@@ -308,7 +334,8 @@ namespace PopulateClassLibrary {
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
 
-            tr = new Transaction() {
+            tr = new Transaction()
+            {
                 ID = Guid.NewGuid(),
                 Date = new DateTime(2022, 8, 1),
                 CustomerID = customers[2].ID,
@@ -329,20 +356,26 @@ namespace PopulateClassLibrary {
         }
 
 
-        public Transaction SetPetAndFood(Transaction tr, List<Pet> pets, List<PetFood> foods, int petIndex) {
+        public Transaction SetPetAndFood(Transaction tr, List<Pet> pets, List<PetFood> foods, int petIndex)
+        {
 
             var newPet = pets[petIndex];
-            if (tr.PetID != Guid.Empty) {
+            if (tr.PetID != Guid.Empty)
+            {
                 tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
-                foreach (var food in foods) {
-                    if (food.Animaltype == newPet.Animaltype) {
+                foreach (var food in foods)
+                {
+                    if (food.Animaltype == newPet.Animaltype)
+                    {
                         tr.PetFoodID = food.ID;
                         break;
                     }
                 }
                 // tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
 
-            } else {
+            }
+            else
+            {
                 tr.PetFoodID = RandomPetFood(foods);
 
             }
@@ -353,25 +386,29 @@ namespace PopulateClassLibrary {
 
 
 
-        public int RandomEmployee(List<Employee> employees) {
+        public int RandomEmployee(List<Employee> employees)
+        {
             var random = new Random();
             int employee = random.Next(1, employees.Count);
             return employee;
         }
 
-        public int RandomQty() {
+        public int RandomQty()
+        {
             var random = new Random();
             int employee = random.Next(1, 20);
             return employee;
         }
 
-        public Guid RandomPetFood(List<PetFood> foods) {
+        public Guid RandomPetFood(List<PetFood> foods)
+        {
             var random = new Random();
             var pf = foods[random.Next(0, foods.Count)].ID;
             return pf;
         }
 
-        public T RandomEnumValue<T>() {
+        public T RandomEnumValue<T>()
+        {
             Random random = new Random();
             var v = Enum.GetValues(typeof(AnimalType));
             return (T)v.GetValue(random.Next(v.Length));
