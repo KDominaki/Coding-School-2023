@@ -40,17 +40,21 @@ namespace Session_11 {
         public PetShop InitPetShop(EngagePopulate eps) { return petShop = ep.SetPopulation(); }
 
 
-        private void SetControlProperties() {   //Customer binding Source
-                                                //grvEmployees.AutoGenerateColumns = false;
+        private void SetControlProperties() {   
 
-            //grvEmployees.AutoFillC
-            //gridControl1.AutoGenerateColumns = false;
-            //grvEmployees.AutoGenerateColumns = false;
-
-            //grvCustomer.AutoGenerateColumns = false;
+            //Employees Binding Source
             bsEmployeesDX.DataSource = petShop.Employees;
             grvEmployees.DataSource = bsEmployeesDX;
 
+            //Customers binding Source
+            bsCustomersDX.DataSource = petShop.Customers;
+            grvCustomers.DataSource = bsCustomersDX;
+
+            //Pet binding Source
+            bsPetsDX.DataSource = petShop.Pets;
+            grvPets.DataSource = bsPetsDX;
+
+            //
 
             //    grvCustomer.AutoGenerateColumns = false;
             //    bsCustomer.DataSource = petShop.Customers;

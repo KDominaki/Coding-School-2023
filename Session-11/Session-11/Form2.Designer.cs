@@ -35,16 +35,16 @@
             this.colBtnEmployeeUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnEmployeeDelete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabCustomers = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.grvCustomers = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerSurname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerPhone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerTIN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerTin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnCustomerDelete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnCustomerUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPets = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.grvPets = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPetDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPetType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,17 +74,25 @@
             this.colPetReportTotalSold = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnPetReportUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnPetReportDelete = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bsEmployeesDX = new DevExpress.Xpo.XPBindingSource(this.components);
+            this.bsEmployeesDX = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCustomersDX = new System.Windows.Forms.BindingSource(this.components);
+            this.bsPetsDX = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.colPetSold = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.xtraTabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.xtraTabCustomers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvPets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.xtraTabPetFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
@@ -93,6 +101,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployeesDX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCustomersDX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPetsDX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -161,7 +176,7 @@
             // colEmployeePost
             // 
             this.colEmployeePost.Caption = "Employee Post";
-            this.colEmployeePost.FieldName = "Post";
+            this.colEmployeePost.FieldName = "EmpType";
             this.colEmployeePost.Name = "colEmployeePost";
             this.colEmployeePost.Visible = true;
             this.colEmployeePost.VisibleIndex = 2;
@@ -169,7 +184,7 @@
             // colvEmployeeSalary
             // 
             this.colvEmployeeSalary.Caption = "Salary";
-            this.colvEmployeeSalary.FieldName = "Salary";
+            this.colvEmployeeSalary.FieldName = "SalaryPerMonth";
             this.colvEmployeeSalary.Name = "colvEmployeeSalary";
             this.colvEmployeeSalary.Visible = true;
             this.colvEmployeeSalary.VisibleIndex = 3;
@@ -190,20 +205,20 @@
             // 
             // xtraTabCustomers
             // 
-            this.xtraTabCustomers.Controls.Add(this.gridControl1);
+            this.xtraTabCustomers.Controls.Add(this.grvCustomers);
             this.xtraTabCustomers.Name = "xtraTabCustomers";
             this.xtraTabCustomers.Size = new System.Drawing.Size(859, 443);
             this.xtraTabCustomers.Text = "Customers";
             // 
-            // gridControl1
+            // grvCustomers
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView2;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(859, 443);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvCustomers.Location = new System.Drawing.Point(0, 0);
+            this.grvCustomers.MainView = this.gridView2;
+            this.grvCustomers.Name = "grvCustomers";
+            this.grvCustomers.Size = new System.Drawing.Size(859, 443);
+            this.grvCustomers.TabIndex = 0;
+            this.grvCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
@@ -212,141 +227,153 @@
             this.colCustomerName,
             this.colCustomerSurname,
             this.colCustomerPhone,
-            this.colCustomerTIN,
+            this.colCustomerTin,
             this.colBtnCustomerDelete,
             this.colBtnCustomerUpdate});
-            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.CustomizationFormBounds = new System.Drawing.Rectangle(679, 381, 264, 272);
+            this.gridView2.GridControl = this.grvCustomers;
             this.gridView2.Name = "gridView2";
             // 
             // colCustomerName
             // 
             this.colCustomerName.Caption = "Name";
+            this.colCustomerName.FieldName = "Name";
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.Visible = true;
-            this.colCustomerName.VisibleIndex = 0;
+            this.colCustomerName.VisibleIndex = 1;
             // 
             // colCustomerSurname
             // 
             this.colCustomerSurname.Caption = "Surname";
+            this.colCustomerSurname.FieldName = "Surname";
             this.colCustomerSurname.Name = "colCustomerSurname";
             this.colCustomerSurname.Visible = true;
-            this.colCustomerSurname.VisibleIndex = 1;
+            this.colCustomerSurname.VisibleIndex = 0;
             // 
             // colCustomerPhone
             // 
             this.colCustomerPhone.Caption = "Phone";
+            this.colCustomerPhone.FieldName = "Phone";
             this.colCustomerPhone.Name = "colCustomerPhone";
             this.colCustomerPhone.Visible = true;
             this.colCustomerPhone.VisibleIndex = 2;
             // 
-            // colCustomerTIN
+            // colCustomerTin
             // 
-            this.colCustomerTIN.Caption = "TIN";
-            this.colCustomerTIN.Name = "colCustomerTIN";
-            this.colCustomerTIN.Visible = true;
-            this.colCustomerTIN.VisibleIndex = 4;
+            this.colCustomerTin.Caption = "TIN";
+            this.colCustomerTin.FieldName = "TIN";
+            this.colCustomerTin.Name = "colCustomerTin";
+            this.colCustomerTin.Visible = true;
+            this.colCustomerTin.VisibleIndex = 3;
             // 
             // colBtnCustomerDelete
             // 
-            this.colBtnCustomerDelete.Caption = "Delete";
+            this.colBtnCustomerDelete.Caption = "Update";
             this.colBtnCustomerDelete.Name = "colBtnCustomerDelete";
             this.colBtnCustomerDelete.Visible = true;
-            this.colBtnCustomerDelete.VisibleIndex = 3;
+            this.colBtnCustomerDelete.VisibleIndex = 4;
             // 
             // colBtnCustomerUpdate
             // 
-            this.colBtnCustomerUpdate.Caption = "Update";
+            this.colBtnCustomerUpdate.Caption = "gridColumn1";
             this.colBtnCustomerUpdate.Name = "colBtnCustomerUpdate";
             this.colBtnCustomerUpdate.Visible = true;
             this.colBtnCustomerUpdate.VisibleIndex = 5;
             // 
             // xtraTabPets
             // 
-            this.xtraTabPets.Controls.Add(this.gridControl2);
+            this.xtraTabPets.Controls.Add(this.grvPets);
             this.xtraTabPets.Name = "xtraTabPets";
             this.xtraTabPets.Size = new System.Drawing.Size(859, 443);
             this.xtraTabPets.Text = "Pets";
             // 
-            // gridControl2
+            // grvPets
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView3;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(859, 443);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvPets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvPets.Location = new System.Drawing.Point(0, 0);
+            this.grvPets.MainView = this.gridView3;
+            this.grvPets.Name = "grvPets";
+            this.grvPets.Size = new System.Drawing.Size(859, 443);
+            this.grvPets.TabIndex = 0;
+            this.grvPets.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
             // gridView3
             // 
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPetDate,
+            this.colPetSold,
             this.colPetType,
             this.colPetBreed,
             this.colPetHealthStatus,
             this.colPetCost,
             this.colPetPrice,
+            this.colPetDate,
             this.colButtonUpdate,
             this.colBtnDelete});
-            this.gridView3.GridControl = this.gridControl2;
+            this.gridView3.GridControl = this.grvPets;
             this.gridView3.Name = "gridView3";
             // 
             // colPetDate
             // 
-            this.colPetDate.Caption = "Date";
+            this.colPetDate.Caption = "Date Received";
+            this.colPetDate.FieldName = "Date";
             this.colPetDate.Name = "colPetDate";
             this.colPetDate.Visible = true;
-            this.colPetDate.VisibleIndex = 0;
+            this.colPetDate.VisibleIndex = 1;
             // 
             // colPetType
             // 
             this.colPetType.Caption = "Type";
+            this.colPetType.FieldName = "Animaltype";
             this.colPetType.Name = "colPetType";
             this.colPetType.Visible = true;
-            this.colPetType.VisibleIndex = 1;
+            this.colPetType.VisibleIndex = 2;
             // 
             // colPetBreed
             // 
             this.colPetBreed.Caption = "Breed";
+            this.colPetBreed.FieldName = "Breed";
             this.colPetBreed.Name = "colPetBreed";
             this.colPetBreed.Visible = true;
-            this.colPetBreed.VisibleIndex = 2;
+            this.colPetBreed.VisibleIndex = 3;
             // 
             // colPetHealthStatus
             // 
             this.colPetHealthStatus.Caption = "Health Status";
+            this.colPetHealthStatus.FieldName = "Petstatus";
             this.colPetHealthStatus.Name = "colPetHealthStatus";
             this.colPetHealthStatus.Visible = true;
-            this.colPetHealthStatus.VisibleIndex = 3;
+            this.colPetHealthStatus.VisibleIndex = 4;
             // 
             // colPetCost
             // 
             this.colPetCost.Caption = "Cost";
+            this.colPetCost.FieldName = "Cost";
             this.colPetCost.Name = "colPetCost";
             this.colPetCost.Visible = true;
-            this.colPetCost.VisibleIndex = 4;
+            this.colPetCost.VisibleIndex = 5;
             // 
             // colPetPrice
             // 
             this.colPetPrice.Caption = "Price";
+            this.colPetPrice.FieldName = "Price";
             this.colPetPrice.Name = "colPetPrice";
             this.colPetPrice.Visible = true;
-            this.colPetPrice.VisibleIndex = 5;
+            this.colPetPrice.VisibleIndex = 6;
             // 
             // colButtonUpdate
             // 
             this.colButtonUpdate.Caption = "Update";
             this.colButtonUpdate.Name = "colButtonUpdate";
             this.colButtonUpdate.Visible = true;
-            this.colButtonUpdate.VisibleIndex = 6;
+            this.colButtonUpdate.VisibleIndex = 7;
             // 
             // colBtnDelete
             // 
             this.colBtnDelete.Caption = "Delete";
             this.colBtnDelete.Name = "colBtnDelete";
             this.colBtnDelete.Visible = true;
-            this.colBtnDelete.VisibleIndex = 7;
+            this.colBtnDelete.VisibleIndex = 8;
             // 
             // xtraTabPetFoods
             // 
@@ -504,6 +531,14 @@
             this.colBtnPetReportDelete.Visible = true;
             this.colBtnPetReportDelete.VisibleIndex = 5;
             // 
+            // colPetSold
+            // 
+            this.colPetSold.Caption = "Available";
+            this.colPetSold.FieldName = "Sold";
+            this.colPetSold.Name = "colPetSold";
+            this.colPetSold.Visible = true;
+            this.colPetSold.VisibleIndex = 0;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,10 +554,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.xtraTabCustomers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPets.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvPets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.xtraTabPetFoods.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
@@ -531,6 +566,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployeesDX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCustomersDX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPetsDX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,15 +596,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colvEmployeeSalary;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnEmployeeUpdate;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnEmployeeDelete;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl grvCustomers;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerSurname;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerPhone;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerTIN;
-        private DevExpress.XtraGrid.Columns.GridColumn colBtnCustomerDelete;
-        private DevExpress.XtraGrid.Columns.GridColumn colBtnCustomerUpdate;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl grvPets;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn colPetDate;
         private DevExpress.XtraGrid.Columns.GridColumn colPetType;
@@ -588,6 +624,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPetReportTotalSold;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnPetReportUpdate;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnPetReportDelete;
-        private DevExpress.Xpo.XPBindingSource bsEmployeesDX;
+        private BindingSource bsEmployeesDX;
+        private BindingSource bindingSource1;
+        private BindingSource bsCustomersDX;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerSurname;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerTin;
+        private DevExpress.XtraGrid.Columns.GridColumn colBtnCustomerDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn colBtnCustomerUpdate;
+        private BindingSource bsPetsDX;
+        private BindingSource bindingSource3;
+        private BindingSource bindingSource4;
+        private BindingSource bindingSource5;
+        private BindingSource bindingSource6;
+        private DevExpress.XtraGrid.Columns.GridColumn colPetSold;
     }
 }
