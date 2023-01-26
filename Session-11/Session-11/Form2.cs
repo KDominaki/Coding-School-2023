@@ -171,5 +171,32 @@ namespace Session_11 {
         private void grvEmployees_Click(object sender, EventArgs e) {
 
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            Serializer serializer = new Serializer();
+            petShop = serializer.DeserializeFromFile<PetShop>("petshop.json");
+
+            System.Windows.MessageBox.Show("Load Completed!");
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Serializer serializer = new Serializer();
+            serializer.SerializeToFile(petShop, "petshop.json");
+
+            System.Windows.MessageBox.Show("Save Completed!");
+        }
     }
 }

@@ -46,12 +46,13 @@
             this.xtraTabPets = new DevExpress.XtraTab.XtraTabPage();
             this.grvPets = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colPetDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPetSold = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPetType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPetBreed = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPetHealthStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPetCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPetPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPetDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colButtonUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnDelete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPetFoods = new DevExpress.XtraTab.XtraTabPage();
@@ -82,7 +83,10 @@
             this.bindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource6 = new System.Windows.Forms.BindingSource(this.components);
-            this.colPetSold = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.xtraTabEmployees.SuspendLayout();
@@ -313,13 +317,13 @@
             this.gridView3.GridControl = this.grvPets;
             this.gridView3.Name = "gridView3";
             // 
-            // colPetDate
+            // colPetSold
             // 
-            this.colPetDate.Caption = "Date Received";
-            this.colPetDate.FieldName = "Date";
-            this.colPetDate.Name = "colPetDate";
-            this.colPetDate.Visible = true;
-            this.colPetDate.VisibleIndex = 1;
+            this.colPetSold.Caption = "Available";
+            this.colPetSold.FieldName = "Sold";
+            this.colPetSold.Name = "colPetSold";
+            this.colPetSold.Visible = true;
+            this.colPetSold.VisibleIndex = 0;
             // 
             // colPetType
             // 
@@ -360,6 +364,14 @@
             this.colPetPrice.Name = "colPetPrice";
             this.colPetPrice.Visible = true;
             this.colPetPrice.VisibleIndex = 6;
+            // 
+            // colPetDate
+            // 
+            this.colPetDate.Caption = "Date Received";
+            this.colPetDate.FieldName = "Date";
+            this.colPetDate.Name = "colPetDate";
+            this.colPetDate.Visible = true;
+            this.colPetDate.VisibleIndex = 1;
             // 
             // colButtonUpdate
             // 
@@ -531,19 +543,59 @@
             this.colBtnPetReportDelete.Visible = true;
             this.colBtnPetReportDelete.VisibleIndex = 5;
             // 
-            // colPetSold
+            // simpleButton1
             // 
-            this.colPetSold.Caption = "Available";
-            this.colPetSold.FieldName = "Sold";
-            this.colPetSold.Name = "colPetSold";
-            this.colPetSold.Visible = true;
-            this.colPetSold.VisibleIndex = 0;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(59, 547);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(100, 50);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "SAVE";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Location = new System.Drawing.Point(165, 547);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(100, 50);
+            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.Text = "LOAD";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Location = new System.Drawing.Point(713, 547);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(100, 50);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "ADD ";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Location = new System.Drawing.Point(819, 547);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(100, 50);
+            this.simpleButton4.TabIndex = 4;
+            this.simpleButton4.Text = "DELETE";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 655);
+            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.tabControlMain);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -639,5 +691,9 @@
         private BindingSource bindingSource5;
         private BindingSource bindingSource6;
         private DevExpress.XtraGrid.Columns.GridColumn colPetSold;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
