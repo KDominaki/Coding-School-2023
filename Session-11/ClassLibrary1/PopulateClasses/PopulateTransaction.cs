@@ -17,7 +17,7 @@ namespace PopulateClassLibrary {
         public List<Transaction> PopulateTransactions(List<PetFood> foods, List<Pet> pets, List<Employee> employees, List<Customer> customers) {
 
             List<Transaction> transactions = new List<Transaction>();
-            Transaction tr;
+            Transaction? tr;
 
             /*1*/
 
@@ -358,7 +358,7 @@ namespace PopulateClassLibrary {
         public T RandomEnumValue<T>() {
             Random random = new Random();
             var v = Enum.GetValues(typeof(AnimalType));
-            return (T)v.GetValue(random.Next(v.Length));
+            return (T?)v.GetValue(random.Next(v.Length));
         }
 
 
