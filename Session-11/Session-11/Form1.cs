@@ -177,18 +177,8 @@ namespace Session_11 {
 
         public void SetControlTransactions() {
             grvTransaction.AutoGenerateColumns = false;
-
             bsTransact.DataSource = petShop.Transactions;
-            grvTransaction.DataSource = bsTransactCustomers;
-
-            bsTransactCustomers.DataSource = petShop.Customers;
-
             grvTransaction.DataSource = bsTransact;
-            grvTransaction.DataSource = bsTransactCustomers;
-
-
-            bsTransactCustomers.DataSource = bsTransact;
-            bsTransactCustomers.DataMember = "CustomerID";
 
 
 
