@@ -823,7 +823,7 @@
             // 
             // CustomerID
             // 
-            this.CustomerID.DataPropertyName = "ID";
+            this.CustomerID.DataPropertyName = "CustomerID";
             this.CustomerID.HeaderText = "Customer ID ";
             this.CustomerID.Name = "CustomerID";
             // 
