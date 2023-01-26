@@ -66,7 +66,6 @@
             this.xtraTabTransactions = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabMonthlyLedger = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPetReport = new DevExpress.XtraTab.XtraTabPage();
-            this.bsEmployees = new DevExpress.Xpo.XPBindingSource(this.components);
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPetReportAnimalType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,6 +74,7 @@
             this.colPetReportTotalSold = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnPetReportUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnPetReportDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bsEmployeesDX = new DevExpress.Xpo.XPBindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.xtraTabEmployees.SuspendLayout();
@@ -90,9 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.xtraTabPetReport.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployeesDX)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -528,9 +528,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.xtraTabPetReport.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployeesDX)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -588,5 +588,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPetReportTotalSold;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnPetReportUpdate;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnPetReportDelete;
+        private DevExpress.Xpo.XPBindingSource bsEmployeesDX;
     }
 }

@@ -41,14 +41,15 @@ namespace Session_11 {
 
 
         private void SetControlProperties() {   //Customer binding Source
-            //grvEmployees.AutoGenerateColumns = false;
+                                                //grvEmployees.AutoGenerateColumns = false;
 
             //grvEmployees.AutoFillC
             //gridControl1.AutoGenerateColumns = false;
             //grvEmployees.AutoGenerateColumns = false;
-            
-            bsEmployees.DataSource = petShop.Employees;
-            grvEmployees.DataSource = bsEmployees;
+
+            //grvCustomer.AutoGenerateColumns = false;
+            bsEmployeesDX.DataSource = petShop.Employees;
+            grvEmployees.DataSource = bsEmployeesDX;
 
 
             //    grvCustomer.AutoGenerateColumns = false;
