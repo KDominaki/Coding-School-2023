@@ -283,6 +283,7 @@
             this.grvPets.Name = "grvPets";
             this.grvPets.Size = new System.Drawing.Size(859, 443);
             this.grvPets.TabIndex = 0;
+            this.grvPets.UseEmbeddedNavigator = true;
             this.grvPets.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
@@ -431,6 +432,7 @@
             this.grvTransactions.Name = "grvTransactions";
             this.grvTransactions.Size = new System.Drawing.Size(859, 443);
             this.grvTransactions.TabIndex = 0;
+            this.grvTransactions.UseEmbeddedNavigator = true;
             this.grvTransactions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
             // 
