@@ -55,44 +55,6 @@ namespace Session_11 {
         {return petShop = ep.SetPopulation(); }
         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void SetControlProperties() {   //Customer binding Source
             grvCustomer.AutoGenerateColumns = false;
             bsCustomer.DataSource = petShop.Customers;
@@ -415,6 +377,10 @@ namespace Session_11 {
         }
 
         private void bsTransact_CurrentChanged(object sender, EventArgs e) {
+
+        }
+
+        private void bsEmployees_CurrentChanged(object sender, EventArgs e) {
 
         }
     }

@@ -1,7 +1,5 @@
-﻿namespace Session_11
-{
-    partial class Form1
-    {
+﻿namespace Session_11 {
+    partial class Form1 {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.btnManage = new System.Windows.Forms.Button();
             this.btnTransact = new System.Windows.Forms.Button();
@@ -546,6 +541,10 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // bsEmployees
+            // 
+            this.bsEmployees.CurrentChanged += new System.EventHandler(this.bsEmployees_CurrentChanged);
             // 
             // btnPets
             // 
