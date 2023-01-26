@@ -100,7 +100,7 @@ namespace Session_11 {
 
             //FOR THE COMBO BOXES 
             //PET - AnimalType combobox
-            DataGridViewComboBoxColumn colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
+            DataGridViewComboBoxColumn? colAnimType = grvPet.Columns["AnimalT"] as DataGridViewComboBoxColumn;
             //colAnimType.DataSource = petShop.Pets;//GetUniversities();
             //colAnimType.DisplayMember = "AnimalType";//"Name";
             //colAnimType.ValueMember =  "ID";//"ID";*/
@@ -111,7 +111,7 @@ namespace Session_11 {
 
 
             //PET - PetFood combobox
-            DataGridViewComboBoxColumn colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
+            DataGridViewComboBoxColumn? colPetFoodType = grvPetFood.Columns["AnimType"] as DataGridViewComboBoxColumn;
             //colPetFoodType.DataSource = petShop.Foods;//GetUniversities();
             //colPetFoodType.DisplayMember = "Animaltype";//"Name";
             //colPetFoodType.ValueMember = "ID";//"ID";*/
@@ -129,7 +129,7 @@ namespace Session_11 {
 
 
             //Employees - Employee combobox
-            DataGridViewComboBoxColumn colEmpType = grvEmployees.Columns["EmpType"] as DataGridViewComboBoxColumn;
+            DataGridViewComboBoxColumn? colEmpType = grvEmployees.Columns["EmpType"] as DataGridViewComboBoxColumn;
             foreach (var type in Enum.GetValues(typeof(EmployeeType))) {
                 colEmpType.Items.Add(type);
             }
@@ -205,7 +205,7 @@ namespace Session_11 {
             var grv = (DataGridView)sender;
 
 
-            DataGridViewButtonColumn col = grv.Columns[e.ColumnIndex] as DataGridViewButtonColumn;
+            DataGridViewButtonColumn? col = grv.Columns[e.ColumnIndex] as DataGridViewButtonColumn;
             //conflict resolution
             if (col != null && col.Name == "btnUpdate" && e.RowIndex >= 0) {
                 publicCustomers = grv.CurrentRow.DataBoundItem as List<Customer>;
