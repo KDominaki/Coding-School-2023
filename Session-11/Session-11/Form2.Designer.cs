@@ -44,11 +44,6 @@
             this.colBtnCustomerDelete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnCustomerUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPets = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPetFoods = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabTransactions = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabMonthlyLedger = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPetReport = new DevExpress.XtraTab.XtraTabPage();
-            this.bsEmployees = new DevExpress.Xpo.XPBindingSource(this.components);
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPetDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +54,7 @@
             this.colPetPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colButtonUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabPetFoods = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPetAnimalType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,6 +63,18 @@
             this.colPetFoodQty = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnPetFoodUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBtnPetFoodDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabTransactions = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabMonthlyLedger = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPetReport = new DevExpress.XtraTab.XtraTabPage();
+            this.bsEmployees = new DevExpress.Xpo.XPBindingSource(this.components);
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPetReportAnimalType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPetReportMonth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPetReportYear = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPetReportTotalSold = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBtnPetReportUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBtnPetReportDelete = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.xtraTabEmployees.SuspendLayout();
@@ -76,12 +84,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPets.SuspendLayout();
-            this.xtraTabPetFoods.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.xtraTabPetFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            this.xtraTabPetReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -256,31 +267,6 @@
             this.xtraTabPets.Size = new System.Drawing.Size(859, 443);
             this.xtraTabPets.Text = "Pets";
             // 
-            // xtraTabPetFoods
-            // 
-            this.xtraTabPetFoods.Controls.Add(this.gridControl3);
-            this.xtraTabPetFoods.Name = "xtraTabPetFoods";
-            this.xtraTabPetFoods.Size = new System.Drawing.Size(859, 443);
-            this.xtraTabPetFoods.Text = "Pet Food";
-            // 
-            // xtraTabTransactions
-            // 
-            this.xtraTabTransactions.Name = "xtraTabTransactions";
-            this.xtraTabTransactions.Size = new System.Drawing.Size(859, 443);
-            this.xtraTabTransactions.Text = "Transactions";
-            // 
-            // xtraTabMonthlyLedger
-            // 
-            this.xtraTabMonthlyLedger.Name = "xtraTabMonthlyLedger";
-            this.xtraTabMonthlyLedger.Size = new System.Drawing.Size(859, 443);
-            this.xtraTabMonthlyLedger.Text = "Monthly Ledger";
-            // 
-            // xtraTabPetReport
-            // 
-            this.xtraTabPetReport.Name = "xtraTabPetReport";
-            this.xtraTabPetReport.Size = new System.Drawing.Size(859, 443);
-            this.xtraTabPetReport.Text = "Pet Report";
-            // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -362,6 +348,13 @@
             this.colBtnDelete.Visible = true;
             this.colBtnDelete.VisibleIndex = 7;
             // 
+            // xtraTabPetFoods
+            // 
+            this.xtraTabPetFoods.Controls.Add(this.gridControl3);
+            this.xtraTabPetFoods.Name = "xtraTabPetFoods";
+            this.xtraTabPetFoods.Size = new System.Drawing.Size(859, 443);
+            this.xtraTabPetFoods.Text = "Pet Food";
+            // 
             // gridControl3
             // 
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -427,6 +420,90 @@
             this.colBtnPetFoodDelete.Visible = true;
             this.colBtnPetFoodDelete.VisibleIndex = 5;
             // 
+            // xtraTabTransactions
+            // 
+            this.xtraTabTransactions.Name = "xtraTabTransactions";
+            this.xtraTabTransactions.Size = new System.Drawing.Size(859, 443);
+            this.xtraTabTransactions.Text = "Transactions";
+            // 
+            // xtraTabMonthlyLedger
+            // 
+            this.xtraTabMonthlyLedger.Name = "xtraTabMonthlyLedger";
+            this.xtraTabMonthlyLedger.Size = new System.Drawing.Size(859, 443);
+            this.xtraTabMonthlyLedger.Text = "Monthly Ledger";
+            // 
+            // xtraTabPetReport
+            // 
+            this.xtraTabPetReport.Controls.Add(this.gridControl4);
+            this.xtraTabPetReport.Name = "xtraTabPetReport";
+            this.xtraTabPetReport.Size = new System.Drawing.Size(859, 443);
+            this.xtraTabPetReport.Text = "Pet Report";
+            // 
+            // gridControl4
+            // 
+            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl4.Location = new System.Drawing.Point(0, 0);
+            this.gridControl4.MainView = this.gridView7;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(859, 443);
+            this.gridControl4.TabIndex = 1;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView7});
+            // 
+            // gridView7
+            // 
+            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPetReportAnimalType,
+            this.colPetReportMonth,
+            this.colPetReportYear,
+            this.colPetReportTotalSold,
+            this.colBtnPetReportUpdate,
+            this.colBtnPetReportDelete});
+            this.gridView7.GridControl = this.gridControl4;
+            this.gridView7.Name = "gridView7";
+            // 
+            // colPetReportAnimalType
+            // 
+            this.colPetReportAnimalType.Caption = "Animal Type";
+            this.colPetReportAnimalType.Name = "colPetReportAnimalType";
+            this.colPetReportAnimalType.Visible = true;
+            this.colPetReportAnimalType.VisibleIndex = 0;
+            // 
+            // colPetReportMonth
+            // 
+            this.colPetReportMonth.Caption = "Month";
+            this.colPetReportMonth.Name = "colPetReportMonth";
+            this.colPetReportMonth.Visible = true;
+            this.colPetReportMonth.VisibleIndex = 1;
+            // 
+            // colPetReportYear
+            // 
+            this.colPetReportYear.Caption = "Year";
+            this.colPetReportYear.Name = "colPetReportYear";
+            this.colPetReportYear.Visible = true;
+            this.colPetReportYear.VisibleIndex = 2;
+            // 
+            // colPetReportTotalSold
+            // 
+            this.colPetReportTotalSold.Caption = "Total Sold";
+            this.colPetReportTotalSold.Name = "colPetReportTotalSold";
+            this.colPetReportTotalSold.Visible = true;
+            this.colPetReportTotalSold.VisibleIndex = 3;
+            // 
+            // colBtnPetReportUpdate
+            // 
+            this.colBtnPetReportUpdate.Caption = "Update";
+            this.colBtnPetReportUpdate.Name = "colBtnPetReportUpdate";
+            this.colBtnPetReportUpdate.Visible = true;
+            this.colBtnPetReportUpdate.VisibleIndex = 4;
+            // 
+            // colBtnPetReportDelete
+            // 
+            this.colBtnPetReportDelete.Caption = "Delete";
+            this.colBtnPetReportDelete.Name = "colBtnPetReportDelete";
+            this.colBtnPetReportDelete.Visible = true;
+            this.colBtnPetReportDelete.VisibleIndex = 5;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,12 +522,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPets.ResumeLayout(false);
-            this.xtraTabPetFoods.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.xtraTabPetFoods.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            this.xtraTabPetReport.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,5 +580,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPetFoodQty;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnPetFoodUpdate;
         private DevExpress.XtraGrid.Columns.GridColumn colBtnPetFoodDelete;
+        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
+        private DevExpress.XtraGrid.Columns.GridColumn colPetReportAnimalType;
+        private DevExpress.XtraGrid.Columns.GridColumn colPetReportMonth;
+        private DevExpress.XtraGrid.Columns.GridColumn colPetReportYear;
+        private DevExpress.XtraGrid.Columns.GridColumn colPetReportTotalSold;
+        private DevExpress.XtraGrid.Columns.GridColumn colBtnPetReportUpdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colBtnPetReportDelete;
     }
 }
