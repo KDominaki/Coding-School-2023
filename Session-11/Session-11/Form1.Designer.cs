@@ -403,7 +403,6 @@
             // 
             // grvTransaction
             // 
-            this.grvTransaction.AutoGenerateColumns = false;
             this.grvTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -417,7 +416,6 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.PetFoodID});
-            this.grvTransaction.DataSource = this.engagePopulateBindingSource;
             this.grvTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvTransaction.Location = new System.Drawing.Point(0, 0);
             this.grvTransaction.Name = "grvTransaction";
