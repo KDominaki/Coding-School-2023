@@ -143,9 +143,9 @@
             this.btnManage.AutoSize = true;
             this.btnManage.BackgroundImage = global::Session_11.Properties.Resources.translogoo;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManage.Location = new System.Drawing.Point(417, 66);
+            this.btnManage.Location = new System.Drawing.Point(417, 70);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(114, 90);
+            this.btnManage.Size = new System.Drawing.Size(114, 88);
             this.btnManage.TabIndex = 0;
             this.btnManage.UseVisualStyleBackColor = true;
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
@@ -558,9 +558,9 @@
             this.btnPets.BackgroundImage = global::Session_11.Properties.Resources.dg_shadow_removebg_preview;
             this.btnPets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPets.FlatAppearance.BorderSize = 0;
-            this.btnPets.Location = new System.Drawing.Point(657, 68);
+            this.btnPets.Location = new System.Drawing.Point(657, 70);
             this.btnPets.Name = "btnPets";
-            this.btnPets.Size = new System.Drawing.Size(115, 90);
+            this.btnPets.Size = new System.Drawing.Size(115, 88);
             this.btnPets.TabIndex = 18;
             this.btnPets.Text = "\r\n";
             this.btnPets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -574,7 +574,7 @@
             this.btnPetFood.BackgroundImage = global::Session_11.Properties.Resources.dogbowl_removebg_preview;
             this.btnPetFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPetFood.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPetFood.Location = new System.Drawing.Point(537, 68);
+            this.btnPetFood.Location = new System.Drawing.Point(537, 70);
             this.btnPetFood.Name = "btnPetFood";
             this.btnPetFood.Size = new System.Drawing.Size(114, 88);
             this.btnPetFood.TabIndex = 19;
@@ -588,7 +588,7 @@
             this.btnPetReport.BackgroundImage = global::Session_11.Properties.Resources.PetReport_thumbnail;
             this.btnPetReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPetReport.FlatAppearance.BorderSize = 0;
-            this.btnPetReport.Location = new System.Drawing.Point(1020, 70);
+            this.btnPetReport.Location = new System.Drawing.Point(899, 70);
             this.btnPetReport.Name = "btnPetReport";
             this.btnPetReport.Size = new System.Drawing.Size(115, 88);
             this.btnPetReport.TabIndex = 20;
@@ -620,7 +620,7 @@
             this.btnMonthly.BackgroundImage = global::Session_11.Properties.Resources.calendar2_thumbnail;
             this.btnMonthly.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMonthly.FlatAppearance.BorderSize = 0;
-            this.btnMonthly.Location = new System.Drawing.Point(899, 68);
+            this.btnMonthly.Location = new System.Drawing.Point(1020, 70);
             this.btnMonthly.Name = "btnMonthly";
             this.btnMonthly.Size = new System.Drawing.Size(115, 88);
             this.btnMonthly.TabIndex = 23;
