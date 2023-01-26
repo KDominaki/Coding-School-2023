@@ -152,11 +152,14 @@
             // grvEmployees
             // 
             this.grvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvEmployees.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.grvEmployees.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.grvEmployees.Location = new System.Drawing.Point(0, 0);
             this.grvEmployees.MainView = this.gridView1;
             this.grvEmployees.Name = "grvEmployees";
             this.grvEmployees.Size = new System.Drawing.Size(859, 443);
             this.grvEmployees.TabIndex = 1;
+            this.grvEmployees.UseEmbeddedNavigator = true;
             this.grvEmployees.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.grvEmployees.Click += new System.EventHandler(this.grvEmployees_Click);
@@ -218,6 +221,7 @@
             this.grvCustomers.Name = "grvCustomers";
             this.grvCustomers.Size = new System.Drawing.Size(859, 443);
             this.grvCustomers.TabIndex = 0;
+            this.grvCustomers.UseEmbeddedNavigator = true;
             this.grvCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -366,6 +370,7 @@
             this.grvPetFood.Name = "grvPetFood";
             this.grvPetFood.Size = new System.Drawing.Size(859, 443);
             this.grvPetFood.TabIndex = 0;
+            this.grvPetFood.UseEmbeddedNavigator = true;
             this.grvPetFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
             // 
