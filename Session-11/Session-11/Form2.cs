@@ -51,8 +51,16 @@ namespace Session_11 {
             grvCustomers.DataSource = bsCustomersDX;
 
             //Pet binding Source
-            bsPetsDX.DataSource = petShop.Pets;
+            bsPetsDX.DataSource = petShop.GetPets();
             grvPets.DataSource = bsPetsDX;
+
+            //Pet Food binding Source
+            bsPetFoodDX.DataSource = petShop.GetPetFood();
+            grvPetFood.DataSource = bsPetFoodDX;
+
+            //Transactions Food binding Source
+            bsTransactionsDX.DataSource = petShop.Transactions;
+            grvTransactions.DataSource = bsTransactionsDX;
 
             //
 
