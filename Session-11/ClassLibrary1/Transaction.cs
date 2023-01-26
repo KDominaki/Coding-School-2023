@@ -40,7 +40,7 @@ namespace ClassLibrary1 {
                 }
             }
             catch (Exception ex) {
-
+                throw;
             }
             return this;
 
