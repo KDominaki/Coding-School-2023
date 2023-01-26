@@ -70,7 +70,6 @@ namespace ClassLibrary1 {
 
             foreach(var trans in Transactions) {
                 EnablePet(trans.PetID);
-                break;
 
             }
             return Pets;
