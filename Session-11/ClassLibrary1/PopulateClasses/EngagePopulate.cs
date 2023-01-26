@@ -31,8 +31,9 @@ namespace ClassLibrary1.PopulateClasses {
 
             PopulateTransaction populateTransaction = new PopulateTransaction();
             //petshop.Transactions = populateTransaction.PopulateTransactions(petshop.Foods, petshop.Pets, petshop.Employees, petshop.Customers);
+            
             petshop.AddTransactions(populateTransaction.PopulateTransactions(petshop.Foods, petshop.Pets, petshop.Employees, petshop.Customers));
-            //SetBoughtDate(petshop.Pets, petshop.Transactions);
+            SetBoughtDate(petshop.Pets, petshop.Transactions);
             //setSoldPets(petshop.Pets, petshop.Transactions);
             //petShop.Transactions = new Populate
             return petshop;
