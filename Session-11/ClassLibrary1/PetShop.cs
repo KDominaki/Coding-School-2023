@@ -65,13 +65,26 @@ namespace ClassLibrary1 {
             }
         }
 
+
+        public List<Pet> GetPets() {
+
+            foreach(var trans in Transactions) {
+                EnablePet(trans.PetID);
+                break;
+
+            }
+            return Pets;
+        }
         public void EnablePet(Guid? input) {
             foreach (var pet in Pets) {
                 if (pet.ID == input) {
-                    pet.Sold = false;
+                    pet.Sold = true;
+                    break;
                 }
             }
         }
+
+
 
         public void UpdatePetFoodQty(Guid? input, decimal foodupdate) {
             foreach (var food in Foods) {
