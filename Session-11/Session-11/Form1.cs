@@ -352,6 +352,8 @@ namespace Session_11 {
         }
 
         private void btnRefresh_Click(object sender, EventArgs e) {
+            InitPetShop(ep);
+            PopGeneralPublic(petShop);
             SetControlProperties();
         }
         private void btnAddEmployees_Click(object sender, EventArgs e) {
