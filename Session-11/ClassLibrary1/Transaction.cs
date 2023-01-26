@@ -16,11 +16,13 @@ namespace ClassLibrary1 {
         public decimal PetFoodQty { get; set; }
         public decimal? PetFoodPrice { get; set; }
         public decimal? TotalPrice { get; set; }
+        private bool _loaded = false;
 
         public Transaction() {
             ID = Guid.NewGuid();
             Date = DateTime.Now;
             PetID = Guid.Empty;
+            _loaded = false;
         }
         //public Transaction() { 
         //    ID = Guid.NewGuid();
@@ -28,32 +30,52 @@ namespace ClassLibrary1 {
         //}
 
 
-        public void SetTotalPrice(decimal? petPrice, decimal? petFoodQty, decimal? petFoodPrice) {
 
-            if (this.PetID != null) {
-                this.TotalPrice = petPrice + (petFoodQty * petFoodPrice);
+
+        public Transaction GetTransaction(List<Pet> pets, List<PetFood> foods) {
+            try {
+                if (_loaded == false) {
+                    LoadTransaction(pets, foods);
+                    _loaded = true;
+                }
+            }
+            catch (Exception ex) {
+
+            }
+            return this;
+
+        }
+
+        //load transaction
+        public void LoadTransaction(List<Pet> pets, List<PetFood> foods) {
+
+            PetFoodPrice = FindPetFoodPrice(foods);
+            if (this.PetID != Guid.Empty) {
+                PetPrice = FindPetPrice(pets);
+                this.TotalPrice = PetPrice + (PetFoodQty * PetFoodPrice);
                 this.PetFoodQty++;
             } else {
-                this.TotalPrice = (petFoodQty * petFoodPrice);
+                this.TotalPrice = (PetFoodQty * PetFoodPrice);
             }
+
         }
-        public decimal FindPetPrice(List<Pet> pets, Guid? id) {
+
+        public decimal FindPetPrice(List<Pet> pets) {
 
             decimal price = 0;
             foreach (var pet in pets) {
-                if (pet.ID == id) {
+                if (pet.ID == PetID) {
                     price = pet.Price;
                     break;
                 }
             }
             return price;
-
         }
 
-        public decimal FindPetFoodPrice(List<PetFood> foods, Guid? id) {
+        public decimal FindPetFoodPrice(List<PetFood> foods) {
             decimal price = 0;
             foreach (var food in foods) {
-                if (food.ID == id) {
+                if (food.ID == PetFoodID) {
                     price = food.Price;
                     break;
                 }
@@ -61,7 +83,10 @@ namespace ClassLibrary1 {
             return price;
         }
 
-
+        //public  GetTransaction(List<Pet> pets, List<PetFood> foods) {
+        //    SetTotalPrice(pets,foods);
+        //    return this;
+        //}
 
 
     }

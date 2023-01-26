@@ -308,13 +308,7 @@ namespace PopulateClassLibrary {
 
             tr = SetPetAndFood(tr, pets, foods, petIndex);
             transactions.Add(tr);
-
-
-
-
-
-
-
+            
             return transactions;
         }
 
@@ -323,7 +317,7 @@ namespace PopulateClassLibrary {
 
             var newPet = pets[petIndex];
             if (tr.PetID != Guid.Empty) {
-                tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
+                //tr.PetPrice = tr.FindPetPrice(pets, tr.PetID);
                 foreach (var food in foods) {
                     if (food.Animaltype == newPet.Animaltype) {
                         tr.PetFoodID = food.ID;
@@ -336,8 +330,8 @@ namespace PopulateClassLibrary {
                 tr.PetFoodID = RandomPetFood(foods);
 
             }
-            tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
-            tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
+            //tr.PetFoodPrice = tr.FindPetFoodPrice(foods, tr.PetFoodID);
+            //tr.SetTotalPrice(tr.PetPrice, tr.PetFoodQty, tr.PetFoodPrice);
             return tr;
         }
 

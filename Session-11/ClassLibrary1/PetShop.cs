@@ -10,12 +10,11 @@ namespace ClassLibrary1 {
 
         //PROPERTIES
         public string Name { get; set; }
-        public List<Transaction>? Transactions { get; set; }
         public List<PetFood>? Foods { get; set; }
         public List<Pet> Pets { get; set; }
         public List<Employee> Employees { get; set; }
         public List<Customer> Customers { get; set; }
-
+        public List<Transaction>? Transactions { get; set; }
 
 
 
@@ -41,6 +40,14 @@ namespace ClassLibrary1 {
             }
             return Foods;
         }
+
+        //ADD TRANSACTIONS
+        public void AddTransactions(List<Transaction> transactions) {
+            foreach (var transaction in transactions) {
+                Transactions.Add(transaction.GetTransaction(Pets, Foods));
+            }
+        }
+
 
 
         //METHOD DELETE FUNCTION
@@ -93,6 +100,8 @@ namespace ClassLibrary1 {
             }
         }
 
+
+        
 
     }
 }
