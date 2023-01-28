@@ -61,8 +61,16 @@ namespace Session_11 {
             //Transactions Food binding Source
             bsTransactionsDX.DataSource = petShop.Transactions;
             grvTransactions.DataSource = bsTransactionsDX;
+            
+            
+            //Weird Idea might work, cause a list is easy to handle
+           // List<BindingSource> bsTransactList = new List<BindingSource>()
+           // {bsCustomersDX,bsEmployeesDX,bsPetFoodDX,bsPetsDX, bsTransactionsDX }; //bsTrabsactions takes the pre-set values from populateTransactions?
+           // grvTransactions.DataSource = bsTransactList;                                                                       //?!
+            
+            
+            // 
 
-            //
 
             //    grvCustomer.AutoGenerateColumns = false;
             //    bsCustomer.DataSource = petShop.Customers;
