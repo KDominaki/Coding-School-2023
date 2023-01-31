@@ -11,27 +11,29 @@ namespace ConfigurationsLibrary.Repositories
     {
         public void Add(PetFood entity)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
 
         public IList<PetFood> GetAll()
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
+            return context.Petfoods.ToList();
         }
 
         public PetFood? GetById(Guid id)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
+            return context.Petfoods.Where(petfood => petfood.ID == id).SingleOrDefault();
         }
 
         public void Update(Guid id, PetFood entity)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
     }
 }

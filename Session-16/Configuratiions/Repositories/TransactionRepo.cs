@@ -11,27 +11,29 @@ namespace ConfigurationsLibrary.Repositories
     {
         public void Add(Transaction entity)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
 
         public IList<Transaction> GetAll()
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
+            return context.Transactions.ToList();
         }
 
         public Transaction? GetById(Guid id)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
+            return context.Transactions.Where(transaction => transaction.ID == id).SingleOrDefault();
         }
 
         public void Update(Guid id, Transaction entity)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
     }
 }

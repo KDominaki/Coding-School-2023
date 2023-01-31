@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Context:DbContext 
+    public class AppDbContext:DbContext 
     {
         public DbSet<Pet> Pets { get; set; }
         public DbSet<PetFood> Petfoods { get;set; }

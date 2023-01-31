@@ -11,27 +11,30 @@ namespace ConfigurationsLibrary.Repositories
     {
         public void Add(Customer entity)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
 
         public IList<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
+            return context.Customers.ToList();
+
         }
 
         public Customer? GetById(Guid id)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
+            return context.Customers.Where(employee => employee.ID == id).SingleOrDefault();
         }
 
         public void Update(Guid id, Customer entity)
         {
-            throw new NotImplementedException();
+            using var context = new AppDbContext();
         }
     }
 }
