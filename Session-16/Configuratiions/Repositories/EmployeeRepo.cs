@@ -12,11 +12,23 @@ namespace ConfigurationsLibrary.Repositories
         public void Add(Employee entity)
         {
             using var context = new AppDbContext();
+            context.Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(Guid id)
         {
             using var context = new AppDbContext();
+            var dbEmployee = context.Employees.Where(employee => employee.ID == id).SingleOrDefault();
+            if (dbEmployee is null)
+            {
+                return;
+            }
+            else
+            {
+                context.Remove(dbEmployee);
+                context.SaveChanges();
+            }
         }
 
         public IList<Employee> GetAll()
@@ -34,6 +46,19 @@ namespace ConfigurationsLibrary.Repositories
         public void Update(Guid id, Employee entity)
         {
             using var context = new AppDbContext();
+            var dbEmployee = context.Employees.Where(employee => employee.ID == id).SingleOrDefault();
+            if (dbEmployee is null)
+            {
+                return;
+            }
+            else
+            {
+                dbEmployee.Name = entity.Name;
+                dbEmployee.Surname = entity.Surname;
+                dbEmployee.SalaryPerMonth = entity.SalaryPerMonth;
+                dbEmployee.EmpType = entity.EmpType;
+                context.SaveChanges();
+            }
         }
     }
 }

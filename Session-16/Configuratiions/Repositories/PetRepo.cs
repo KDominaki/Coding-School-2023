@@ -12,11 +12,23 @@ namespace ConfigurationsLibrary.Repositories
         public void Add(Pet entity)
         {
             using var context = new AppDbContext();
+            context.Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(Guid id)
         {
             using var context = new AppDbContext();
+            var dbPet = context.Pets.Where(pet => pet.ID == id).SingleOrDefault();
+            if (dbPet is null)
+            {
+                return;
+            }
+            else
+            {
+                context.Remove(dbPet);
+                context.SaveChanges();
+            }
         }
 
         public IList<Pet> GetAll()
@@ -34,6 +46,22 @@ namespace ConfigurationsLibrary.Repositories
         public void Update(Guid id, Pet entity)
         {
             using var context = new AppDbContext();
+            var dbPet = context.Pets.Where(pet => pet.ID == id).SingleOrDefault();
+            if (dbPet is null)
+            {
+                return;
+            }
+            else
+            {
+                dbPet.Breed = entity.Breed;
+                dbPet.Petstatus = entity.Petstatus;
+                dbPet.Cost = entity.Cost;
+                dbPet.Bought = entity.Bought;
+                dbPet.Sold= entity.Sold;
+                dbPet.Animaltype= entity.Animaltype;
+                dbPet.Price= entity.Price;
+                context.SaveChanges();
+            }
         }
     }
 }

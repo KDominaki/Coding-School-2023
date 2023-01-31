@@ -12,11 +12,23 @@ namespace ConfigurationsLibrary.Repositories
         public void Add(Transaction entity)
         {
             using var context = new AppDbContext();
+            context.Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(Guid id)
         {
             using var context = new AppDbContext();
+            var dbTransaction = context.Transactions.Where(transaction => transaction.ID == id).SingleOrDefault();
+            if (dbTransaction is null)
+            {
+                return;
+            }
+            else
+            {
+                context.Remove(dbTransaction);
+                context.SaveChanges();
+            }
         }
 
         public IList<Transaction> GetAll()
@@ -34,6 +46,24 @@ namespace ConfigurationsLibrary.Repositories
         public void Update(Guid id, Transaction entity)
         {
             using var context = new AppDbContext();
+            var dbTransaction = context.Transactions.Where(transaction => transaction.ID == id).SingleOrDefault();
+            if (dbTransaction is null)
+            {
+                return;
+            }
+            else
+            {
+                dbTransaction.TotalPrice = entity.TotalPrice;
+                dbTransaction.PetPrice = entity.PetPrice;
+                dbTransaction.PetFoodPrice = entity.PetFoodPrice;
+                dbTransaction.Date = entity.Date;
+                dbTransaction.PetFoodQty = entity.PetFoodQty;
+                dbTransaction.CustomerID = entity.CustomerID;
+                dbTransaction.EmployeeID = entity.EmployeeID;
+                dbTransaction.PetID= entity.PetID;
+                dbTransaction.PetFoodID = entity.PetFoodID;
+                context.SaveChanges();
+            }
         }
     }
 }
