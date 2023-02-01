@@ -10,22 +10,21 @@ namespace ClassLibrary1 {
 
         //PROPERTIES
         public string Name { get; set; }
-        public List<PetFood>? Foods { get; set; }
-        public List<Pet> Pets { get; set; }
-        public List<Employee> Employees { get; set; }
-        public List<Customer> Customers { get; set; }
-        public List<Transaction>? Transactions { get; set; }
+        public List<PetFood> Foods = new List<PetFood>();
+        public List<Pet> Pets = new List<Pet>();
+        public List<Employee> Employees = new List<Employee>();
+        public List<Customer> Customers = new List<Customer>();
+        public List<Transaction> Transactions = new List<Transaction>()
+        {
+            new Transaction(5000),
+                new Transaction(1000),
+        };
 
 
 
 
         //CTOR
         public PetShop() {
-            Transactions = new List<Transaction>();
-            Foods = new List<PetFood>();
-            Pets = new List<Pet>();
-            Employees = new List<Employee>();
-            Customers = new List<Customer>();
         }
 
         public List<PetFood> GetPetFood() {

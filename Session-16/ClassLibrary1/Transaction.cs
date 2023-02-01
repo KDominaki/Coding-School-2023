@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1 {
     public class Transaction {
-        public Guid? ID { get; set; }
+        public Guid ID { get; set; }
         public DateTime Date { get; set; }
         public Guid CustomerID { get; set; }
-        public Guid? EmployeeID { get; set; }
-        public Guid? PetID { get; set; }
-        public decimal? PetPrice { get; set; }
-        public Guid? PetFoodID { get; set; }
+        public Guid EmployeeID { get; set; }
+        public Guid PetID { get; set; }
+        public decimal PetPrice { get; set; }
+        public Guid PetFoodID { get; set; }
         public decimal PetFoodQty { get; set; }
-        public decimal? PetFoodPrice { get; set; }
-        public decimal? TotalPrice { get; set; }
+        public decimal PetFoodPrice { get; set; }
+        public decimal TotalPrice { get; set; }
         private bool _loaded = false;
 
         public Transaction() {
@@ -24,10 +24,15 @@ namespace ClassLibrary1 {
             PetID = Guid.Empty;
             _loaded = false;
         }
-        //public Transaction() { 
-        //    ID = Guid.NewGuid();
-        //    Date = DateTime.Now;
-        //}
+        public Transaction(decimal total)
+        {
+            TotalPrice = total;
+            ID = Guid.NewGuid();
+            Date = DateTime.Now;
+            PetID = Guid.Empty;
+            _loaded = false;
+        }
+ 
 
 
 

@@ -11,6 +11,8 @@ namespace ClassLibrary1
         private DateTime _date = DateTime.Now;
         public List<MonthlyLedger> monthLegList = new List<MonthlyLedger> ();
         public MonthlyLedger currentMonthlyLedger { get; set; }
+        public decimal currentMonthTotal { get; set; }
+        public decimal overAllTotal { get; set; }
         public PetShop Shop { get; set; }
 
         public MonthlyLedgerManager(PetShop petshop)
@@ -48,19 +50,18 @@ namespace ClassLibrary1
             }
         }
 
-        public decimal? CurrentMonthTotal()
+        public void CurrentMonthTotal()
         {
             GeneratorActivator();
             currentMonthlyLedger.MothlyTotalCalc();
-            decimal? currentMonthTotal = currentMonthlyLedger.Total; 
-            return currentMonthTotal;
+            currentMonthTotal = currentMonthlyLedger.Total; 
+            
         }
-        public decimal? CurrentMonthOverAllTotal()
+        public void CurrentMonthOverAllTotal()
         {
             GeneratorActivator();
             currentMonthlyLedger.OverAllTotalCalc();
-            decimal? currentMonthOverAllTotal = currentMonthlyLedger.OverAllTotal;
-            return currentMonthOverAllTotal;
+            overAllTotal = currentMonthlyLedger.OverAllTotal;
         }
 
 

@@ -11,12 +11,12 @@ namespace ClassLibrary1
     {
         public int Year { get; set; }
         public int Month { get; set; }
-        public decimal? Incomee { get; set; }
-        public decimal? Expense { get; set; } 
-        public decimal? Total { get; set; }
-        public decimal? OverAllTotal { get; set; }
-        public decimal? OverAllIncomee { get; set; }
-        public decimal? OverAllExpense { get; set; }
+        public decimal Incomee { get; set; }
+        public decimal Expense { get; set; }
+        public decimal Total { get; set; }
+        public decimal OverAllTotal { get; set; }
+        public decimal OverAllIncomee { get; set; }
+        public decimal OverAllExpense { get; set; }
         public PetShop Petshop { get; set; }
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
@@ -29,6 +29,7 @@ namespace ClassLibrary1
             Year = year;
             Month = month;
             Expense += 2000;
+            
 
         }
 
@@ -127,7 +128,7 @@ namespace ClassLibrary1
         {
             TotalExpenseCalc();
             TotalIncomeCalc();
-            OverAllTotal = Incomee - Expense;
+            OverAllTotal = Incomee -Expense;
 
         }
 
