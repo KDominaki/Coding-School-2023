@@ -38,6 +38,9 @@ namespace Session_16
             //_monthLedger.MothlyTotalCalc();
             //totalResult.Text = _monthLedger.Total.ToString();
 
+            //_monthLedger.OverAllTotalCalc();
+            //overAllTotalRes.Text = _monthLedger.OverAllTotal.ToString();
+
             _manager.CurrentMonthOverAllTotal();
             overAllTotalRes.Text = _manager.overAllTotal.ToString();
 
@@ -45,7 +48,7 @@ namespace Session_16
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //_petshop.Transactions.Add(trans1);
+            
             _pop.PopulateTrans(_petshop.Transactions);
         }
 

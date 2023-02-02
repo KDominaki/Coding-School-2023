@@ -45,7 +45,7 @@ namespace ClassLibrary1
         {
             foreach (var item in Petshop.Transactions)
             {
-                Incomee += item.TotalPrice;
+                OverAllIncomee += item.TotalPrice;
             }
         }
         public void MonthlyExpenseCalc()
@@ -119,8 +119,7 @@ namespace ClassLibrary1
             GetMonthsTrans();
             MonthlyExpenseCalc();
             IncomeCalc();
-            Total = Incomee - Expense;
-           
+            Total = Incomee - Expense;          
         }
 
 
@@ -128,7 +127,7 @@ namespace ClassLibrary1
         {
             TotalExpenseCalc();
             TotalIncomeCalc();
-            OverAllTotal = Incomee -Expense;
+            OverAllTotal = OverAllIncomee -Expense;
 
         }
 
