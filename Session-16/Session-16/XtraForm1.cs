@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Session_16
 {
-    public partial class Form2 : Form
+    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
     {
-        public Form2()
+        public XtraForm1()
         {
             InitializeComponent();
         }
