@@ -38,17 +38,21 @@ namespace ClassLibrary1
             transList.Add(trans1);
         }
 
-        public void PopulateCustomers(List<Customer> customerList)
+        public void PopulateCustomers(List<Customer> customerList, int num)
         {
-            int randNameInt = rnd.Next(names.Count);
-            int randSurnameInt = rnd.Next(surnames.Count);
-
-            Customer customer1 = new Customer()
+            for (int i = 0; i < num; i++)
             {
-                Name = names[randNameInt],
-                Surname = surnames[randSurnameInt],
-            };
-            customerList.Add(customer1);
+                int randNameInt = rnd.Next(names.Count);
+                int randSurnameInt = rnd.Next(surnames.Count);
+
+                Customer customer1 = new Customer()
+                {
+                    Name = names[randNameInt],
+                    Surname = surnames[randSurnameInt],
+                };
+                customerList.Add(customer1);
+            }
+          
         }
     }
 }
