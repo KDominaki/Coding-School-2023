@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.employeeGrid = new System.Windows.Forms.DataGridView();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalResult = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loadBtn = new System.Windows.Forms.Button();
@@ -36,9 +39,8 @@
             this.overAllTotalRes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddGridElem = new System.Windows.Forms.Button();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSaveJSON = new System.Windows.Forms.Button();
+            this.btnLoadJSON = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeeGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +56,24 @@
             this.employeeGrid.RowTemplate.Height = 25;
             this.employeeGrid.Size = new System.Drawing.Size(440, 254);
             this.employeeGrid.TabIndex = 0;
+            // 
+            // clmID
+            // 
+            this.clmID.DataPropertyName = "ID";
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            // 
+            // clmName
+            // 
+            this.clmName.DataPropertyName = "Name";
+            this.clmName.HeaderText = "Name";
+            this.clmName.Name = "clmName";
+            // 
+            // clmSurname
+            // 
+            this.clmSurname.DataPropertyName = "Surname";
+            this.clmSurname.HeaderText = "Surname";
+            this.clmSurname.Name = "clmSurname";
             // 
             // totalResult
             // 
@@ -119,29 +139,33 @@
             this.btnAddGridElem.UseVisualStyleBackColor = true;
             this.btnAddGridElem.Click += new System.EventHandler(this.btnAddGridElem_Click);
             // 
-            // clmID
+            // btnSaveJSON
             // 
-            this.clmID.DataPropertyName = "ID";
-            this.clmID.HeaderText = "ID";
-            this.clmID.Name = "clmID";
+            this.btnSaveJSON.Location = new System.Drawing.Point(36, 147);
+            this.btnSaveJSON.Name = "btnSaveJSON";
+            this.btnSaveJSON.Size = new System.Drawing.Size(75, 38);
+            this.btnSaveJSON.TabIndex = 8;
+            this.btnSaveJSON.Text = "SAVE";
+            this.btnSaveJSON.UseVisualStyleBackColor = true;
+            this.btnSaveJSON.Click += new System.EventHandler(this.btnSaveJSON_Click);
             // 
-            // clmName
+            // btnLoadJSON
             // 
-            this.clmName.DataPropertyName = "Name";
-            this.clmName.HeaderText = "Name";
-            this.clmName.Name = "clmName";
-            // 
-            // clmSurname
-            // 
-            this.clmSurname.DataPropertyName = "Surname";
-            this.clmSurname.HeaderText = "Surname";
-            this.clmSurname.Name = "clmSurname";
+            this.btnLoadJSON.Location = new System.Drawing.Point(36, 213);
+            this.btnLoadJSON.Name = "btnLoadJSON";
+            this.btnLoadJSON.Size = new System.Drawing.Size(75, 38);
+            this.btnLoadJSON.TabIndex = 9;
+            this.btnLoadJSON.Text = "LOAD";
+            this.btnLoadJSON.UseVisualStyleBackColor = true;
+            this.btnLoadJSON.Click += new System.EventHandler(this.btnLoadJSON_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLoadJSON);
+            this.Controls.Add(this.btnSaveJSON);
             this.Controls.Add(this.btnAddGridElem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.overAllTotalRes);
@@ -172,5 +196,7 @@
         private DataGridViewTextBoxColumn clmID;
         private DataGridViewTextBoxColumn clmName;
         private DataGridViewTextBoxColumn clmSurname;
+        private Button btnSaveJSON;
+        private Button btnLoadJSON;
     }
 }

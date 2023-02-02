@@ -35,7 +35,6 @@ namespace Session_16
             _monthLedger.OverAllTotalCalc();
             overAllTotalRes.Text = _monthLedger.OverAllTotal.ToString();
 
-          
 
         }
 
@@ -50,9 +49,19 @@ namespace Session_16
 
         }
 
-        private void btnAddGridElem_Click(object sender, EventArgs e)
+        private void btnSaveJSON_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoadJSON_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnAddGridElem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
