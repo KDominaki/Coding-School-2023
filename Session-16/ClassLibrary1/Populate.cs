@@ -27,6 +27,7 @@ namespace ClassLibrary1
 
         Random rnd = new Random();
         
+        
 
         public void PopulateTrans(List<Transaction> transList)
         {
@@ -39,10 +40,13 @@ namespace ClassLibrary1
 
         public void PopulateCustomers(List<Customer> customerList)
         {
+            int randNameInt = rnd.Next(names.Count);
+            int randSurnameInt = rnd.Next(surnames.Count);
+
             Customer customer1 = new Customer()
             {
-                Name = "Fake",
-                Surname = "Name",
+                Name = names[randNameInt],
+                Surname = surnames[randSurnameInt],
             };
             customerList.Add(customer1);
         }
