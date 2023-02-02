@@ -8,10 +8,7 @@ namespace Session_16
         private MonthlyLedgerManager _manager;
         private MonthlyLedger _monthLedger;
         private Populate _pop = new Populate();
-        public Transaction trans1 = new Transaction()
-        {
-            TotalPrice= 10000,
-        };
+
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +19,8 @@ namespace Session_16
         {
             _manager = new MonthlyLedgerManager(_petshop);
             _monthLedger = new MonthlyLedger(2023, 10, _petshop);
+            _pop.PopulateCustomers(_petshop.Customers);
+            employeeGrid.DataSource = _petshop.Customers;
         }
 
         private void totalResult_TextChanged(object sender, EventArgs e)
@@ -55,6 +54,11 @@ namespace Session_16
         private void overAllTotalRes_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddGridElem_Click(object sender, EventArgs e)
+        {
+            _pop.PopulateCustomers(_petshop.Customers);
         }
     }
 }

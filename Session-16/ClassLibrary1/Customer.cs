@@ -9,7 +9,7 @@ namespace ClassLibrary1
 
         public Customer()
         {
-
+            ID= Guid.NewGuid();
         }
     }
 }

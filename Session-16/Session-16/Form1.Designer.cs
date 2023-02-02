@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.employeeGrid = new System.Windows.Forms.DataGridView();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalResult = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loadBtn = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.overAllTotalRes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAddGridElem = new System.Windows.Forms.Button();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,21 +54,6 @@
             this.employeeGrid.RowTemplate.Height = 25;
             this.employeeGrid.Size = new System.Drawing.Size(440, 254);
             this.employeeGrid.TabIndex = 0;
-            // 
-            // clmID
-            // 
-            this.clmID.HeaderText = "ID";
-            this.clmID.Name = "clmID";
-            // 
-            // clmName
-            // 
-            this.clmName.HeaderText = "Name";
-            this.clmName.Name = "clmName";
-            // 
-            // clmSurname
-            // 
-            this.clmSurname.HeaderText = "Surname";
-            this.clmSurname.Name = "clmSurname";
             // 
             // totalResult
             // 
@@ -123,11 +109,40 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Over All Total";
             // 
+            // btnAddGridElem
+            // 
+            this.btnAddGridElem.Location = new System.Drawing.Point(646, 173);
+            this.btnAddGridElem.Name = "btnAddGridElem";
+            this.btnAddGridElem.Size = new System.Drawing.Size(75, 23);
+            this.btnAddGridElem.TabIndex = 7;
+            this.btnAddGridElem.Text = "ADD";
+            this.btnAddGridElem.UseVisualStyleBackColor = true;
+            this.btnAddGridElem.Click += new System.EventHandler(this.btnAddGridElem_Click);
+            // 
+            // clmID
+            // 
+            this.clmID.DataPropertyName = "ID";
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            // 
+            // clmName
+            // 
+            this.clmName.DataPropertyName = "Name";
+            this.clmName.HeaderText = "Name";
+            this.clmName.Name = "clmName";
+            // 
+            // clmSurname
+            // 
+            this.clmSurname.DataPropertyName = "Surname";
+            this.clmSurname.HeaderText = "Surname";
+            this.clmSurname.Name = "clmSurname";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAddGridElem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.overAllTotalRes);
             this.Controls.Add(this.btnAdd);
@@ -147,14 +162,15 @@
         #endregion
 
         private DataGridView employeeGrid;
-        private DataGridViewTextBoxColumn clmID;
-        private DataGridViewTextBoxColumn clmName;
-        private DataGridViewTextBoxColumn clmSurname;
         private TextBox totalResult;
         private Label label1;
         private Button loadBtn;
         private Button btnAdd;
         private TextBox overAllTotalRes;
         private Label label2;
+        private Button btnAddGridElem;
+        private DataGridViewTextBoxColumn clmID;
+        private DataGridViewTextBoxColumn clmName;
+        private DataGridViewTextBoxColumn clmSurname;
     }
 }
