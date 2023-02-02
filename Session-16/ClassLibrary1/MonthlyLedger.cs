@@ -18,16 +18,18 @@ namespace ClassLibrary1
         public decimal OverAllIncomee { get; set; }
         public decimal OverAllExpense { get; set; }
         public PetShop Petshop { get; set; }
+        public DateTime Date { get; set; }
 
         public List<Transaction> MonthlyTransactions = new List<Transaction>();
         public List<PetFood> MonthlyPetfoodTransactions= new List<PetFood>();
         public List<Pet>MontlhyPetTransactions= new List<Pet>();
 
-        public MonthlyLedger(int year, int month,PetShop petshop)
+        public MonthlyLedger(PetShop petshop)
         {
+            Date = DateTime.Now;
             Petshop= petshop;
-            Year = year;
-            Month = month;
+            Year = Date.Year;
+            Month = Date.Month;
             Expense += 2000;
             
 

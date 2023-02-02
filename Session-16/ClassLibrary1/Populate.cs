@@ -33,7 +33,7 @@ namespace ClassLibrary1
         {
             Transaction trans1 = new Transaction()
             {
-                TotalPrice= 1000,
+                TotalPrice = 1000,
             };
             transList.Add(trans1);
         }
