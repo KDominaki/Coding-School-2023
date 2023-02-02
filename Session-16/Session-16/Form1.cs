@@ -6,8 +6,8 @@ namespace Session_16
     {
         private PetShop _petshop = new PetShop();
         private MonthlyLedgerManager _manager;
-        private decimal _money = 300;
         private MonthlyLedger _monthLedger;
+        private Populate _pop = new Populate();
         public Transaction trans1 = new Transaction()
         {
             TotalPrice= 10000,
@@ -45,7 +45,8 @@ namespace Session_16
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            _petshop.Transactions.Add(trans1);
+            //_petshop.Transactions.Add(trans1);
+            _pop.PopulateTrans(_petshop.Transactions);
         }
 
         private void overAllTotalRes_TextChanged(object sender, EventArgs e)

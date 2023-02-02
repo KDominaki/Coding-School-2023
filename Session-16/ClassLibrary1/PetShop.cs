@@ -14,11 +14,7 @@ namespace ClassLibrary1 {
         public List<Pet> Pets = new List<Pet>();
         public List<Employee> Employees = new List<Employee>();
         public List<Customer> Customers = new List<Customer>();
-        public List<Transaction> Transactions = new List<Transaction>()
-        {
-            new Transaction(5000),
-                new Transaction(1000),
-        };
+        public List<Transaction> Transactions = new List<Transaction>();
 
 
 
