@@ -1,0 +1,20 @@
+﻿body {
+    background-color: #BDCDD6;
+    margin-left: 50px;
+    margin-top:50px;
+}
+
+table, th, td {
+    border: 1px solid;
+    background-color: white;
+}
+.article_image {
+
+}
+.logo {
+    background-color: white;
+}
+
+ul, ol, p{
+    font-size: 18px;
+}
