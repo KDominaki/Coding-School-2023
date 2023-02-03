@@ -16,7 +16,7 @@ namespace Session_16
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _pop.PopulateCustomers(_petshop.Customers, 4);
+            //_pop.PopulateCustomers(_petshop.Customers, 4);
             employeeGrid.DataSource = _petshop.Customers;
         }
 
@@ -51,12 +51,14 @@ namespace Session_16
 
         private void btnSaveJSON_Click(object sender, EventArgs e)
         {
-
+            Serializer serializer = new Serializer();
+            serializer.SerializeToFile(_petshop, "petshop.json");
         }
 
         private void btnLoadJSON_Click(object sender, EventArgs e)
         {
-            
+            Serializer serializer = new Serializer();
+            _petshop = serializer.DeserializeFromFile<PetShop>("petshop.json");
         }
 
         private void btnAddGridElem_Click(object sender, EventArgs e)
