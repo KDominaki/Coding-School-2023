@@ -17,5 +17,35 @@ namespace Session_16
         {
             InitializeComponent();
         }
+
+        private void btnTotalLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMonthlyTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOverAllTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddTrans_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaveJSON_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoadJSON_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
