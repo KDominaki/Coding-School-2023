@@ -46,12 +46,19 @@ namespace Session_16
         {
             if(textEdit3.Text != null)
             {
-                Transaction trans = new Transaction()
+                try
                 {
-                    TotalPrice = Convert.ToDecimal(textEdit3.Text)
-                };
-                _petshop.Transactions.Add(trans);
-                textEdit3.Text = null;
+                    Transaction trans = new Transaction()
+                    {
+                        TotalPrice = Convert.ToDecimal(textEdit3.Text)
+                    };
+                    _petshop.Transactions.Add(trans);
+                    textEdit3.Text = null;
+                }
+                catch(Exception)
+                {
+                    System.Windows.MessageBox.Show("Invalid input");
+                }
             }
             else
             {
