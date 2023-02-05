@@ -175,7 +175,7 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.EditValue = "";
+            this.textEdit3.EditValue = "Enter TotalPrice";
             this.textEdit3.Location = new System.Drawing.Point(588, 266);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(116, 20);

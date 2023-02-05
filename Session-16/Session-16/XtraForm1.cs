@@ -44,7 +44,7 @@ namespace Session_16
         // Buttons
         private void btnAddTrans_Click(object sender, EventArgs e)
         {
-            if(textEdit3.Text != null)
+            if(textEdit3.Text != null && textEdit3.Text != "Enter TotalPrice")
             {
                 try
                 {
