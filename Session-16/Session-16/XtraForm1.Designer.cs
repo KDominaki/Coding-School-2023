@@ -39,8 +39,15 @@
             this.btnAddTrans = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveJSON = new DevExpress.XtraEditors.SimpleButton();
             this.btnLoadJSON = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTotalLoad
@@ -77,6 +84,7 @@
             this.gridCustomers.TabIndex = 3;
             this.gridCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridCustomers.Click += new System.EventHandler(this.gridCustomers_Click);
             // 
             // gridView1
             // 
@@ -138,11 +146,51 @@
             this.btnLoadJSON.Text = "LOAD";
             this.btnLoadJSON.Click += new System.EventHandler(this.btnLoadJSON_Click);
             // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "name";
+            this.textEdit1.Location = new System.Drawing.Point(614, 81);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(129, 20);
+            this.textEdit1.TabIndex = 7;
+            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.EditValue = "surname";
+            this.textEdit2.Location = new System.Drawing.Point(614, 116);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(129, 20);
+            this.textEdit2.TabIndex = 8;
+            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(638, 152);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(80, 38);
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "Add Customer";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.EditValue = "";
+            this.textEdit3.Location = new System.Drawing.Point(588, 266);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(116, 20);
+            this.textEdit3.TabIndex = 10;
+            this.textEdit3.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
+            // 
             // XtraForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 345);
+            this.Controls.Add(this.textEdit3);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.btnLoadJSON);
             this.Controls.Add(this.btnSaveJSON);
             this.Controls.Add(this.btnAddTrans);
@@ -155,6 +203,9 @@
             this.Load += new System.EventHandler(this.XtraForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +224,9 @@
         private DevExpress.XtraEditors.SimpleButton btnAddTrans;
         private DevExpress.XtraEditors.SimpleButton btnSaveJSON;
         private DevExpress.XtraEditors.SimpleButton btnLoadJSON;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
     }
 }

@@ -27,6 +27,7 @@ namespace Session_16
         {
             _pop.PopulateCustomers(_petshop.Customers, 4);
             gridCustomers.DataSource = _petshop.Customers;
+            gridCustomers.AllowDrop= true;
         }
 
         private void btnTotalLoad_Click(object sender, EventArgs e)
@@ -43,19 +44,45 @@ namespace Session_16
         // Buttons
         private void btnAddTrans_Click(object sender, EventArgs e)
         {
-            _pop.PopulateTrans(_petshop.Transactions);
+            if(textEdit3.Text != null)
+            {
+                Transaction trans = new Transaction()
+                {
+                    TotalPrice = Convert.ToDecimal(textEdit3.Text)
+                };
+                _petshop.Transactions.Add(trans);
+                textEdit3.Text = null;
+            }
+            else
+            {
+                _pop.PopulateTrans(_petshop.Transactions);
+            }
         }
 
         private void btnSaveJSON_Click(object sender, EventArgs e)
         {
             Serializer serializer = new Serializer();
-            serializer.SerializeToFile(_petshop, "petshop.json");
+            serializer.SerializeToFile(_petshop,"petshop.json");
+            System.Windows.MessageBox.Show("Save Completed!");
         }
 
         private void btnLoadJSON_Click(object sender, EventArgs e)
         {
             Serializer serializer = new Serializer();
             _petshop = serializer.DeserializeFromFile<PetShop>("petshop.json");
+            System.Windows.MessageBox.Show("Load Completed!");
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            //    Customer cust = new Customer()
+            //    {
+            //        ID = Guid.NewGuid(),
+            //        Name = textEdit1.Text,
+            //        Surname = textEdit2.Text
+            //    };
+            //    _petshop.Customers.Add(cust);
+
         }
 
         // Text Boxes
@@ -68,5 +95,30 @@ namespace Session_16
         {
 
         }
+
+
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textEdit3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // Grid
+
+        private void gridCustomers_Click(object sender, EventArgs e)
+        {
+            gridCustomers.Update();
+        }
+
+ 
     }
 }
