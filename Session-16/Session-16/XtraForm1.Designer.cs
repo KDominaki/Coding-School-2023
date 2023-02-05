@@ -31,7 +31,7 @@
             this.btnTotalLoad = new DevExpress.XtraEditors.SimpleButton();
             this.txtMonthlyTotal = new System.Windows.Forms.TextBox();
             this.txtOverAllTotal = new System.Windows.Forms.TextBox();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridCustomers = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,7 +39,7 @@
             this.btnAddTrans = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveJSON = new DevExpress.XtraEditors.SimpleButton();
             this.btnLoadJSON = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,14 +68,14 @@
             this.txtOverAllTotal.TabIndex = 2;
             this.txtOverAllTotal.TextChanged += new System.EventHandler(this.txtOverAllTotal_TextChanged);
             // 
-            // gridControl1
+            // gridCustomers
             // 
-            this.gridControl1.Location = new System.Drawing.Point(166, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(400, 200);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridCustomers.Location = new System.Drawing.Point(176, 12);
+            this.gridCustomers.MainView = this.gridView1;
+            this.gridCustomers.Name = "gridCustomers";
+            this.gridCustomers.Size = new System.Drawing.Size(400, 200);
+            this.gridCustomers.TabIndex = 3;
+            this.gridCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -84,12 +84,13 @@
             this.IDColumn,
             this.nameColumn,
             this.surnameColum});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridCustomers;
             this.gridView1.Name = "gridView1";
             // 
             // IDColumn
             // 
             this.IDColumn.Caption = "ID";
+            this.IDColumn.FieldName = "ID";
             this.IDColumn.Name = "IDColumn";
             this.IDColumn.Visible = true;
             this.IDColumn.VisibleIndex = 0;
@@ -97,6 +98,7 @@
             // nameColumn
             // 
             this.nameColumn.Caption = "Name";
+            this.nameColumn.FieldName = "Name";
             this.nameColumn.Name = "nameColumn";
             this.nameColumn.Visible = true;
             this.nameColumn.VisibleIndex = 1;
@@ -104,6 +106,7 @@
             // surnameColum
             // 
             this.surnameColum.Caption = "Surname";
+            this.surnameColum.FieldName = "Surname";
             this.surnameColum.Name = "surnameColum";
             this.surnameColum.Visible = true;
             this.surnameColum.VisibleIndex = 2;
@@ -143,13 +146,14 @@
             this.Controls.Add(this.btnLoadJSON);
             this.Controls.Add(this.btnSaveJSON);
             this.Controls.Add(this.btnAddTrans);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gridCustomers);
             this.Controls.Add(this.txtOverAllTotal);
             this.Controls.Add(this.txtMonthlyTotal);
             this.Controls.Add(this.btnTotalLoad);
             this.Name = "XtraForm1";
             this.Text = "XtraForm1";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            this.Load += new System.EventHandler(this.XtraForm1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,7 +165,7 @@
         private DevExpress.XtraEditors.SimpleButton btnTotalLoad;
         private TextBox txtMonthlyTotal;
         private TextBox txtOverAllTotal;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridCustomers;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn IDColumn;
         private DevExpress.XtraGrid.Columns.GridColumn nameColumn;

@@ -16,7 +16,7 @@ namespace Session_16
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //_pop.PopulateCustomers(_petshop.Customers, 4);
+            _pop.PopulateCustomers(_petshop.Customers, 4);
             employeeGrid.DataSource = _petshop.Customers;
         }
 
