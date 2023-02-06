@@ -3,6 +3,10 @@
     
 }
 
+h1{
+    font-size:3rem;
+}
+
 h2 {
     font-weight: 400;
     font-size: 2rem;
@@ -31,8 +35,9 @@ header {
     justify-content: flex-end;
     justify-content: space-between;
     padding: 10px;
-    padding-right: 20px;
+    padding-right: 2rem;
     flex-wrap: wrap;
+    width:100%;
 }
 
 ul.nav {
@@ -54,13 +59,31 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
-    left: 3rem;
+    left: 2rem;
+}
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+   /*Divs*/
+
 div{
-    margin: 3rem;
+    margin: 2rem;
     flex-wrap: wrap;
     position: relative;
+}
+
+.content {
 }
 
 .form-item {
@@ -68,18 +91,6 @@ div{
     flex-direction:column;
 }
 
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-textarea {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
 
 .side{
     position:absolute;
@@ -101,10 +112,20 @@ textarea {
     }
 
 .article-img{
-
+    width:300px;
+    border-color: red;
+    top: 2rem;
+    right:2rem ;
+}
+.article-img img{
+    width:300px;
+    height: auto;
 }
 
 .main{
+    position:absolute;
+    top: 0px;
+    right: 30%;
     width: 44%;
 }
 
