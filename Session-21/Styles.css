@@ -3,6 +3,11 @@
     
 }
 
+h2 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
 a {
     color: #09deb7;
     text-decoration: none;
@@ -15,8 +20,8 @@ ol, ul{
     list-style: none;
 }
 
-p, li{
-    font-size: 18px;
+p, li, label{
+    font-size: 20px;
 }
 
 header {
@@ -37,10 +42,6 @@ ul.nav{
 }
 
 
-.logo{
-
-}
-
 button {
     background-color: #09deb7;
     border: none;
@@ -48,6 +49,28 @@ button {
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
-    cursor: pointer; 
+    cursor: pointer;
     border-radius: 12px;
+}
+
+div{
+    margin: 40px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction:column;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
