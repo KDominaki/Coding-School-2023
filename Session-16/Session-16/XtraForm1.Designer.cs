@@ -77,11 +77,13 @@
             // 
             // gridCustomers
             // 
+            this.gridCustomers.AllowDrop = true;
             this.gridCustomers.Location = new System.Drawing.Point(176, 12);
             this.gridCustomers.MainView = this.gridView1;
             this.gridCustomers.Name = "gridCustomers";
-            this.gridCustomers.Size = new System.Drawing.Size(400, 200);
+            this.gridCustomers.Size = new System.Drawing.Size(400, 204);
             this.gridCustomers.TabIndex = 3;
+            this.gridCustomers.UseEmbeddedNavigator = true;
             this.gridCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridCustomers.Click += new System.EventHandler(this.gridCustomers_Click);

@@ -27,7 +27,7 @@ namespace Session_16
         {
             _pop.PopulateCustomers(_petshop.Customers, 4);
             gridCustomers.DataSource = _petshop.Customers;
-            gridCustomers.AllowDrop= true;
+            gridCustomers.AllowDrop = true;
         }
 
         private void btnTotalLoad_Click(object sender, EventArgs e)
@@ -82,14 +82,14 @@ namespace Session_16
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            //    Customer cust = new Customer()
-            //    {
-            //        ID = Guid.NewGuid(),
-            //        Name = textEdit1.Text,
-            //        Surname = textEdit2.Text
-            //    };
-            //    _petshop.Customers.Add(cust);
-
+            Customer cust = new Customer()
+            {
+                ID = Guid.NewGuid(),
+                Name = textEdit1.Text,
+                Surname = textEdit2.Text
+            };
+            _petshop.Customers.Add(cust);
+            textEdit1.Text = null; textEdit2.Text = null;
         }
 
         // Text Boxes
