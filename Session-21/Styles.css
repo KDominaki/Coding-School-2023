@@ -32,17 +32,20 @@ header {
     justify-content: space-between;
     padding: 10px;
     padding-right: 20px;
+    flex-wrap: wrap;
 }
 
-ul.nav{
+ul.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 
 button {
+    position: relative;
     background-color: #09deb7;
     border: none;
     color: white;
@@ -51,10 +54,13 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
+    left: 3rem;
 }
 
 div{
-    margin: 40px;
+    margin: 3rem;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .form-item {
@@ -74,3 +80,37 @@ textarea {
     margin: 8px 0;
     box-sizing: border-box;
 }
+
+.side{
+    position:absolute;
+    top: 0px;
+    right: 10px;
+    width:25%;
+}
+
+.side ol{
+    display:flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+    .side ol li {
+        padding-bottom: 20px;
+        border-bottom: solid;
+        border-color: #E9E8E8
+    }
+
+.article-img{
+
+}
+
+.main{
+    width: 44%;
+}
+
+.main ul{
+    list-style: disc;
+}
+
+
+
