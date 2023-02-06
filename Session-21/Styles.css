@@ -135,3 +135,38 @@ div{
 
 
 
+@media(max-width: 600px){
+    header {
+        display: flex;
+        flex-direction: column;
+        background-color: #E3F6FF;
+        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    ul.nav {
+        display: flex;
+        justify-content: space-between;
+        justify-content:center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    div{
+        margin:auto;
+    }
+    .side{
+        position:static;
+            width: 100%;
+    }
+    .article-img{
+        position: static;
+    }
+
+    .main{
+        position:static;
+        width: 100%;
+    }
+}
+
