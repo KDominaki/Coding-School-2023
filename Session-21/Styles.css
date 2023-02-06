@@ -37,7 +37,6 @@ header {
     padding: 10px;
     padding-right: 2rem;
     flex-wrap: wrap;
-    width:100%;
 }
 
 ul.nav {
@@ -114,7 +113,7 @@ div{
 .article-img{
     width:300px;
     border-color: red;
-    top: 2rem;
+    top: 3rem;
     right:2rem ;
 }
 .article-img img{
@@ -138,7 +137,6 @@ div{
 @media(max-width: 600px){
     header {
         display: flex;
-        flex-direction: column;
         background-color: #E3F6FF;
         justify-content: space-between;
         justify-content: center;
