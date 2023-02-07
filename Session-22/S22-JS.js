@@ -22,6 +22,28 @@ function checkPalindrome(word){
 }
 
 //Ex 3
+var allPosts = [];
+var selectPostRowEl;
+
+function createPostsTableRow(post, tableEl) {
+    let rowEl = tableEl.insertRow();
+
+    rowEl.setAttribute('data-id', post.N);
+
+    rowEl.addEventListener('click', (event) => {
+        selectPostRow(event.currentTarget);
+    });
+
+    let idEl = rowEl.insertCell(0);
+    idEl.innerHTML = post.id;
+
+    let titleEl = rowEl.insertCell(1);
+    titleEl.innerHTML = post.title;
+
+    let userIdEl = rowEl.insertCell(2);
+    userIdEl.innerHTML = post.userId;
+}
+
 
 //Ex 4
 function multiply(a, b) {
@@ -56,5 +78,5 @@ function exFive(x) {
     }
     return x;
 }
-console.log(exFive("fjfh56"))
+
 

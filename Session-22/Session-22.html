@@ -8,7 +8,8 @@
 </head>
 <body>
     <script src="S22-JS.js"></script>
-    <form action="" method="get">
+
+    <form action="" method="get" class="ex1">
         <label for='string-to-reverse'>Put a string</label>
         <input id='string-to-reverse' name='string-to-reverse' type='text' />
 
@@ -16,6 +17,54 @@
         <input id='reversed-string' name='reversed-string' type='text' />
 
         <button type="button" onclick="reverseString()">Reverse</button>
+
+    </form>
+
+    <form action="" method="get" class="ex3">
+
+        <h3>New Customer Information</h3>
+
+        <label for="name">Name</label>
+        <input id="ent-name" name="name" type="text" />
+
+        <label for="surname">Surname</label>
+        <input id="ent-surname" name="surname" type="text" />
+
+        <label for="age">Age</label>
+        <input id="ent-age" name="age" type="number" />
+
+        <label for="gender">Gender</label>
+        <input id="ent-gender" name="gender" type="text" />
+        <button type="button" onclick="">Add</button>
+
+        <table id="class3-t">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>jake</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Selected Customer Information</h3>
+
+        <label for="s-name">Name</label>
+        <input id="shown-name" name="s-name" type="text" />
+
+        <label for="s-surname">Surname</label>
+        <input id="shown-surname" name="s-nsurame" type="text" />
+
+        <label for="s-age">Age</label>
+        <input id="shown-age" name="s-age" type="number" />
+
+        <label for="s-gender">Gender</label>
+        <input id="shown-gender" name="s-gender" type="text" />
 
     </form>
 </body>
