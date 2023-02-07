@@ -29,6 +29,12 @@ function checkPalindrome(word){
 
 //Ex 4
 function multiply(a, b) {
-    return a * b;
+    if (a == Number & b == Number) {
+        return a * b
+    }
+    else {
+        alert("Non valid input");
+    }
 }
+
 // Ex 5
