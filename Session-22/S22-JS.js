@@ -9,10 +9,6 @@ function reverseString() {
     document.getElementById("string-to-reverse").value = "";
 
 }
-function demo() {
-    document.getElementById("test").value = "New text";
-}
-
 
 //Ex 2
 function checkPalindrome(word){
@@ -38,3 +34,27 @@ function multiply(a, b) {
 }
 
 // Ex 5
+function exFive(x) {
+    var nums = "";
+    var letters = ""
+    for (let i = 0; i < x.length; i++) {
+        if (isNaN(x[i]) == false) {
+            nums += x[i];
+        }
+        else {
+            letters += x[i];
+        }
+    }
+    if (nums != "") {
+        var numbers = Number(nums);
+        numbers += 1
+        x = letters += numbers.toString();
+
+    }
+    else {
+        x = letters += "1";
+    }
+    return x;
+}
+console.log(exFive("fjfh56"))
+
