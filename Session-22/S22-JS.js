@@ -1,11 +1,20 @@
 // JavaScript source code
 
 //Ex 1
-function reverse(s) {
+function reverseString(s) {
     return s.split("").reverse().join("");
 }
 
 //Ex 2
+function checkPalindrome(word){
+    var reverseWord = reverseString(word).toLowerCase();
+    if (word.toLowerCase() == reverseWord) {
+        console.log("Palindrome")
+    }
+    else {
+        console.log("Not a Palindrome")
+    }
+}
 
 
 //Ex 4
