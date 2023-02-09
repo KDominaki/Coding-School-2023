@@ -58,10 +58,6 @@ namespace ConfigurationsLibrary.Repositories
                 dbTransaction.PetFoodPrice = entity.PetFoodPrice;
                 dbTransaction.Date = entity.Date;
                 dbTransaction.PetFoodQty = entity.PetFoodQty;
-                dbTransaction.CustomerID = entity.CustomerID;
-                dbTransaction.EmployeeID = entity.EmployeeID;
-                dbTransaction.PetID= entity.PetID;
-                dbTransaction.PetFoodID = entity.PetFoodID;
                 context.SaveChanges();
             }
         }

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace ConfigurationsLibrary
 {
-    public class EmployeeConfiguration : IEntityTypeConfiguration<Pet>
+    public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
     {
-        public void Configure(EntityTypeBuilder<Pet> builder)
+        public void Configure(EntityTypeBuilder<Employee> builder)
         {
             builder.ToTable("Employees");
             builder.HasKey(employee => employee.ID);
