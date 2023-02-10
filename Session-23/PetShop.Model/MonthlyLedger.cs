@@ -27,7 +27,11 @@ namespace PetShop.Model
         {
             foreach(var transaction in Transactions)
             {
-                Income += transaction.TotalPrice;
+                if(transaction.Date.Month == Date.Month)
+                {
+                    Income += transaction.TotalPrice;
+                }
+                else { }
             }
             foreach(var employee in Employees)
             {

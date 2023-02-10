@@ -2,13 +2,13 @@
 {
     public class Transaction
     {
-        public Transaction(decimal petPrice, int petFoodQty, decimal petFoodPrice, decimal totalPrice)
+        public Transaction(decimal petPrice, int petFoodQty, decimal petFoodPrice)
         {
             Date = DateTime.Now;
             PetPrice = petPrice;
             PetFoodPrice = petFoodPrice;
             PetFoodQty = petFoodQty;
-            TotalPrice = totalPrice;
+            TotalPriceCalc();
         }
 
         public int Id { get; set; }
@@ -30,5 +30,19 @@
 
         public int PetFoodId { get; set; }
         public PetFood PetFood { get; set; } = null!;
+
+        // Methonds
+        public void TotalPriceCalc()
+        {
+            if (PetPrice != 0)
+            {
+                PetFoodQty += 1;
+                TotalPrice = (PetFoodQty * PetFoodPrice) - PetFoodPrice + PetPrice;
+            }
+            else
+            {
+                TotalPrice = (PetFoodQty * PetFoodPrice) + PetPrice;
+            }
+        }
     }
 }
