@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigurationsLibrary.Repositories
+namespace PetShop.EF.Repos
 {
     public class EmployeeRepo : IEntityRepo<Employee>
     {
