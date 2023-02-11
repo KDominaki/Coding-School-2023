@@ -34,16 +34,12 @@ namespace Petshop.Web.Controllers
         // POST: EmployeeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(EmployeeCreateDto employee)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            if (!ModelState.IsValid) { return View(); }
+            var dbEmployee = new Employee(employee.Name, employee.Surname, employee.EmployeeType, employee.SalaryPerMonth);
+            _employeeRepo.Add(dbEmployee);
+            return RedirectToAction("Index");
         }
 
         // GET: EmployeeController/Edit/5

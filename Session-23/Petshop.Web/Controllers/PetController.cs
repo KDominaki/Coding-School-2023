@@ -34,16 +34,12 @@ namespace Petshop.Web.Controllers
         // POST: PetController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(PetCreateDto pet)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            if (!ModelState.IsValid) { return View(); }
+            var dbPet = new Pet(pet.Breed, pet.AnimalType, pet.PetStatus, pet.Price, pet.Cost);
+            _petRepo.Add(dbPet);
+            return RedirectToAction("Index");
         }
 
         // GET: PetController/Edit/5
