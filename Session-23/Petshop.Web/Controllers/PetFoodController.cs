@@ -45,22 +45,43 @@ namespace Petshop.Web.Controllers
         // GET: PetFoodController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var dbPetFood = _petFoodRepo.GetById(id);
+            if (dbPetFood == null)
+            {
+                return NotFound();
+            }
+
+            var viewPetFood = new PetFoodEditDto
+            {
+                AnimalType = dbPetFood.AnimalType,
+                Price = dbPetFood.Price,
+                Cost = dbPetFood.Cost,
+                Id = dbPetFood.Id
+            };
+
+
+            return View(model: viewPetFood);
         }
 
         // POST: PetFoodController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, PetFoodEditDto petFood)
         {
-            try
+            if (!ModelState.IsValid) { return View(); }
+            var dbPetFood = _petFoodRepo.GetById(id);
+
+            if (dbPetFood == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+            dbPetFood.AnimalType = dbPetFood.AnimalType;
+            dbPetFood.Price = dbPetFood.Price;
+            dbPetFood.Cost = dbPetFood.Cost;
+            dbPetFood.Id = petFood.Id;
+
+            _petFoodRepo.Update(id, dbPetFood);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: PetFoodController/Delete/5

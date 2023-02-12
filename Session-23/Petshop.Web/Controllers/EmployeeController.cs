@@ -51,7 +51,7 @@ namespace Petshop.Web.Controllers
                 return NotFound();
             }
 
-            var viewCustomer = new EmployeeEditDto
+            var viewEmployee = new EmployeeEditDto
             {
                 Name = dbEmployee.Name,
                 Surname = dbEmployee.Surname,
@@ -61,7 +61,7 @@ namespace Petshop.Web.Controllers
             };
 
 
-            return View(model: viewCustomer);
+            return View(model: viewEmployee);
         }
 
         // POST: EmployeeController/Edit/5
