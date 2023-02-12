@@ -1,0 +1,16 @@
+﻿@using PetShop.EF.Repos;
+@using PetShop.Model;
+
+@{
+    ViewData["Title"] = "MonthlyLedger";
+}
+@{
+    var transRepo = new TransactionRepo();
+    var employeeRepo = new EmployeeRepo();
+    var month = new MonthlyLedger(transRepo.GetAll(), employeeRepo.GetAll());
+    month.TotalCalc();
+}
+
+<h1>Current Month's Profit is: @month.Total.ToString()$</h1>
+
+ 
