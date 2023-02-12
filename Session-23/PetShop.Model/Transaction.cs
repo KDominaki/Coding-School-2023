@@ -45,4 +45,37 @@
             }
         }
     }
+
+    public class TransactionCreateDto
+    {
+        public decimal PetPrice { get; set; }
+        public int PetFoodQty { get; set; }
+        public decimal PetFoodPrice { get; set; }
+        public int CustomerId { get; set; }
+        public int EmployeeId { get; set; }
+        public int PetId { get; set; }
+        public int PetFoodId { get; set; }
+    }
+    public class TransactionEditDto
+    {
+        public int Id { get; set; }
+        public decimal PetPrice { get; set; }
+        public int PetFoodQty { get; set; }
+        public decimal PetFoodPrice { get; set; }
+        public int CustomerId { get; set; }
+        public int EmployeeId { get; set; }
+        public int PetId { get; set; }
+        public int PetFoodId { get; set; }
+    }
+    public class TransactionDeleteDto
+    {
+        public int Id { get; set; }
+        public decimal PetPrice { get; set; }
+        public int PetFoodQty { get; set; }
+        public decimal PetFoodPrice { get; set; }
+        public int CustomerId { get; set; }
+        public int EmployeeId { get; set; }
+        public int PetId { get; set; }
+        public int PetFoodId { get; set; }
+    }
 }

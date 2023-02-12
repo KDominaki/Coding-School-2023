@@ -1,0 +1,64 @@
+﻿@model PetShop.Model.TransactionEditDto
+
+@{
+    ViewData["Title"] = "Edit Transaction";
+}
+
+<h1>Edit</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PetPrice" class="control-label"></label>
+                <input asp-for="PetPrice" class="form-control" />
+                <span asp-validation-for="PetPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PetFoodQty" class="control-label"></label>
+                <input asp-for="PetFoodQty" class="form-control" />
+                <span asp-validation-for="PetFoodQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PetFoodPrice" class="control-label"></label>
+                <input asp-for="PetFoodPrice" class="form-control" />
+                <span asp-validation-for="PetFoodPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <input asp-for="CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <input asp-for="EmployeeId" class="form-control" />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PetId" class="control-label"></label>
+                <input asp-for="PetId" class="form-control" />
+                <span asp-validation-for="PetId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PetFoodId" class="control-label"></label>
+                <input asp-for="PetFoodId" class="form-control" />
+                <span asp-validation-for="PetFoodId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -20,8 +20,8 @@ namespace PetShop.EF.Configurations
             builder.Property(t => t.Breed).HasMaxLength(50).IsRequired();
             builder.Property(t => t.AnimalType).IsRequired();
             builder.Property(t => t.PetStatus).IsRequired();
-            builder.Property(t => t.Price).HasPrecision(2, 4).IsRequired();
-            builder.Property(t => t.Cost).HasPrecision(2, 4).IsRequired();
+            builder.Property(t => t.Price).IsRequired();
+            builder.Property(t => t.Cost).IsRequired();
 
             // Relations
         }
