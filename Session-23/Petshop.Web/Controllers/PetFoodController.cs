@@ -87,7 +87,23 @@ namespace Petshop.Web.Controllers
         // GET: PetFoodController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (!ModelState.IsValid) { return View(); }
+            var dbPetFood = _petFoodRepo.GetById(id);
+
+            if (dbPetFood == null)
+            {
+                return NotFound();
+            }
+
+            var viewPetFood = new PetFoodDeleteDto
+            {
+                AnimalType = dbPetFood.AnimalType,
+                Price = dbPetFood.Price,
+                Cost = dbPetFood.Cost,
+                Id = dbPetFood.Id
+            };
+
+            return View(model: viewPetFood);
         }
 
         // POST: PetFoodController/Delete/5
@@ -95,14 +111,8 @@ namespace Petshop.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _petFoodRepo.Delete(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
