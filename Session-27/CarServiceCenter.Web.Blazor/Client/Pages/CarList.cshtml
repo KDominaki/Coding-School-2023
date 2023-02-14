@@ -1,0 +1,72 @@
+﻿@page "/carlist"
+@inject httpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+
+<h3>CarList</h3>
+
+@if(jsloading)
+{
+    <p>Loading ...</p>
+}
+else
+{
+    <button class="btn btn-primary" onclick="CreateItem">Create</button>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Mode</th>
+                <th>Brand</th>
+                <th>Car Registration Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var car in carList)
+            {
+                <tr>
+                    <td>@car.Model</td>
+                    <td>@car.Brand</td>
+                    <td>@car.CarRegistrationNumber</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>EditItem(car)">Edit</button>
+                        <button class="btn btn-danger" @onclick="()=>DeleteItem(car)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private List<CarListDto> carList = new();
+    bool isLoading {get; set;}=true;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadItemFromServer();
+        isLoading = false;
+    }
+
+    private async Task LoadItemsFromServer()
+    {
+        carList = await httpClient.GetFromJsonAsync<List<CarListDto>>("car");
+    }
+
+    private void CreateItem()
+    {
+        navigationManager.NavigateTo("carlist/edit");
+    }
+    private void EditItem(CarListDto car)
+    {
+        navigationMarnager.NavigateTo($"carlist/edit/{car.Id}")
+    }
+    private async Task DeleteItem(CarListDto car)
+    {
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Item. Are you sure?");
+        if(confirm)
+        {
+            var response = await httpClient.DeleteAsync($"todo/(todo.Id)");
+            response.EnsureSuccessStatusCode();
+            await LoadItemsFromServer();
+        }
+    }
+}

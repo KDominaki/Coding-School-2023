@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarServiceCenter.Model", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarServiceCenter.EF", "CarServiceCenter.EF\CarServiceCenter.EF.csproj", "{AE4AEC3C-9519-4489-979F-6399580F86B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServiceCenter.Web.Blazor.Server", "CarServiceCenter.Web.Blazor\Server\CarServiceCenter.Web.Blazor.Server.csproj", "{1DEA98E7-B7D3-4DE8-8B23-5119A7CE95AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarServiceCenter.Web.Blazor.Server", "CarServiceCenter.Web.Blazor\Server\CarServiceCenter.Web.Blazor.Server.csproj", "{1DEA98E7-B7D3-4DE8-8B23-5119A7CE95AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServiceCenter.Web.Blazor.Client", "CarServiceCenter.Web.Blazor\Client\CarServiceCenter.Web.Blazor.Client.csproj", "{11535E41-3A66-4B5B-9A46-C98F4635A7F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarServiceCenter.Web.Blazor.Client", "CarServiceCenter.Web.Blazor\Client\CarServiceCenter.Web.Blazor.Client.csproj", "{11535E41-3A66-4B5B-9A46-C98F4635A7F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServiceCenter.Web.Blazor.Shared", "CarServiceCenter.Web.Blazor\Shared\CarServiceCenter.Web.Blazor.Shared.csproj", "{0EF5B4F9-FA8D-4E00-B1BD-EA491FB0C498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarServiceCenter.Web.Blazor.Shared", "CarServiceCenter.Web.Blazor\Shared\CarServiceCenter.Web.Blazor.Shared.csproj", "{0EF5B4F9-FA8D-4E00-B1BD-EA491FB0C498}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
