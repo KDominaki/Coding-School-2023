@@ -1,11 +1,12 @@
 ﻿@page "/carlist"
-@inject httpClient httpClient
+@using CarServiceCenter.Web.Blazor.Shared.Car;
+@inject HttpClient httpClient
 @inject NavigationManager navigationManager
 @inject IJSRuntime jsRuntime
 
 <h3>CarList</h3>
 
-@if(jsloading)
+@if(isLoading)
 {
     <p>Loading ...</p>
 }
@@ -15,7 +16,7 @@ else
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>Mode</th>
+                <th>Model</th>
                 <th>Brand</th>
                 <th>Car Registration Number</th>
             </tr>
@@ -39,10 +40,10 @@ else
 @code {
     private List<CarListDto> carList = new();
     bool isLoading {get; set;}=true;
-    
+
     protected override async Task OnInitializedAsync()
     {
-        await LoadItemFromServer();
+        await LoadItemsFromServer();
         isLoading = false;
     }
 
@@ -57,7 +58,7 @@ else
     }
     private void EditItem(CarListDto car)
     {
-        navigationMarnager.NavigateTo($"carlist/edit/{car.Id}")
+        navigationManager.NavigateTo($"carlist/edit/{car.Id}");
     }
     private async Task DeleteItem(CarListDto car)
     {

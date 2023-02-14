@@ -26,7 +26,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
             {
                 Id = Car.Id,
                 Model = Car.Model,
-                Bramd = Car.Brand,
+                Brand = Car.Brand,
                 CarRegistrationNumber = Car.CarRegistrationNumber
             });
         }
@@ -39,7 +39,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
             {
                 Id = id,
                 Model = result.Model,
-                Bramd = result.Brand,
+                Brand = result.Brand,
                 CarRegistrationNumber = result.CarRegistrationNumber
             };
         }
@@ -47,7 +47,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         [HttpPost]
         public async Task Post(CarEditDto car)
         {
-            var newCar = new Car(car.Model, car.Bramd, car.CarRegistrationNumber);
+            var newCar = new Car(car.Model, car.Brand, car.CarRegistrationNumber);
             _carRepo.Add(newCar);
         }
 
@@ -56,7 +56,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         {
             var carToUpdate = _carRepo.GetById(car.Id);
             carToUpdate.Model = car.Model;
-            carToUpdate.Brand = car.Bramd;
+            carToUpdate.Brand = car.Brand;
             carToUpdate.CarRegistrationNumber = car.CarRegistrationNumber;
             _carRepo.Update(car.Id, carToUpdate);
         }
