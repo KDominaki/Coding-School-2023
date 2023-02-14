@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\CarServiceCenter.EF\CarServiceCenter.EF.csproj" />
+    <ProjectReference Include="..\..\CarServiceCenter.Model\CarServiceCenter.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 </Project>
