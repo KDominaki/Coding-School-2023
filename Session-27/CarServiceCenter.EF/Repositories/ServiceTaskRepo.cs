@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace CarServiceCenter.EF.Repositories
 {
-    internal class ServiceTaskRepo : IEntityRepo<ServiceTask>
+    public class ServiceTaskRepo : IEntityRepo<ServiceTask>
     {
         public void Add(ServiceTask entity)
         {
