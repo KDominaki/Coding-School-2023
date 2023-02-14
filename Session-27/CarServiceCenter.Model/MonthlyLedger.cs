@@ -23,6 +23,7 @@ namespace CarServiceCenter.Model
             Engineers = engineers;
             Date = DateTime.Now;
             Managers = managers;
+            TotalCalc();
         }
 
         public void TotalCalc()
