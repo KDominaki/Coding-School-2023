@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CarServiceCenter.EF.Repositories {
-    internal class EngineerRepo : IEntityRepo<Engineer> {
+    public class EngineerRepo : IEntityRepo<Engineer> {
         public void Add(Engineer entity) {
             using var context = new CarServiceCenterDbContext();
             if (entity.Id != 0)
