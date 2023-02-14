@@ -10,7 +10,7 @@ namespace CarServiceCenter.Web.Blazor.Shared.Car
     {
         public int Id { get; set; }
         public string Bramd { get; set; } = string.Empty;
-        public string Model { get; set; }
-        public string CarRegistrationNumber { get; set; }
+        public string Model { get; set; } = string.Empty;
+        public string CarRegistrationNumber { get; set; } = string.Empty;
     }
 }
