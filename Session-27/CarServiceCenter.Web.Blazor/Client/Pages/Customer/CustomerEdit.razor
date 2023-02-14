@@ -1,0 +1,74 @@
+﻿@page "/customerlist/edit/{Id:int?}"
+
+@using CarServiceCenter.Web.Blazor.Shared.Customer
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+
+<h3>CustomerEdit</h3>
+
+@if(Customer == null)
+{
+    <p>Loading ...</p>
+
+} else {
+
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input class="form-control" @bind="@Customer.Name" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Surname</label>
+            <input class="form-control" @bind="@Customer.Surname" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input class="form-control" @bind="@Customer.Phone" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Tin</label>
+            <input class="form-control" @bind="@Customer.Tin" />
+        </div>
+        
+    </div>
+
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+
+    </div>
+    
+}
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    CustomerEditDto Customer { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        if (Id == null) {
+            Customer = new();
+        } else {
+            Customer = await httpClient.GetFromJsonAsync<CustomerEditDto>($"customer/{Id}");
+        }
+    }
+
+    private void OnCancel() {
+        navigationManager.NavigateTo("customerlist");
+    }
+
+    private async Task OnSave() {
+        HttpResponseMessage? response = null;
+        if (Id == null) {
+            response = await httpClient.PostAsJsonAsync("customer", Customer);
+        } else {
+            response = await httpClient.PutAsJsonAsync("customer", Customer);
+        }
+
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("customerlist");
+    }
+
+}

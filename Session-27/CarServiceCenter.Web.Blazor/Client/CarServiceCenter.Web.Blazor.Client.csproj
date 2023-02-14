@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\CarServiceCenter.EF\CarServiceCenter.EF.csproj" />
+    <ProjectReference Include="..\..\CarServiceCenter.Model\CarServiceCenter.Model.csproj" />
     <ProjectReference Include="..\Shared\CarServiceCenter.Web.Blazor.Shared.csproj" />
   </ItemGroup>
 
