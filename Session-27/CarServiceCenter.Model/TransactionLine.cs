@@ -2,11 +2,11 @@
 {
     public class TransactionLine
     {
-        public TransactionLine(decimal hours, decimal pricePerHour, decimal price)
+        public TransactionLine(decimal pricePerHour)
         {
-            Hours = hours;
+            ServiceTask.Hours = Hours;
             PricePerHour = pricePerHour;
-            Price = price;
+            Price = Hours * pricePerHour;
         }
 
         public int Id { get; set; }
