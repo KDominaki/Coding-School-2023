@@ -2,10 +2,10 @@
 {
     public class Transaction
     {
-        public Transaction(decimal totalPrice)
+        public Transaction()
         {
             Date = DateTime.Now;
-            TotalPrice = totalPrice;
+            TotalPriceCalc();
 
             TransactionLines = new List<TransactionLine>();
         }
@@ -25,5 +25,15 @@
         public Car Car { get; set; } = null!;
 
         public List<TransactionLine> TransactionLines { get; set; }
+
+
+        public void TotalPriceCalc()
+        {
+            foreach(TransactionLine transactionLine in TransactionLines)
+            {
+                TotalPrice += transactionLine.Price;
+            }
+        }
     }
+
 }
