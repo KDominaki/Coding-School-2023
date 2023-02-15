@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarServiceCenter.Web.Blazor.Shared.TransactionLine {
     public class TransactionLineListDto {
+        public int Id { get; set; }
         public decimal Hours { get; set; }
         public decimal PricePerHour { get; set; }
 
