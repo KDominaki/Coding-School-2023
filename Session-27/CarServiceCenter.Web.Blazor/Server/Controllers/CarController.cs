@@ -23,7 +23,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         {
             var result = _carRepo.GetAll();
             return result.Select(Car => new CarListDto
-            {
+            {   
                 Id = Car.Id,
                 Model = Car.Model,
                 Brand = Car.Brand,
