@@ -1,0 +1,71 @@
+﻿@page "/managerlist"
+@using CarServiceCenter.Web.Blazor.Shared.Manager;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+
+<h3>Manager List Dto</h3>
+
+@if (isLoading) {
+        <p>Loading ...</p>
+} else {
+        <button class="btn btn-primary" @onclick="CreateItem">Create</button>
+          <table class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Surname</th>
+                      <th>Salary</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+            @foreach (var manager in managerList) {
+                        <tr>
+                            <td>@manager.Name</td>
+                            <td>@manager.Surname</td>
+                            <td>@manager.SalaryPerMonth</td>                   
+                            <td>
+                                <button class="btn btn-primary" @onclick="()=> EditItem(manager)">Edit</button>
+                                <button class="btn btn-danger" @onclick="()=> DeleteItem(manager)">Delete</button>
+                            </td>
+                        </tr>
+            }
+              </tbody>
+          </table>
+}
+
+
+
+
+@code {
+    private List<ManagerListDto> managerList = new();
+
+    bool isLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync() {
+        await LoadItemsFromServer();
+        isLoading = false;
+    }
+
+    private async Task LoadItemsFromServer() {
+        managerList = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
+    }
+
+    private void CreateItem() {
+        navigationManager.NavigateTo("managerlist/edit");
+    }
+
+    private void EditItem(ManagerListDto manager) {
+        navigationManager.NavigateTo($"managerlist/edit/{manager.Id}");
+    }
+
+    private async Task DeleteItem(ManagerListDto manager) {
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Item. Are you sure?");
+        if (confirm) {
+            var response = await httpClient.DeleteAsync($"manager/{manager.Id}");
+            response.EnsureSuccessStatusCode();
+            await LoadItemsFromServer();
+        }
+    }
+}
