@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarServiceCenter.Web.Blazor.Shared.TransactionLine {
-    public class TransactionLineListDto {
-        public decimal Hours { get; set; }
+namespace CarServiceCenter.Web.Blazor.Shared.TransactionLine
+{
+    public class TransactionLineEditDto
+    {
         public decimal PricePerHour { get; set; }
         public decimal Price { get; set; }
 
         // These below are from the relations, maybe we need them to appear in the UI of TransactionLineList -- TODO: MAYBE NEEDS FIX
-        public DateTime TransactionDate { get; set; }
-        public string ServiceTaskCode { get; set; } = null!;
+        public string ServiceTaskId { get; set; } = null!;
         public string EngineerSurname { get; set; } = null!;
     }
 }
+
