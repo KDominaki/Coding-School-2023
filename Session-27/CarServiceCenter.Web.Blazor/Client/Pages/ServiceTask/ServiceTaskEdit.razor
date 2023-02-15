@@ -1,0 +1,70 @@
+﻿@page "/servicetasklist/edit/{Id:int?}"
+
+@using CarServiceCenter.Web.Blazor.Shared.ServiceTask
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>ServiceTaskEdit</h3>
+
+@if (ServiceTask == null) {
+    <p>Loading ...</p>
+
+} else {
+
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Code</label>
+            <input class="form-control" @bind="@ServiceTask.Code" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Description</label>
+            <input class="form-control" @bind="@ServiceTask.Description" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Hours</label>
+            <input class="form-control" @bind="@ServiceTask.Hours" type="number"/>
+        </div>
+        
+
+    </div>
+
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+
+    </div>
+
+}
+
+@code {
+
+    [Parameter] public int? Id { get; set; }
+    ServiceTaskEditDto ServiceTask { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        if (Id == null) {
+            ServiceTask = new();
+        } else {
+            ServiceTask = await httpClient.GetFromJsonAsync<ServiceTaskEditDto>($"servicetask/{Id}");
+        }
+    }
+
+    private void OnCancel() {
+        navigationManager.NavigateTo("servicetasklist");
+    }
+
+    private async Task OnSave() {
+        HttpResponseMessage? response = null;
+        if (Id == null) {
+            response = await httpClient.PostAsJsonAsync("servicetask", ServiceTask);
+        } else {
+            response = await httpClient.PutAsJsonAsync("servicetask", ServiceTask);
+        }
+
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("servicetasklist");
+    }
+
+}
