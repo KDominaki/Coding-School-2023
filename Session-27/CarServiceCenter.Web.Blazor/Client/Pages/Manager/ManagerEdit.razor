@@ -7,7 +7,8 @@
 <h3>Managers</h3>
 <h4>Create/Edit</h4>
 
-@if (isLoading) {
+@if (Manager == null) {
+
         <p>Loading ...</p>
 
 } else {
@@ -15,15 +16,15 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="form-label">Name</label>
-                <input class="form-control" @bind="@manager.Name" />
+                <input class="form-control" @bind="@Manager.Name" />
             </div>
             <div class="col-md-6">
                 <label class="form-label">Surname</label>
-                <input class="form-control" @bind="@manager.Surname" />
+                <input class="form-control" @bind="@Manager.Surname" />
             </div>
             <div class="col-md-6">
                 <label class="form-label">Phone</label>
-                <input class="form-control" @bind="@manager.SalaryPerMonth" />
+                <input class="form-control" @bind="@Manager.SalaryPerMonth" />
             </div>
         </div>
         <div class="row mt-2">
@@ -39,14 +40,14 @@
 
 @code {
     [Parameter] public int? Id { get; set; }
-    bool isLoading = true;
-    ManagerEditDto manager;
+    //bool isLoading = true;
+    ManagerEditDto Manager { get; set; }
 
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
-            manager = new();
+            Manager = new();
         } else {
-            manager = await httpClient.GetFromJsonAsync<ManagerEditDto>($"manager/{Id}");
+            Manager = await httpClient.GetFromJsonAsync<ManagerEditDto>($"manager/{Id}");
         }
     }
 
@@ -57,9 +58,9 @@
     private async Task OnSave() {
         HttpResponseMessage? response = null;
         if (Id == null) {
-            response = await httpClient.PostAsJsonAsync("manager", manager);
+            response = await httpClient.PostAsJsonAsync("manager", Manager);
         } else {
-            response = await httpClient.PutAsJsonAsync("manager", manager);
+            response = await httpClient.PutAsJsonAsync("manager", Manager);
         }
 
         response.EnsureSuccessStatusCode();

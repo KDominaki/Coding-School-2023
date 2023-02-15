@@ -11,8 +11,8 @@ namespace CarServiceCenter.Web.Blazor.Shared {
     public class EngineerEditDto {
 
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string Name { get; set; } = null!;
+        public string Surname { get; set; } = null!;
         public int SalaryPerMonth { get; set; }
 
         // Relations
