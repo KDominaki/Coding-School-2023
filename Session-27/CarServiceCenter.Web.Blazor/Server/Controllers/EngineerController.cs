@@ -41,6 +41,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Name = result.Name,
                 Surname = result.Surname,
                 SalaryPerMonth = result.SalaryPerMonth,
+                ManagerId = result.ManagerId,
                 Managers = managers.Select(manager => new ManagerEditDto{
                     Id = manager.Id,
                     Name= manager.Name,
@@ -55,7 +56,11 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         [HttpPost]
         public async Task Post(EngineerEditDto engineer) {
             var newEngineer = new Engineer(engineer.Name, engineer.Surname, engineer.SalaryPerMonth);
-            newEngineer.ManagerId = engineer.ManagerId;
+            if (engineer.ManagerId == 0) {
+                throw Exception("");
+            } else {
+                newEngineer.ManagerId = engineer.ManagerId;
+            }
             _engineerRepo.Add(newEngineer);
         }
 

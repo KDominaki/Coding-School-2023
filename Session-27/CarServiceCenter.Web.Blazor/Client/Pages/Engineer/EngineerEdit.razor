@@ -25,15 +25,14 @@
                 <input class="form-control" @bind="@engineer.SalaryPerMonth" />
             </div>
             <div class="col-md-6">
-                     <label class="form-label">Manager</label>
-                <select class="form-control" @bind="engineer.ManagerId">
-                @foreach (var item in engineer.Managers) {
+                 <label class="form-label">Manager</label>
+                <select class="form-control" @bind="engineer.ManagerId">   
+                    <option>Select Menu</option>
+                @foreach (var item in engineer.Managers) {                             
                             <option value="@item.Id">@item.Name</option>
                 }
                 </select>
-
             </div>
-
         </div>
 
         <div class="row mt-2">
@@ -49,7 +48,9 @@
 @code {
     [Parameter] public int? Id { get; set; }
     EngineerEditDto engineer { get; set; }
+
     bool isLoading=true;
+    List<ManagerListDto> Managers = new();
 
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
