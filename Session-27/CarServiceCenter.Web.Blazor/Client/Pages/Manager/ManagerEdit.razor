@@ -1,6 +1,4 @@
 ﻿@page "/managerlist/edit/{Id:int?}"
-
-@using CarServiceCenter.Web.Blazor.Shared.Manager
 @using CarServiceCenter.Web.Blazor.Shared;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
@@ -8,7 +6,7 @@
 
 <h3>Manager Edit</h3>
 
-@if (Manager == null) {
+@if (isLoading) {
         <p>Loading ...</p>
 
 } else {
@@ -16,15 +14,15 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="form-label">Name</label>
-                <input class="form-control" @bind="@Manager.Name" />
+                <input class="form-control" @bind="@manager.Name" />
             </div>
             <div class="col-md-6">
                 <label class="form-label">Surname</label>
-                <input class="form-control" @bind="@Manager.Surname" />
+                <input class="form-control" @bind="@manager.Surname" />
             </div>
             <div class="col-md-6">
                 <label class="form-label">Phone</label>
-                <input class="form-control" @bind="@Manager.SalaryPerMonth" />
+                <input class="form-control" @bind="@manager.SalaryPerMonth" />
             </div>
         </div>
         <div class="row mt-2">
@@ -39,13 +37,14 @@
 
 @code {
     [Parameter] public int? Id { get; set; }
-    ManagerEditDto Manager { get; set; }
+    bool isLoading = true;
+    ManagerEditDto manager;
 
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
-            Manager = new();
+            manager = new();
         } else {
-            Manager = await httpClient.GetFromJsonAsync<ManagerEditDto>($"manager/{Id}");
+            manager = await httpClient.GetFromJsonAsync<ManagerEditDto>($"manager/{Id}");
         }
     }
 
@@ -56,9 +55,9 @@
     private async Task OnSave() {
         HttpResponseMessage? response = null;
         if (Id == null) {
-            response = await httpClient.PostAsJsonAsync("manager", Manager);
+            response = await httpClient.PostAsJsonAsync("manager", manager);
         } else {
-            response = await httpClient.PutAsJsonAsync("manager", Manager);
+            response = await httpClient.PutAsJsonAsync("manager", manager);
         }
 
         response.EnsureSuccessStatusCode();

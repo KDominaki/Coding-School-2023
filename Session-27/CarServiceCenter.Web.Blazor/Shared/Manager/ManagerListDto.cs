@@ -1,9 +1,12 @@
-﻿using CarServiceCenter.Model;
+﻿
+using CarServiceCenter.Web.Blazor.Shared.Engineer;
+using CarServiceCenter.Web.Blazor.Shared.Transaction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace CarServiceCenter.Web.Blazor.Shared.Manager {
     public class ManagerListDto {
@@ -13,8 +16,10 @@ namespace CarServiceCenter.Web.Blazor.Shared.Manager {
         public string Surname { get; set; }
         public int SalaryPerMonth { get; set; }
 
-        public List<CarServiceCenter.Model.Engineer> Engineers { get; set; }
+     
 
-        public List<CarServiceCenter.Model.Transaction> Transactions { get; set; }
+        public List<EngineerListDto> Engineers { get; set; }=new List<EngineerListDto>();
+
+        public List<TransactionListDto> Transactions { get; set; }= new List<TransactionListDto>();
     }
 }

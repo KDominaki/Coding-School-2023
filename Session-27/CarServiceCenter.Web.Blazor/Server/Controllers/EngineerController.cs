@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace CarServiceCenter.Web.Blazor.Server.Controllers {
-    [Route("a[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class EngineerController : ControllerBase {
 
-        private IEntityRepo<Engineer> _engineerRepo;
+        private readonly IEntityRepo<Engineer> _engineerRepo;
 
         public EngineerController(IEntityRepo<Engineer> engineerRepo) {
             _engineerRepo = engineerRepo;
@@ -26,8 +26,9 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Surname = engineer.Surname,
                 SalaryPerMonth = engineer.SalaryPerMonth,
                 ManagerId = engineer.ManagerId,
-
             });
+
+           
         }
 
 

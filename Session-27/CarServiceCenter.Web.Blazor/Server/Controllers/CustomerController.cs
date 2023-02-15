@@ -31,6 +31,9 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         [HttpGet("{id}")]
         public async Task<CustomerEditDto> GetById(int id) {
             var result = _customerRepo.GetById(id);
+
+            
+
             return new CustomerEditDto {
                 Id = id,
                 Name = result.Name,
@@ -49,6 +52,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         [HttpPut]
         public async Task Put(CustomerEditDto customer) {
             var itemToUpdate = _customerRepo.GetById(customer.Id);
+
             itemToUpdate.Name = customer.Name;
             itemToUpdate.Surname = customer.Surname;
             itemToUpdate.Phone = customer.Phone;
@@ -58,6 +62,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
 
         [HttpDelete("{id}")]
         public async Task Delete(int id) {
+            
             _customerRepo.Delete(id);
         }
 

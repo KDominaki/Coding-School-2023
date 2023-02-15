@@ -8,20 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CarServiceCenter.Web.Blazor.Shared.Transaction {
-    public class TransactionListEditDto {                               //TODO: MAYBE NEEDS FIXING
+    public class TransactionEditDto {                        
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public decimal TotalPrice { get; set; }
 
         // Relations
         public int CustomerId { get; set; }
-        public List<CustomerListDto> Customers { get; set; } = new();
+        public CarServiceCenter.Model.Customer Customer { get; set; } = null!;
 
         public int ManagerId { get; set; }
-        //public List<ManagerListDto> Managers { get; set; } = new();   //TODO:  When ManagerListDto is ready, uncomment this line
+
+        public CarServiceCenter.Model.Manager Manager { get; set; } = null!;
+
 
         public int CarId { get; set; }
-        public List<CarListDto> Car { get; set; } = new();
+        public CarServiceCenter.Model.Car Car { get; set; } = null!;
+
+        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; } = new();
 
 
     }

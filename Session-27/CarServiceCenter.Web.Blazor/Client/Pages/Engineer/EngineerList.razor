@@ -5,7 +5,7 @@
 @inject IJSRuntime jsRuntime
 
 
-<h3>EngineerList</h3>
+<h3>Engineer List</h3>
 
 
 @if (isLoading) {
@@ -28,7 +28,7 @@
                             <td>@engineer.Name</td>
                             <td>@engineer.Surname</td>
                             <td>@engineer.SalaryPerMonth</td>
-                            <td>@engineer.ManagerId</td>                    
+                            <td>@engineer.ManagerId</td>                  
                             <td>
                                 <button class="btn btn-primary" @onclick="()=> EditItem(engineer)">Edit</button>
                                 <button class="btn btn-danger" @onclick="()=> DeleteItem(engineer)">Delete</button>
@@ -58,13 +58,13 @@
     }
 
     private void EditItem(EngineerListDto engineer) {
-        navigationManager.NavigateTo($"customerlist/edit/{engineer.Id}");
+        navigationManager.NavigateTo($"engineerlist/edit/{engineer.Id}");
     }
 
     private async Task DeleteItem(EngineerListDto engineer) {
         var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Item. Are you sure?");
         if (confirm) {
-            var response = await httpClient.DeleteAsync($"customer/{engineer.Id}");
+            var response = await httpClient.DeleteAsync($"engineer/{engineer.Id}");
             response.EnsureSuccessStatusCode();
             await LoadItemsFromServer();
         }

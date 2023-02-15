@@ -1,0 +1,75 @@
+﻿@page "/transactionlist/edit/{Id:int?}"
+
+@using CarServiceCenter.Web.Blazor.Shared.Transaction
+@using CarServiceCenter.Web.Blazor.Shared;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+
+<h3>Transaction Edit</h3>
+
+@if (Transaction == null) {
+            <p>Loading ...</p>
+
+} else {
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Date</label>
+                    <input class="form-control" @bind="@Transaction.Date" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Total Price</label>
+                    <input class="form-control" @bind="@Transaction.TotalPrice" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Customer</label>
+                    <input class="form-control" @bind="@Transaction.CustomerId" />
+                </div> 
+                <div class="col-md-6">
+                    <label class="form-label">Manager</label>
+                    <input class="form-control" @bind="@Transaction.ManagerId" />
+                </div> <div class="col-md-6">
+                    <label class="form-label">Car</label>
+                    <input class="form-control" @bind="@Transaction.CarId" />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <button class="btn btn-success" @onclick="OnSave">Save</button>
+                    <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+                </div>
+
+            </div>
+
+}
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    TransactionEditDto Transaction { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        if (Id == null) {
+            Transaction = new();
+        } else {
+            Transaction = await httpClient.GetFromJsonAsync<TransactionEditDto>($"transaction/{Id}");
+        }
+    }
+
+    private void OnCancel() {
+        navigationManager.NavigateTo("transactionlist");
+    }
+
+    private async Task OnSave() {
+        HttpResponseMessage? response = null;
+        if (Id == null) {
+            response = await httpClient.PostAsJsonAsync("transaction", Transaction);
+        } else {
+            response = await httpClient.PutAsJsonAsync("transaction", Transaction);
+        }
+
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("transactionlist");
+    }
+
+}
