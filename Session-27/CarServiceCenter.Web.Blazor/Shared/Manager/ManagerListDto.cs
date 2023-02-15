@@ -15,6 +15,6 @@ namespace CarServiceCenter.Web.Blazor.Shared.Manager {
 
         public List<CarServiceCenter.Model.Engineer> Engineers { get; set; }
 
-        public List<Transaction> Transactions { get; set; }
+        public List<CarServiceCenter.Model.Transaction> Transactions { get; set; }
     }
 }
