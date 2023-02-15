@@ -8,6 +8,8 @@ namespace CarServiceCenter.Web.Blazor.Shared.TransactionLine
 {
     public class TransactionLineEditDto
     {
+        public int Id { get; set; }
+        public decimal Hours { get; set; }
         public decimal PricePerHour { get; set; }
 
         // These below are from the relations, maybe we need them to appear in the UI of TransactionLineList -- TODO: MAYBE NEEDS FIX
