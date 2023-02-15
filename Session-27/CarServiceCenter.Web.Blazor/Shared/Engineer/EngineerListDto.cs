@@ -16,6 +16,6 @@ namespace CarServiceCenter.Web.Blazor.Shared.Engineer {
         public int ManagerId { get; set; }
         public CarServiceCenter.Model.Manager Manager { get; set; } = null!;
 
-        public List<TransactionLine> TransactionLines { get; set; }
+        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; }
     }
 }
