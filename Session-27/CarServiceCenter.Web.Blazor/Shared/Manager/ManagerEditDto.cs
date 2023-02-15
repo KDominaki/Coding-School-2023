@@ -17,9 +17,9 @@ namespace CarServiceCenter.Web.Blazor.Shared {
 
 
     
-        public List<EngineerListDto> Engineers { get; set; } = new List<EngineerListDto> { };
+        public List<EngineerListDto> Engineers { get; set; } = new List<EngineerListDto> ();
 
-        public List<TransactionEditDto> Transactions { get; set; } = new List<TransactionEditDto> { };
+        public List<TransactionEditDto> Transactions { get; set; } = new List<TransactionEditDto> ();
 
 
     }

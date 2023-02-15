@@ -16,7 +16,7 @@ namespace CarServiceCenter.Web.Blazor.Shared {
         // Relations
         public int ManagerId { get; set; }
 
-        public List<ManagerListDto> Managers { get; set; } = new();
+        public List<ManagerListDto> Managers { get; set; } = new List<ManagerListDto>() ;
 
         public List<TransactionLineListDto> TransactionLines { get; set; }= new List<TransactionLineListDto>();
     }

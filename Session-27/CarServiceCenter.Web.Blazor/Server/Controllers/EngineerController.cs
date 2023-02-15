@@ -4,6 +4,7 @@ using CarServiceCenter.Model;
 using CarServiceCenter.Web.Blazor.Shared;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace CarServiceCenter.Web.Blazor.Server.Controllers {
     [Route("[controller]")]
     [ApiController]
@@ -26,9 +27,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Surname = engineer.Surname,
                 SalaryPerMonth = engineer.SalaryPerMonth,
                 ManagerId = engineer.ManagerId,
-            });
-
-           
+            });  
         }
 
 
@@ -42,7 +41,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Name = result.Name,
                 Surname = result.Surname,
                 SalaryPerMonth = result.SalaryPerMonth,
-                Managers = managers.Select(manager => new ManagerListDto{
+                Managers = managers.Select(manager => new ManagerEditDto{
                     Id = manager.Id,
                     Name= manager.Name,
                     Surname= manager.Surname

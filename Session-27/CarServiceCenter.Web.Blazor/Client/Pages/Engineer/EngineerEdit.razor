@@ -1,5 +1,4 @@
 ﻿@page "/engineerlist/edit/{Id:int?}"
-
 @using CarServiceCenter.Web.Blazor.Shared;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
@@ -55,7 +54,7 @@
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
             engineer = new();
-            engineer.Managers = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
+            engineer.Managers = await httpClient.GetFromJsonAsync<List<ManagerEditDto>>("manager");
         } else {
             engineer = await httpClient.GetFromJsonAsync<EngineerEditDto>($"engineer/{Id}");
         }
