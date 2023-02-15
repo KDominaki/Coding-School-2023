@@ -1,4 +1,5 @@
 ﻿using CarServiceCenter.Model;
+using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,9 @@ namespace CarServiceCenter.Web.Blazor.Shared.Engineer {
 
         // Relations
         public int ManagerId { get; set; }
+
         public CarServiceCenter.Model.Manager Manager { get; set; } = null!;
 
-        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; }
+        public List<TransactionLineListDto> TransactionLines { get; set; }= new List<TransactionLineListDto>();
     }
 }

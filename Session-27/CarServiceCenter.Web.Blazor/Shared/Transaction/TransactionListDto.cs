@@ -10,10 +10,19 @@ namespace CarServiceCenter.Web.Blazor.Shared.Transaction {
         public DateTime Date { get; set; }
         public decimal TotalPrice { get; set; }
 
-        // Properties below are from the relations, because maybe we want these to appear in the View as well   -- TODO: MAYBE NEEDS FIX 
-        public string CustomerSurname { get; set; } = null!; 
-        public string ManagerSurname { get; set; } = null!;
-        public string CarRegistrationNumber { get; set; } = null!;  
-        public decimal TransactionLinePrice { get; set; }   //maybe we need here multiple prices from multiple transaction lines
+
+        public int CustomerId { get; set; }
+        public CarServiceCenter.Model.Customer Customer { get; set; } = null!;
+
+        public int ManagerId { get; set; }
+
+        public CarServiceCenter.Model.Manager Manager { get; set; } = null!;
+
+        public int CarId { get; set; } 
+
+        public CarServiceCenter.Model.Car Car { get; set; } = null!;
+
+
+        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; } = new();
     }
 }
