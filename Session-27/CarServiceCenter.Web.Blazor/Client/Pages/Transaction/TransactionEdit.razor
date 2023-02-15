@@ -1,5 +1,7 @@
 ﻿@page "/transactionlist/edit/{Id:int?}"
 
+@using CarServiceCenter.Web.Blazor.Shared.Car;
+@using CarServiceCenter.Web.Blazor.Shared.Customer;
 @using CarServiceCenter.Web.Blazor.Shared.Transaction
 @using CarServiceCenter.Web.Blazor.Shared;
 @inject HttpClient httpClient
@@ -22,17 +24,33 @@
                 <div class="col-md-6">
                     <label class="form-label">Total Price</label>
                     <input class="form-control" @bind="@Transaction.TotalPrice" />
-                </div>
+                </div><EngineerEdit />
                 <div class="col-md-6">
-                    <label class="form-label">Customer</label>
-                    <input class="form-control" @bind="@Transaction.CustomerId" />
+                        <label class="form-label">Manager</label>
+                    <select class="form-control" @bind="Transaction.ManagerId">   
+                        <option>Select Menu</option>
+                @foreach (var item in Transaction.Managers) {                             
+                                    <option value="@item.Id">@item.Name</option>
+                }
+                    </select>
+                    
                 </div> 
                 <div class="col-md-6">
-                    <label class="form-label">Manager</label>
-                    <input class="form-control" @bind="@Transaction.ManagerId" />
+                        <label class="form-label">Customer</label>
+                    <select class="form-control" @bind="Transaction.CustomerId">   
+                        <option>Select Menu</option>
+                @foreach (var item in Transaction.Customers) {                             
+                                    <option value="@item.Id">@item.Name</option>
+                }
+                    </select>
                 </div> <div class="col-md-6">
-                    <label class="form-label">Car</label>
-                    <input class="form-control" @bind="@Transaction.CarId" />
+                        <label class="form-label">Car</label>
+                    <select class="form-control" @bind="Transaction.CarId">   
+                        <option>Select Menu</option>
+                @foreach (var item in Transaction.Cars) {                             
+                                    <option value="@item.Id">@item.Brand</option>
+                }
+                    </select>
                 </div>
             </div>
             <div class="row mt-2">
@@ -52,6 +70,9 @@
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
             Transaction = new();
+            Transaction.Managers = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
+            Transaction.Customers = await httpClient.GetFromJsonAsync<List<CustomerListDto>>("customer");
+            Transaction.Cars = await httpClient.GetFromJsonAsync<List<CarListDto>>("car");
         } else {
             Transaction = await httpClient.GetFromJsonAsync<TransactionEditDto>($"transaction/{Id}");
         }

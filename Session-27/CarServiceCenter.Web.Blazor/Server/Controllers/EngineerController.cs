@@ -57,7 +57,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         public async Task Post(EngineerEditDto engineer) {
             var newEngineer = new Engineer(engineer.Name, engineer.Surname, engineer.SalaryPerMonth);
             if (engineer.ManagerId == 0) {
-                throw Exception("");
+                //TODO
             } else {
                 newEngineer.ManagerId = engineer.ManagerId;
             }
