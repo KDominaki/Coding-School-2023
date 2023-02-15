@@ -1,0 +1,71 @@
+﻿@page "/carlist/edit/{Id:int?}"
+
+@using CarServiceCenter.Web.Blazor.Shared.Car;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+
+<h3>CarEdit</h3>
+
+@if(Car == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-6">
+            <lable class="form-label">Model</lable>
+            <input class="form-control" @bind="@Car.Model"/>
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Brand</label>
+            <input class="form-control" @bind="@Car.Brand"/>
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Car Registration Number</label>
+            <input class="form-control" @bind="@Car.CarRegistrationNumber" />
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+    </div>
+}
+@code
+{
+    [Parameter] public int? Id { get; set; }
+    CarEditDto Car { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if(Id == null)
+        {
+            Car = new();
+        }
+        else
+        {
+            Car = await httpClient.GetFromJsonAsync<CarEditDto>($"car/{Id}");
+        }
+    }
+    private void OnCancel()
+    {
+        navigationManager.NavigateTo("carlist");
+    }
+    private async Task OnSave()
+    {
+        HttpResponseMessage? response = null;
+        if(Id == null)
+        {
+            response = await httpClient.PostAsJsonAsync("car", Car);
+        }
+        else
+        {
+            response = await httpClient.PutAsJsonAsync("car", Car);
+        }
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("carlist");
+    }
+}
