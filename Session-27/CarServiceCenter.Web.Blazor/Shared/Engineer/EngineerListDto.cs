@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarServiceCenter.Web.Blazor.Shared.Engineer {
+namespace CarServiceCenter.Web.Blazor.Shared {
     public class EngineerListDto {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,7 +16,7 @@ namespace CarServiceCenter.Web.Blazor.Shared.Engineer {
         // Relations
         public int ManagerId { get; set; }
 
-        public CarServiceCenter.Model.Manager Manager { get; set; } = null!;
+        public List<ManagerListDto> Managers { get; set; } = new();
 
         public List<TransactionLineListDto> TransactionLines { get; set; }= new List<TransactionLineListDto>();
     }

@@ -1,13 +1,13 @@
 ﻿@page "/engineerlist/edit/{Id:int?}"
 
-@using CarServiceCenter.Web.Blazor.Shared.Engineer
+@using CarServiceCenter.Web.Blazor.Shared;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
 
 <h3>Engineers</h3>
 <h4>Create/Edit</h4>
 
-@if (Engineer == null) {
+@if (engineer == null) {
         <p>Loading ...</p>
 
 } else {
@@ -15,19 +15,24 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="form-label">Name</label>
-                <input class="form-control" @bind="@Engineer.Name" />
+                <input class="form-control" @bind="@engineer.Name" />
             </div>
             <div class="col-md-6">
                 <label class="form-label">Surname</label>
-                <input class="form-control" @bind="@Engineer.Surname" />
+                <input class="form-control" @bind="@engineer.Surname" />
             </div>
             <div class="col-md-6">
-                <label class="form-label">Phone</label>
-                <input class="form-control" @bind="@Engineer.SalaryPerMonth" />
+                <label class="form-label">Salary</label>
+                <input class="form-control" @bind="@engineer.SalaryPerMonth" />
             </div>
             <div class="col-md-6">
-                <label class="form-label">Tax Identification Number</label>
-                <input class="form-control" @bind="@Engineer.Manager" />
+                     <label class="form-label">Manager</label>
+                <select class="form-control" @bind="engineer.ManagerId">
+                @foreach (var item in engineer.Managers) {
+                            <option value="@item.Id">@item.Name</option>
+                }
+                </select>
+
             </div>
 
         </div>
@@ -44,14 +49,17 @@
 
 @code {
     [Parameter] public int? Id { get; set; }
-    EngineerEditDto Engineer { get; set; }
+    EngineerEditDto engineer { get; set; }
+    bool isLoading=true;
 
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
-            Engineer = new();
+            engineer = new();
+            engineer.Managers = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
         } else {
-            Engineer = await httpClient.GetFromJsonAsync<EngineerEditDto>($"engineer/{Id}");
+            engineer = await httpClient.GetFromJsonAsync<EngineerEditDto>($"engineer/{Id}");
         }
+        isLoading = false;
     }
 
     private void OnCancel() {
@@ -59,11 +67,11 @@
     }
 
     private async Task OnSave() {
-        HttpResponseMessage? response = null;
+        HttpResponseMessage? response;
         if (Id == null) {
-            response = await httpClient.PostAsJsonAsync("engineer", Engineer);
+            response = await httpClient.PostAsJsonAsync("engineer", engineer);
         } else {
-            response = await httpClient.PutAsJsonAsync("engineer", Engineer);
+            response = await httpClient.PutAsJsonAsync("engineer", engineer);
         }
 
         response.EnsureSuccessStatusCode();

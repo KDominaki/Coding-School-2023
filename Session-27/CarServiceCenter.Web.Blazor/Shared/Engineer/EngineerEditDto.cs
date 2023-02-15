@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarServiceCenter.EF;
+using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 
-namespace CarServiceCenter.Web.Blazor.Shared.Engineer {
+namespace CarServiceCenter.Web.Blazor.Shared {
     public class EngineerEditDto {
 
         public int Id { get; set; }
@@ -15,7 +17,9 @@ namespace CarServiceCenter.Web.Blazor.Shared.Engineer {
 
         // Relations
         public int ManagerId { get; set; }
-        public CarServiceCenter.Model.Manager Manager { get; set; } = null!;
-        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; } = new List<Model.TransactionLine>();
+
+        public List<ManagerListDto> Managers = new();
+
+        public List<TransactionLineListDto> TransactionLines  = new();
     }
 }

@@ -1,10 +1,8 @@
-﻿using CarServiceCenter.EF.Repositories;
+﻿
+using CarServiceCenter.EF.Repositories;
 using CarServiceCenter.Model;
-using CarServiceCenter.Web.Blazor.Shared.Customer;
-using CarServiceCenter.Web.Blazor.Shared.Engineer;
-using Microsoft.AspNetCore.Http;
+using CarServiceCenter.Web.Blazor.Shared;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace CarServiceCenter.Web.Blazor.Server.Controllers {
     [Route("[controller]")]
@@ -12,8 +10,10 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
     public class EngineerController : ControllerBase {
 
         private readonly IEntityRepo<Engineer> _engineerRepo;
+        private readonly IEntityRepo<Manager> _managerRepo;
 
-        public EngineerController(IEntityRepo<Engineer> engineerRepo) {
+        public EngineerController(IEntityRepo<Engineer> engineerRepo,IEntityRepo<Manager> managerRepo) {
+            _managerRepo= managerRepo;
             _engineerRepo = engineerRepo;
         }
 
@@ -35,14 +35,22 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         [HttpGet("{id}")]
         public async Task<EngineerEditDto> GetById(int id) {
             var result = _engineerRepo.GetById(id);
+
+            var managers=_managerRepo.GetAll();
             return new EngineerEditDto {
-                Id = id,
+                
                 Name = result.Name,
                 Surname = result.Surname,
-                ManagerId = result.ManagerId,
-                SalaryPerMonth = result.SalaryPerMonth
+                SalaryPerMonth = result.SalaryPerMonth,
+                Managers = managers.Select(manager => new ManagerListDto{
+                    Id = manager.Id,
+                    Name= manager.Name,
+                    Surname= manager.Surname
+                }).ToList()
             };
-        }
+                
+            }
+    
 
 
         [HttpPost]
@@ -55,10 +63,8 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         [HttpPut]
         public async Task Put(EngineerEditDto engineer) {
             var itemToUpdate = _engineerRepo.GetById(engineer.Id);
-            if (itemToUpdate == null) {
-                throw new Exception("This engineer with {id} id doesnt exists");
-            }
-            itemToUpdate.Name = engineer.Name;
+            
+            itemToUpdate.Name= engineer.Name;
             itemToUpdate.Surname = engineer.Surname;
             itemToUpdate.SalaryPerMonth = engineer.SalaryPerMonth;
             itemToUpdate.ManagerId = engineer.ManagerId;

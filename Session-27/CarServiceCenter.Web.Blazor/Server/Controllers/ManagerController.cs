@@ -2,7 +2,6 @@
 using CarServiceCenter.Model;
 using CarServiceCenter.Web.Blazor.Shared;
 using CarServiceCenter.Web.Blazor.Shared.Customer;
-using CarServiceCenter.Web.Blazor.Shared.Manager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

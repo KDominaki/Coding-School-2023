@@ -1,5 +1,5 @@
 ﻿using CarServiceCenter.Model;
-using CarServiceCenter.Web.Blazor.Shared.Engineer;
+using CarServiceCenter.Web.Blazor.Shared;
 using CarServiceCenter.Web.Blazor.Shared.Transaction;
 using System;
 using System.Collections.Generic;
@@ -20,5 +20,7 @@ namespace CarServiceCenter.Web.Blazor.Shared {
         public List<EngineerListDto> Engineers { get; set; } = new List<EngineerListDto> { };
 
         public List<TransactionEditDto> Transactions { get; set; } = new List<TransactionEditDto> { };
+
+
     }
 }

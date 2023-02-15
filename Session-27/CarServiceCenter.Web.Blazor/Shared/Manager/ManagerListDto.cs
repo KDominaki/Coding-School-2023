@@ -1,5 +1,4 @@
 ﻿
-using CarServiceCenter.Web.Blazor.Shared.Engineer;
 using CarServiceCenter.Web.Blazor.Shared.Transaction;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CarServiceCenter.Web.Blazor.Shared.Manager {
+namespace CarServiceCenter.Web.Blazor.Shared {
     public class ManagerListDto {
 
         public int Id { get; set; }

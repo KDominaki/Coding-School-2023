@@ -1,7 +1,6 @@
 ﻿using CarServiceCenter.EF.Repositories;
 using CarServiceCenter.Model;
 using CarServiceCenter.Web.Blazor.Shared;
-using CarServiceCenter.Web.Blazor.Shared.Manager;
 using CarServiceCenter.Web.Blazor.Shared.Transaction;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -36,12 +35,11 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Id = tras.Id,
                 Date= tras.Date,
                 TotalPrice= tras.TotalPrice,
-                CustomerId= tras.CustomerId,
-                Customer= tras.Customer,
+                CustomerId= tras.CustomerId,              
                 ManagerId= tras.ManagerId,
-                Manager= tras.Manager,
+            
                 CarId= tras.CarId,
-                Car= tras.Car
+               
             });
         }
 
@@ -53,11 +51,11 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Date=result.Date,
                 TotalPrice= result.TotalPrice,
                 CustomerId= result.CustomerId,
-                Customer= result.Customer,
+              
                 ManagerId= result.ManagerId,
-                Manager= result.Manager,
+          
                 CarId= result.CarId,
-                Car= result.Car
+      
             };
         }
 
@@ -69,11 +67,11 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Date = transaction.Date,
                 TotalPrice = transaction.TotalPrice,
                 CustomerId = transaction.CustomerId,
-                Customer = transaction.Customer,
+               
                 ManagerId = transaction.ManagerId,
-                Manager = transaction.Manager,
+           
                 CarId = transaction.CarId,
-                Car = transaction.Car,
+              
                 TransactionLines= transaction.TransactionLines
             };
             _trasRepo.Add(newTras);
@@ -88,9 +86,9 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
             itemToUpdate.CustomerId = tras.CustomerId;
             itemToUpdate.ManagerId = tras.ManagerId;
             itemToUpdate.CarId = tras.CarId;
-            itemToUpdate.Car = tras.Car;
-            itemToUpdate.Customer= tras.Customer;
-            itemToUpdate.Manager= tras.Manager;
+      
+        
+         
             itemToUpdate.Date= tras.Date;
             itemToUpdate.TransactionLines = tras.TransactionLines;
 
