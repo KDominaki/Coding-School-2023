@@ -47,7 +47,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         [HttpPost]
         public async Task Post(CarEditDto car)
         {
-            var newCar = new Car(car.Model, car.Brand, car.CarRegistrationNumber);
+            var newCar = new Car(car.Brand, car.Model, car.CarRegistrationNumber);
             _carRepo.Add(newCar);
         }
 
