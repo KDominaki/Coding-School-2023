@@ -1,5 +1,6 @@
 ﻿using CarServiceCenter.Web.Blazor.Shared.Car;
 using CarServiceCenter.Web.Blazor.Shared.Customer;
+using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace CarServiceCenter.Web.Blazor.Shared.Transaction {
         public List<CarListDto> Car { get; set; } = new();
 
 
-        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; } = new();
+        public List<TransactionLineListDto> TransactionLines { get; set; } = new();
 
     }
 }
