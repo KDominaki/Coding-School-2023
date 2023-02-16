@@ -64,8 +64,17 @@
         var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Item. Are you sure?");
         if (confirm) {
             var response = await httpClient.DeleteAsync($"manager/{manager.Id}");
-            response.EnsureSuccessStatusCode();
-            await LoadItemsFromServer();
-        }
+            try {               
+                response.EnsureSuccessStatusCode();
+
+            } catch {
+                throw new Exception("Cannot delete manager");
+                
+            } finally {
+                await LoadItemsFromServer();
+            }
+
+           
+        } 
     }
 }
