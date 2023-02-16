@@ -65,11 +65,16 @@
             </select>
         </div>
     </div>
-    <div class="row mt-2">
-        <br>
-        <br>
-            <h3 class="mb-4">Transaction Lines</h3>
-      <button class="btn btn-success m" @onclick="AddLine">Add Line</button>
+
+
+
+     <br>
+     <br>
+     <h3>Transaction Lines</h3>
+     <br>
+     <div class="row">
+     <button class="btn btn-success" @onclick="AddLine">Add Line</button>
+     </div>
       <div id="transactionLinesContainer">
             @foreach (var transactionLine in Transaction.TransactionLines) {
               <div class="row mb-3">
