@@ -15,9 +15,9 @@ namespace CarServiceCenter.Web.Blazor.Shared.MonthlyLedger
         public int Year { get; set; }
         public int Month { get; set; }
 
-        // The below maybe not needed
-        public List<TransactionListDto> Transactions { get; set; } = new();
-        public List<EngineerListDto> Engineers { get; set; } = new();
-        public List<ManagerListDto> Managers { get; set; } = new();    
+        //// The below maybe not needed
+        //public List<TransactionListDto> Transactions { get; set; } = new();
+        //public List<EngineerListDto> Engineers { get; set; } = new();
+        //public List<ManagerListDto> Managers { get; set; } = new();    
     }
 }

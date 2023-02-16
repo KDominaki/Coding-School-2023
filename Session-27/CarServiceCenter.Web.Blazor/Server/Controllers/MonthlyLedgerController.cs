@@ -1,5 +1,6 @@
 ﻿using CarServiceCenter.EF.Repositories;
 using CarServiceCenter.Model;
+using CarServiceCenter.Web.Blazor.Shared.MonthlyLedger;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Contracts;
 
@@ -11,24 +12,25 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         private readonly IEntityRepo<Manager> _managerRepo;
         private readonly IEntityRepo<Engineer> _engineerRepo;
         
-        public MonthlyLedgerController(IEntityRepo<Transaction> transanctionRepo,
+        public MonthlyLedgerController(IEntityRepo<Transaction> transactionRepo,
                                         IEntityRepo<Manager> managerRepo,
                                         IEntityRepo<Engineer> engineerRepo)
         {
-            _transactionRepo = transanctionRepo;
+            _transactionRepo = transactionRepo;
             _managerRepo = managerRepo;
             _engineerRepo = engineerRepo;
         }
 
         [HttpGet]
-        public ActionResult MonthlyLedger()
+        public ActionResult Get()
         {
-            var monthlyLedgers = List<MonthlyLedgerDto>();
-            var transactions = _engineerRepo.GetAll().ToList();
+            List<MonthlyLedgerDto> monthlyLedgers = new(); 
+            //var monthlyLedgers = new IList<MonthlyLedgerDto>();
+            var transactions = _transactionRepo.GetAll().ToList();
             var managers = _managerRepo.GetAll().ToList();
             var engineers = _engineerRepo.GetAll().ToList();
 
-            MonthlyLedgerDto = new MonthlyLedgerDto();
+            MonthlyLedgerDto monthlyLedger = new MonthlyLedgerDto();
             decimal totalTransactions = 0;
             decimal totalSalaryEngineers = 0;
             decimal totalSalaryManagers = 0;
@@ -38,22 +40,25 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
             }
             foreach(var mangager in managers)
             {
-                totalSalaryManagers += Manager.SalaryPerMonth;
+                //totalSalaryManagers += Manager.SalaryPerMonth;
+                totalSalaryManagers += managers.Select(manager => manager.SalaryPerMonth).SingleOrDefault();
             }
             foreach(var engineer in engineers)
             {
-                totalSalaryEngineers += Engineer.SalaryPerMonth;
+                //totalSalaryEngineers += Engineer.SalaryPerMonth;
+                totalSalaryEngineers += engineers.Select(engineer => engineer.SalaryPerMonth).SingleOrDefault();
             }
-            var groupedTransactions = transactions.GroupBy(transactions => { transactions.Date.Year, trans.Date.Month})
-                .Select(grouped => new MonthlyLedger
+            var groupedTransactions = transactions.GroupBy(transactions => new { transactions.Date.Year, transactions.Date.Month})
+                .Select(grouped => new MonthlyLedgerDto
                 {
                     Year = grouped.Key.Year,
                     Month = grouped.Key.Month,
-                    Income = grouped.Sum(transactions => transactions.totalTransactions),
-                    Expenses = grouped.totalSalaryManagers + grouped.totalSalaryEngineers,
-                    Total = grouped.Income - grouped.Expenses
+                    //Income = grouped.Sum(transactions => transactions.totalTransactions),
+                    Income = totalTransactions,
+                    Expenses =  totalSalaryManagers + totalSalaryEngineers,
+                    Total = totalTransactions - (totalSalaryEngineers + totalSalaryManagers)
                 });
-            monthlyLedgers.Add(MonthlyLedger);
+            monthlyLedgers.Add(monthlyLedger);
             return View (groupedTransactions);
         }   
     }
