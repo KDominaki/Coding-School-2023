@@ -31,21 +31,28 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
 
 
         [HttpGet]
-        public async Task<IEnumerable<TransactionListDto>> Get() {
+        //public async Task<IEnumerable<TransactionListDto>> Get()
+        //{
+        public IEnumerable<TransactionListDto> Get()
+        {
             var result = _trasRepo.GetAll();
             return result.Select(tras => new TransactionListDto {
                 Id = tras.Id,
                 Date= tras.Date,
                 TotalPrice= tras.TotalPrice,
-                CustomerId= tras.CustomerId,              
-                ManagerId= tras.ManagerId,
-                CarId= tras.CarId,
+                CustomerSurname = tras.Customer.Surname,
+                ManagerSurname = tras.Manager.Surname,
+                CarRegistrationNumber = tras.Car.CarRegistrationNumber
+                //CustomerId= tras.CustomerId,              
+                //ManagerId= tras.ManagerId,
+                //CarId= tras.CarId,
                
             });
         }
 
         [HttpGet("{id}")]
-        public async Task<TransactionEditDto> GetById(int id) {
+        //public async Task<TransactionEditDto> GetById(int id){
+        public TransactionEditDto GetById(int id) {
             var result = _trasRepo.GetById(id);
             var managers=_managerRepo.GetAll();
             var customers=_customerRepo.GetAll();
