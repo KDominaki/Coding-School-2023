@@ -2,8 +2,10 @@
 
 @using CarServiceCenter.Web.Blazor.Shared.Car;
 @using CarServiceCenter.Web.Blazor.Shared.Customer;
+@using CarServiceCenter.Web.Blazor.Shared.ServiceTask;
 @using CarServiceCenter.Web.Blazor.Shared.Transaction
 @using CarServiceCenter.Web.Blazor.Shared;
+@using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
 
@@ -22,60 +24,109 @@
 </style>
 
 @if (Transaction == null) {
-            <p>Loading ...</p>
+    <p>Loading ...</p>
 
 } else {
 
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="form-label">Date</label>
-                    <input class="form-control" @bind="@Transaction.Date" />
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Total Price</label>
-                    <input class="form-control" @bind="@Transaction.TotalPrice" />
-                </div><EngineerEdit />
-                <div class="col-md-6">
-                        <label class="form-label">Manager</label>
-                    <select class="form-control" @bind="Transaction.ManagerId">   
-                        <option>Select Menu</option>
-                @foreach (var item in Transaction.Managers) {                             
-                                    <option value="@item.Id">@item.Name</option>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Date</label>
+            <input class="form-control" @bind="@Transaction.Date" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Total Price</label>
+            <input class="form-control" @bind="@Transaction.TotalPrice" />
+        </div><EngineerEdit />
+        <div class="col-md-6">
+            <label class="form-label">Select Manager</label>
+            <select class="form-control" @bind="Transaction.ManagerId">   
+               
+                @foreach (var item in Transaction.Managers) {
+                    <option value="@item.Id">@item.Name</option>
                 }
-                    </select>
-                    
-                </div> 
-                <div class="col-md-6">
-                        <label class="form-label">Customer</label>
-                    <select class="form-control" @bind="Transaction.CustomerId">   
-                        <option>Select Menu</option>
-                @foreach (var item in Transaction.Customers) {                             
-                                    <option value="@item.Id">@item.Name</option>
-                }
-                    </select>
-                </div> <div class="col-md-6">
-                        <label class="form-label">Car</label>
-                    <select class="form-control" @bind="Transaction.CarId">   
-                        <option>Select Menu</option>
-                @foreach (var item in Transaction.Cars) {                             
-                                    <option value="@item.Id">@item.Brand</option>
-                }
-                    </select>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <button class="btn btn-success" @onclick="OnSave">Save</button>
-                    <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
-                </div>
+            </select>
 
-            </div>
+        </div> 
+        <div class="col-md-6">
+            <label class="form-label">Select Customer</label>
+            <select class="form-control" @bind="Transaction.CustomerId">   
+       
+                @foreach (var item in Transaction.Customers) {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div> <div class="col-md-6">
+            <label class="form-label">Select Car</label>
+            <select class="form-control" @bind="Transaction.CarId">   
+            
+                @foreach (var item in Transaction.Cars) {
+                    <option value="@item.Id">@item.Brand</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+
+        <br>
+        <br>
+        <h3>Transaction Lines</h3>
+        <button class="btn btn-success col-md-3" @onclick="AddLine">Add Line</button>
+        <div id="transactionLinesContainer" class="container-fluid">
+            @foreach (var transactionLine in Transaction.TransactionLines) {
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="form-label">Service Task</label>
+                        <select class="form-control" @bind="@transactionLine.ServiceTaskId">
+                            @foreach (var task in ServiceTasks) {
+                                <option value="@task.Id">@task.Code - @task.Description</option>
+
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Assigned Engineer</label>
+                        <select class="form-control" @bind="@transactionLine.EngineerId">
+                            @foreach (var engineer in Engineers) {
+                                <option value="@engineer.Id">@engineer.Name - @engineer.Surname</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label">Total Price</label>
+                        <input class="form-control" @bind="@Transaction.TotalPrice" readonly />
+                    </div>
+                    <div class="col col-md-2">
+                        <label class="form-label">Actions</label>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-danger" @onclick="()=>DeleteTrasLine(transactionLine)">Delete </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <input class="form-control" @bind="@transactionLine.TransactionId" hidden />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 
 }
 
 @code {
-    [Parameter] public int? Id { get; set; }
-    TransactionEditDto Transaction { get; set; }
+        [Parameter] public int? Id { get; set; }
+        TransactionEditDto Transaction { get; set; }
+        TransactionLineEditDto TrasLine { get; set; }
+        public List<CarListDto> Cars;
+        public List<ManagerListDto> Managers;
+        public List<CustomerListDto> Customers;
+        public List<ServiceTaskListDto> ServiceTasks;
+        public List<EngineerListDto> Engineers;
+
 
     protected override async Task OnInitializedAsync() {
         if (Id == null) {
@@ -83,8 +134,15 @@
             Transaction.Managers = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
             Transaction.Customers = await httpClient.GetFromJsonAsync<List<CustomerListDto>>("customer");
             Transaction.Cars = await httpClient.GetFromJsonAsync<List<CarListDto>>("car");
+            ServiceTasks = await httpClient.GetFromJsonAsync<List<ServiceTaskListDto>>("servicetask");
+            Engineers = await httpClient.GetFromJsonAsync<List<EngineerListDto>>("engineer");
         } else {
             Transaction = await httpClient.GetFromJsonAsync<TransactionEditDto>($"transaction/{Id}");
+            Transaction.Managers = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
+            Transaction.Customers = await httpClient.GetFromJsonAsync<List<CustomerListDto>>("customer");
+            Transaction.Cars = await httpClient.GetFromJsonAsync<List<CarListDto>>("car");
+            ServiceTasks = await httpClient.GetFromJsonAsync<List<ServiceTaskListDto>>("servicetask");
+            Engineers = await httpClient.GetFromJsonAsync<List<EngineerListDto>>("engineer");
         }
     }
 
@@ -92,16 +150,30 @@
         navigationManager.NavigateTo("transactionlist");
     }
 
+
     private async Task OnSave() {
         HttpResponseMessage? response = null;
         if (Id == null) {
             response = await httpClient.PostAsJsonAsync("transaction", Transaction);
         } else {
             response = await httpClient.PutAsJsonAsync("transaction", Transaction);
+
         }
 
         response.EnsureSuccessStatusCode();
         navigationManager.NavigateTo("transactionlist");
+    }
+
+
+
+    private void AddLine() {
+
+        Transaction.TransactionLines.Add(new Blazor.Shared.TransactionLine.TransactionLineListDto());
+
+    }
+
+    private void DeleteTrasLine(TransactionLineListDto trasLine) {
+        Transaction.TransactionLines.Remove(trasLine);
     }
 
 }

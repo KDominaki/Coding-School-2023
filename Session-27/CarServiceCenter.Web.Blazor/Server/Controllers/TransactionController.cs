@@ -4,6 +4,7 @@ using CarServiceCenter.Web.Blazor.Shared;
 using CarServiceCenter.Web.Blazor.Shared.Car;
 using CarServiceCenter.Web.Blazor.Shared.Customer;
 using CarServiceCenter.Web.Blazor.Shared.Transaction;
+using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -64,6 +65,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 CustomerId = result.CustomerId,
                 ManagerId = result.ManagerId,
                 CarId = result.CarId,
+
                 Managers = managers.Select(manager => new ManagerListDto {
                     Id = manager.Id,
                     Name = manager.Name,
@@ -72,17 +74,28 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
 
                 Customers = customers.Select(customer => new CustomerListDto {
                     Id = customer.Id,
-                    Name= customer.Name,
+                    Name = customer.Name,
                     Surname = customer.Surname
-                }).ToList(), 
-                
+                }).ToList(),
+
                 Cars = cars.Select(car => new CarListDto {
                     Id = car.Id,
-                    Brand=car.Brand,
-                   Model=car.Model,
-                   CarRegistrationNumber=car.CarRegistrationNumber
+                    Brand = car.Brand,
+                    Model = car.Model,
+                    CarRegistrationNumber = car.CarRegistrationNumber
+                }).ToList(),
+
+                TransactionLines = result.TransactionLines.Select(trasLine => new TransactionLineListDto {
+                    Id = trasLine.Id,
+                    Hours = trasLine.Hours,
+                    Price = trasLine.Price,
+                    PricePerHour = trasLine.PricePerHour,
+                    ServiceTaskId = trasLine.ServiceTaskId,
+                    EngineerId = trasLine.EngineerId,
+                    TransactionId = trasLine.TransactionId
                 }).ToList()
             };
+ 
         }
 
         [HttpPost]
@@ -93,31 +106,28 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 Date = transaction.Date,
                 TotalPrice = transaction.TotalPrice,
                 CustomerId = transaction.CustomerId,
-               
-                ManagerId = transaction.ManagerId,
-           
+                ManagerId = transaction.ManagerId,    
                 CarId = transaction.CarId,
-              
-                //TransactionLines= transaction.TransactionLines
+                
             };
+            foreach(var trasLine in newTras.TransactionLines) {
+                newTras.TransactionLines.Add(trasLine);
+            }
             _trasRepo.Add(newTras);
         }
 
         [HttpPut]
         public async Task Put(TransactionEditDto tras) {
             var itemToUpdate = _trasRepo.GetById(tras.Id);
-
-
             itemToUpdate.TotalPrice= tras.TotalPrice;
             itemToUpdate.CustomerId = tras.CustomerId;
             itemToUpdate.ManagerId = tras.ManagerId;
             itemToUpdate.CarId = tras.CarId;
-      
-        
-         
+            itemToUpdate.TotalPrice = tras.TotalPrice;
             itemToUpdate.Date= tras.Date;
-            //itemToUpdate.TransactionLines = tras.TransactionLines;
-
+            itemToUpdate.TransactionLines = tras.TransactionLines.Select(trasLine => new TransactionLine(trasLine.Hours, trasLine.PricePerHour, trasLine.Price) {
+                TransactionId = tras.Id
+            }).ToList() ;
             _trasRepo.Update(tras.Id, itemToUpdate);
         }
 
