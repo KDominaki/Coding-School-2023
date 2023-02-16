@@ -24,8 +24,13 @@
 }
 else
 {
+     @if(errorMessage != null)
+    {
+        <p class="text-danger">@errorMessage</p>
+    }
+
      <EditForm Model="Car" OnValidSubmit="OnSave">
-   <DataAnnotationsValidator />
+    <DataAnnotationsValidator />
     <div class="row">
         <div class="col-md-6">
             <lable class="form-label">Brand</lable>
@@ -53,6 +58,7 @@ else
 {
     [Parameter] public int? Id { get; set; }
     CarEditDto Car { get; set; }
+    string errorMessage = null;
 
     protected override async Task OnInitializedAsync()
     {
@@ -72,24 +78,14 @@ else
     private async Task OnSave()
     {
         HttpResponseMessage? response = null;
-        if(Id == null)
-        {
+        if(Id == null){
             response = await httpClient.PostAsJsonAsync("car", Car);
-        }
-        else
-        {
+        } else {
             response = await httpClient.PutAsJsonAsync("car", Car);
-        }
-        try
-        {
-            response.EnsureSuccessStatusCode();
-        }
-        catch
-        {
-            throw new Exception("Can not be saved.");
-        }finally
-        {
-            navigationManager.NavigateTo("carlist");
-        }
+        }        
+        response.EnsureSuccessStatusCode();
+        //TODO: ERROR MESSAGE
+        navigationManager.NavigateTo("carlist");
+        
     }
 }
