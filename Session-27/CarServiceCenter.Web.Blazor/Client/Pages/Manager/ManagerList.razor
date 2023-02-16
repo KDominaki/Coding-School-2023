@@ -12,8 +12,9 @@
     body {
         background-color: #FAF8F1
     }
-     h3{
-        font-weight: bold;
+
+    .main-btn {
+        margin-top: 15px;
     }
 </style>
 
@@ -23,7 +24,7 @@
     </div>
     <p style="color:purple">Loading...</p>
 } else {
-        <button class="btn btn-primary" @onclick="CreateItem">Create</button>
+    <button class="btn btn-primary main-btn" @onclick="CreateItem">Create</button>
           <table class="table table-striped table-hover">
               <thead>
                   <tr>
