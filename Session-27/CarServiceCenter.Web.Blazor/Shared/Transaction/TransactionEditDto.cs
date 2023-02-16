@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace CarServiceCenter.Web.Blazor.Shared {
     public class TransactionEditDto {                        
         public int Id { get; set; }
+
         public DateTime Date = DateTime.Now;
         public decimal TotalPrice { get; set; }
 

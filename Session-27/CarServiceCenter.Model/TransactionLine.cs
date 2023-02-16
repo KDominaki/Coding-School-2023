@@ -15,6 +15,10 @@
             Price = price;
         }
 
+        public TransactionLine() { 
+}
+
+
         public int Id { get; set; }
         public decimal Hours { get; set; }
         public decimal PricePerHour { get; set; }

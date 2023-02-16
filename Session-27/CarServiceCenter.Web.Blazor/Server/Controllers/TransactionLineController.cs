@@ -4,6 +4,7 @@ using CarServiceCenter.EF.Repositories;
 using CarServiceCenter.Model;
 using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 using CarServiceCenter.Web.Blazor.Shared.ServiceTask;
+using CarServiceCenter.Web.Blazor.Shared;
 
 namespace CarServiceCenter.Web.Blazor.Server.Controllers
 {
@@ -45,18 +46,41 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         }
 
         [HttpGet("{id}")]
-        public TransactionLineEditDto GetById(int id)
-        {
+        public TransactionLineEditDto GetById(int id) {
             var transactionLine = _transactionLineRepo.GetById(id);
             var serviceTask = _serviceTaskRepo.GetAll();
             var engineer = _engineerRepo.GetAll();
-            return new TransactionLineEditDto
-            {
+            return new TransactionLineEditDto {
                 Id = transactionLine.Id,
                 Hours = transactionLine.Hours,
                 PricePerHour = transactionLine.PricePerHour,
                 //ServiceTaskId = transactionLine.ServiceTaskId
             };
         }
+
+
+        //[HttpPost]
+        //public async Task Post(TransactionLineEditDto transactionLine) {
+        //    var newTransactionLine = new TransactionLineEditDto {
+        //        Id = transactionLine.Id,
+
+        //    };
+
+        //    _transactionLineRepo.Add(newTransactionLine);
+
+        //    foreach (var line in transaction.TransactionLines) {
+        //        var transactionLine = new TransactionLine {
+        //            Id = line.Id,
+        //            PricePerHour = line.PricePerHour,
+        //            Price = line.Price,
+        //            ServiceTaskId = line.ServiceTaskId,
+        //            EngineerId = line.EngineerId,
+        //            Hours = line.Hours,
+        //            TransactionId = newTransaction.Id
+        //        };
+
+        //        _transactionLineRepo.Add(transactionLine);
+        //    }
+        //}
     }
 }
