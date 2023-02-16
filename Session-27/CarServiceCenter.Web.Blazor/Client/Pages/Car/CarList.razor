@@ -6,14 +6,17 @@
 
 <PageTitle>Cars</PageTitle>
 
-<h3>Cars</h3>
+<h3 class="display-3">Cars</h3>
 
 <style>
     body {
         background-color: #FAF8F1
     }
-    h3{
+    h2{
         font-weight: bold;
+    }
+    .main-btn{
+        margin-top: 15px;
     }
 </style>
 
@@ -26,7 +29,7 @@
 }
 else
 {
-    <button class="btn btn-primary" @onclick="CreateItem">Create</button>
+    <button class="btn btn-primary main-btn" @onclick="CreateItem">Create</button>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
