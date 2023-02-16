@@ -38,7 +38,7 @@ namespace CarServiceCenter.EF.Repositories {
         public Engineer? GetById(int id) {
             using var context = new CarServiceCenterDbContext();
             return context.Engineers.Where(engineer => engineer.Id == id)
-                .Include(engineer => engineer.Manager).Include(eng=>eng.ManagerId).Include(engineer => engineer.TransactionLines).SingleOrDefault();
+                .Include(engineer => engineer.Manager).Include(engineer => engineer.TransactionLines).SingleOrDefault();
         }
 
         public void Update(int id, Engineer entity) {

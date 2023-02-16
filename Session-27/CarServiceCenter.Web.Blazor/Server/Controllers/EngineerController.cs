@@ -19,69 +19,66 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         }
 
         [HttpGet]
-        public async Task<IEnumerable<EngineerListDto>> Get() {
-            var result = _engineerRepo.GetAll();
-            return result.Select(engineer => new EngineerListDto {
+        //public async Task<IEnumerable<EngineerListDto>> Get() {
+        public IEnumerable<EngineerListDto> Get() {
+            var engineers = _engineerRepo.GetAll();
+            return engineers.Select(engineer => new EngineerListDto {
                 Id = engineer.Id,
                 Name = engineer.Name,
                 Surname = engineer.Surname,
                 SalaryPerMonth = engineer.SalaryPerMonth,
-                ManagerId = engineer.ManagerId,
+                //ManagerId = engineer.ManagerId,
+                ManagerSurname = engineer.Manager.Surname,
             });  
         }
 
 
         [HttpGet("{id}")]
-        public async Task<EngineerEditDto> GetById(int id) {
-            var result = _engineerRepo.GetById(id);
-
+        //public async Task<EngineerEditDto> GetById(int id) {
+        public EngineerEditDto GetById(int id) {
+            var engineer = _engineerRepo.GetById(id);
             var managers=_managerRepo.GetAll();
             return new EngineerEditDto {
-                
-                Name = result.Name,
-                Surname = result.Surname,
-                SalaryPerMonth = result.SalaryPerMonth,
-                ManagerId = result.ManagerId,
-                Managers = managers.Select(manager => new ManagerEditDto{
+                Id = engineer.Id,   
+                Name = engineer.Name,
+                Surname = engineer.Surname,
+                SalaryPerMonth = engineer.SalaryPerMonth,
+                ManagerId = engineer.ManagerId,
+
+                Managers = managers.Select(manager => new ManagerListDto{
                     Id = manager.Id,
                     Name= manager.Name,
                     Surname= manager.Surname
                 }).ToList()
             };
                 
-            }
+        }
     
 
 
         [HttpPost]
         public async Task Post(EngineerEditDto engineer) {
             var newEngineer = new Engineer(engineer.Name, engineer.Surname, engineer.SalaryPerMonth);
-            if (engineer.ManagerId == 0) {
-                throw Exception("");
-            } else {
                 newEngineer.ManagerId = engineer.ManagerId;
-            }
+                      
             _engineerRepo.Add(newEngineer);
         }
 
         [HttpPut]
         public async Task Put(EngineerEditDto engineer) {
-            var itemToUpdate = _engineerRepo.GetById(engineer.Id);
+            var engineerToUpdate = _engineerRepo.GetById(engineer.Id);
             
-            itemToUpdate.Name= engineer.Name;
-            itemToUpdate.Surname = engineer.Surname;
-            itemToUpdate.SalaryPerMonth = engineer.SalaryPerMonth;
-            itemToUpdate.ManagerId = engineer.ManagerId;
-            _engineerRepo.Update(engineer.Id, itemToUpdate);
+            engineerToUpdate.Name= engineer.Name;
+            engineerToUpdate.Surname = engineer.Surname;
+            engineerToUpdate.SalaryPerMonth = engineer.SalaryPerMonth;
+            engineerToUpdate.ManagerId = engineer.ManagerId;
+            _engineerRepo.Update(engineer.Id, engineerToUpdate);
         }
 
 
         [HttpDelete("{id}")]
-        public async Task Delete(int id) {
+        public void Delete(int id) {
             _engineerRepo.Delete(id);
         }
-
     }
-
-
 }

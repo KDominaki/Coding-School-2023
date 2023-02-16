@@ -6,7 +6,8 @@
 <h3>Engineers</h3>
 <h4>Create/Edit</h4>
 
-@if (engineer == null) {
+@if (isLoading) {
+
         <p>Loading ...</p>
 
 } else {
@@ -25,11 +26,10 @@
                 <input class="form-control" @bind="@engineer.SalaryPerMonth" />
             </div>
             <div class="col-md-6">
-                 <label class="form-label">Manager</label>
-                <select class="form-control" @bind="engineer.ManagerId">   
-                    <option>Select Menu</option>
+                 <label class="form-label">Select Manager</label>  @* Put Select on label*@
+                 <select class="form-control" @bind="engineer.ManagerId">                      
                 @foreach (var item in engineer.Managers) {                             
-                            <option value="@item.Id">@item.Name</option>
+                    <option value="@item.Id">@item.Surname</option>
                 }
                 </select>
             </div>
@@ -40,26 +40,29 @@
                 <button class="btn btn-success" @onclick="OnSave">Save</button>
                 <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
             </div>
-
         </div>
 
 }
 
 @code {
     [Parameter] public int? Id { get; set; }
-    EngineerEditDto engineer { get; set; }
-
-    bool isLoading=true;
-    List<ManagerListDto> Managers = new();
+    bool isLoading = true;
+    EngineerEditDto engineer;
+    
+    //List<ManagerListDto> Managers = new();
 
     protected override async Task OnInitializedAsync() {
+        
         if (Id == null) {
             engineer = new();
-            engineer.Managers = await httpClient.GetFromJsonAsync<List<ManagerEditDto>>("manager");
+            engineer.Managers = await httpClient.GetFromJsonAsync<List<ManagerListDto>>("manager");
+
         } else {
             engineer = await httpClient.GetFromJsonAsync<EngineerEditDto>($"engineer/{Id}");
-        }
-        isLoading = false;
+        }    
+            
+        isLoading = false;    
+        
     }
 
     private void OnCancel() {
@@ -77,6 +80,4 @@
         response.EnsureSuccessStatusCode();
         navigationManager.NavigateTo("engineerlist");
     }
-
-
 }
