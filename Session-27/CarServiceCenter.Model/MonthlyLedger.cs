@@ -12,17 +12,19 @@ namespace CarServiceCenter.Model
         public decimal Expenses { get; set; }
         public decimal Income { get; set; }
         public decimal Total { get; set; }
-        public DateTime Date { get; set; }
+        public int Year { get; set; }
+        public int Month { get; set; }
         public IList<Transaction> Transactions { get; set; }
         public IList<Engineer> Engineers { get; set; }
         public IList<Manager> Managers{ get; set; }
 
-        public MonthlyLedger(IList<Transaction> transactions, IList<Engineer> engineers, IList<Manager> managers)
+        public MonthlyLedger( int year, int month, IList<Transaction> transactions, IList<Engineer> engineers, IList<Manager> managers)
         {
             Transactions = transactions;
             Engineers = engineers;
-            Date = DateTime.Now;
             Managers = managers;
+            Year= year;
+            Month= month;
             TotalCalc();
         }
 
@@ -30,7 +32,7 @@ namespace CarServiceCenter.Model
         {
             foreach (var transaction in Transactions)
             {
-                if (transaction.Date.Month == Date.Month)
+                if (transaction.Date.Month == Month & transaction.Date.Year == Year)
                 {
                     Income += transaction.TotalPrice;
                 }
