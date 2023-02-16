@@ -32,8 +32,6 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
 
 
         [HttpGet]
-        //public async Task<IEnumerable<TransactionListDto>> Get()
-        //{
         public IEnumerable<TransactionListDto> Get()
         {
             var result = _trasRepo.GetAll();
@@ -43,16 +41,14 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 TotalPrice= tras.TotalPrice,
                 CustomerSurname = tras.Customer.Surname,
                 ManagerSurname = tras.Manager.Surname,
-                CarRegistrationNumber = tras.Car.CarRegistrationNumber
-                //CustomerId= tras.CustomerId,              
-                //ManagerId= tras.ManagerId,
-                //CarId= tras.CarId,
-               
+                CarRegistrationNumber = tras.Car.CarRegistrationNumber,
+                CustomerId = tras.CustomerId,
+                ManagerId = tras.ManagerId,
+                CarId = tras.CarId
             });
         }
 
         [HttpGet("{id}")]
-        //public async Task<TransactionEditDto> GetById(int id){
         public TransactionEditDto GetById(int id) {
             var result = _trasRepo.GetById(id);
             var managers=_managerRepo.GetAll();
@@ -100,21 +96,33 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
 
         [HttpPost]
         public async Task Post(TransactionEditDto transaction) {
-            var newTras = new Transaction() {
-
+            var newTransaction = new Transaction {
                 Id = transaction.Id,
                 Date = transaction.Date,
                 TotalPrice = transaction.TotalPrice,
                 CustomerId = transaction.CustomerId,
-                ManagerId = transaction.ManagerId,    
-                CarId = transaction.CarId,
-                
+                ManagerId = transaction.ManagerId,
+                CarId = transaction.CarId
             };
-            foreach(var trasLine in newTras.TransactionLines) {
-                newTras.TransactionLines.Add(trasLine);
+
+            _trasRepo.Add(newTransaction);
+
+            foreach (var line in transaction.TransactionLines) {
+                var transactionLine = new TransactionLine {
+                    Id = line.Id,
+                    PricePerHour = line.PricePerHour,
+                    Price = line.Price,
+                    ServiceTaskId = line.ServiceTaskId,
+                    EngineerId = line.EngineerId,
+                    Hours = line.Hours,
+                    TransactionId = newTransaction.Id
+                };
+
+                _trasLinesRepo.Add(transactionLine);
             }
-            _trasRepo.Add(newTras);
         }
+
+
 
         [HttpPut]
         public async Task Put(TransactionEditDto tras) {
@@ -128,7 +136,20 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
             itemToUpdate.TransactionLines = tras.TransactionLines.Select(trasLine => new TransactionLine(trasLine.Hours, trasLine.PricePerHour, trasLine.Price) {
                 TransactionId = tras.Id
             }).ToList() ;
+
+            foreach (var line in tras.TransactionLines) {
+                var transactionLine = new TransactionLine {
+                    Id = line.Id,
+                    PricePerHour = line.PricePerHour,
+                    Price = line.Price,
+                    ServiceTaskId = line.ServiceTaskId,
+                    EngineerId = line.EngineerId,
+                    Hours = line.Hours,
+                    TransactionId = tras.Id
+                };             
+            }
             _trasRepo.Update(tras.Id, itemToUpdate);
+            
         }
 
         [HttpDelete("{id}")]
