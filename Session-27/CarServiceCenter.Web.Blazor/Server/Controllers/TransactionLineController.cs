@@ -47,7 +47,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
                 Id = transactionLine.Id,
                 Hours = transactionLine.Hours,
                 PricePerHour = transactionLine.PricePerHour,
-                ServiceTaskId = transactionLine.ServiceTaskId.ToString(),
+                //ServiceTaskId = transactionLine.ServiceTaskId
             };
         }
     }

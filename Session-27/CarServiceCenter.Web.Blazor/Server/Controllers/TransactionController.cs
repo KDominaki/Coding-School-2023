@@ -1,6 +1,8 @@
 ﻿using CarServiceCenter.EF.Repositories;
 using CarServiceCenter.Model;
 using CarServiceCenter.Web.Blazor.Shared;
+using CarServiceCenter.Web.Blazor.Shared.Car;
+using CarServiceCenter.Web.Blazor.Shared.Customer;
 using CarServiceCenter.Web.Blazor.Shared.Transaction;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +39,6 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
                 TotalPrice= tras.TotalPrice,
                 CustomerId= tras.CustomerId,              
                 ManagerId= tras.ManagerId,
-            
                 CarId= tras.CarId,
                
             });
@@ -46,16 +47,34 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         [HttpGet("{id}")]
         public async Task<TransactionEditDto> GetById(int id) {
             var result = _trasRepo.GetById(id);
+            var managers=_managerRepo.GetAll();
+            var customers=_customerRepo.GetAll();
+            var cars=_carRepo.GetAll();
             return new TransactionEditDto {
                 Id = id,
-                Date=result.Date,
-                TotalPrice= result.TotalPrice,
-                CustomerId= result.CustomerId,
-              
-                ManagerId= result.ManagerId,
-          
-                CarId= result.CarId,
-      
+                Date = result.Date,
+                TotalPrice = result.TotalPrice,
+                CustomerId = result.CustomerId,
+                ManagerId = result.ManagerId,
+                CarId = result.CarId,
+                Managers = managers.Select(manager => new ManagerListDto {
+                    Id = manager.Id,
+                    Name = manager.Name,
+                    Surname = manager.Surname
+                }).ToList(),
+
+                Customers = customers.Select(customer => new CustomerListDto {
+                    Id = customer.Id,
+                    Name= customer.Name,
+                    Surname = customer.Surname
+                }).ToList(), 
+                
+                Cars = cars.Select(car => new CarListDto {
+                    Id = car.Id,
+                    Brand=car.Brand,
+                   Model=car.Model,
+                   CarRegistrationNumber=car.CarRegistrationNumber
+                }).ToList()
             };
         }
 
@@ -72,7 +91,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
            
                 CarId = transaction.CarId,
               
-                TransactionLines= transaction.TransactionLines
+                //TransactionLines= transaction.TransactionLines
             };
             _trasRepo.Add(newTras);
         }
@@ -90,7 +109,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers {
         
          
             itemToUpdate.Date= tras.Date;
-            itemToUpdate.TransactionLines = tras.TransactionLines;
+            //itemToUpdate.TransactionLines = tras.TransactionLines;
 
             _trasRepo.Update(tras.Id, itemToUpdate);
         }

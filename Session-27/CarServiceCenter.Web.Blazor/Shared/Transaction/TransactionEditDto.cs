@@ -17,19 +17,19 @@ namespace CarServiceCenter.Web.Blazor.Shared {
         // Relations
         public int CustomerId { get; set; }
 
-        public List<CustomerListDto> Customer { get; set; } = new();
+        public List<CustomerListDto> Customers { get; set; } = new();
 
 
         public int ManagerId { get; set; }
 
-        public List<ManagerListDto> Manager { get; set; } = new List<ManagerListDto>();
+        public List<ManagerListDto> Managers { get; set; } = new List<ManagerListDto>();
 
 
         public int CarId { get; set; }
 
-        public List<CarListDto> Car { get; set; } = new List<CarListDto>();
+        public List<CarListDto> Cars { get; set; } = new List<CarListDto>();
 
-        public List<CarServiceCenter.Model.TransactionLine> TransactionLines { get; set; } = new();
+        public List<TransactionLineListDto> TransactionLines { get; set; } = new();
 
 
     }

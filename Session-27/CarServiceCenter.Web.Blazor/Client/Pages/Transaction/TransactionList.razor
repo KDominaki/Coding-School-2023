@@ -25,9 +25,9 @@
             @foreach (var transaction in transactionList) {
                                 <tr>
                                     <td>@transaction.Date</td>
-                                    <td>@transaction.Customer</td>
-                                    <td>@transaction.Manager</td>                   
-                                    <td>@transaction.Car</td>                   
+                                    <td>@transaction.CustomerId</td>
+                                    <td>@transaction.ManagerId</td>                   
+                                    <td>@transaction.CarId</td>                   
                                     <td>@transaction.TotalPrice</td>                   
                                     <td>
                                         <button class="btn btn-primary" @onclick="()=> EditItem(transaction)">Edit</button>
@@ -61,13 +61,13 @@
     }
 
     private void EditItem(TransactionListDto transaction) {
-        navigationManager.NavigateTo($"managerlist/edit/{transaction.Id}");
+        navigationManager.NavigateTo($"transactionlist/edit/{transaction.Id}");
     }
 
     private async Task DeleteItem(TransactionListDto transaction) {
         var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Item. Are you sure?");
         if (confirm) {
-            var response = await httpClient.DeleteAsync($"manager/{transaction.Id}");
+            var response = await httpClient.DeleteAsync($"transaction/{transaction.Id}");
             response.EnsureSuccessStatusCode();
             await LoadItemsFromServer();
         }

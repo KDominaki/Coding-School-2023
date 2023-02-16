@@ -5,9 +5,8 @@
         public Transaction()
         {
             Date = DateTime.Now;
-            TotalPriceCalc();
-
             TransactionLines = new List<TransactionLine>();
+            TotalPriceCalc();
         }
 
         public int Id { get; set; }
@@ -27,10 +26,8 @@
         public List<TransactionLine> TransactionLines { get; set; }
 
 
-        public void TotalPriceCalc()
-        {
-            foreach(TransactionLine transactionLine in TransactionLines)
-            {
+        public void TotalPriceCalc() {
+            foreach (TransactionLine transactionLine in TransactionLines) {
                 TotalPrice += transactionLine.Price;
             }
         }
