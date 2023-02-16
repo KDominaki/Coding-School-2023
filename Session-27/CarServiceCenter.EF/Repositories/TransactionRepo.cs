@@ -18,6 +18,7 @@ namespace CarServiceCenter.EF.Repositories
             {
                 throw new ArgumentException("Given entity should not have Id set", nameof(entity));
             }
+           
             context.Add(entity);
             context.SaveChanges();
         }
@@ -46,7 +47,7 @@ namespace CarServiceCenter.EF.Repositories
         {
             using var context = new CarServiceCenterDbContext();
             return context.Transactions.Where(transaction => transaction.Id == id).Include(transaction => transaction.Customer)
-                .Include(transaction => transaction.Manager).Include(transaction => transaction.Car).SingleOrDefault();
+                .Include(transaction => transaction.Manager).Include(tras=>tras.TransactionLines).Include(transaction => transaction.Car).SingleOrDefault();
         }
 
         public void Update(int id, Transaction entity)

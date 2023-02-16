@@ -28,8 +28,6 @@ namespace CarServiceCenter.Web.Blazor.Shared.Transaction {
         public string CarRegistrationNumber { get; set; } = null!;
 
         public List<CarListDto> Cars { get; set; } = new();
-
-
         public List<TransactionListDto> TransactionLines { get; set; } = new();
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarServiceCenter.Web.Blazor.Shared.ServiceTask;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,17 @@ namespace CarServiceCenter.Web.Blazor.Shared.TransactionLine {
         public int Id { get; set; }
         public decimal Hours { get; set; }
         public decimal PricePerHour { get; set; }
+        public decimal Price { get; set; }
 
-        // These below are from the relations, maybe we need them to appear in the UI of TransactionLineList -- TODO: MAYBE NEEDS FIX
-        public string ServiceTaskCode { get; set; } = null!;
-        public string EngineerSurname { get; set; } = null!;
+        // Relations
+        public int TransactionId { get; set; }
+
+        public int ServiceTaskId { get; set; }
+        public List<ServiceTaskListDto> ServiceTasks { get; set; } = new();
+
+        public int EngineerId { get; set; }
+
+        public List<EngineerListDto> Engineers { get; set; } = new();
     }
 }
+
