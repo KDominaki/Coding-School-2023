@@ -6,7 +6,7 @@
 
 <PageTitle>Cars Edit</PageTitle>
 
-<h3>Cars</h3>
+<h3 class="display-3">Cars</h3>
 <h4>Create/Edit</h4>
 
 <style>
@@ -24,6 +24,8 @@
 }
 else
 {
+     <EditForm Model="Car" OnValidSubmit="OnSave">
+   <DataAnnotationsValidator />
     <div class="row">
         <div class="col-md-6">
             <lable class="form-label">Brand</lable>
@@ -35,15 +37,17 @@ else
         </div>
         <div class="col-md-6">
             <label class="col-form-label">Car Registration Number</label>
-            <input class="form-control" @bind="@Car.CarRegistrationNumber" />
+            <InputText class="form-control" @bind-Value="@Car.CarRegistrationNumber" />
         </div>
     </div>
+   
     <div class="row mt-2">
         <div class="col">
             <button class="btn btn-success" @onclick="OnSave">Save</button>
             <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
         </div>
     </div>
+    </EditForm> 
 }
 @code
 {
@@ -76,7 +80,16 @@ else
         {
             response = await httpClient.PutAsJsonAsync("car", Car);
         }
-        response.EnsureSuccessStatusCode();
-        navigationManager.NavigateTo("carlist");
+        try
+        {
+            response.EnsureSuccessStatusCode();
+        }
+        catch
+        {
+            throw new Exception("Can not be saved.");
+        }finally
+        {
+            navigationManager.NavigateTo("carlist");
+        }
     }
 }
