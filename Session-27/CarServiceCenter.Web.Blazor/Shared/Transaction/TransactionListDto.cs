@@ -1,6 +1,7 @@
 ﻿using CarServiceCenter.Web.Blazor.Shared.Car;
 using CarServiceCenter.Web.Blazor.Shared.Customer;
 using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,16 @@ namespace CarServiceCenter.Web.Blazor.Shared.Transaction {
 
 
         public int CustomerId { get; set; }
+        public string CustomerSurname { get; set; } = null!;
         public List<CustomerListDto> Customers { get; set; } = new();
 
         public int ManagerId { get; set; }
+        public string ManagerSurname { get; set; } = null!;
 
         public List<ManagerListDto> Managers { get; set; } = new();
 
         public int CarId { get; set; }
+        public string CarRegistrationNumber { get; set; } = null!;
 
         public List<CarListDto> Cars { get; set; } = new();
 

@@ -40,9 +40,9 @@
             @foreach (var transaction in transactionList) {
                                 <tr>
                                     <td>@transaction.Date</td>
-                                    <td>@transaction.CustomerId</td>
-                                    <td>@transaction.ManagerId</td>                   
-                                    <td>@transaction.CarId</td>                   
+                                    <td>@transaction.CustomerSurname</td>
+                                    <td>@transaction.ManagerSurname</td>                   
+                                    <td>@transaction.CarRegistrationNumber</td>                   
                                     <td>@transaction.TotalPrice</td>                   
                                     <td>
                                         <button class="btn btn-primary" @onclick="()=> EditItem(transaction)">Edit</button>
