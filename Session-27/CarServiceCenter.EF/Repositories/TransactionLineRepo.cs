@@ -1,5 +1,6 @@
 ﻿using CarServiceCenter.EF.Context;
 using CarServiceCenter.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,13 @@ namespace CarServiceCenter.EF.Repositories
         public void Delete(int id)
         {
             using var context = new CarServiceCenterDbContext();
-            var dbTransactionLine = context.TransactionLines.Where(transactionLine => transactionLine.Id == id).SingleOrDefault();
+            var dbTransactionLine = context.TransactionLines.Where(transactionLine => transactionLine.Id == id)
+                .Include(transactionLine => transactionLine.Transaction)
+                .Include(transactionLine => transactionLine.ServiceTask)
+                .Include(transactionLine => transactionLine.Engineer).SingleOrDefault();
             if (dbTransactionLine is null)
             {
-                return;
+                throw new KeyNotFoundException($"Given id '{id}' was not found in database");
             }
             else
             {
@@ -39,19 +43,27 @@ namespace CarServiceCenter.EF.Repositories
         public IList<TransactionLine> GetAll()
         {
             using var context = new CarServiceCenterDbContext();
-            return context.TransactionLines.ToList();
+            return context.TransactionLines.Include(transactionLine => transactionLine.Transaction)
+                 .Include(transactionLine => transactionLine.ServiceTask)
+                 .Include(transactionLine => transactionLine.Engineer).ToList();
         }
 
         public TransactionLine? GetById(int id)
         {
             using var context = new CarServiceCenterDbContext();
-            return context.TransactionLines.Where(transactionLine => transactionLine.Id == id).SingleOrDefault();
+            return context.TransactionLines.Where(transactionLine => transactionLine.Id == id)
+                 .Include(transactionLine => transactionLine.Transaction)
+                 .Include(transactionLine => transactionLine.ServiceTask)
+                 .Include(transactionLine => transactionLine.Engineer).SingleOrDefault();
         }
 
         public void Update(int id, TransactionLine entity)
         {
             using var context = new CarServiceCenterDbContext();
-            var dbTransactionLines = context.TransactionLines.Where(transactionLine => transactionLine.Id == id).SingleOrDefault();
+            var dbTransactionLines = context.TransactionLines.Where(transactionLine => transactionLine.Id == id)
+                .Include(transactionLine => transactionLine.Transaction)
+                .Include(transactionLine => transactionLine.ServiceTask)
+                .Include(transactionLine => transactionLine.Engineer).SingleOrDefault();
             if (dbTransactionLines is null)
             {
                 throw new KeyNotFoundException($"Given id '{id}' was not found in database");
@@ -61,6 +73,9 @@ namespace CarServiceCenter.EF.Repositories
                 dbTransactionLines.Price = entity.Price;
                 dbTransactionLines.PricePerHour = entity.PricePerHour;
                 dbTransactionLines.Hours = entity.Hours;
+                dbTransactionLines.TransactionId = entity.TransactionId;
+                dbTransactionLines.ServiceTaskId = entity.ServiceTaskId;
+                dbTransactionLines.EngineerId = entity.EngineerId;
                 context.SaveChanges();
             }
         }
