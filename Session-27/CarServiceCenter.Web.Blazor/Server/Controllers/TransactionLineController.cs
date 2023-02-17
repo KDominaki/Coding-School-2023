@@ -5,6 +5,7 @@ using CarServiceCenter.Model;
 using CarServiceCenter.Web.Blazor.Shared.TransactionLine;
 using CarServiceCenter.Web.Blazor.Shared.ServiceTask;
 using CarServiceCenter.Web.Blazor.Shared;
+using CarServiceCenter.Web.Blazor.Shared.Transaction;
 
 namespace CarServiceCenter.Web.Blazor.Server.Controllers
 {
@@ -40,6 +41,9 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
                 Id= transanctionLine.Id,
                 Hours = transanctionLine.Hours,
                 PricePerHour = transanctionLine.PricePerHour,
+                TransactionId = transanctionLine.TransactionId,
+                ServiceTaskId = transanctionLine.ServiceTaskId,
+                EngineerId = transanctionLine.EngineerId
                 //ServiceTaskCode = transanctionLine.ServiceTask.Code,
                 //EngineerSurname = transanctionLine.Engineer.Surname
             });
@@ -48,39 +52,67 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
         [HttpGet("{id}")]
         public TransactionLineEditDto GetById(int id) {
             var transactionLine = _transactionLineRepo.GetById(id);
-            var serviceTask = _serviceTaskRepo.GetAll();
-            var engineer = _engineerRepo.GetAll();
+            var transactions = _transactionRepo.GetAll();
+            var serviceTasks = _serviceTaskRepo.GetAll();
+            var engineers = _engineerRepo.GetAll();
             return new TransactionLineEditDto {
                 Id = transactionLine.Id,
                 Hours = transactionLine.Hours,
                 PricePerHour = transactionLine.PricePerHour,
-                //ServiceTaskId = transactionLine.ServiceTaskId
+                TransactionId = transactionLine.TransactionId,
+                ServiceTaskId = transactionLine.ServiceTaskId,
+                EngineerId = transactionLine.EngineerId,
+
+                Transactions = transactions.Select(transaction => new TransactionListDto {
+                    Id = transaction.Id
+                }).ToList(),
+
+                ServiceTasks = serviceTasks.Select(servicetask => new ServiceTaskListDto {
+                    Id = servicetask.Id,
+                    Code = servicetask.Code,
+                    Description = servicetask.Description,
+                    Hours = servicetask.Hours
+                }).ToList(),
+
+                Engineers = engineers.Select(engineer => new EngineerListDto {
+                    Id = engineer.Id,
+                    Name = engineer.Name,
+                    Surname = engineer.Surname,
+                    SalaryPerMonth= engineer.SalaryPerMonth
+                }).ToList()
             };
         }
 
 
-        //[HttpPost]
-        //public async Task Post(TransactionLineEditDto transactionLine) {
-        //    var newTransactionLine = new TransactionLineEditDto {
-        //        Id = transactionLine.Id,
+        [HttpPost]
+        public async Task Post(TransactionLineEditDto transactionLine) {
+            transactionLine.PricePerHour = 44.5m;
+            var newTransactionLine = new TransactionLine(transactionLine.Hours, transactionLine.PricePerHour, transactionLine.Price);
+            newTransactionLine.TransactionId = transactionLine.TransactionId;
+            newTransactionLine.ServiceTaskId = transactionLine.ServiceTaskId;
+            newTransactionLine.EngineerId = transactionLine.EngineerId;
+            _transactionLineRepo.Add(newTransactionLine);
 
-        //    };
+            
+        }
 
-        //    _transactionLineRepo.Add(newTransactionLine);
+        [HttpPut]
+        public async Task Put(TransactionLineEditDto transactionLine) {
+            var transactionLineToUpdate = _transactionLineRepo.GetById(transactionLine.Id);
 
-        //    foreach (var line in transaction.TransactionLines) {
-        //        var transactionLine = new TransactionLine {
-        //            Id = line.Id,
-        //            PricePerHour = line.PricePerHour,
-        //            Price = line.Price,
-        //            ServiceTaskId = line.ServiceTaskId,
-        //            EngineerId = line.EngineerId,
-        //            Hours = line.Hours,
-        //            TransactionId = newTransaction.Id
-        //        };
+            transactionLineToUpdate.Hours = transactionLineToUpdate.Hours;
+            transactionLineToUpdate.PricePerHour = transactionLineToUpdate.PricePerHour;
+            transactionLineToUpdate.Price = transactionLineToUpdate.Price;
+            transactionLineToUpdate.TransactionId = transactionLineToUpdate.TransactionId;
+            transactionLineToUpdate.ServiceTaskId = transactionLineToUpdate.ServiceTaskId;
+            transactionLineToUpdate.EngineerId = transactionLineToUpdate.EngineerId;
+            _transactionLineRepo.Update(transactionLine.Id, transactionLineToUpdate);
+        }
 
-        //        _transactionLineRepo.Add(transactionLine);
-        //    }
-        //}
+
+        [HttpDelete("{id}")]
+        public void Delete(int id) {
+            _transactionLineRepo.Delete(id);
+        }
     }
 }
