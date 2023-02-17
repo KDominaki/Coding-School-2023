@@ -86,7 +86,7 @@ namespace CarServiceCenter.Web.Blazor.Server.Controllers
 
         [HttpPost]
         public async Task Post(TransactionLineEditDto transactionLine) {
-            transactionLine.PricePerHour = 44.5m;
+            //transactionLine.PricePerHour = 44.5m;
             var newTransactionLine = new TransactionLine(transactionLine.Hours, transactionLine.PricePerHour, transactionLine.Price);
             newTransactionLine.TransactionId = transactionLine.TransactionId;
             newTransactionLine.ServiceTaskId = transactionLine.ServiceTaskId;
