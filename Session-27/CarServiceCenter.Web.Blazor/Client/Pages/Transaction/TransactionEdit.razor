@@ -36,7 +36,7 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Total Price</label>
-            <input class="form-control" @bind="@Transaction.TotalPrice" />
+            <input class="form-control" @bind="@Transaction.TotalPrice" readonly/>
         </div>
         <div class="col-md-6">
             <label class="form-label">Select Manager</label>
@@ -75,7 +75,7 @@
     <br>
 
     <div class="row">
-        <button class="btn btn-success col-md-6" @onclick="AddLine">Add Line</button>
+        <button class="btn btn-success col-md-1" @onclick="AddLine">Add Line</button>
     </div>
     <div id="transactionLinesContainer">
         @foreach (var transactionLine in Transaction.TransactionLines) {
@@ -97,13 +97,15 @@
                     </select>
                 </div>
                 <div class="col-md-1">
-                    <label class="form-label">Total Price</label>
-                    <input class="form-control" @bind="@Transaction.TotalPrice" readonly />
+                    <label class="form-label">Price</label>                   
+                    <input class="form-control" @bind="@transactionLine.Price" />  
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Actions</label>
                     <div class="row">
                         <div class="col">
+                            @* Save Line button Doesn't work'*@
+                            @*<button class="btn btn-primary" @onclick="() => SaveTrasLine(transactionLine)">Save Line</button>    *@
                             <button class="btn btn-danger" @onclick="() => DeleteTrasLine(transactionLine)">Delete</button>
                         </div>
                     </div>
@@ -116,7 +118,7 @@
 
         <div class="row">
             <div class="col">
-                <button class="btn btn-success" @onclick="OnSave">Save</button>
+                <button class="btn btn-success" @onclick="OnSave">Save</button>                
                 <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
             </div>
         </div>
@@ -126,14 +128,14 @@
 }
 
 @code {
-        [Parameter] public int? Id { get; set; }
-        TransactionEditDto Transaction { get; set; }
-        TransactionLineEditDto TrasLine { get; set; }
-        public List<CarListDto> Cars;
-        public List<ManagerListDto> Managers;
-        public List<CustomerListDto> Customers;
-        public List<ServiceTaskListDto> ServiceTasks;
-        public List<EngineerListDto> Engineers;
+    [Parameter] public int? Id { get; set; }
+    TransactionEditDto Transaction { get; set; }
+    TransactionLineEditDto TrasLine { get; set; }
+    public List<CarListDto> Cars;
+    public List<ManagerListDto> Managers;
+    public List<CustomerListDto> Customers;
+    public List<ServiceTaskListDto> ServiceTasks;
+    public List<EngineerListDto> Engineers;
 
 
     protected override async Task OnInitializedAsync() {
@@ -183,6 +185,38 @@
 
     private void DeleteTrasLine(TransactionLineListDto trasLine) {
         Transaction.TransactionLines.Remove(trasLine);
+
+
+    }
+    private async Task SaveTrasLine(TransactionLineListDto trasLine) {
+         await SaveLine();     //It gives error 400 TODO: FIX 
+    }
+
+    private async Task SaveLine() {
+        HttpResponseMessage? response = null;
+        if (Id == null) {
+            try {
+                response = await httpClient.PostAsJsonAsync("transactionline", TrasLine); 
+                response.EnsureSuccessStatusCode();
+            } catch {
+                throw new Exception("Couldn't save line");
+            } finally {               
+                navigationManager.NavigateTo("transactionlist");
+            }
+           
+        } else {
+            try {
+                response = await httpClient.PostAsJsonAsync("transactionline", TrasLine);
+                response.EnsureSuccessStatusCode();                
+            } catch {
+                throw new Exception("Couldn't save line");
+            } finally {                
+                navigationManager.NavigateTo("transactionlist");
+            }
+
+        }
+
+        
     }
 
 }
