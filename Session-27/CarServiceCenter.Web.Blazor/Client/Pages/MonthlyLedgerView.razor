@@ -2,6 +2,7 @@
 @using CarServiceCenter.Web.Blazor.Shared.MonthlyLedger;
 @inject HttpClient httpClient
 
+
 <PageTitle>Montlhy Ledger</PageTitle>
 
 <h3 class="display-3">Monthly Ledger</h3>
@@ -51,6 +52,7 @@ else
 @code {
     private List<MonthlyLedgerDto> monthlyLedgerList = new();
     bool isLoading { get; set; } = true;
+
     protected override async Task OnInitializedAsync()
     {
         await LoadItemsFromServer();
@@ -58,6 +60,12 @@ else
     }
     private async Task LoadItemsFromServer()
     {
-        monthlyLedgerList = await httpClient.GetFromJsonAsync<List<MonthlyLedgerDto>>("monthlyLedger");
+        try {
+            monthlyLedgerList = await httpClient.GetFromJsonAsync<List<MonthlyLedgerDto>>("monthlyLedger");
+        } catch (Exception ex) {
+            throw new Exception("Error in Get MonthlyLedger");
+
+        }
+       
     }
 }
