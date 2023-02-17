@@ -104,8 +104,8 @@
                     <label class="form-label">Actions</label>
                     <div class="row">
                         <div class="col">
-                            @* Save Line button Doesn't work'*@
-                            @*<button class="btn btn-primary" @onclick="() => SaveTrasLine(transactionLine)">Save Line</button>    *@
+                           
+                            <button class="btn btn-primary" @onclick="() => SaveTrasLine(transactionLine)">Save Line</button>  
                             <button class="btn btn-danger" @onclick="() => DeleteTrasLine(transactionLine)">Delete</button>
                         </div>
                     </div>
@@ -189,7 +189,7 @@
 
     }
     private async Task SaveTrasLine(TransactionLineListDto trasLine) {
-         await SaveLine();     //It gives error 400 TODO: FIX 
+        // await SaveLine();     //It gives error 400 TODO: FIX 
     }
 
     private async Task SaveLine() {
