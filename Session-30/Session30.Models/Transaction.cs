@@ -11,8 +11,6 @@ namespace Session30.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public int EmployeeID { get; set; }
-        public int CustomerID { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
         public decimal TotalValue { get; set; }
 
@@ -20,5 +18,14 @@ namespace Session30.Models
         {
 
         }
+
+        // Relations
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; } = null!;
+
+        public int EmployeeId { get; set; }
+        public Employee Employee { get; set; } = null!;
+
+        public List<TransactionLine> TransactionLines { get; set; }
     }
 }

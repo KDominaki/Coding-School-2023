@@ -9,8 +9,6 @@ namespace Session30.Models
     public class TransactionLine
     {
         public int Id { get; set; }
-        public int TransactionID { get; set; }
-        public int ItemID { get; set; }
         public int Quantity { get; set; }
         public decimal ItemPrice { get; set; }
         public decimal NetValue { get; set; }
@@ -24,5 +22,14 @@ namespace Session30.Models
         {
 
         }
+
+        // Relations
+
+        public int TransactioId { get; set; }
+        public Transaction Transaction { get; set; }
+        public int ItemId { get; set; }
+        public Item Item { get; set; }
+
+
     }
 }

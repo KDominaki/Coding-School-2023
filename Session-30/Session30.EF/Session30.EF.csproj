@@ -23,4 +23,9 @@
     <ProjectReference Include="..\Session30.Models\Session30.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

@@ -23,5 +23,8 @@ namespace Session30.Models
             
         }
 
+        // Relations
+        public List<Transaction> Transactions { get; set; }
+
     }
 }
