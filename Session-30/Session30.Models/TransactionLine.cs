@@ -25,7 +25,7 @@ namespace Session30.Models
 
         // Relations
 
-        public int TransactioId { get; set; }
+        public int TransactionId { get; set; }
         public Transaction Transaction { get; set; }
         public int ItemId { get; set; }
         public Item Item { get; set; }
