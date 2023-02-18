@@ -13,5 +13,10 @@ namespace Session30.Models
         public decimal Income { get; set; }
         public decimal Expenses { get; set; }
         public decimal Total { get; set; }
+
+        public Ledger() 
+        {
+
+        }
     }
 }
