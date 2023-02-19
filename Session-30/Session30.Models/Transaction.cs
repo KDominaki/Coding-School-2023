@@ -1,6 +1,7 @@
 ﻿using Session30.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Session30.Models
 
         public Transaction()
         {
-
+            TransactionLines= new List<TransactionLine>();
         }
 
         // Relations
@@ -27,5 +28,24 @@ namespace Session30.Models
         public Employee Employee { get; set; } = null!;
 
         public List<TransactionLine> TransactionLines { get; set; }
+
+
+        public void TotalValueCalc()
+        {
+            foreach (var line in TransactionLines)
+            {
+                TotalValue += line.TotalValue;
+            }
+       
+        }
+
+        public void PaymentMethodCheck()
+        {
+            if (TotalValue >= 50)
+            {
+                PaymentMethod = PaymentMethod.Cash;
+            }
+
+        }
     }
 }

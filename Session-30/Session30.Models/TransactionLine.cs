@@ -31,5 +31,16 @@ namespace Session30.Models
         public Item Item { get; set; }
 
 
+        public void TotalValueCalc()
+        {
+            NetValue = ItemPrice * Quantity;
+            if (NetValue > 20 && Item.ItemType == Enums.ItemType.Fuel)
+            {
+                DiscountPercent = 0.10m;
+            }
+            DiscountValue = NetValue * DiscountPercent;
+            TotalValue = NetValue - DiscountValue;
+        }
+
     }
 }

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Session30.EF\Session30.EF.csproj" />
     <ProjectReference Include="..\Session30.Models\Session30.Models.csproj" />
   </ItemGroup>
 
