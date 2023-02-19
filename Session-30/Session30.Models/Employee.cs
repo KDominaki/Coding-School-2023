@@ -18,9 +18,13 @@ namespace Session30.Models
         public EmployeeType EmployeeType { get; set; }
 
 
-        public Employee()
+        public Employee(string name, string surname, int sallary)
         {
-            
+            Name = name;
+            Surname = surname;
+            SallaryPerMonth = sallary;
+            HireDateStart = DateTime.Now;
+            Transactions= new List<Transaction>();
         }
 
         // Relations

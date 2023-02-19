@@ -17,9 +17,13 @@ namespace Session30.Models
         public decimal Cost { get; set; }
 
 
-        public Item()
+        public Item(decimal price, decimal cost, ItemType itemType)
         {
+            Price = price;
+            Cost = cost;
+            ItemType = itemType;
             ItemCodeGenerator();
+            TransactionLines = new List<TransactionLine>();
         }
 
         // Relations

@@ -15,8 +15,10 @@ namespace Session30.Models
         public string CardNumber { get; set; }
 
 
-        public Customer()
+        public Customer(string name, string surname)
         {
+            Name = name;
+            Surname = surname;
             CardNumGenerator();
         }
 

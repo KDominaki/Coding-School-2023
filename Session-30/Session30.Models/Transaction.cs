@@ -17,6 +17,7 @@ namespace Session30.Models
 
         public Transaction()
         {
+            Date = DateTime.Now;
             TransactionLines= new List<TransactionLine>();
         }
 
