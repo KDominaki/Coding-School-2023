@@ -9,8 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Session30.EF\Session30.EF.csproj" />
     <ProjectReference Include="..\Session30.Models\Session30.Models.csproj" />
+    <ProjectReference Include="..\Session30.Web\Client\Session30.Web.Client.csproj" />
+    <ProjectReference Include="..\Session30.Web\Server\Session30.Web.Server.csproj" />
+    <ProjectReference Include="..\Session30.Web\Shared\Session30.Web.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -38,7 +38,7 @@ namespace Session30.Web.Server.Controllers
                 Id = id,
                 Name = result.Name,
                 Surname = result.Surname,
-                CardNumber = result.CardNumber,
+                
             };
         }
 
@@ -60,7 +60,6 @@ namespace Session30.Web.Server.Controllers
 
             itemToUpdate.Name = customer.Name;
             itemToUpdate.Surname = customer.Surname;
-            itemToUpdate.CardNumber = customer.CardNumber;
             _customerRepo.Update(customer.Id, itemToUpdate);
         }
 
