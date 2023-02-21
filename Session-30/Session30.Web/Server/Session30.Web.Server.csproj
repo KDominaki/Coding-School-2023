@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Session30.EF\Session30.EF.csproj" />
+    <ProjectReference Include="..\..\Session30.Models\Session30.Models.csproj" />
     <ProjectReference Include="..\Client\Session30.Web.Client.csproj" />
     <ProjectReference Include="..\Shared\Session30.Web.Shared.csproj" />
   </ItemGroup>
