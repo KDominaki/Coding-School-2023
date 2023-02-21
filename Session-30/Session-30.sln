@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session-30", "Session-30\Session-30.csproj", "{FC78115E-F3D6-4429-AF16-839AE5F0B61E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session-30", "Session-30\Session-30.csproj", "{FC78115E-F3D6-4429-AF16-839AE5F0B61E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session30.Models", "Session30.Models\Session30.Models.csproj", "{1F8E9C2F-9413-4F68-8B9B-E82DA1379C3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session30.Models", "Session30.Models\Session30.Models.csproj", "{1F8E9C2F-9413-4F68-8B9B-E82DA1379C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session30.EF", "Session30.EF\Session30.EF.csproj", "{2E3A5E74-74C8-4261-AD35-2FBF64CA93B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session30.EF", "Session30.EF\Session30.EF.csproj", "{2E3A5E74-74C8-4261-AD35-2FBF64CA93B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session30.WF", "Session30.WF\Session30.WF.csproj", "{26820CF2-6382-48EC-9654-BADCAAE6C948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2E3A5E74-74C8-4261-AD35-2FBF64CA93B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E3A5E74-74C8-4261-AD35-2FBF64CA93B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E3A5E74-74C8-4261-AD35-2FBF64CA93B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26820CF2-6382-48EC-9654-BADCAAE6C948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26820CF2-6382-48EC-9654-BADCAAE6C948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26820CF2-6382-48EC-9654-BADCAAE6C948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26820CF2-6382-48EC-9654-BADCAAE6C948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

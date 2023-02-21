@@ -21,6 +21,10 @@ namespace Session30.Models
             Surname = surname;
             CardNumGenerator();
         }
+        public Customer()
+        {
+            CardNumGenerator();
+        }
 
         // Relations
         public List<Transaction> Transactions { get; set; }

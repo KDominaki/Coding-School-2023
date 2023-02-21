@@ -26,6 +26,12 @@ namespace Session30.Models
             HireDateStart = DateTime.Now;
             Transactions= new List<Transaction>();
         }
+        public Employee()
+        {
+            
+            HireDateStart = DateTime.Now;
+            Transactions = new List<Transaction>();
+        }
 
         // Relations
         public List<Transaction> Transactions { get; set; }
