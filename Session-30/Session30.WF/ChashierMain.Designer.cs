@@ -41,6 +41,7 @@
             this.CustomerViewBtn.TabIndex = 1;
             this.CustomerViewBtn.Text = "View Cutomers";
             this.CustomerViewBtn.UseVisualStyleBackColor = true;
+            this.CustomerViewBtn.Click += new System.EventHandler(this.CustomerViewBtn_Click);
             // 
             // TransViewBtn
             // 
@@ -51,6 +52,7 @@
             this.TransViewBtn.TabIndex = 2;
             this.TransViewBtn.Text = "View Transactions";
             this.TransViewBtn.UseVisualStyleBackColor = true;
+            this.TransViewBtn.Click += new System.EventHandler(this.TransViewBtn_Click);
             // 
             // ChashierMain
             // 

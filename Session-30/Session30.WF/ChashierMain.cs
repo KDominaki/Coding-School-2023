@@ -16,5 +16,17 @@ namespace Session30.WF
         {
             InitializeComponent();
         }
+
+        private void CustomerViewBtn_Click(object sender, EventArgs e)
+        {
+            CustomersView customers = new CustomersView();
+            customers.ShowDialog();
+        }
+
+        private void TransViewBtn_Click(object sender, EventArgs e)
+        {
+            TransactionsView transactions = new TransactionsView();
+            transactions.ShowDialog();
+        }
     }
 }
