@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.itemsGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // itemsGridView
+            // 
+            this.itemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemsGridView.Location = new System.Drawing.Point(177, 101);
+            this.itemsGridView.Name = "itemsGridView";
+            this.itemsGridView.RowTemplate.Height = 25;
+            this.itemsGridView.Size = new System.Drawing.Size(422, 232);
+            this.itemsGridView.TabIndex = 0;
+            // 
+            // ItemsView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.itemsGridView);
+            this.Name = "ItemsView";
             this.Text = "ItemsView";
+            ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private DataGridView itemsGridView;
     }
 }
