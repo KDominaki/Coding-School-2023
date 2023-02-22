@@ -67,7 +67,7 @@ namespace Session30.Web.Server.Controllers
             _itemRepo.Update(item.Id, itemToUpdate);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
 

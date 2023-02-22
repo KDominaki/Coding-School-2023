@@ -14,6 +14,7 @@ ItemRepo repo = new ItemRepo();
 
 //repo.Add(item);
 
+repo.Delete(1);
 var list = repo.GetAll();
 
 Console.WriteLine(list.Count);
