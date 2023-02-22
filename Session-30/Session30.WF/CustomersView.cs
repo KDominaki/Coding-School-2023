@@ -37,7 +37,7 @@ namespace Session30.WF
         
         private async Task LoadItemsFromServer()
         {
-            var _customerList = await _httpClient.GetFromJsonAsync<List<CustomerListDto>>("https://localhost:7117//customer");
+            _customerList = await _httpClient.GetFromJsonAsync<List<CustomerListDto>>("https://localhost:7117//customer");
         }
 
         public void GridData()

@@ -35,7 +35,7 @@
             // itemsGridView
             // 
             this.itemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itemsGridView.Location = new System.Drawing.Point(177, 101);
+            this.itemsGridView.Location = new System.Drawing.Point(194, 87);
             this.itemsGridView.Name = "itemsGridView";
             this.itemsGridView.RowTemplate.Height = 25;
             this.itemsGridView.Size = new System.Drawing.Size(422, 232);
@@ -49,6 +49,7 @@
             this.Controls.Add(this.itemsGridView);
             this.Name = "ItemsView";
             this.Text = "ItemsView";
+            this.Load += new System.EventHandler(this.ItemsView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).EndInit();
             this.ResumeLayout(false);
 
