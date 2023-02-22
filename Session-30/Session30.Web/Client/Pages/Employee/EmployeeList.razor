@@ -1,0 +1,108 @@
+﻿@page "/employeelist"
+
+@using Session30.Web.Shared;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+
+
+<PageTitle>Employees</PageTitle>
+<h3 class="display-3">Employees</h3>
+
+<style>
+    body {
+        background-color: #FAF8F1
+    }
+
+    .main-btn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        border-bottom: double;
+    }
+</style>
+
+@if (isLoading)
+{
+    <div class="spinner-border text-success" role="status">
+        <span class="sr-only"></span>
+    </div>
+    <p style="color:purple">Loading...</p>
+}
+else
+{
+    <button class="btn btn-success btn-lg main-btn" @onclick="CreateItem">Create New +</button>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Employee Type</th>
+                <th>Sallary</th>
+                <th>Hire Date Start</th>
+                <th>Hire Date End</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in employeeList)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Surname</td>
+                    <td>@employee.EmployeeType</td>
+                    <td>@employee.SallaryPerMonth</td>
+                    <td>@employee.HireDateStart</td>
+                    <td>@employee.HireDateEnd</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=> EditItem(employee)">Edit</button>
+                        <button class="btn btn-danger" @onclick="()=> DeleteItem(employee)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+@code {
+    private List<EmployeeListDto> employeeList = new();
+
+    bool isLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadItemsFromServer();
+        isLoading = false;
+    }
+
+    private async Task LoadItemsFromServer()
+    {
+        employeeList = await httpClient.GetFromJsonAsync<List<EmployeeListDto>>("employee");
+    }
+
+    private void CreateItem()
+    {
+        navigationManager.NavigateTo("employeelist/edit");
+    }
+
+    private void EditItem(EmployeeListDto employee)
+    {
+        navigationManager.NavigateTo($"employeelist/edit/{employee.Id}");
+    }
+
+    private async Task DeleteItem(EmployeeListDto employee)
+    {
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Item. Are you sure?");
+        if (confirm)
+        {
+            var response = await httpClient.DeleteAsync($"employee/{employee.Id}");
+            response.EnsureSuccessStatusCode();
+            await LoadItemsFromServer();
+        }
+    }
+}
