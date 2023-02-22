@@ -5,8 +5,18 @@ using Session30.Models.Enums;
 using System.Diagnostics;
 
 
+//Item item = new Item(400, 600, ItemType.Fuel)
+//{
+//    Description = "bbbbbb"
+//};
 
+ItemRepo repo = new ItemRepo();
 
+//repo.Add(item);
+
+var list = repo.GetAll();
+
+Console.WriteLine(list.Count);
 Console.WriteLine("In theory its done");
 
 Console.ReadLine();

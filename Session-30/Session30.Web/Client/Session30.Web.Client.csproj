@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Shared\Session30.Web.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Employee\" />
+  </ItemGroup>
+
 </Project>
