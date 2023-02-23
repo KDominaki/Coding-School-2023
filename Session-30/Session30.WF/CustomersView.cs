@@ -56,5 +56,33 @@ namespace Session30.WF
             AddNewCustomer();
             //Refresh :(\\
         }
+
+        private void GetCustomer()
+        {
+            var customerId = Convert.ToInt32(idTextBox.Text);
+            var customer = _customerRepo.GetById(customerId);
+            nameTextBox.Text = customer.Name;
+            surnameTextBox.Text = customer.Surname;
+        }
+
+        private void DeleteCustomer()
+        {
+            if(idTextBox.Text !=null)
+            {
+                var customerId = Convert.ToInt32(idTextBox.Text);
+                _customerRepo.Delete(customerId);
+
+            }
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            GetCustomer();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DeleteCustomer();
+        }
     }
 }

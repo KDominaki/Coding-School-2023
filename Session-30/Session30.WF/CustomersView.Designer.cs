@@ -38,6 +38,10 @@
             this.addCustomerBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.okBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,14 +80,14 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(618, 94);
+            this.nameTextBox.Location = new System.Drawing.Point(618, 132);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(204, 23);
             this.nameTextBox.TabIndex = 1;
             // 
             // surnameTextBox
             // 
-            this.surnameTextBox.Location = new System.Drawing.Point(618, 154);
+            this.surnameTextBox.Location = new System.Drawing.Point(618, 188);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(204, 23);
             this.surnameTextBox.TabIndex = 2;
@@ -95,7 +99,7 @@
             // 
             // addCustomerBtn
             // 
-            this.addCustomerBtn.Location = new System.Drawing.Point(650, 205);
+            this.addCustomerBtn.Location = new System.Drawing.Point(643, 235);
             this.addCustomerBtn.Name = "addCustomerBtn";
             this.addCustomerBtn.Size = new System.Drawing.Size(124, 37);
             this.addCustomerBtn.TabIndex = 3;
@@ -106,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(618, 76);
+            this.label1.Location = new System.Drawing.Point(618, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -115,17 +119,57 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(618, 136);
+            this.label2.Location = new System.Drawing.Point(618, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Surname";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.Location = new System.Drawing.Point(618, 67);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(204, 23);
+            this.idTextBox.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(618, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Id";
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(643, 278);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(124, 37);
+            this.deleteBtn.TabIndex = 8;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // okBtn
+            // 
+            this.okBtn.Location = new System.Drawing.Point(828, 63);
+            this.okBtn.Name = "okBtn";
+            this.okBtn.Size = new System.Drawing.Size(86, 29);
+            this.okBtn.TabIndex = 9;
+            this.okBtn.Text = "OK";
+            this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // CustomersView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 450);
+            this.Controls.Add(this.okBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addCustomerBtn);
@@ -150,5 +194,9 @@
         private Button addCustomerBtn;
         private Label label1;
         private Label label2;
+        private TextBox idTextBox;
+        private Label label3;
+        private Button deleteBtn;
+        private Button okBtn;
     }
 }
