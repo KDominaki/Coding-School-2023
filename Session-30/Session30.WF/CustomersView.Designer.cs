@@ -80,14 +80,14 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(618, 132);
+            this.nameTextBox.Location = new System.Drawing.Point(618, 157);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(204, 23);
             this.nameTextBox.TabIndex = 1;
             // 
             // surnameTextBox
             // 
-            this.surnameTextBox.Location = new System.Drawing.Point(618, 188);
+            this.surnameTextBox.Location = new System.Drawing.Point(618, 210);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(204, 23);
             this.surnameTextBox.TabIndex = 2;
@@ -99,7 +99,7 @@
             // 
             // addCustomerBtn
             // 
-            this.addCustomerBtn.Location = new System.Drawing.Point(643, 235);
+            this.addCustomerBtn.Location = new System.Drawing.Point(588, 258);
             this.addCustomerBtn.Name = "addCustomerBtn";
             this.addCustomerBtn.Size = new System.Drawing.Size(124, 37);
             this.addCustomerBtn.TabIndex = 3;
@@ -110,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(618, 114);
+            this.label1.Location = new System.Drawing.Point(618, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -119,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(618, 170);
+            this.label2.Location = new System.Drawing.Point(618, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 5;
@@ -143,7 +143,7 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(643, 278);
+            this.deleteBtn.Location = new System.Drawing.Point(737, 258);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(124, 37);
             this.deleteBtn.TabIndex = 8;

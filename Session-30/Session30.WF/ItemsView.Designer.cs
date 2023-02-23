@@ -166,9 +166,9 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(784, 53);
+            this.okBtn.Location = new System.Drawing.Point(784, 58);
             this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(67, 38);
+            this.okBtn.Size = new System.Drawing.Size(67, 29);
             this.okBtn.TabIndex = 14;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
