@@ -1,6 +1,7 @@
 ﻿@page "/employeelist/edit/{Id:int?}"
 @using Session30.Models.Enums;
 @using Session30.Web.Shared;
+@inject IJSRuntime jsRuntime
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
 
@@ -93,19 +94,32 @@ else
 
     private async Task OnSave()
     {
-
-    HttpResponseMessage? response = null;
-        if (Id == null)
+        try
         {
-            response = await httpClient.PostAsJsonAsync("employee", Employee);
-        }
-        else
-        {
-            response = await httpClient.PutAsJsonAsync("employee", Employee);
-        }
+            HttpResponseMessage? response = null;
+            if (Id == null)
+            {
+                response = await httpClient.PostAsJsonAsync("employee", Employee);
+            }
+            else
+            {
+                response = await httpClient.PutAsJsonAsync("employee", Employee);
+            }
 
-        response.EnsureSuccessStatusCode();
-        navigationManager.NavigateTo("employeelist");
+            response.EnsureSuccessStatusCode();
+            navigationManager.NavigateTo("employeelist");
+        }
+        catch (Exception)
+        {
+            var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "You cant have more employees of this type");
+        if (confirm)
+        {
+        
+        } 
+        }
+        
+
+      
     }
 
 }

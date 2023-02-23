@@ -84,7 +84,7 @@ namespace Session30.Web.Server.Controllers
 
             if(newEmployee.EmployeeType == Models.Enums.EmployeeType.Manager)
             {
-                if (managerCount >= 1)
+                if (managerCount >= 3)
                 {
                     throw new Exception();
                 }
@@ -97,7 +97,7 @@ namespace Session30.Web.Server.Controllers
             {
                 if (cashierCount >= 4)
                 {
-
+                    throw new Exception();
                 }
                 else
                 {
@@ -106,9 +106,9 @@ namespace Session30.Web.Server.Controllers
             }
             if (newEmployee.EmployeeType == Models.Enums.EmployeeType.Staff)
             {
-                if (staffCount >= 3)
+                if (staffCount >= 10)
                 {
-
+                    throw new Exception();
                 }
                 else
                 {
