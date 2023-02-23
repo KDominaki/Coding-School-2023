@@ -74,7 +74,7 @@ namespace Session30.WF
 
         private void DeleteCustomer()
         {
-            if(idTextBox.Text !=null)
+            if(idTextBox.Text != "")
             {
                 var customerId = Convert.ToInt32(idTextBox.Text);
                 _customerRepo.Delete(customerId);
@@ -94,7 +94,7 @@ namespace Session30.WF
 
         private void EditCustomer()
         {
-            if (idTextBox.Text != null)
+            if (idTextBox.Text != "")
             {
                 var customerId = Convert.ToInt32(idTextBox.Text);
                 var customerEntity = new Customer();
