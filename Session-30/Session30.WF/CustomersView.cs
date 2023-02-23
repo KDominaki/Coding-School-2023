@@ -53,7 +53,14 @@ namespace Session30.WF
 
         private void addCustomerBtn_Click(object sender, EventArgs e)
         {
-            AddNewCustomer();
+            if (idTextBox.Text != "")
+            {
+                EditCustomer();
+            }
+            else
+            {
+                AddNewCustomer();
+            }
             //Refresh :(\\
         }
 
@@ -83,6 +90,21 @@ namespace Session30.WF
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             DeleteCustomer();
+        }
+
+        private void EditCustomer()
+        {
+            if (idTextBox.Text != null)
+            {
+                var customerId = Convert.ToInt32(idTextBox.Text);
+                var customerEntity = new Customer();
+                {
+                    customerEntity.Name = nameTextBox.Text;
+                    customerEntity.Surname = surnameTextBox.Text;
+                }
+                _customerRepo.Update(customerId, customerEntity);
+
+            }
         }
     }
 }
