@@ -1,0 +1,25 @@
+﻿@page "/ledger"
+
+@using Session30.Web.Shared;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+
+
+<PageTitle>Ledger</PageTitle>
+<h3 class="display-3">Ledger</h3>
+
+<style>
+    body {
+        background-color: #FAF8F1
+    }
+
+    .main-btn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        border-bottom: double;
+    }
+</style>
