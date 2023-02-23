@@ -55,7 +55,74 @@ namespace Session30.WF
 
         private void itemAddBtn_Click(object sender, EventArgs e)
         {
-            AddItem();
+            if (idTextBox.Text != "")
+            {
+                EditItem();
+            }
+            else
+            {
+                AddItem();
+            }
+        }
+
+
+        private void DeleteCustomer()
+        {
+            if (idTextBox.Text != "")
+            {
+                var itemId = Convert.ToInt32(idTextBox.Text);
+                _itemRepo.Delete(itemId);
+
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DeleteCustomer();
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            GetItem();
+        }
+
+        private void GetItem()
+        {
+            var itemId = Convert.ToInt32(idTextBox.Text);
+            var item = _itemRepo.GetById(itemId);
+            descriptionTextBox.Text = item.Description;
+            typeTextBox.Text = item.ItemType.ToString();
+            CostTextBox.Text  = item.Cost.ToString();
+            priceTextBox.Text = item.Price.ToString();
+        }
+
+        private void EditItem()
+        {
+            if (idTextBox.Text != "")
+            {
+                var itemId = Convert.ToInt32(idTextBox.Text);
+                var itemEntity = new Item();
+                {
+                    itemEntity.Description = descriptionTextBox.Text;
+                    itemEntity.Cost =Convert.ToDecimal( CostTextBox.Text);
+                    itemEntity.Price = Convert.ToDecimal(priceTextBox.Text);
+
+                    if (typeTextBox.Text.ToLower() == "fuel")
+                    {
+                        itemEntity.ItemType = Models.Enums.ItemType.Fuel;
+                    }
+                    else if (typeTextBox.Text.ToLower() == "product")
+                    {
+                        itemEntity.ItemType = Models.Enums.ItemType.Product;
+                    }
+                    else if (typeTextBox.Text.ToLower() == "service")
+                    {
+                        itemEntity.ItemType = Models.Enums.ItemType.Service;
+                    }
+                }
+                _itemRepo.Update(itemId, itemEntity);
+
+            }
         }
     }
 }
