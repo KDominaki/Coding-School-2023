@@ -15,6 +15,8 @@ namespace Session30.WF
     public partial class ItemsView : Form
     {
         private ItemRepo _itemRepo = new ItemRepo();
+
+
         public ItemsView()
         {
             InitializeComponent();
@@ -26,12 +28,15 @@ namespace Session30.WF
         }
 
 
+
+
+        //Methods
+
         private void GridData()
         {
             var dt = _itemRepo.GetAll();
             itemsGridView.DataSource = dt;
         }
-
         private void AddItem()
         {
             var item = new Item();
@@ -53,19 +58,6 @@ namespace Session30.WF
             _itemRepo.Add(item);
         }
 
-        private void itemAddBtn_Click(object sender, EventArgs e)
-        {
-            if (idTextBox.Text != "")
-            {
-                EditItem();
-            }
-            else
-            {
-                AddItem();
-            }
-        }
-
-
         private void DeleteCustomer()
         {
             if (idTextBox.Text != "")
@@ -76,23 +68,13 @@ namespace Session30.WF
             }
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            DeleteCustomer();
-        }
-
-        private void okBtn_Click(object sender, EventArgs e)
-        {
-            GetItem();
-        }
-
         private void GetItem()
         {
             var itemId = Convert.ToInt32(idTextBox.Text);
             var item = _itemRepo.GetById(itemId);
             descriptionTextBox.Text = item.Description;
             typeTextBox.Text = item.ItemType.ToString();
-            CostTextBox.Text  = item.Cost.ToString();
+            CostTextBox.Text = item.Cost.ToString();
             priceTextBox.Text = item.Price.ToString();
         }
 
@@ -104,7 +86,7 @@ namespace Session30.WF
                 var itemEntity = new Item();
                 {
                     itemEntity.Description = descriptionTextBox.Text;
-                    itemEntity.Cost =Convert.ToDecimal( CostTextBox.Text);
+                    itemEntity.Cost = Convert.ToDecimal(CostTextBox.Text);
                     itemEntity.Price = Convert.ToDecimal(priceTextBox.Text);
 
                     if (typeTextBox.Text.ToLower() == "fuel")
@@ -124,5 +106,30 @@ namespace Session30.WF
 
             }
         }
+
+
+        // Buttons
+        private void itemAddBtn_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.Text != "")
+            {
+                EditItem();
+            }
+            else
+            {
+                AddItem();
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DeleteCustomer();
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            GetItem();
+        }
+
     }
 }

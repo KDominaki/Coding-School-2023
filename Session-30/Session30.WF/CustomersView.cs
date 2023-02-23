@@ -37,6 +37,7 @@ namespace Session30.WF
         }
         
 
+        // Methods
         public void GridData()
         {
             customersGridView.DataSource = _customerRepo.GetAll();
@@ -50,20 +51,6 @@ namespace Session30.WF
 
             _customerRepo.Add(customer);
         }
-
-        private void addCustomerBtn_Click(object sender, EventArgs e)
-        {
-            if (idTextBox.Text != "")
-            {
-                EditCustomer();
-            }
-            else
-            {
-                AddNewCustomer();
-            }
-            //Refresh :(\\
-        }
-
         private void GetCustomer()
         {
             var customerId = Convert.ToInt32(idTextBox.Text);
@@ -74,7 +61,7 @@ namespace Session30.WF
 
         private void DeleteCustomer()
         {
-            if(idTextBox.Text != "")
+            if (idTextBox.Text != "")
             {
                 var customerId = Convert.ToInt32(idTextBox.Text);
                 _customerRepo.Delete(customerId);
@@ -82,15 +69,6 @@ namespace Session30.WF
             }
         }
 
-        private void okBtn_Click(object sender, EventArgs e)
-        {
-            GetCustomer();
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            DeleteCustomer();
-        }
 
         private void EditCustomer()
         {
@@ -106,5 +84,29 @@ namespace Session30.WF
 
             }
         }
+
+        // Buttons
+        private void addCustomerBtn_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.Text != "")
+            {
+                EditCustomer();
+            }
+            else
+            {
+                AddNewCustomer();
+            }
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            GetCustomer();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DeleteCustomer();
+        }
+
     }
 }
