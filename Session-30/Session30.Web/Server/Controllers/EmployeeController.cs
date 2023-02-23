@@ -52,6 +52,26 @@ namespace Session30.Web.Server.Controllers
         [HttpPost]
         public async Task Post(EmployeeEditDto employee)
         {
+            int managerCount = 0;
+            int cashierCount = 0;
+            int staffCount = 0;
+            var employees = _employeeRepo.GetAll();
+
+            foreach( var item in employees)
+            {
+                if(item.HireDateEnd.Year == 0001 && item.EmployeeType == Models.Enums.EmployeeType.Manager)
+                {
+                    managerCount++;
+                }
+                else if(item.HireDateEnd.Year == 0001 && item.EmployeeType == Models.Enums.EmployeeType.Cashier)
+                {
+                    cashierCount++;
+                }
+                else if (item.HireDateEnd.Year == 0001 && item.EmployeeType == Models.Enums.EmployeeType.Staff)
+                {
+                    staffCount++;
+                }
+            }
             var newEmployee = new Employee()
             {
                 Name = employee.Name,
@@ -61,7 +81,42 @@ namespace Session30.Web.Server.Controllers
                 HireDateStart = employee.HireDateStart,
                 EmployeeType = employee.EmployeeType,
             };
-            _employeeRepo.Add(newEmployee);
+
+            if(newEmployee.EmployeeType == Models.Enums.EmployeeType.Manager)
+            {
+                if (managerCount >= 1)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    _employeeRepo.Add(newEmployee);
+                }
+            }
+            if (newEmployee.EmployeeType == Models.Enums.EmployeeType.Cashier)
+            {
+                if (cashierCount >= 4)
+                {
+
+                }
+                else
+                {
+                    _employeeRepo.Add(newEmployee);
+                }
+            }
+            if (newEmployee.EmployeeType == Models.Enums.EmployeeType.Staff)
+            {
+                if (staffCount >= 3)
+                {
+
+                }
+                else
+                {
+                    _employeeRepo.Add(newEmployee);
+                }
+            }
+
+
         }
 
         [HttpPut]
