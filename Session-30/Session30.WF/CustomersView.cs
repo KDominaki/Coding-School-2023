@@ -29,7 +29,7 @@ namespace Session30.WF
             
         }
 
-        private async void CustomersView_Load(object sender, EventArgs e)
+        private void CustomersView_Load(object sender, EventArgs e)
         {
             _customerRepo= new CustomerRepo();
 

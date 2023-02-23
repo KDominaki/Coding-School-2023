@@ -25,6 +25,11 @@ namespace Session30.Models
             ItemCodeGenerator();
             TransactionLines = new List<TransactionLine>();
         }
+        public Item()
+        {
+            ItemCodeGenerator();
+            TransactionLines = new List<TransactionLine>();
+        }
 
         // Relations
         public List<TransactionLine> TransactionLines { get; set; }
