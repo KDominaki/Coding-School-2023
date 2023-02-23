@@ -12,14 +12,16 @@ using System.Windows.Forms;
 using System.Net.Http;
 using System.Net.Http.Json;
 using Session30.Web.Shared;
+using Session30.Models;
 
 namespace Session30.WF
 {
     
     public partial class CustomersView : Form
     {
-        private HttpClient _httpClient;
-        private List<CustomerListDto> _customerList = new();
+        private CustomerRepo _customerRepo;
+        
+        
         public CustomersView()
         {
             
@@ -29,20 +31,30 @@ namespace Session30.WF
 
         private async void CustomersView_Load(object sender, EventArgs e)
         {
-            _httpClient = new HttpClient();
+            _customerRepo= new CustomerRepo();
 
-            await LoadItemsFromServer();
             GridData();
         }
         
-        private async Task LoadItemsFromServer()
-        {
-            _customerList = await _httpClient.GetFromJsonAsync<List<CustomerListDto>>("https://localhost:7117//customer");
-        }
 
         public void GridData()
         {
-            customersGridView.DataSource = _customerList;
+            customersGridView.DataSource = _customerRepo.GetAll();
+        }
+
+        public void AddNewCustomer()
+        {
+            var customer = new Customer();
+            customer.Name = nameTextBox.Text;
+            customer.Surname= surnameTextBox.Text;
+
+            _customerRepo.Add(customer);
+        }
+
+        private void addCustomerBtn_Click(object sender, EventArgs e)
+        {
+            AddNewCustomer();
+            //Refresh :(\\
         }
     }
 }
