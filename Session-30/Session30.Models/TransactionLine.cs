@@ -18,10 +18,10 @@ namespace Session30.Models
 
 
 
-        public TransactionLine(int quantity, decimal itemPrice)
+        public TransactionLine()
         {
-            ItemPrice= itemPrice;
-            Quantity= quantity;
+  
+            
         }
 
         // Relations
