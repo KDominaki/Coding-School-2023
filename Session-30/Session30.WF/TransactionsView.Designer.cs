@@ -231,6 +231,7 @@
             this.okBtn.TabIndex = 15;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // saveTransBtn
             // 

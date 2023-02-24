@@ -60,6 +60,8 @@ namespace Session30.WF
                 totalPriceTextBox.Text = trans.TotalValue.ToString();
                 dateTextBox.Text = trans.Date.ToString();
                 payMethodTextBox.Text = trans.PaymentMethod.ToString();
+                cardNumberTextBox.Text = "Do not change this value";
+                employeeIdTextBox.Text = "Do not change this value";
             }
         }
 
@@ -177,6 +179,31 @@ namespace Session30.WF
             }
         }
 
+        public void EditTrans()
+        {
+            if (transIdTextBox1.Text != "")
+            {
+                var transId = Convert.ToInt32(transIdTextBox1.Text);
+                var dbTrans = _transactionRepo.GetById(transId);
+
+                Transaction newTransaction = new Transaction()
+                {
+                    CustomerId = dbTrans.CustomerId,
+                    PaymentMethod = dbTrans.PaymentMethod,
+                    TotalValue = Convert.ToDecimal(totalPriceTextBox.Text),
+                    EmployeeId= dbTrans.EmployeeId,
+                    Date = Convert.ToDateTime(dateTextBox.Text),
+                };
+
+                _transactionRepo.Update(transId, newTransaction);
+
+            }
+        }
+        public void EditTransLine()
+        {
+
+        }
+
         public void CheckCard(Transaction trans)
         {
             if (cardNumberTextBox.Text !="")
@@ -253,7 +280,14 @@ namespace Session30.WF
 
         private void saveTransBtn_Click(object sender, EventArgs e)
         {
-            AddTrans();
+            if (transIdTextBox1.Text != "")
+            {
+                EditTrans();
+            }
+            else
+            {
+                AddTrans();
+            }
         }
 
         private void deleteTransBtn_Click(object sender, EventArgs e)
@@ -269,12 +303,25 @@ namespace Session30.WF
 
         private void saveTransLineBtn_Click(object sender, EventArgs e)
         {
-            AddTransLine();
+            if (transIdTextBox2.Text != "")
+            {   
+                AddTransLine();
+            }
+            else
+            {
+                EditTransLine();
+            }
+            
         }
 
         private void deleteTransLineBtn_Click(object sender, EventArgs e)
         {
             DeleteTransLine();
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            GetTrans();
         }
     }
 }
