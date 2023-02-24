@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,21 @@
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(640, 93);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 15);
+            this.errorLabel.TabIndex = 10;
+            // 
             // CustomersView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 450);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.label3);
@@ -198,5 +209,6 @@
         private Label label3;
         private Button deleteBtn;
         private Button okBtn;
+        private Label errorLabel;
     }
 }

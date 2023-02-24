@@ -55,8 +55,17 @@ namespace Session30.WF
         {
             var customerId = Convert.ToInt32(idTextBox.Text);
             var customer = _customerRepo.GetById(customerId);
-            nameTextBox.Text = customer.Name;
-            surnameTextBox.Text = customer.Surname;
+            if (customer != null)
+            {
+                nameTextBox.Text = customer.Name;
+                surnameTextBox.Text = customer.Surname;
+                errorLabel.Text = "";
+            }
+            else
+            {
+                errorLabel.Text = $"There is no customer with id:{customerId}";
+            }
+           
         }
 
         private void DeleteCustomer()
@@ -96,6 +105,9 @@ namespace Session30.WF
             {
                 AddNewCustomer();
             }
+            nameTextBox.Text = "";
+            surnameTextBox.Text = "";
+            idTextBox.Text = "";
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -106,6 +118,9 @@ namespace Session30.WF
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             DeleteCustomer();
+            nameTextBox.Text = "";
+            surnameTextBox.Text = "";
+            idTextBox.Text = "";
         }
 
     }

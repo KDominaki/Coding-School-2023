@@ -72,10 +72,19 @@ namespace Session30.WF
         {
             var itemId = Convert.ToInt32(idTextBox.Text);
             var item = _itemRepo.GetById(itemId);
-            descriptionTextBox.Text = item.Description;
-            typeTextBox.Text = item.ItemType.ToString();
-            CostTextBox.Text = item.Cost.ToString();
-            priceTextBox.Text = item.Price.ToString();
+            if (item != null)
+            {
+                descriptionTextBox.Text = item.Description;
+                typeTextBox.Text = item.ItemType.ToString();
+                CostTextBox.Text = item.Cost.ToString();
+                priceTextBox.Text = item.Price.ToString();
+                errorLabel.Text = "";
+            }
+            else
+            {
+                errorLabel.Text = $"There is no item with id:{itemId}";
+            }
+         
         }
 
         private void EditItem()
@@ -119,11 +128,20 @@ namespace Session30.WF
             {
                 AddItem();
             }
+            descriptionTextBox.Text = "";
+            typeTextBox.Text = "";
+            CostTextBox.Text = "";
+            priceTextBox.Text = "";
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             DeleteCustomer();
+            idTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            typeTextBox.Text = "";
+            CostTextBox.Text = "";
+            priceTextBox.Text = "";
         }
 
         private void okBtn_Click(object sender, EventArgs e)
