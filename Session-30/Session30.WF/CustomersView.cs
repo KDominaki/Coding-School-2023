@@ -108,6 +108,7 @@ namespace Session30.WF
             nameTextBox.Text = "";
             surnameTextBox.Text = "";
             idTextBox.Text = "";
+            GridData();
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -121,6 +122,7 @@ namespace Session30.WF
             nameTextBox.Text = "";
             surnameTextBox.Text = "";
             idTextBox.Text = "";
+            GridData();
         }
 
     }

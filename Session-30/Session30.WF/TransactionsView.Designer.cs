@@ -30,10 +30,6 @@
         {
             this.transactionsGridView = new System.Windows.Forms.DataGridView();
             this.transLinesGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardNumberTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +60,17 @@
             this.saveTransLineBtn = new System.Windows.Forms.Button();
             this.deleteTransLineBtn = new System.Windows.Forms.Button();
             this.viewItemBtn = new System.Windows.Forms.Button();
+            this.CustomerIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NetValcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +78,12 @@
             // transactionsGridView
             // 
             this.transactionsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transactionsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustomerIdCol,
+            this.EmployeeIdCol,
+            this.DateCol,
+            this.PaymentCol,
+            this.dataGridViewTextBoxColumn1});
             this.transactionsGridView.Location = new System.Drawing.Point(12, 12);
             this.transactionsGridView.Name = "transactionsGridView";
             this.transactionsGridView.RowTemplate.Height = 25;
@@ -84,36 +97,14 @@
             this.Id,
             this.ItemIdCol,
             this.QuantityCol,
+            this.NetValcol,
+            this.DiscountValueCol,
             this.TotalValueCol});
             this.transLinesGridView.Location = new System.Drawing.Point(12, 241);
             this.transLinesGridView.Name = "transLinesGridView";
             this.transLinesGridView.RowTemplate.Height = 25;
             this.transLinesGridView.Size = new System.Drawing.Size(602, 197);
             this.transLinesGridView.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            // 
-            // ItemIdCol
-            // 
-            this.ItemIdCol.DataPropertyName = "ItemId";
-            this.ItemIdCol.HeaderText = "Item Id";
-            this.ItemIdCol.Name = "ItemIdCol";
-            // 
-            // QuantityCol
-            // 
-            this.QuantityCol.DataPropertyName = "Quantity";
-            this.QuantityCol.HeaderText = "Quantity";
-            this.QuantityCol.Name = "QuantityCol";
-            // 
-            // TotalValueCol
-            // 
-            this.TotalValueCol.DataPropertyName = "TotalValue";
-            this.TotalValueCol.HeaderText = "Total Value";
-            this.TotalValueCol.Name = "TotalValueCol";
             // 
             // cardNumberTextBox
             // 
@@ -375,6 +366,72 @@
             this.viewItemBtn.UseVisualStyleBackColor = true;
             this.viewItemBtn.Click += new System.EventHandler(this.viewItemBtn_Click);
             // 
+            // CustomerIdCol
+            // 
+            this.CustomerIdCol.DataPropertyName = "CustomerId";
+            this.CustomerIdCol.HeaderText = "Customer Id";
+            this.CustomerIdCol.Name = "CustomerIdCol";
+            // 
+            // EmployeeIdCol
+            // 
+            this.EmployeeIdCol.DataPropertyName = "EmployeeId";
+            this.EmployeeIdCol.HeaderText = "Employee Id";
+            this.EmployeeIdCol.Name = "EmployeeIdCol";
+            // 
+            // DateCol
+            // 
+            this.DateCol.DataPropertyName = "Date";
+            this.DateCol.HeaderText = "Date";
+            this.DateCol.Name = "DateCol";
+            // 
+            // PaymentCol
+            // 
+            this.PaymentCol.DataPropertyName = "PaymentMethod";
+            this.PaymentCol.HeaderText = "Payment Method";
+            this.PaymentCol.Name = "PaymentCol";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalValue";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Total Value";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // ItemIdCol
+            // 
+            this.ItemIdCol.DataPropertyName = "ItemId";
+            this.ItemIdCol.HeaderText = "Item Id";
+            this.ItemIdCol.Name = "ItemIdCol";
+            // 
+            // QuantityCol
+            // 
+            this.QuantityCol.DataPropertyName = "Quantity";
+            this.QuantityCol.HeaderText = "Quantity";
+            this.QuantityCol.Name = "QuantityCol";
+            // 
+            // NetValcol
+            // 
+            this.NetValcol.DataPropertyName = "NetValue";
+            this.NetValcol.HeaderText = "Net Value";
+            this.NetValcol.Name = "NetValcol";
+            // 
+            // DiscountValueCol
+            // 
+            this.DiscountValueCol.DataPropertyName = "DiscountValue";
+            this.DiscountValueCol.HeaderText = "Discount Value";
+            this.DiscountValueCol.Name = "DiscountValueCol";
+            // 
+            // TotalValueCol
+            // 
+            this.TotalValueCol.DataPropertyName = "TotalValue";
+            this.TotalValueCol.HeaderText = "Total Value";
+            this.TotalValueCol.Name = "TotalValueCol";
+            // 
             // TransactionsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -456,9 +513,16 @@
         private Button saveTransLineBtn;
         private Button deleteTransLineBtn;
         private Button viewItemBtn;
+        private DataGridViewTextBoxColumn CustomerIdCol;
+        private DataGridViewTextBoxColumn EmployeeIdCol;
+        private DataGridViewTextBoxColumn DateCol;
+        private DataGridViewTextBoxColumn PaymentCol;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn ItemIdCol;
         private DataGridViewTextBoxColumn QuantityCol;
+        private DataGridViewTextBoxColumn NetValcol;
+        private DataGridViewTextBoxColumn DiscountValueCol;
         private DataGridViewTextBoxColumn TotalValueCol;
     }
 }

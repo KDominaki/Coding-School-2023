@@ -132,6 +132,7 @@ namespace Session30.WF
             typeTextBox.Text = "";
             CostTextBox.Text = "";
             priceTextBox.Text = "";
+            GridData();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -142,6 +143,7 @@ namespace Session30.WF
             typeTextBox.Text = "";
             CostTextBox.Text = "";
             priceTextBox.Text = "";
+            GridData();
         }
 
         private void okBtn_Click(object sender, EventArgs e)

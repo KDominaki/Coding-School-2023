@@ -44,6 +44,9 @@ namespace Session30.WF
         //Methods
         public void DataBinding()
         {
+            transactionsGridView.AutoGenerateColumns = false;
+            transLinesGridView.AutoGenerateColumns = false;
+
             var trans = _transactionRepo.GetAll();
             transactionsGridView.DataSource= trans;
             var transLines = _transactionLineRepo.GetAll();
@@ -302,6 +305,7 @@ namespace Session30.WF
             payMethodTextBox.Text = "";
             cardNumberTextBox.Text = "";
             employeeIdTextBox.Text = "";
+            DataBinding();
         }
 
         private void deleteTransBtn_Click(object sender, EventArgs e)
@@ -313,6 +317,7 @@ namespace Session30.WF
             payMethodTextBox.Text = "";
             cardNumberTextBox.Text = "";
             employeeIdTextBox.Text = "";
+            DataBinding();
         }
 
         private void viewItemBtn_Click(object sender, EventArgs e)
@@ -331,12 +336,23 @@ namespace Session30.WF
             {
                 EditTransLine();
             }
-            
+            totalValueTextBox.Text = "";
+            qntTextBox.Text = "";
+            itemIdTextBox.Text = "";
+            transIdTextBox2.Text = "";
+            DataBinding();
+
         }
 
         private void deleteTransLineBtn_Click(object sender, EventArgs e)
         {
             DeleteTransLine();
+
+            totalValueTextBox.Text = "";
+            qntTextBox.Text = "";
+            itemIdTextBox.Text = "";
+            transIdTextBox2.Text = "";
+            DataBinding();
         }
 
         private void okBtn_Click(object sender, EventArgs e)
