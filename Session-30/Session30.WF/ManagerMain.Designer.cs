@@ -76,6 +76,7 @@
             this.Controls.Add(this.CustomerViewBtn);
             this.Name = "ManagerMain";
             this.Text = "ManagerMain";
+            this.Load += new System.EventHandler(this.ManagerMain_Load);
             this.ResumeLayout(false);
 
         }

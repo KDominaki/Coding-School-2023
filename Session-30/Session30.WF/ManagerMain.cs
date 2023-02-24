@@ -34,5 +34,10 @@ namespace Session30.WF
             TransactionsView transactions = new TransactionsView();
             transactions.ShowDialog();
         }
+
+        private void ManagerMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

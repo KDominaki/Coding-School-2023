@@ -44,8 +44,8 @@
             this.transIdTextBox1 = new System.Windows.Forms.TextBox();
             this.newCustomerBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.saveTransBtn = new System.Windows.Forms.Button();
+            this.deleteTransBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.transIdTextBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@
             this.totalVaueTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.qntTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.okBtn2 = new System.Windows.Forms.Button();
+            this.saveTransLineBtn = new System.Windows.Forms.Button();
+            this.deleteTransLineBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -150,9 +150,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(923, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 15);
+            this.label5.Size = new System.Drawing.Size(63, 15);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Total Price";
+            this.label5.Text = "Total Value";
             // 
             // totalPriceTextBox
             // 
@@ -186,6 +186,7 @@
             this.newCustomerBtn.TabIndex = 12;
             this.newCustomerBtn.Text = "New ";
             this.newCustomerBtn.UseVisualStyleBackColor = true;
+            this.newCustomerBtn.Click += new System.EventHandler(this.newCustomerBtn_Click);
             // 
             // okBtn
             // 
@@ -197,23 +198,23 @@
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
             // 
-            // saveBtn
+            // saveTransBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(730, 169);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(103, 44);
-            this.saveBtn.TabIndex = 16;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveTransBtn.Location = new System.Drawing.Point(730, 169);
+            this.saveTransBtn.Name = "saveTransBtn";
+            this.saveTransBtn.Size = new System.Drawing.Size(103, 44);
+            this.saveTransBtn.TabIndex = 16;
+            this.saveTransBtn.Text = "Save";
+            this.saveTransBtn.UseVisualStyleBackColor = true;
             // 
-            // deleteBtn
+            // deleteTransBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(852, 169);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(103, 44);
-            this.deleteBtn.TabIndex = 17;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteTransBtn.Location = new System.Drawing.Point(852, 169);
+            this.deleteTransBtn.Name = "deleteTransBtn";
+            this.deleteTransBtn.Size = new System.Drawing.Size(103, 44);
+            this.deleteTransBtn.TabIndex = 17;
+            this.deleteTransBtn.Text = "Delete";
+            this.deleteTransBtn.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -295,42 +296,42 @@
             this.qntTextBox.Size = new System.Drawing.Size(132, 23);
             this.qntTextBox.TabIndex = 24;
             // 
-            // button1
+            // okBtn2
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(804, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 28);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.okBtn2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.okBtn2.Location = new System.Drawing.Point(804, 253);
+            this.okBtn2.Name = "okBtn2";
+            this.okBtn2.Size = new System.Drawing.Size(49, 28);
+            this.okBtn2.TabIndex = 28;
+            this.okBtn2.Text = "OK";
+            this.okBtn2.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // saveTransLineBtn
             // 
-            this.button2.Location = new System.Drawing.Point(861, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 44);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.saveTransLineBtn.Location = new System.Drawing.Point(861, 347);
+            this.saveTransLineBtn.Name = "saveTransLineBtn";
+            this.saveTransLineBtn.Size = new System.Drawing.Size(103, 44);
+            this.saveTransLineBtn.TabIndex = 29;
+            this.saveTransLineBtn.Text = "Save";
+            this.saveTransLineBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // deleteTransLineBtn
             // 
-            this.button3.Location = new System.Drawing.Point(984, 347);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 44);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteTransLineBtn.Location = new System.Drawing.Point(984, 347);
+            this.deleteTransLineBtn.Name = "deleteTransLineBtn";
+            this.deleteTransLineBtn.Size = new System.Drawing.Size(103, 44);
+            this.deleteTransLineBtn.TabIndex = 30;
+            this.deleteTransLineBtn.Text = "Delete";
+            this.deleteTransLineBtn.UseVisualStyleBackColor = true;
             // 
             // TransactionsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteTransLineBtn);
+            this.Controls.Add(this.saveTransLineBtn);
+            this.Controls.Add(this.okBtn2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.totalVaueTextBox);
             this.Controls.Add(this.label11);
@@ -341,8 +342,8 @@
             this.Controls.Add(this.transLineIdTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.transIdTextBox2);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.deleteTransBtn);
+            this.Controls.Add(this.saveTransBtn);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.transIdTextBox1);
@@ -361,6 +362,7 @@
             this.Controls.Add(this.transactionsGridView);
             this.Name = "TransactionsView";
             this.Text = "TransactionsView";
+            this.Load += new System.EventHandler(this.TransactionsView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).EndInit();
             this.ResumeLayout(false);
@@ -386,8 +388,8 @@
         private TextBox transIdTextBox1;
         private Button newCustomerBtn;
         private Button okBtn;
-        private Button saveBtn;
-        private Button deleteBtn;
+        private Button saveTransBtn;
+        private Button deleteTransBtn;
         private Label label7;
         private TextBox transIdTextBox2;
         private Label label8;
@@ -398,8 +400,8 @@
         private TextBox totalVaueTextBox;
         private Label label11;
         private TextBox qntTextBox;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button okBtn2;
+        private Button saveTransLineBtn;
+        private Button deleteTransLineBtn;
     }
 }
