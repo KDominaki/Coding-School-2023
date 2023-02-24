@@ -342,6 +342,7 @@
             this.okBtn2.TabIndex = 28;
             this.okBtn2.Text = "OK";
             this.okBtn2.UseVisualStyleBackColor = true;
+            this.okBtn2.Click += new System.EventHandler(this.okBtn2_Click);
             // 
             // saveTransLineBtn
             // 

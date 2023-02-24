@@ -68,7 +68,15 @@ namespace Session30.WF
 
         public void GetTransLine()
         {
-
+            var transLineId = Convert.ToInt32(transLineIdTextBox.Text);
+            var transLine = _transactionLineRepo.GetById(transLineId);
+            if (transLine != null)
+            {
+                totalValueTextBox.Text = transLine.NetValue.ToString();
+                qntTextBox.Text = transLine.Quantity.ToString();
+                itemIdTextBox.Text = "Do not change this value";
+                transIdTextBox2.Text = "Do not change this value";
+            }
         }
         public void AddTrans()
         {
@@ -334,6 +342,11 @@ namespace Session30.WF
         private void okBtn_Click(object sender, EventArgs e)
         {
             GetTrans();
+        }
+
+        private void okBtn2_Click(object sender, EventArgs e)
+        {
+            GetTransLine();
         }
     }
 }
