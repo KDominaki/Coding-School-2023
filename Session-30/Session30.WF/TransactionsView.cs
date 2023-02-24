@@ -46,8 +46,9 @@ namespace Session30.WF
             var trans = _transactionRepo.GetAll();
             transactionsGridView.DataSource= trans;
             var transLines = _transactionLineRepo.GetAll();
+            transLinesGridView.AutoGenerateColumns = false;
             transLinesGridView.DataSource= transLines;
-            transactionsGridView.AutoGenerateColumns = false;
+            
         }
 
         public void GetTrans()
@@ -140,12 +141,32 @@ namespace Session30.WF
         {
             if (transLineIdTextBox.Text != "")
             {
-                var transLineId = Convert.ToInt32(transLineIdTextBox.Text);
+                var transLineId = Convert.ToInt32(transLineIdTextBox.Text);                
+                var dbTransLine = _transactionLineRepo.GetById(transLineId);
+                var transId = dbTransLine.TransactionId;
+                var trans = _transactionRepo.GetById(transId);
+
+                trans.TotalValue -= dbTransLine.TotalValue;
+
+                trans.TotalValueCalc();
+                trans.PaymentMethodCheck();
+
+                var entityTrans = new Transaction
+                {
+                    Date = trans.Date,
+                    EmployeeId = trans.EmployeeId,
+                    CustomerId = trans.CustomerId,
+                    PaymentMethod = trans.PaymentMethod,
+                    TotalValue = trans.TotalValue,
+                };
+
+                _transactionRepo.Update(transId, entityTrans);
+
                 _transactionLineRepo.Delete(transLineId);
 
             }
-        }
 
+        }
         public void DeleteTrans()
         {
             if (transIdTextBox1.Text != "")
@@ -249,6 +270,11 @@ namespace Session30.WF
         private void saveTransLineBtn_Click(object sender, EventArgs e)
         {
             AddTransLine();
+        }
+
+        private void deleteTransLineBtn_Click(object sender, EventArgs e)
+        {
+            DeleteTransLine();
         }
     }
 }

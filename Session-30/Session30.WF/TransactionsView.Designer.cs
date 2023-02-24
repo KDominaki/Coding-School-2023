@@ -30,6 +30,10 @@
         {
             this.transactionsGridView = new System.Windows.Forms.DataGridView();
             this.transLinesGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardNumberTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,10 +64,6 @@
             this.saveTransLineBtn = new System.Windows.Forms.Button();
             this.deleteTransLineBtn = new System.Windows.Forms.Button();
             this.viewItemBtn = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,30 @@
             this.transLinesGridView.RowTemplate.Height = 25;
             this.transLinesGridView.Size = new System.Drawing.Size(602, 197);
             this.transLinesGridView.TabIndex = 1;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // ItemIdCol
+            // 
+            this.ItemIdCol.DataPropertyName = "ItemId";
+            this.ItemIdCol.HeaderText = "Item Id";
+            this.ItemIdCol.Name = "ItemIdCol";
+            // 
+            // QuantityCol
+            // 
+            this.QuantityCol.DataPropertyName = "Quantity";
+            this.QuantityCol.HeaderText = "Quantity";
+            this.QuantityCol.Name = "QuantityCol";
+            // 
+            // TotalValueCol
+            // 
+            this.TotalValueCol.DataPropertyName = "TotalValue";
+            this.TotalValueCol.HeaderText = "Total Value";
+            this.TotalValueCol.Name = "TotalValueCol";
             // 
             // cardNumberTextBox
             // 
@@ -336,6 +360,7 @@
             this.deleteTransLineBtn.TabIndex = 30;
             this.deleteTransLineBtn.Text = "Delete";
             this.deleteTransLineBtn.UseVisualStyleBackColor = true;
+            this.deleteTransLineBtn.Click += new System.EventHandler(this.deleteTransLineBtn_Click);
             // 
             // viewItemBtn
             // 
@@ -347,30 +372,6 @@
             this.viewItemBtn.Text = "View Items";
             this.viewItemBtn.UseVisualStyleBackColor = true;
             this.viewItemBtn.Click += new System.EventHandler(this.viewItemBtn_Click);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            // 
-            // ItemIdCol
-            // 
-            this.ItemIdCol.DataPropertyName = "ItemId";
-            this.ItemIdCol.HeaderText = "Item Id";
-            this.ItemIdCol.Name = "ItemIdCol";
-            // 
-            // QuantityCol
-            // 
-            this.QuantityCol.DataPropertyName = "Quantity";
-            this.QuantityCol.HeaderText = "Quantity";
-            this.QuantityCol.Name = "QuantityCol";
-            // 
-            // TotalValueCol
-            // 
-            this.TotalValueCol.DataPropertyName = "TotalValue";
-            this.TotalValueCol.HeaderText = "Total Value";
-            this.TotalValueCol.Name = "TotalValueCol";
             // 
             // TransactionsView
             // 
