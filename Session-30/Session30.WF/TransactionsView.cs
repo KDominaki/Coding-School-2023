@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Session30.WF
 {
@@ -288,11 +289,22 @@ namespace Session30.WF
             {
                 AddTrans();
             }
+            totalPriceTextBox.Text = "";
+            dateTextBox.Text = "";
+            payMethodTextBox.Text = "";
+            cardNumberTextBox.Text = "";
+            employeeIdTextBox.Text = "";
         }
 
         private void deleteTransBtn_Click(object sender, EventArgs e)
         {
             DeleteTrans();
+
+            totalPriceTextBox.Text = "";
+            dateTextBox.Text = "";
+            payMethodTextBox.Text = "";
+            cardNumberTextBox.Text = "";
+            employeeIdTextBox.Text = "";
         }
 
         private void viewItemBtn_Click(object sender, EventArgs e)
