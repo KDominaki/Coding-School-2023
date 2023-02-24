@@ -66,6 +66,11 @@ namespace Session30.WF
                 payMethodTextBox.Text = trans.PaymentMethod.ToString();
                 cardNumberTextBox.Text = "Do not change this value";
                 employeeIdTextBox.Text = "Do not change this value";
+                errorLabel1.Text = "";
+            }
+            else
+            {
+                errorLabel1.Text = $"* There is no transaction with Id:{transId}";
             }
         }
 
@@ -79,6 +84,11 @@ namespace Session30.WF
                 qntTextBox.Text = transLine.Quantity.ToString();
                 itemIdTextBox.Text = "Do not change this value";
                 transIdTextBox2.Text = "Do not change this value";
+                errorLabel2.Text = "";
+            }
+            else
+            {
+                errorLabel2.Text = $"* There is no transaction with Id:{transLineId}";
             }
         }
         public void AddTrans()
@@ -210,6 +220,7 @@ namespace Session30.WF
                 _transactionRepo.Update(transId, newTransaction);
 
             }
+           
         }
         public void EditTransLine()
         {
