@@ -51,14 +51,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.transLineIdTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.itemIdTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.totalVaueTextBox = new System.Windows.Forms.TextBox();
+            this.totalValueTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.qntTextBox = new System.Windows.Forms.TextBox();
             this.okBtn2 = new System.Windows.Forms.Button();
             this.saveTransLineBtn = new System.Windows.Forms.Button();
             this.deleteTransLineBtn = new System.Windows.Forms.Button();
+            this.viewItemBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -259,28 +260,28 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Item ID";
             // 
-            // textBox1
+            // itemIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(663, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 23);
-            this.textBox1.TabIndex = 22;
+            this.itemIdTextBox.Location = new System.Drawing.Point(663, 359);
+            this.itemIdTextBox.Name = "itemIdTextBox";
+            this.itemIdTextBox.Size = new System.Drawing.Size(132, 23);
+            this.itemIdTextBox.TabIndex = 22;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(910, 285);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 15);
+            this.label10.Size = new System.Drawing.Size(57, 15);
             this.label10.TabIndex = 27;
-            this.label10.Text = "Total Value";
+            this.label10.Text = "Net Value";
             // 
-            // totalVaueTextBox
+            // totalValueTextBox
             // 
-            this.totalVaueTextBox.Location = new System.Drawing.Point(911, 303);
-            this.totalVaueTextBox.Name = "totalVaueTextBox";
-            this.totalVaueTextBox.Size = new System.Drawing.Size(132, 23);
-            this.totalVaueTextBox.TabIndex = 26;
+            this.totalValueTextBox.Location = new System.Drawing.Point(911, 303);
+            this.totalValueTextBox.Name = "totalValueTextBox";
+            this.totalValueTextBox.Size = new System.Drawing.Size(132, 23);
+            this.totalValueTextBox.TabIndex = 26;
             // 
             // label11
             // 
@@ -316,6 +317,7 @@
             this.saveTransLineBtn.TabIndex = 29;
             this.saveTransLineBtn.Text = "Save";
             this.saveTransLineBtn.UseVisualStyleBackColor = true;
+            this.saveTransLineBtn.Click += new System.EventHandler(this.saveTransLineBtn_Click);
             // 
             // deleteTransLineBtn
             // 
@@ -326,20 +328,32 @@
             this.deleteTransLineBtn.Text = "Delete";
             this.deleteTransLineBtn.UseVisualStyleBackColor = true;
             // 
+            // viewItemBtn
+            // 
+            this.viewItemBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.viewItemBtn.Location = new System.Drawing.Point(802, 303);
+            this.viewItemBtn.Name = "viewItemBtn";
+            this.viewItemBtn.Size = new System.Drawing.Size(72, 28);
+            this.viewItemBtn.TabIndex = 31;
+            this.viewItemBtn.Text = "View Items";
+            this.viewItemBtn.UseVisualStyleBackColor = true;
+            this.viewItemBtn.Click += new System.EventHandler(this.viewItemBtn_Click);
+            // 
             // TransactionsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 450);
+            this.Controls.Add(this.viewItemBtn);
             this.Controls.Add(this.deleteTransLineBtn);
             this.Controls.Add(this.saveTransLineBtn);
             this.Controls.Add(this.okBtn2);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.totalVaueTextBox);
+            this.Controls.Add(this.totalValueTextBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.qntTextBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.itemIdTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.transLineIdTextBox);
             this.Controls.Add(this.label7);
@@ -397,13 +411,14 @@
         private Label label8;
         private TextBox transLineIdTextBox;
         private Label label9;
-        private TextBox textBox1;
+        private TextBox itemIdTextBox;
         private Label label10;
-        private TextBox totalVaueTextBox;
+        private TextBox totalValueTextBox;
         private Label label11;
         private TextBox qntTextBox;
         private Button okBtn2;
         private Button saveTransLineBtn;
         private Button deleteTransLineBtn;
+        private Button viewItemBtn;
     }
 }

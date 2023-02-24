@@ -34,6 +34,7 @@ namespace Session30.Models
 
         public void TotalValueCalc()
         {
+            ItemPrice = Item.Price;
             NetValue = ItemPrice * Quantity;
             if (NetValue > 20 && Item.ItemType == Enums.ItemType.Fuel)
             {

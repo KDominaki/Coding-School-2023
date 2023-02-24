@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -110,7 +112,24 @@ namespace Session30.WF
 
         public void AddTransLine()
         {
+            var newTransLine = new TransactionLine()
+            {
+                Quantity = Convert.ToInt32(qntTextBox.Text)
+            };
+            GetItem(newTransLine);
+            if (totalValueTextBox.Text == "")
+            {
+                newTransLine.TotalValueCalc();
+            }
+            else
+            {
+                newTransLine.TotalValue = Convert.ToDecimal(totalValueTextBox.Text);
+            }
+            AddTransLineToTrans(newTransLine);
 
+            //_transactionLineRepo.Add(newTransLine);
+            
+           
         }
 
         public void DeleteTransLine()
@@ -135,19 +154,70 @@ namespace Session30.WF
 
         public void CheckCard(Transaction trans)
         {
-            var customers = _customerRepo.GetAll();
-            foreach(var customer in customers)
+            if (cardNumberTextBox.Text !="")
             {
-                if(customer.CardNumber == cardNumberTextBox.Text)
+                var customers = _customerRepo.GetAll();
+                foreach (var customer in customers)
                 {
-                    trans.CustomerId = customer.Id;
-                }
-                else
-                {
+                    if (customer.CardNumber == cardNumberTextBox.Text)
+                    {
+                        trans.CustomerId = customer.Id;
+                    }
+                    else
+                    {
 
+                    }
                 }
+
+            }
+        
+        }
+
+        public void GetItem(TransactionLine transLine)
+        {
+            if (itemIdTextBox.Text != "")
+            {
+                var itemId = Convert.ToInt32(itemIdTextBox.Text);
+                var tlItem = _itemRepo.GetById(itemId);
+                if (tlItem != null)
+                {
+                    transLine.Item = tlItem;
+                    transLine.ItemId = itemId;
+                }
+                
             }
         }
+
+        public void AddTransLineToTrans(TransactionLine transLine) 
+        {
+            if (transIdTextBox2.Text != "")
+            {
+                var transId = Convert.ToInt32(transIdTextBox2.Text);
+                var trans = _transactionRepo.GetById(transId);
+
+                if(trans != null)
+                {
+                    trans.TransactionLines.Add(transLine);
+                    transLine.TransactionId= transId;
+
+                    trans.TotalValueCalc();
+                    trans.PaymentMethodCheck();
+
+                    var entityTrans = new Transaction
+                    {
+                        Date = trans.Date,
+                        EmployeeId = trans.EmployeeId,
+                        CustomerId = trans.CustomerId,
+                        PaymentMethod = trans.PaymentMethod,
+                        TotalValue = trans.TotalValue,
+                    };
+
+                    _transactionRepo.Update(transId, entityTrans);
+                    
+                }
+            }   
+        }
+
 
         //Buttons
         private void newCustomerBtn_Click(object sender, EventArgs e)
@@ -164,6 +234,17 @@ namespace Session30.WF
         private void deleteTransBtn_Click(object sender, EventArgs e)
         {
             DeleteTrans();
+        }
+
+        private void viewItemBtn_Click(object sender, EventArgs e)
+        {
+            ItemsView view = new ItemsView();
+            view.ShowDialog();
+        }
+
+        private void saveTransLineBtn_Click(object sender, EventArgs e)
+        {
+            AddTransLine();
         }
     }
 }
