@@ -60,6 +60,10 @@
             this.saveTransLineBtn = new System.Windows.Forms.Button();
             this.deleteTransLineBtn = new System.Windows.Forms.Button();
             this.viewItemBtn = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +80,11 @@
             // transLinesGridView
             // 
             this.transLinesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transLinesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.ItemIdCol,
+            this.QuantityCol,
+            this.TotalValueCol});
             this.transLinesGridView.Location = new System.Drawing.Point(12, 241);
             this.transLinesGridView.Name = "transLinesGridView";
             this.transLinesGridView.RowTemplate.Height = 25;
@@ -339,6 +348,30 @@
             this.viewItemBtn.UseVisualStyleBackColor = true;
             this.viewItemBtn.Click += new System.EventHandler(this.viewItemBtn_Click);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // ItemIdCol
+            // 
+            this.ItemIdCol.DataPropertyName = "ItemId";
+            this.ItemIdCol.HeaderText = "Item Id";
+            this.ItemIdCol.Name = "ItemIdCol";
+            // 
+            // QuantityCol
+            // 
+            this.QuantityCol.DataPropertyName = "Quantity";
+            this.QuantityCol.HeaderText = "Quantity";
+            this.QuantityCol.Name = "QuantityCol";
+            // 
+            // TotalValueCol
+            // 
+            this.TotalValueCol.DataPropertyName = "TotalValue";
+            this.TotalValueCol.HeaderText = "Total Value";
+            this.TotalValueCol.Name = "TotalValueCol";
+            // 
             // TransactionsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -420,5 +453,9 @@
         private Button saveTransLineBtn;
         private Button deleteTransLineBtn;
         private Button viewItemBtn;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn ItemIdCol;
+        private DataGridViewTextBoxColumn QuantityCol;
+        private DataGridViewTextBoxColumn TotalValueCol;
     }
 }

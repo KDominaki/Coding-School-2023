@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Session30.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,14 @@ namespace Session30.Models
         public Transaction Transaction { get; set; }
         public int ItemId { get; set; }
         public Item Item { get; set; }
+        
 
 
-        public void TotalValueCalc()
+        public void TotalValueCalc( Item item)
         {
-            ItemPrice = Item.Price;
+            ItemPrice= item.Price;
             NetValue = ItemPrice * Quantity;
-            if (NetValue > 20 && Item.ItemType == Enums.ItemType.Fuel)
+            if (NetValue > 20 && item.ItemType == Enums.ItemType.Fuel)
             {
                 DiscountPercent = 0.10m;
             }

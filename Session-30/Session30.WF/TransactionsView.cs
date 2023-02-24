@@ -47,6 +47,7 @@ namespace Session30.WF
             transactionsGridView.DataSource= trans;
             var transLines = _transactionLineRepo.GetAll();
             transLinesGridView.DataSource= transLines;
+            transactionsGridView.AutoGenerateColumns = false;
         }
 
         public void GetTrans()
@@ -119,15 +120,18 @@ namespace Session30.WF
             GetItem(newTransLine);
             if (totalValueTextBox.Text == "")
             {
-                newTransLine.TotalValueCalc();
+                var itemId = newTransLine.ItemId;
+                var item = _itemRepo.GetById(itemId);
+                newTransLine.TotalValueCalc(item);
             }
             else
             {
                 newTransLine.TotalValue = Convert.ToDecimal(totalValueTextBox.Text);
             }
+            
             AddTransLineToTrans(newTransLine);
 
-            //_transactionLineRepo.Add(newTransLine);
+            _transactionLineRepo.Add(newTransLine);
             
            
         }
@@ -181,7 +185,7 @@ namespace Session30.WF
                 var tlItem = _itemRepo.GetById(itemId);
                 if (tlItem != null)
                 {
-                    transLine.Item = tlItem;
+                    tlItem.Price = transLine.ItemPrice;
                     transLine.ItemId = itemId;
                 }
                 
