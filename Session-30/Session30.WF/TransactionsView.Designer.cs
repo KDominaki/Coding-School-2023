@@ -206,6 +206,7 @@
             this.saveTransBtn.TabIndex = 16;
             this.saveTransBtn.Text = "Save";
             this.saveTransBtn.UseVisualStyleBackColor = true;
+            this.saveTransBtn.Click += new System.EventHandler(this.saveTransBtn_Click);
             // 
             // deleteTransBtn
             // 
@@ -215,6 +216,7 @@
             this.deleteTransBtn.TabIndex = 17;
             this.deleteTransBtn.Text = "Delete";
             this.deleteTransBtn.UseVisualStyleBackColor = true;
+            this.deleteTransBtn.Click += new System.EventHandler(this.deleteTransBtn_Click);
             // 
             // label7
             // 

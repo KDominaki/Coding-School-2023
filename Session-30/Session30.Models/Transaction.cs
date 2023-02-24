@@ -17,7 +17,7 @@ namespace Session30.Models
 
         public Transaction()
         {
-            Date = DateTime.Now;
+
             TransactionLines= new List<TransactionLine>();
         }
 
@@ -33,10 +33,18 @@ namespace Session30.Models
 
         public void TotalValueCalc()
         {
-            foreach (var line in TransactionLines)
+            if(TransactionLines != null)
             {
-                TotalValue += line.TotalValue;
+                foreach (var line in TransactionLines)
+                {
+                    TotalValue += line.TotalValue;
+                }
             }
+            else
+            {
+                TotalValue = 0;
+            }
+           
        
         }
 

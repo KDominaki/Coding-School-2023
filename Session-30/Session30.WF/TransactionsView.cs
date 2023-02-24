@@ -1,4 +1,5 @@
 ﻿using Session30.EF.Repositories;
+using Session30.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Session30.WF
 {
@@ -63,7 +65,47 @@ namespace Session30.WF
         }
         public void AddTrans()
         {
+            var newTrans = new Transaction()
+            {
+                EmployeeId = Convert.ToInt32(employeeIdTextBox.Text),
 
+            };
+
+            if (payMethodTextBox.Text.ToLower() == "cash")
+            {
+                newTrans.PaymentMethod = Models.Enums.PaymentMethod.Cash;
+            }
+            else if (payMethodTextBox.Text.ToLower() == "product")
+            {
+                newTrans.PaymentMethod = Models.Enums.PaymentMethod.CreditCard;
+            }
+            else
+            {
+                payMethodTextBox.Text = "";
+            }
+
+            if (dateTextBox.Text == "")
+            {
+                newTrans.Date = DateTime.Now;
+            }
+            else
+            {
+                newTrans.Date = Convert.ToDateTime(dateTextBox.Text);
+            }
+            
+            CheckCard(newTrans);
+            newTrans.PaymentMethodCheck();
+            if(totalPriceTextBox.Text == "")
+            {
+                newTrans.TotalValueCalc();
+            }
+            else
+            {
+                newTrans.TotalValue = Convert.ToDecimal(totalPriceTextBox.Text);
+            }
+            
+
+            _transactionRepo.Add(newTrans);
         }
 
         public void AddTransLine()
@@ -73,12 +115,38 @@ namespace Session30.WF
 
         public void DeleteTransLine()
         {
+            if (transLineIdTextBox.Text != "")
+            {
+                var transLineId = Convert.ToInt32(transLineIdTextBox.Text);
+                _transactionLineRepo.Delete(transLineId);
 
+            }
         }
 
         public void DeleteTrans()
         {
+            if (transIdTextBox1.Text != "")
+            {
+                var transId = Convert.ToInt32(transIdTextBox1.Text);
+                _transactionRepo.Delete(transId);
 
+            }
+        }
+
+        public void CheckCard(Transaction trans)
+        {
+            var customers = _customerRepo.GetAll();
+            foreach(var customer in customers)
+            {
+                if(customer.CardNumber == cardNumberTextBox.Text)
+                {
+                    trans.CustomerId = customer.Id;
+                }
+                else
+                {
+
+                }
+            }
         }
 
         //Buttons
@@ -86,6 +154,16 @@ namespace Session30.WF
         {
             CustomersView customers = new CustomersView();
             customers.ShowDialog();
+        }
+
+        private void saveTransBtn_Click(object sender, EventArgs e)
+        {
+            AddTrans();
+        }
+
+        private void deleteTransBtn_Click(object sender, EventArgs e)
+        {
+            DeleteTrans();
         }
     }
 }
