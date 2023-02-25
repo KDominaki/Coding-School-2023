@@ -109,15 +109,15 @@ else
             response.EnsureSuccessStatusCode();
             navigationManager.NavigateTo("employeelist");
         }
-        catch (Exception)
+        catch (InvalidOperationException)
         {
             var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "You cant have more employees of this type");
-        if (confirm)
-        {
-        
-        } 
         }
-        
+        catch (Exception)
+        {
+            var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Ops something went wrong. Make sure you filled the form correctly");
+        }
+
 
       
     }

@@ -3,6 +3,7 @@
 @using Session30.Web.Shared;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
 
 <PageTitle>Item Edit</PageTitle>
 
@@ -84,18 +85,26 @@ else
 
     private async Task OnSave()
     {
-        HttpResponseMessage? response = null;
-        if (Id == null)
+        try
         {
-            response = await httpClient.PostAsJsonAsync("item", Item);
-        }
-        else
-        {
-            response = await httpClient.PutAsJsonAsync("item", Item);
-        }
+            HttpResponseMessage? response = null;
+            if (Id == null)
+            {
+                response = await httpClient.PostAsJsonAsync("item", Item);
+            }
+            else
+            {
+                response = await httpClient.PutAsJsonAsync("item", Item);
+            }
 
-        response.EnsureSuccessStatusCode();
-        navigationManager.NavigateTo("itemlist");
+            response.EnsureSuccessStatusCode();
+            navigationManager.NavigateTo("itemlist");
+        }
+        catch (Exception)
+        {
+            var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Ops something went wrong. Make sure you filled the form correctly");
+        }
+        
     }
 
 }

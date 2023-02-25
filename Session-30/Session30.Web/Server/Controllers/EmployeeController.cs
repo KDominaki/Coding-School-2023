@@ -86,7 +86,7 @@ namespace Session30.Web.Server.Controllers
             {
                 if (managerCount >= 3)
                 {
-                    throw new Exception();
+                    throw new InvalidOperationException();
                 }
                 else
                 {

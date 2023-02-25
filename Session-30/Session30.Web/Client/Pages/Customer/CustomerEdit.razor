@@ -2,6 +2,7 @@
 @using Session30.Web.Shared;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
 
 <PageTitle>Customers Edit</PageTitle>
 
@@ -71,18 +72,26 @@ else
 
     private async Task OnSave()
     {
-        HttpResponseMessage? response = null;
-        if (Id == null)
+        try
         {
-            response = await httpClient.PostAsJsonAsync("customer", Customer);
-        }
-        else
-        {
-            response = await httpClient.PutAsJsonAsync("customer", Customer);
-        }
+            HttpResponseMessage? response = null;
+            if (Id == null)
+            {
+                response = await httpClient.PostAsJsonAsync("customer", Customer);
+            }
+            else
+            {
+                response = await httpClient.PutAsJsonAsync("customer", Customer);
+            }
 
-        response.EnsureSuccessStatusCode();
-        navigationManager.NavigateTo("customerlist");
+            response.EnsureSuccessStatusCode();
+            navigationManager.NavigateTo("customerlist");
+        }
+        catch (Exception)
+        {
+            var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Ops something went wrong. Make sure you filled the form correctly");
+        }
+       
     }
 
 }
