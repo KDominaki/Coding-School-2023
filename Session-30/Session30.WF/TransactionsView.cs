@@ -303,32 +303,50 @@ namespace Session30.WF
 
         private void saveTransBtn_Click(object sender, EventArgs e)
         {
-            if (transIdTextBox1.Text != "")
+            try
             {
-                EditTrans();
+                if (transIdTextBox1.Text != "")
+                {
+                    EditTrans();
+                }
+                else
+                {
+                    AddTrans();
+                }
+                totalPriceTextBox.Text = "";
+                dateTextBox.Text = "";
+                payMethodTextBox.Text = "";
+                cardNumberTextBox.Text = "";
+                employeeIdTextBox.Text = "";
+                DataBinding();
+                errorMessageLabel.Text = "";
             }
-            else
+            catch (Exception)
             {
-                AddTrans();
+                errorMessageLabel.Text= "*Oops something went wrong.\nMake sure that you filled the form correctly";
             }
-            totalPriceTextBox.Text = "";
-            dateTextBox.Text = "";
-            payMethodTextBox.Text = "";
-            cardNumberTextBox.Text = "";
-            employeeIdTextBox.Text = "";
-            DataBinding();
+            
         }
 
         private void deleteTransBtn_Click(object sender, EventArgs e)
         {
-            DeleteTrans();
+            try
+            {
+                DeleteTrans();
 
-            totalPriceTextBox.Text = "";
-            dateTextBox.Text = "";
-            payMethodTextBox.Text = "";
-            cardNumberTextBox.Text = "";
-            employeeIdTextBox.Text = "";
-            DataBinding();
+                totalPriceTextBox.Text = "";
+                dateTextBox.Text = "";
+                payMethodTextBox.Text = "";
+                cardNumberTextBox.Text = "";
+                employeeIdTextBox.Text = "";
+                DataBinding();
+                errorMessageLabel.Text = "";
+            }
+            catch(Exception)
+            {
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
+            }
+           
         }
 
         private void viewItemBtn_Click(object sender, EventArgs e)
@@ -339,31 +357,49 @@ namespace Session30.WF
 
         private void saveTransLineBtn_Click(object sender, EventArgs e)
         {
-            if (transIdTextBox2.Text != "")
-            {   
-                AddTransLine();
-            }
-            else
+            try
             {
-                EditTransLine();
+                if (transIdTextBox2.Text != "")
+                {
+                    AddTransLine();
+                }
+                else
+                {
+                    EditTransLine();
+                }
+                totalValueTextBox.Text = "";
+                qntTextBox.Text = "";
+                itemIdTextBox.Text = "";
+                transIdTextBox2.Text = "";
+                DataBinding();
+                errorMessageLabel.Text = "";
             }
-            totalValueTextBox.Text = "";
-            qntTextBox.Text = "";
-            itemIdTextBox.Text = "";
-            transIdTextBox2.Text = "";
-            DataBinding();
+            catch (Exception) 
+            {
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
+            }
+            
 
         }
 
         private void deleteTransLineBtn_Click(object sender, EventArgs e)
         {
-            DeleteTransLine();
+            try
+            {
+                DeleteTransLine();
 
-            totalValueTextBox.Text = "";
-            qntTextBox.Text = "";
-            itemIdTextBox.Text = "";
-            transIdTextBox2.Text = "";
-            DataBinding();
+                totalValueTextBox.Text = "";
+                qntTextBox.Text = "";
+                itemIdTextBox.Text = "";
+                transIdTextBox2.Text = "";
+                DataBinding();
+                errorMessageLabel.Text = "";
+            }
+            catch (Exception)
+            {
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
+            }
+           
         }
 
         private void okBtn_Click(object sender, EventArgs e)

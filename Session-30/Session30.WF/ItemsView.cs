@@ -120,30 +120,48 @@ namespace Session30.WF
         // Buttons
         private void itemAddBtn_Click(object sender, EventArgs e)
         {
-            if (idTextBox.Text != "")
+            try
             {
-                EditItem();
+                if (idTextBox.Text != "")
+                {
+                    EditItem();
+                }
+                else
+                {
+                    AddItem();
+                }
+                descriptionTextBox.Text = "";
+                typeTextBox.Text = "";
+                CostTextBox.Text = "";
+                priceTextBox.Text = "";
+                GridData();
+                errorMessageLabel.Text = "";
             }
-            else
+            catch(Exception)
             {
-                AddItem();
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
             }
-            descriptionTextBox.Text = "";
-            typeTextBox.Text = "";
-            CostTextBox.Text = "";
-            priceTextBox.Text = "";
-            GridData();
+          
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            DeleteCustomer();
-            idTextBox.Text = "";
-            descriptionTextBox.Text = "";
-            typeTextBox.Text = "";
-            CostTextBox.Text = "";
-            priceTextBox.Text = "";
-            GridData();
+            try
+            {
+                DeleteCustomer();
+                idTextBox.Text = "";
+                descriptionTextBox.Text = "";
+                typeTextBox.Text = "";
+                CostTextBox.Text = "";
+                priceTextBox.Text = "";
+                GridData();
+                errorMessageLabel.Text = "";
+            }
+            catch(Exception)
+            {
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
+            }
+           
         }
 
         private void okBtn_Click(object sender, EventArgs e)

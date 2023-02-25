@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.transactionsGridView = new System.Windows.Forms.DataGridView();
+            this.IdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transLinesGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,12 +74,7 @@
             this.viewItemBtn = new System.Windows.Forms.Button();
             this.errorLabel1 = new System.Windows.Forms.Label();
             this.errorLabel2 = new System.Windows.Forms.Label();
-            this.IdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorMessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +94,42 @@
             this.transactionsGridView.RowTemplate.Height = 25;
             this.transactionsGridView.Size = new System.Drawing.Size(602, 223);
             this.transactionsGridView.TabIndex = 0;
+            // 
+            // IdCol
+            // 
+            this.IdCol.DataPropertyName = "Id";
+            this.IdCol.HeaderText = "Transaction Id";
+            this.IdCol.Name = "IdCol";
+            // 
+            // EmployeeIdCol
+            // 
+            this.EmployeeIdCol.DataPropertyName = "EmployeeId";
+            this.EmployeeIdCol.HeaderText = "Employee Id";
+            this.EmployeeIdCol.Name = "EmployeeIdCol";
+            // 
+            // CustomerIdCol
+            // 
+            this.CustomerIdCol.DataPropertyName = "CustomerId";
+            this.CustomerIdCol.HeaderText = "Customer Id";
+            this.CustomerIdCol.Name = "CustomerIdCol";
+            // 
+            // DateCol
+            // 
+            this.DateCol.DataPropertyName = "Date";
+            this.DateCol.HeaderText = "Date";
+            this.DateCol.Name = "DateCol";
+            // 
+            // PaymentCol
+            // 
+            this.PaymentCol.DataPropertyName = "PaymentMethod";
+            this.PaymentCol.HeaderText = "Payment Method";
+            this.PaymentCol.Name = "PaymentCol";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalValue";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Total Value";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // transLinesGridView
             // 
@@ -424,46 +461,23 @@
             this.errorLabel2.Size = new System.Drawing.Size(0, 15);
             this.errorLabel2.TabIndex = 33;
             // 
-            // IdCol
+            // errorMessageLabel
             // 
-            this.IdCol.HeaderText = "Transaction Id";
-            this.IdCol.Name = "IdCol";
-            // 
-            // EmployeeIdCol
-            // 
-            this.EmployeeIdCol.DataPropertyName = "EmployeeId";
-            this.EmployeeIdCol.HeaderText = "Employee Id";
-            this.EmployeeIdCol.Name = "EmployeeIdCol";
-            // 
-            // CustomerIdCol
-            // 
-            this.CustomerIdCol.DataPropertyName = "CustomerId";
-            this.CustomerIdCol.HeaderText = "Customer Id";
-            this.CustomerIdCol.Name = "CustomerIdCol";
-            // 
-            // DateCol
-            // 
-            this.DateCol.DataPropertyName = "Date";
-            this.DateCol.HeaderText = "Date";
-            this.DateCol.Name = "DateCol";
-            // 
-            // PaymentCol
-            // 
-            this.PaymentCol.DataPropertyName = "PaymentMethod";
-            this.PaymentCol.HeaderText = "Payment Method";
-            this.PaymentCol.Name = "PaymentCol";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalValue";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Total Value";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.errorMessageLabel.AutoSize = true;
+            this.errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.errorMessageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.errorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorMessageLabel.Location = new System.Drawing.Point(695, 401);
+            this.errorMessageLabel.Name = "errorMessageLabel";
+            this.errorMessageLabel.Size = new System.Drawing.Size(0, 21);
+            this.errorMessageLabel.TabIndex = 34;
             // 
             // TransactionsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 450);
+            this.Controls.Add(this.errorMessageLabel);
             this.Controls.Add(this.errorLabel2);
             this.Controls.Add(this.errorLabel1);
             this.Controls.Add(this.viewItemBtn);
@@ -556,5 +570,6 @@
         private DataGridViewTextBoxColumn DateCol;
         private DataGridViewTextBoxColumn PaymentCol;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private Label errorMessageLabel;
     }
 }

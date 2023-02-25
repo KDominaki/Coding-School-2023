@@ -44,6 +44,7 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.errorMessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +185,22 @@
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 15;
             // 
+            // errorMessageLabel
+            // 
+            this.errorMessageLabel.AutoSize = true;
+            this.errorMessageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.errorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorMessageLabel.Location = new System.Drawing.Point(82, 336);
+            this.errorMessageLabel.Name = "errorMessageLabel";
+            this.errorMessageLabel.Size = new System.Drawing.Size(0, 21);
+            this.errorMessageLabel.TabIndex = 16;
+            // 
             // ItemsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 450);
+            this.Controls.Add(this.errorMessageLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.deleteBtn);
@@ -232,5 +244,6 @@
         private Button deleteBtn;
         private Button okBtn;
         private Label errorLabel;
+        private Label errorMessageLabel;
     }
 }

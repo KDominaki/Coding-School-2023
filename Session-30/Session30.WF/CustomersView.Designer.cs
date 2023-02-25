@@ -43,6 +43,7 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.errorMessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,11 +172,22 @@
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 10;
             // 
+            // errorMessageLabel
+            // 
+            this.errorMessageLabel.AutoSize = true;
+            this.errorMessageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.errorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorMessageLabel.Location = new System.Drawing.Point(600, 325);
+            this.errorMessageLabel.Name = "errorMessageLabel";
+            this.errorMessageLabel.Size = new System.Drawing.Size(0, 21);
+            this.errorMessageLabel.TabIndex = 11;
+            // 
             // CustomersView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 450);
+            this.Controls.Add(this.errorMessageLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.deleteBtn);
@@ -210,5 +222,6 @@
         private Button deleteBtn;
         private Button okBtn;
         private Label errorLabel;
+        private Label errorMessageLabel;
     }
 }

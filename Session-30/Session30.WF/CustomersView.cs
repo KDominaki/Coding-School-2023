@@ -97,18 +97,29 @@ namespace Session30.WF
         // Buttons
         private void addCustomerBtn_Click(object sender, EventArgs e)
         {
-            if (idTextBox.Text != "")
+            try
             {
-                EditCustomer();
+                if (idTextBox.Text != "")
+                {
+                    EditCustomer();
+                }
+                else
+                {
+                    AddNewCustomer();
+                }
+                nameTextBox.Text = "";
+                surnameTextBox.Text = "";
+                idTextBox.Text = "";
+                GridData();
+                errorMessageLabel.Text = "";
+
             }
-            else
+            catch (Exception) 
             {
-                AddNewCustomer();
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
+
             }
-            nameTextBox.Text = "";
-            surnameTextBox.Text = "";
-            idTextBox.Text = "";
-            GridData();
+
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -118,11 +129,21 @@ namespace Session30.WF
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            DeleteCustomer();
-            nameTextBox.Text = "";
-            surnameTextBox.Text = "";
-            idTextBox.Text = "";
-            GridData();
+            try
+            {
+                DeleteCustomer();
+                nameTextBox.Text = "";
+                surnameTextBox.Text = "";
+                idTextBox.Text = "";
+                GridData();
+                errorMessageLabel.Text = "";
+
+            }
+            catch (Exception)
+            {
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
+            }
+            
         }
 
     }
