@@ -36,12 +36,6 @@
             this.PaymentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transLinesGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NetValcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscountValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardNumberTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,6 +69,13 @@
             this.errorLabel1 = new System.Windows.Forms.Label();
             this.errorLabel2 = new System.Windows.Forms.Label();
             this.errorMessageLabel = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NetValcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalValueCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transLinesGridView)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +137,7 @@
             this.transLinesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transLinesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.TransIdCol,
             this.ItemIdCol,
             this.QuantityCol,
             this.NetValcol,
@@ -146,42 +148,6 @@
             this.transLinesGridView.RowTemplate.Height = 25;
             this.transLinesGridView.Size = new System.Drawing.Size(602, 197);
             this.transLinesGridView.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            // 
-            // ItemIdCol
-            // 
-            this.ItemIdCol.DataPropertyName = "ItemId";
-            this.ItemIdCol.HeaderText = "Item Id";
-            this.ItemIdCol.Name = "ItemIdCol";
-            // 
-            // QuantityCol
-            // 
-            this.QuantityCol.DataPropertyName = "Quantity";
-            this.QuantityCol.HeaderText = "Quantity";
-            this.QuantityCol.Name = "QuantityCol";
-            // 
-            // NetValcol
-            // 
-            this.NetValcol.DataPropertyName = "NetValue";
-            this.NetValcol.HeaderText = "Net Value";
-            this.NetValcol.Name = "NetValcol";
-            // 
-            // DiscountValueCol
-            // 
-            this.DiscountValueCol.DataPropertyName = "DiscountValue";
-            this.DiscountValueCol.HeaderText = "Discount Value";
-            this.DiscountValueCol.Name = "DiscountValueCol";
-            // 
-            // TotalValueCol
-            // 
-            this.TotalValueCol.DataPropertyName = "TotalValue";
-            this.TotalValueCol.HeaderText = "Total Value";
-            this.TotalValueCol.Name = "TotalValueCol";
             // 
             // cardNumberTextBox
             // 
@@ -324,7 +290,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(663, 287);
+            this.label7.Location = new System.Drawing.Point(662, 350);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 15);
             this.label7.TabIndex = 19;
@@ -332,7 +298,7 @@
             // 
             // transIdTextBox2
             // 
-            this.transIdTextBox2.Location = new System.Drawing.Point(663, 305);
+            this.transIdTextBox2.Location = new System.Drawing.Point(662, 368);
             this.transIdTextBox2.Name = "transIdTextBox2";
             this.transIdTextBox2.Size = new System.Drawing.Size(132, 23);
             this.transIdTextBox2.TabIndex = 18;
@@ -356,7 +322,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(663, 341);
+            this.label9.Location = new System.Drawing.Point(663, 296);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 15);
             this.label9.TabIndex = 23;
@@ -364,7 +330,7 @@
             // 
             // itemIdTextBox
             // 
-            this.itemIdTextBox.Location = new System.Drawing.Point(663, 359);
+            this.itemIdTextBox.Location = new System.Drawing.Point(663, 314);
             this.itemIdTextBox.Name = "itemIdTextBox";
             this.itemIdTextBox.Size = new System.Drawing.Size(132, 23);
             this.itemIdTextBox.TabIndex = 22;
@@ -435,7 +401,7 @@
             // viewItemBtn
             // 
             this.viewItemBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.viewItemBtn.Location = new System.Drawing.Point(802, 303);
+            this.viewItemBtn.Location = new System.Drawing.Point(804, 313);
             this.viewItemBtn.Name = "viewItemBtn";
             this.viewItemBtn.Size = new System.Drawing.Size(72, 28);
             this.viewItemBtn.TabIndex = 31;
@@ -467,10 +433,52 @@
             this.errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
             this.errorMessageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.errorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorMessageLabel.Location = new System.Drawing.Point(695, 401);
+            this.errorMessageLabel.Location = new System.Drawing.Point(670, 404);
             this.errorMessageLabel.Name = "errorMessageLabel";
             this.errorMessageLabel.Size = new System.Drawing.Size(0, 21);
             this.errorMessageLabel.TabIndex = 34;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // TransIdCol
+            // 
+            this.TransIdCol.DataPropertyName = "TransactionId";
+            this.TransIdCol.HeaderText = "Transaction Id";
+            this.TransIdCol.Name = "TransIdCol";
+            // 
+            // ItemIdCol
+            // 
+            this.ItemIdCol.DataPropertyName = "ItemId";
+            this.ItemIdCol.HeaderText = "Item Id";
+            this.ItemIdCol.Name = "ItemIdCol";
+            // 
+            // QuantityCol
+            // 
+            this.QuantityCol.DataPropertyName = "Quantity";
+            this.QuantityCol.HeaderText = "Quantity";
+            this.QuantityCol.Name = "QuantityCol";
+            // 
+            // NetValcol
+            // 
+            this.NetValcol.DataPropertyName = "NetValue";
+            this.NetValcol.HeaderText = "Net Value";
+            this.NetValcol.Name = "NetValcol";
+            // 
+            // DiscountValueCol
+            // 
+            this.DiscountValueCol.DataPropertyName = "DiscountValue";
+            this.DiscountValueCol.HeaderText = "Discount Value";
+            this.DiscountValueCol.Name = "DiscountValueCol";
+            // 
+            // TotalValueCol
+            // 
+            this.TotalValueCol.DataPropertyName = "TotalValue";
+            this.TotalValueCol.HeaderText = "Total Value";
+            this.TotalValueCol.Name = "TotalValueCol";
             // 
             // TransactionsView
             // 
@@ -556,12 +564,6 @@
         private Button saveTransLineBtn;
         private Button deleteTransLineBtn;
         private Button viewItemBtn;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn ItemIdCol;
-        private DataGridViewTextBoxColumn QuantityCol;
-        private DataGridViewTextBoxColumn NetValcol;
-        private DataGridViewTextBoxColumn DiscountValueCol;
-        private DataGridViewTextBoxColumn TotalValueCol;
         private Label errorLabel1;
         private Label errorLabel2;
         private DataGridViewTextBoxColumn IdCol;
@@ -571,5 +573,12 @@
         private DataGridViewTextBoxColumn PaymentCol;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private Label errorMessageLabel;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn TransIdCol;
+        private DataGridViewTextBoxColumn ItemIdCol;
+        private DataGridViewTextBoxColumn QuantityCol;
+        private DataGridViewTextBoxColumn NetValcol;
+        private DataGridViewTextBoxColumn DiscountValueCol;
+        private DataGridViewTextBoxColumn TotalValueCol;
     }
 }

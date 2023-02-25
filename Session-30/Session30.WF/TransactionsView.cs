@@ -1,4 +1,5 @@
-﻿using Session30.EF.Repositories;
+﻿using Microsoft.Extensions.FileProviders;
+using Session30.EF.Repositories;
 using Session30.Models;
 using System;
 using System.Collections.Generic;
@@ -93,7 +94,7 @@ namespace Session30.WF
         }
         public void AddTrans()
         {
-            if (totalPriceTextBox.Text != "" && dateTextBox.Text != "" && payMethodTextBox.Text != "")
+            if (payMethodTextBox.Text != "")
             {
                 var newTrans = new Transaction()
                 {
@@ -105,7 +106,7 @@ namespace Session30.WF
                 {
                     newTrans.PaymentMethod = Models.Enums.PaymentMethod.Cash;
                 }
-                else if (payMethodTextBox.Text.ToLower() == "product")
+                else if (payMethodTextBox.Text.ToLower() == "credit card")
                 {
                     newTrans.PaymentMethod = Models.Enums.PaymentMethod.CreditCard;
                 }
@@ -256,16 +257,21 @@ namespace Session30.WF
             if (cardNumberTextBox.Text !="")
             {
                 var customers = _customerRepo.GetAll();
+                var found = false;
                 foreach (var customer in customers)
                 {
                     if (customer.CardNumber == cardNumberTextBox.Text)
                     {
                         trans.CustomerId = customer.Id;
+                        found = true;
                     }
-                    else
-                    {
+                    
 
-                    }
+                }
+                if (!found)
+                {
+                    errorLabel1.Text = "There is no customer with this Card Number";
+                    throw new Exception();
                 }
 
             }
@@ -342,14 +348,16 @@ namespace Session30.WF
                 payMethodTextBox.Text = "";
                 cardNumberTextBox.Text = "";
                 employeeIdTextBox.Text = "";
+                transIdTextBox1.Text = "";
                 DataBinding();
-                errorMessageLabel.Text = "";
+                errorMessageLabel.Text = ""; errorLabel1.Text = "";
             }
             catch (Exception)
             {
-                errorMessageLabel.Text= "*Oops something went wrong.\nMake sure that you filled the form correctly";
+                errorMessageLabel.Text = "*Oops something went wrong.\nMake sure that you filled the form correctly";
             }
-            
+           
+
         }
 
         private void deleteTransBtn_Click(object sender, EventArgs e)
@@ -363,8 +371,10 @@ namespace Session30.WF
                 payMethodTextBox.Text = "";
                 cardNumberTextBox.Text = "";
                 employeeIdTextBox.Text = "";
+                transIdTextBox1.Text = "";
                 DataBinding();
                 errorMessageLabel.Text = "";
+                errorLabel1.Text = "";
             }
             catch(Exception)
             {
@@ -383,20 +393,22 @@ namespace Session30.WF
         {
             try
             {
-                if (transIdTextBox2.Text != "")
+                if (transLineIdTextBox.Text != "")
                 {
-                    AddTransLine();
+                    EditTransLine();
                 }
                 else
                 {
-                    EditTransLine();
+                    AddTransLine();
+                    
                 }
                 totalValueTextBox.Text = "";
                 qntTextBox.Text = "";
                 itemIdTextBox.Text = "";
-                transIdTextBox2.Text = "";
+                transLineIdTextBox.Text = "";
                 DataBinding();
                 errorMessageLabel.Text = "";
+                errorLabel2.Text = "";
             }
             catch (Exception) 
             {
@@ -415,9 +427,10 @@ namespace Session30.WF
                 totalValueTextBox.Text = "";
                 qntTextBox.Text = "";
                 itemIdTextBox.Text = "";
-                transIdTextBox2.Text = "";
+                transLineIdTextBox.Text = "";
                 DataBinding();
                 errorMessageLabel.Text = "";
+                errorLabel2.Text = "";
             }
             catch (Exception)
             {
