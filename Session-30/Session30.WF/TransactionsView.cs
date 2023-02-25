@@ -93,72 +93,88 @@ namespace Session30.WF
         }
         public void AddTrans()
         {
-            var newTrans = new Transaction()
+            if (totalPriceTextBox.Text != "" && dateTextBox.Text != "" && payMethodTextBox.Text != "")
             {
-                EmployeeId = Convert.ToInt32(employeeIdTextBox.Text),
+                var newTrans = new Transaction()
+                {
+                    EmployeeId = Convert.ToInt32(employeeIdTextBox.Text),
 
-            };
+                };
 
-            if (payMethodTextBox.Text.ToLower() == "cash")
-            {
-                newTrans.PaymentMethod = Models.Enums.PaymentMethod.Cash;
-            }
-            else if (payMethodTextBox.Text.ToLower() == "product")
-            {
-                newTrans.PaymentMethod = Models.Enums.PaymentMethod.CreditCard;
+                if (payMethodTextBox.Text.ToLower() == "cash")
+                {
+                    newTrans.PaymentMethod = Models.Enums.PaymentMethod.Cash;
+                }
+                else if (payMethodTextBox.Text.ToLower() == "product")
+                {
+                    newTrans.PaymentMethod = Models.Enums.PaymentMethod.CreditCard;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
+                if (dateTextBox.Text == "")
+                {
+                    newTrans.Date = DateTime.Now;
+                }
+                else
+                {
+                    newTrans.Date = Convert.ToDateTime(dateTextBox.Text);
+                }
+
+                CheckCard(newTrans);
+                newTrans.PaymentMethodCheck();
+                if (totalPriceTextBox.Text == "")
+                {
+                    newTrans.TotalValueCalc();
+                }
+                else
+                {
+                    newTrans.TotalValue = Convert.ToDecimal(totalPriceTextBox.Text);
+                }
+
+
+                _transactionRepo.Add(newTrans);
             }
             else
             {
-                payMethodTextBox.Text = "";
-            }
-
-            if (dateTextBox.Text == "")
-            {
-                newTrans.Date = DateTime.Now;
-            }
-            else
-            {
-                newTrans.Date = Convert.ToDateTime(dateTextBox.Text);
+                throw new Exception();
             }
             
-            CheckCard(newTrans);
-            newTrans.PaymentMethodCheck();
-            if(totalPriceTextBox.Text == "")
-            {
-                newTrans.TotalValueCalc();
-            }
-            else
-            {
-                newTrans.TotalValue = Convert.ToDecimal(totalPriceTextBox.Text);
-            }
-            
-
-            _transactionRepo.Add(newTrans);
         }
 
         public void AddTransLine()
         {
-            var newTransLine = new TransactionLine()
+            if(qntTextBox.Text != "")
             {
-                Quantity = Convert.ToInt32(qntTextBox.Text)
-            };
-            GetItem(newTransLine);
-            if (totalValueTextBox.Text == "")
-            {
-                var itemId = newTransLine.ItemId;
-                var item = _itemRepo.GetById(itemId);
-                newTransLine.TotalValueCalc(item);
+                var newTransLine = new TransactionLine()
+                {
+                    Quantity = Convert.ToInt32(qntTextBox.Text)
+                };
+                GetItem(newTransLine);
+                if (totalValueTextBox.Text == "")
+                {
+                    var itemId = newTransLine.ItemId;
+                    var item = _itemRepo.GetById(itemId);
+                    newTransLine.TotalValueCalc(item);
+                }
+                else
+                {
+                    newTransLine.TotalValue = Convert.ToDecimal(totalValueTextBox.Text);
+                }
+
+                AddTransLineToTrans(newTransLine);
+
+                _transactionLineRepo.Add(newTransLine);
+
             }
             else
             {
-                newTransLine.TotalValue = Convert.ToDecimal(totalValueTextBox.Text);
+                throw new Exception();
             }
-            
-            AddTransLineToTrans(newTransLine);
 
-            _transactionLineRepo.Add(newTransLine);
-            
-           
+
         }
 
         public void DeleteTransLine()
@@ -232,7 +248,7 @@ namespace Session30.WF
         }
         public void EditTransLine()
         {
-
+            errorMessageLabel.Text = "Unfortunatilly edit method is not available for trans lines :(";
         }
 
         public void CheckCard(Transaction trans)
