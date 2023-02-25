@@ -406,6 +406,7 @@ namespace Session30.WF
                 qntTextBox.Text = "";
                 itemIdTextBox.Text = "";
                 transLineIdTextBox.Text = "";
+                transIdTextBox2.Text = "";
                 DataBinding();
                 errorMessageLabel.Text = "";
                 errorLabel2.Text = "";
@@ -428,6 +429,7 @@ namespace Session30.WF
                 qntTextBox.Text = "";
                 itemIdTextBox.Text = "";
                 transLineIdTextBox.Text = "";
+                transIdTextBox2.Text = "";
                 DataBinding();
                 errorMessageLabel.Text = "";
                 errorLabel2.Text = "";

@@ -39,7 +39,7 @@ namespace Session30.WF
         }
         private void AddItem()
         {
-            if(typeTextBox.Text != "" && CostTextBox.Text != null && priceTextBox.Text!= "")
+            if(typeTextBox.Text != "" && CostTextBox.Text != null && priceTextBox.Text!= "" && descriptionTextBox.Text !="")
             {
                 var item = new Item();
                 item.Description = descriptionTextBox.Text;
