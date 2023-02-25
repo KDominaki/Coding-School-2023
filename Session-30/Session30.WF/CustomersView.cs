@@ -45,11 +45,19 @@ namespace Session30.WF
 
         public void AddNewCustomer()
         {
-            var customer = new Customer();
-            customer.Name = nameTextBox.Text;
-            customer.Surname= surnameTextBox.Text;
+            if (nameTextBox.Text != "" && surnameTextBox.Text != "")
+            {
+                var customer = new Customer();
+                customer.Name = nameTextBox.Text;
+                customer.Surname = surnameTextBox.Text;
 
-            _customerRepo.Add(customer);
+                _customerRepo.Add(customer);
+            }
+            else
+            {
+                throw new Exception();
+            }
+                
         }
         private void GetCustomer()
         {
@@ -83,13 +91,21 @@ namespace Session30.WF
         {
             if (idTextBox.Text != "")
             {
-                var customerId = Convert.ToInt32(idTextBox.Text);
-                var customerEntity = new Customer();
+                if (nameTextBox.Text !="" && surnameTextBox.Text!="")
                 {
-                    customerEntity.Name = nameTextBox.Text;
-                    customerEntity.Surname = surnameTextBox.Text;
+                    var customerId = Convert.ToInt32(idTextBox.Text);
+                    var customerEntity = new Customer();
+                    {
+                        customerEntity.Name = nameTextBox.Text;
+                        customerEntity.Surname = surnameTextBox.Text;
+                    }
+                    _customerRepo.Update(customerId, customerEntity);
                 }
-                _customerRepo.Update(customerId, customerEntity);
+                else
+                {
+                    throw new Exception();
+                }
+               
 
             }
         }

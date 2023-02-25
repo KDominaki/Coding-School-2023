@@ -203,23 +203,31 @@ namespace Session30.WF
 
         public void EditTrans()
         {
-            if (transIdTextBox1.Text != "")
+            if (totalPriceTextBox.Text!="" && dateTextBox.Text != "")
             {
-                var transId = Convert.ToInt32(transIdTextBox1.Text);
-                var dbTrans = _transactionRepo.GetById(transId);
-
-                Transaction newTransaction = new Transaction()
+                if (transIdTextBox1.Text != "")
                 {
-                    CustomerId = dbTrans.CustomerId,
-                    PaymentMethod = dbTrans.PaymentMethod,
-                    TotalValue = Convert.ToDecimal(totalPriceTextBox.Text),
-                    EmployeeId= dbTrans.EmployeeId,
-                    Date = Convert.ToDateTime(dateTextBox.Text),
-                };
+                    var transId = Convert.ToInt32(transIdTextBox1.Text);
+                    var dbTrans = _transactionRepo.GetById(transId);
 
-                _transactionRepo.Update(transId, newTransaction);
+                    Transaction newTransaction = new Transaction()
+                    {
+                        CustomerId = dbTrans.CustomerId,
+                        PaymentMethod = dbTrans.PaymentMethod,
+                        TotalValue = Convert.ToDecimal(totalPriceTextBox.Text),
+                        EmployeeId = dbTrans.EmployeeId,
+                        Date = Convert.ToDateTime(dateTextBox.Text),
+                    };
 
+                    _transactionRepo.Update(transId, newTransaction);
+
+                }
             }
+            else
+            {
+                throw new Exception();
+            }
+            
            
         }
         public void EditTransLine()

@@ -39,26 +39,34 @@ namespace Session30.WF
         }
         private void AddItem()
         {
-            var item = new Item();
-            item.Description = descriptionTextBox.Text;
-            item.Cost = Convert.ToDecimal(CostTextBox.Text);
-            item.Price = Convert.ToDecimal(priceTextBox.Text);
-            if(typeTextBox.Text.ToLower() == "fuel")
+            if(typeTextBox.Text != "" && CostTextBox.Text != null && priceTextBox.Text!= "")
             {
-                item.ItemType = Models.Enums.ItemType.Fuel;
+                var item = new Item();
+                item.Description = descriptionTextBox.Text;
+                item.Cost = Convert.ToDecimal(CostTextBox.Text);
+                item.Price = Convert.ToDecimal(priceTextBox.Text);
+                if (typeTextBox.Text.ToLower() == "fuel")
+                {
+                    item.ItemType = Models.Enums.ItemType.Fuel;
+                }
+                else if (typeTextBox.Text.ToLower() == "product")
+                {
+                    item.ItemType = Models.Enums.ItemType.Product;
+                }
+                else if (typeTextBox.Text.ToLower() == "service")
+                {
+                    item.ItemType = Models.Enums.ItemType.Service;
+                }
+                _itemRepo.Add(item);
             }
-            else if(typeTextBox.Text.ToLower() == "product")
+            else
             {
-                item.ItemType = Models.Enums.ItemType.Product;
+                throw new Exception();
             }
-            else if (typeTextBox.Text.ToLower() == "service")
-            {
-                item.ItemType = Models.Enums.ItemType.Service;
-            }
-            _itemRepo.Add(item);
+            
         }
 
-        private void DeleteCustomer()
+        private void DeleteItem()
         {
             if (idTextBox.Text != "")
             {
@@ -89,31 +97,39 @@ namespace Session30.WF
 
         private void EditItem()
         {
-            if (idTextBox.Text != "")
+            if (typeTextBox.Text != "" && CostTextBox.Text != null && priceTextBox.Text != "")
             {
-                var itemId = Convert.ToInt32(idTextBox.Text);
-                var itemEntity = new Item();
+                if (idTextBox.Text != "")
                 {
-                    itemEntity.Description = descriptionTextBox.Text;
-                    itemEntity.Cost = Convert.ToDecimal(CostTextBox.Text);
-                    itemEntity.Price = Convert.ToDecimal(priceTextBox.Text);
+                    var itemId = Convert.ToInt32(idTextBox.Text);
+                    var itemEntity = new Item();
+                    {
+                        itemEntity.Description = descriptionTextBox.Text;
+                        itemEntity.Cost = Convert.ToDecimal(CostTextBox.Text);
+                        itemEntity.Price = Convert.ToDecimal(priceTextBox.Text);
 
-                    if (typeTextBox.Text.ToLower() == "fuel")
-                    {
-                        itemEntity.ItemType = Models.Enums.ItemType.Fuel;
+                        if (typeTextBox.Text.ToLower() == "fuel")
+                        {
+                            itemEntity.ItemType = Models.Enums.ItemType.Fuel;
+                        }
+                        else if (typeTextBox.Text.ToLower() == "product")
+                        {
+                            itemEntity.ItemType = Models.Enums.ItemType.Product;
+                        }
+                        else if (typeTextBox.Text.ToLower() == "service")
+                        {
+                            itemEntity.ItemType = Models.Enums.ItemType.Service;
+                        }
                     }
-                    else if (typeTextBox.Text.ToLower() == "product")
-                    {
-                        itemEntity.ItemType = Models.Enums.ItemType.Product;
-                    }
-                    else if (typeTextBox.Text.ToLower() == "service")
-                    {
-                        itemEntity.ItemType = Models.Enums.ItemType.Service;
-                    }
+                    _itemRepo.Update(itemId, itemEntity);
+
                 }
-                _itemRepo.Update(itemId, itemEntity);
-
             }
+            else
+            {
+                throw new Exception();
+            }
+            
         }
 
 
@@ -148,7 +164,7 @@ namespace Session30.WF
         {
             try
             {
-                DeleteCustomer();
+                DeleteItem();
                 idTextBox.Text = "";
                 descriptionTextBox.Text = "";
                 typeTextBox.Text = "";
