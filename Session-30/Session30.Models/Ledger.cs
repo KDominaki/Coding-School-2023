@@ -13,10 +13,35 @@ namespace Session30.Models
         public decimal Income { get; set; }
         public decimal Expenses { get; set; }
         public decimal Total { get; set; }
+        public Rent Rent { get; set; }
 
-        public Ledger() 
+        public Ledger(int month, int year) 
         {
+            Month = month;
+            Year= year;
+        }
 
+        public void TotalCalc(IList<Transaction> transactions, IList<Employee> employees)
+        {
+            foreach (Transaction transaction in transactions)
+            {
+                if(transaction.Date.Year == Year && transaction.Date.Month == Month)
+                {
+                    Income += transaction.TotalValue;
+                }
+                
+            }
+            foreach (Employee employee in employees)
+            {
+                if(employee.HireDateEnd.Year!= 0001)
+                {
+                    Expenses += employee.SallaryPerMonth;
+                }
+
+            }
+            Expenses += Rent.Price;
+
+            Total = Income - Expenses;
         }
     }
 }
