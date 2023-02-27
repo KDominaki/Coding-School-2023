@@ -70,19 +70,15 @@ else
     {
         await LoadItemsFromServer();
         isLoading = false;
-        AddLedgers();
     }
     private async Task LoadItemsFromServer()
     {
         transactions = await httpClient.GetFromJsonAsync<List<TransactionListDto>>("transaction");
         employeeList = await httpClient.GetFromJsonAsync<List<EmployeeListDto>>("employee");
-    }
 
-    private void AddLedgers()
-    {
-        foreach (var transaction in transactions)
+        foreach(var transaction in transactions)
         {
-            if (transaction.Date.Month != _month)
+            if(transaction.Date.Month != _month)
             {
                 _month = transaction.Date.Month;
                 _year = transaction.Date.Year;
@@ -90,11 +86,10 @@ else
                 newLedger.TotalCalc(transactions, employeeList);
                 ledgers.Add(newLedger);
             }
-
-
+            
+            
         }
     }
-}
 
 
     
