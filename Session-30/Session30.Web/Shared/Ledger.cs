@@ -22,9 +22,9 @@ namespace Session30.Web.Shared
             Year = year;
         }
 
-        public void TotalCalc(List<TransactionListDto> transactions, List<EmployeeListDto> employees)
+        public void TotalCalc(IList<Transaction> transactions, IList<Employee> employees)
         {
-            foreach (TransactionListDto transaction in transactions)
+            foreach (var transaction in transactions)
             {
                 if (transaction.Date.Year == Year && transaction.Date.Month == Month)
                 {
@@ -32,15 +32,15 @@ namespace Session30.Web.Shared
                 }
 
             }
-            foreach (EmployeeListDto employee in employees)
+            foreach (var employee in employees)
             {
-                if (employee.HireDateEnd.Year != 0001)
+                if (employee.HireDateEnd.Year == 0001)
                 {
                     Expenses += employee.SallaryPerMonth;
                 }
 
             }
-            Expenses += Rent.Price;
+            //Expenses += Rent.Price;
 
             Total = Income - Expenses;
         }

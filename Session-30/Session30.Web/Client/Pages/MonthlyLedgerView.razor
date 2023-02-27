@@ -44,7 +44,8 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var ledger in ledgers)
+        
+            @foreach (var ledger in ledgersList)
             {
                 <tr>
                     <td>@ledger.Month</td>
@@ -60,7 +61,10 @@ else
 @code{
     private List<TransactionListDto> transactions = new();
     private List<EmployeeListDto> employeeList = new();
-    public List<Ledger> ledgers = new List<Ledger>();
+    private List<Ledger> ledgersList = new List<Ledger>()
+    {
+        
+    };
     private int _month = 0;
     private int _year = 0001; 
 
@@ -69,26 +73,33 @@ else
     protected override async Task OnInitializedAsync()
     {
         await LoadItemsFromServer();
+        
         isLoading = false;
     }
     private async Task LoadItemsFromServer()
     {
         transactions = await httpClient.GetFromJsonAsync<List<TransactionListDto>>("transaction");
         employeeList = await httpClient.GetFromJsonAsync<List<EmployeeListDto>>("employee");
-
-        foreach(var transaction in transactions)
+        ledgersList = await httpClient.GetFromJsonAsync<List<Ledger>>("ledger");
+       
+    }
+    private void GetLedgers()
+    {
+        foreach (var transaction in transactions)
         {
-            if(transaction.Date.Month != _month)
+            if (transaction.Date.Month != _month)
             {
                 _month = transaction.Date.Month;
                 _year = transaction.Date.Year;
                 Ledger newLedger = new Ledger(_month, _year);
-                newLedger.TotalCalc(transactions, employeeList);
-                ledgers.Add(newLedger);
+                //newLedger.TotalCalc(transactions, employeeList);
+                
             }
-            
-            
+
+
         }
+        
+
     }
 
 

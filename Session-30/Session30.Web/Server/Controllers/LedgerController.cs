@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Session30.EF.Repositories;
 using Session30.Models;
+using Session30.Web.Client.Pages.Employee;
 using Session30.Web.Shared;
 using System.Net.WebSockets;
 
@@ -21,17 +23,30 @@ namespace Session30.Web.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Transaction>> GetTrans()
+        public async Task<IEnumerable<Ledger>> Get()
         {
-            var result = _transactionRepo.GetAll();
-            return result; 
+            int month = 0;
+            int year = 0;
+            var ledgers = new List<Ledger>();
+            var transactions = _transactionRepo.GetAll();
+            var employees = _employeeRepo.GetAll();
+            foreach (var item in transactions)
+            {
+                if (item.Date.Month != month)
+                {
+                    month = item.Date.Month;
+                    year = item.Date.Year;
+                    Ledger newLedger = new Ledger(month, year);
+                    newLedger.TotalCalc(transactions, employees);
+                    ledgers.Add(newLedger);
+
+                }
+
+
+            }
+            return ledgers; 
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Employee>> GetEmployees()
-        {
-            var result =  _employeeRepo.GetAll();
-            return result;
-        }
+      
     }
 }
