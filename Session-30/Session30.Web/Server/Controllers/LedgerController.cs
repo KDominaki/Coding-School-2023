@@ -15,11 +15,13 @@ namespace Session30.Web.Server.Controllers
     {
         private readonly IEntityRepo<Transaction> _transactionRepo;
         private readonly IEntityRepo<Employee> _employeeRepo;
+        private readonly IEntityRepo<Rent> _rentRepo;
 
-        public LedgerController(IEntityRepo<Transaction> transactionRepo, IEntityRepo<Employee> employeeRepo)
+        public LedgerController(IEntityRepo<Transaction> transactionRepo, IEntityRepo<Employee> employeeRepo, IEntityRepo<Rent> rentRepo)
         {
             _transactionRepo = transactionRepo;
             _employeeRepo = employeeRepo;
+            _rentRepo = rentRepo;
         }
 
         [HttpGet]
@@ -30,6 +32,7 @@ namespace Session30.Web.Server.Controllers
             var ledgers = new List<Ledger>();
             var transactions = _transactionRepo.GetAll();
             var employees = _employeeRepo.GetAll();
+            var rent = _rentRepo.GetById(1);
             foreach (var item in transactions)
             {
                 if (item.Date.Month != month)
@@ -37,15 +40,16 @@ namespace Session30.Web.Server.Controllers
                     month = item.Date.Month;
                     year = item.Date.Year;
                     Ledger newLedger = new Ledger(month, year);
+                    newLedger.Rent = rent;
                     newLedger.TotalCalc(transactions, employees);
                     ledgers.Add(newLedger);
-
                 }
                 if (item.Date.Month == month && item.Date.Year != year)
                 {
                     month = item.Date.Month;
                     year = item.Date.Year;
                     Ledger newLedger = new Ledger(month, year);
+                    newLedger.Rent = rent;
                     newLedger.TotalCalc(transactions, employees);
                     ledgers.Add(newLedger);
                 }

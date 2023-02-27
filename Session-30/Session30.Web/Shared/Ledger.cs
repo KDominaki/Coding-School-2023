@@ -40,7 +40,7 @@ namespace Session30.Web.Shared
                 }
 
             }
-            //Expenses += Rent.Price;
+            Expenses += Rent.Price;
 
             Total = Income - Expenses;
         }

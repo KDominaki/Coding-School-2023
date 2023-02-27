@@ -9,15 +9,16 @@ using System.Diagnostics;
 //{
 //    Description = "bbbbbb"
 //};
+RentRepo repo = new RentRepo();
+Rent rent = new Rent()
+{
+    Price = 5000
+};
 
-ItemRepo repo = new ItemRepo();
+repo.Add(rent);
 
-//repo.Add(item);
 
-repo.Delete(1);
-var list = repo.GetAll();
 
-Console.WriteLine(list.Count);
 Console.WriteLine("In theory its done");
 
 Console.ReadLine();
