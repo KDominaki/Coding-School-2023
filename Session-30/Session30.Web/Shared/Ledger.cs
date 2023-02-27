@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Session30.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Session30.Models
+namespace Session30.Web.Shared
 {
     public class Ledger
     {
@@ -15,25 +16,25 @@ namespace Session30.Models
         public decimal Total { get; set; }
         public Rent Rent { get; set; }
 
-        public Ledger(int month, int year) 
+        public Ledger(int month, int year)
         {
             Month = month;
-            Year= year;
+            Year = year;
         }
 
-        public void TotalCalc(IList<Transaction> transactions, IList<Employee> employees)
+        public void TotalCalc(List<TransactionListDto> transactions, List<EmployeeListDto> employees)
         {
-            foreach (Transaction transaction in transactions)
+            foreach (TransactionListDto transaction in transactions)
             {
-                if(transaction.Date.Year == Year && transaction.Date.Month == Month)
+                if (transaction.Date.Year == Year && transaction.Date.Month == Month)
                 {
                     Income += transaction.TotalValue;
                 }
-                
+
             }
-            foreach (Employee employee in employees)
+            foreach (EmployeeListDto employee in employees)
             {
-                if(employee.HireDateEnd.Year!= 0001)
+                if (employee.HireDateEnd.Year != 0001)
                 {
                     Expenses += employee.SallaryPerMonth;
                 }
