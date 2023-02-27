@@ -41,6 +41,14 @@ namespace Session30.Web.Server.Controllers
                     ledgers.Add(newLedger);
 
                 }
+                if (item.Date.Month == month && item.Date.Year != year)
+                {
+                    month = item.Date.Month;
+                    year = item.Date.Year;
+                    Ledger newLedger = new Ledger(month, year);
+                    newLedger.TotalCalc(transactions, employees);
+                    ledgers.Add(newLedger);
+                }
 
 
             }
