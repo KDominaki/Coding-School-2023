@@ -16,6 +16,7 @@ namespace Session30.Web.Server.Controllers
         {
             _transactionRepo = transactionRepo;
         }
+
         [HttpGet]
         public async Task<IEnumerable<TransactionListDto>> Get()
         {
@@ -27,6 +28,43 @@ namespace Session30.Web.Server.Controllers
                 TotalValue = transaction.TotalValue,
                 PaymentMethod = transaction.PaymentMethod,
             });
+        }
+
+        [HttpGet("{Id}")]
+        public async Task<TransactionEditDto> GetById(int id)
+        {
+            var result = _transactionRepo.GetById(id);
+            return new TransactionEditDto
+            {
+                Id = id,
+                Date = result.Date,
+                PaymentMethod = result.PaymentMethod,
+                TotalValue= result.TotalValue,
+
+            };
+        }
+
+        [HttpPost]
+        public async Task Post(TransactionEditDto trans)
+        {
+            var newTransaction = new Transaction()
+            {
+                Date = trans.Date,
+                TotalValue = trans.TotalValue,
+                PaymentMethod = trans.PaymentMethod,
+
+            };
+            _transactionRepo.Add(newTransaction);
+        }
+
+        [HttpPut]
+        public async Task Put(TransactionEditDto trans)
+        {
+            var itemToUpdate = _transactionRepo.GetById(trans.Id);
+
+            itemToUpdate.Name = trans.Name;
+            itemToUpdate.Surname = trans.Surname;
+            _customerRepo.Update(trans.Id, itemToUpdate);
         }
     }
 }
