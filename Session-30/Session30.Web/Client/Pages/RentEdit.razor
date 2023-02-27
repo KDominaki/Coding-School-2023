@@ -6,7 +6,17 @@
 @inject NavigationManager navigationManager
 @inject IJSRuntime jsRuntime
 
-<h3>Rent Edit</h3>
+<h3 class="display-3">Rent Edit</h3>
+
+<style>
+    body {
+        background-color: #FAF8F1
+    }
+
+    h3 {
+        font-weight: bold;
+    }
+</style>
 
 @if (Rent == null)
 {
@@ -19,8 +29,12 @@ else
         <label class="form-label">Name</label>
         <input class="form-control" @bind="@Rent.Price" />
     </div>
-    <div class="col">
-        <button class="btn btn-success" @onclick="OnSave">Save</button>
+   <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+
     </div>
 }
 
@@ -35,11 +49,22 @@ else
 
     private async Task OnSave()
     {
-        HttpResponseMessage? response = null;
- 
-        response = await httpClient.PutAsJsonAsync("ledger", Rent);
-        
-        response.EnsureSuccessStatusCode();
+        try
+        {
+            HttpResponseMessage? response = null;
+
+            response = await httpClient.PutAsJsonAsync("ledger", Rent);
+
+            response.EnsureSuccessStatusCode();
+            navigationManager.NavigateTo("ledger");
+        }
+        catch (Exception)
+        {
+            var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Ops something went wrong. Make sure you filled the form correctly");
+        }
+    }
+    private void OnCancel()
+    {
         navigationManager.NavigateTo("ledger");
     }
 }
