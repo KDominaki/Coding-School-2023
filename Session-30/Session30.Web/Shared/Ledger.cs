@@ -34,7 +34,7 @@ namespace Session30.Web.Shared
             }
             foreach (var employee in employees)
             {
-                if (employee.HireDateEnd.Year == 0001)
+                if (employee.HireDateEnd.Year == 0001 && employee.HireDateStart.Year <= Year && employee.HireDateStart.Month <= Month)
                 {
                     Expenses += employee.SallaryPerMonth;
                 }
