@@ -58,7 +58,28 @@ namespace Session30.Web.Server.Controllers
             }
             return ledgers; 
         }
+		
+        [HttpGet("{Id}")]
+		public async Task<Rent> GetById(int id)
+		{
+			var result = _rentRepo.GetById(id);
+			return new Rent
+			{
+				Id = id,
+				Price = result.Price
 
-      
+			};
+		}
+
+		[HttpPut]
+        public async Task Put(Rent rent)
+        {
+            var itemToUpdate = _rentRepo.GetById(rent.Id);
+
+            itemToUpdate.Price = rent.Price;
+            _rentRepo.Update(rent.Id, itemToUpdate);
+        }
+
+
     }
 }

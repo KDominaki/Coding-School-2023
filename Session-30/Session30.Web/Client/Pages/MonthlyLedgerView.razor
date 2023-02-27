@@ -34,6 +34,7 @@
 }
 else
 {
+    <button class="btn btn-success btn-lg main-btn" @onclick="EditRent">Edit Rent</button>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -64,20 +65,24 @@ else
 
 @code{
     private List<Ledger> ledgersList = new List<Ledger>();
-  
+
     bool isLoading { get; set; } = true;
 
     protected override async Task OnInitializedAsync()
     {
         await LoadItemsFromServer();
-        
+
         isLoading = false;
     }
     private async Task LoadItemsFromServer()
     {
         ledgersList = await httpClient.GetFromJsonAsync<List<Ledger>>("ledger");
-       
+
     }
+    private void EditRent()
+    {
+        navigationManager.NavigateTo("rent_edit");
+    } 
 
 
     

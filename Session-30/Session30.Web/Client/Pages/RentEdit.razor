@@ -1,0 +1,45 @@
+﻿@page "/rent_edit"
+
+@using Session30.Models;
+@using Session30.Web.Shared;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+
+<h3>Rent Edit</h3>
+
+@if (Rent == null)
+{
+    <p>Loading ...</p>
+
+}
+else
+{
+    <div class="col-md-6">
+        <label class="form-label">Name</label>
+        <input class="form-control" @bind="@Rent.Price" />
+    </div>
+    <div class="col">
+        <button class="btn btn-success" @onclick="OnSave">Save</button>
+    </div>
+}
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    Rent Rent { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Rent = await httpClient.GetFromJsonAsync<Rent>($"ledger/{1}");
+    }
+
+    private async Task OnSave()
+    {
+        HttpResponseMessage? response = null;
+ 
+        response = await httpClient.PutAsJsonAsync("ledger", Rent);
+        
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("ledger");
+    }
+}
