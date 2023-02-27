@@ -16,6 +16,7 @@ namespace Session30.EF.Context
         public DbSet<Item> Items { get; set; } = null!;
         public DbSet<Transaction> Transactions { get; set; } = null!;
         public DbSet<TransactionLine> TransactionLines { get; set; } = null!;
+        public DbSet<Rent> Rents { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,7 @@ namespace Session30.EF.Context
             modelBuilder.ApplyConfiguration(new ItemConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionLineConfiguration());
+            modelBuilder.ApplyConfiguration(new RentConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
