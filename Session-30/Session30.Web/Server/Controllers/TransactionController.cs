@@ -62,9 +62,17 @@ namespace Session30.Web.Server.Controllers
         {
             var itemToUpdate = _transactionRepo.GetById(trans.Id);
 
-            itemToUpdate.Name = trans.Name;
-            itemToUpdate.Surname = trans.Surname;
-            _customerRepo.Update(trans.Id, itemToUpdate);
+            itemToUpdate.Date = trans.Date;
+            itemToUpdate.PaymentMethod = trans.PaymentMethod;
+            itemToUpdate.TotalValue = trans.TotalValue;
+            _transactionRepo.Update(trans.Id, itemToUpdate);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task Delete(int id)
+        {
+
+            _transactionRepo.Delete(id);
         }
     }
 }
